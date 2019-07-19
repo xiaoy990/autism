@@ -1,0 +1,398 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.join.autism.mapper.HzhAssistMapper">
+  <resultMap id="BaseResultMap" type="com.join.autism.entity.HzhAssist.HzhAssist">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="pic" jdbcType="VARCHAR" property="pic" />
+    <result column="headpic" jdbcType="VARCHAR" property="headpic" />
+    <result column="headmri" jdbcType="VARCHAR" property="headmri" />
+    <result column="headmrireason" jdbcType="VARCHAR" property="headmrireason" />
+    <result column="intell" jdbcType="VARCHAR" property="intell" />
+    <result column="colorbody" jdbcType="VARCHAR" property="colorbody" />
+    <result column="bloodwater" jdbcType="VARCHAR" property="bloodwater" />
+    <result column="check" jdbcType="VARCHAR" property="check" />
+    <result column="supersession" jdbcType="VARCHAR" property="supersession" />
+    <result column="ssreason" jdbcType="VARCHAR" property="ssreason" />
+    <result column="other" jdbcType="VARCHAR" property="other" />
+    <result column="otherreason" jdbcType="VARCHAR" property="otherreason" />
+    <result column="child_id" jdbcType="INTEGER" property="childId" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    id, pic, headpic, headmri, headmrireason, intell, colorbody, bloodwater, `check`, 
+    supersession, ssreason, other, otherreason, child_id
+  </sql>
+  <select id="selectByExample" parameterType="com.join.autism.entity.HzhAssist.HzhAssistExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from hzh_assist
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+    <if test="limit != null">
+      <if test="offset != null">
+        limit ${offset}, ${limit}
+      </if>
+      <if test="offset == null">
+        limit ${limit}
+      </if>
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from hzh_assist
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from hzh_assist
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.join.autism.entity.HzhAssist.HzhAssistExample">
+    delete from hzh_assist
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.join.autism.entity.HzhAssist.HzhAssist" useGeneratedKeys="true">
+    insert into hzh_assist (pic, headpic, headmri, 
+      headmrireason, intell, colorbody, 
+      bloodwater, `check`, supersession, 
+      ssreason, other, otherreason, 
+      child_id)
+    values (#{pic,jdbcType=VARCHAR}, #{headpic,jdbcType=VARCHAR}, #{headmri,jdbcType=VARCHAR}, 
+      #{headmrireason,jdbcType=VARCHAR}, #{intell,jdbcType=VARCHAR}, #{colorbody,jdbcType=VARCHAR}, 
+      #{bloodwater,jdbcType=VARCHAR}, #{check,jdbcType=VARCHAR}, #{supersession,jdbcType=VARCHAR}, 
+      #{ssreason,jdbcType=VARCHAR}, #{other,jdbcType=VARCHAR}, #{otherreason,jdbcType=VARCHAR}, 
+      #{childId,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.join.autism.entity.HzhAssist.HzhAssist" useGeneratedKeys="true">
+    insert into hzh_assist
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="pic != null">
+        pic,
+      </if>
+      <if test="headpic != null">
+        headpic,
+      </if>
+      <if test="headmri != null">
+        headmri,
+      </if>
+      <if test="headmrireason != null">
+        headmrireason,
+      </if>
+      <if test="intell != null">
+        intell,
+      </if>
+      <if test="colorbody != null">
+        colorbody,
+      </if>
+      <if test="bloodwater != null">
+        bloodwater,
+      </if>
+      <if test="check != null">
+        `check`,
+      </if>
+      <if test="supersession != null">
+        supersession,
+      </if>
+      <if test="ssreason != null">
+        ssreason,
+      </if>
+      <if test="other != null">
+        other,
+      </if>
+      <if test="otherreason != null">
+        otherreason,
+      </if>
+      <if test="childId != null">
+        child_id,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="pic != null">
+        #{pic,jdbcType=VARCHAR},
+      </if>
+      <if test="headpic != null">
+        #{headpic,jdbcType=VARCHAR},
+      </if>
+      <if test="headmri != null">
+        #{headmri,jdbcType=VARCHAR},
+      </if>
+      <if test="headmrireason != null">
+        #{headmrireason,jdbcType=VARCHAR},
+      </if>
+      <if test="intell != null">
+        #{intell,jdbcType=VARCHAR},
+      </if>
+      <if test="colorbody != null">
+        #{colorbody,jdbcType=VARCHAR},
+      </if>
+      <if test="bloodwater != null">
+        #{bloodwater,jdbcType=VARCHAR},
+      </if>
+      <if test="check != null">
+        #{check,jdbcType=VARCHAR},
+      </if>
+      <if test="supersession != null">
+        #{supersession,jdbcType=VARCHAR},
+      </if>
+      <if test="ssreason != null">
+        #{ssreason,jdbcType=VARCHAR},
+      </if>
+      <if test="other != null">
+        #{other,jdbcType=VARCHAR},
+      </if>
+      <if test="otherreason != null">
+        #{otherreason,jdbcType=VARCHAR},
+      </if>
+      <if test="childId != null">
+        #{childId,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.join.autism.entity.HzhAssist.HzhAssistExample" resultType="java.lang.Long">
+    select count(*) from hzh_assist
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update hzh_assist
+    <set>
+      <if test="record.id != null">
+        id = #{record.id,jdbcType=INTEGER},
+      </if>
+      <if test="record.pic != null">
+        pic = #{record.pic,jdbcType=VARCHAR},
+      </if>
+      <if test="record.headpic != null">
+        headpic = #{record.headpic,jdbcType=VARCHAR},
+      </if>
+      <if test="record.headmri != null">
+        headmri = #{record.headmri,jdbcType=VARCHAR},
+      </if>
+      <if test="record.headmrireason != null">
+        headmrireason = #{record.headmrireason,jdbcType=VARCHAR},
+      </if>
+      <if test="record.intell != null">
+        intell = #{record.intell,jdbcType=VARCHAR},
+      </if>
+      <if test="record.colorbody != null">
+        colorbody = #{record.colorbody,jdbcType=VARCHAR},
+      </if>
+      <if test="record.bloodwater != null">
+        bloodwater = #{record.bloodwater,jdbcType=VARCHAR},
+      </if>
+      <if test="record.check != null">
+        `check` = #{record.check,jdbcType=VARCHAR},
+      </if>
+      <if test="record.supersession != null">
+        supersession = #{record.supersession,jdbcType=VARCHAR},
+      </if>
+      <if test="record.ssreason != null">
+        ssreason = #{record.ssreason,jdbcType=VARCHAR},
+      </if>
+      <if test="record.other != null">
+        other = #{record.other,jdbcType=VARCHAR},
+      </if>
+      <if test="record.otherreason != null">
+        otherreason = #{record.otherreason,jdbcType=VARCHAR},
+      </if>
+      <if test="record.childId != null">
+        child_id = #{record.childId,jdbcType=INTEGER},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update hzh_assist
+    set id = #{record.id,jdbcType=INTEGER},
+      pic = #{record.pic,jdbcType=VARCHAR},
+      headpic = #{record.headpic,jdbcType=VARCHAR},
+      headmri = #{record.headmri,jdbcType=VARCHAR},
+      headmrireason = #{record.headmrireason,jdbcType=VARCHAR},
+      intell = #{record.intell,jdbcType=VARCHAR},
+      colorbody = #{record.colorbody,jdbcType=VARCHAR},
+      bloodwater = #{record.bloodwater,jdbcType=VARCHAR},
+      `check` = #{record.check,jdbcType=VARCHAR},
+      supersession = #{record.supersession,jdbcType=VARCHAR},
+      ssreason = #{record.ssreason,jdbcType=VARCHAR},
+      other = #{record.other,jdbcType=VARCHAR},
+      otherreason = #{record.otherreason,jdbcType=VARCHAR},
+      child_id = #{record.childId,jdbcType=INTEGER}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.join.autism.entity.HzhAssist.HzhAssist">
+    update hzh_assist
+    <set>
+      <if test="pic != null">
+        pic = #{pic,jdbcType=VARCHAR},
+      </if>
+      <if test="headpic != null">
+        headpic = #{headpic,jdbcType=VARCHAR},
+      </if>
+      <if test="headmri != null">
+        headmri = #{headmri,jdbcType=VARCHAR},
+      </if>
+      <if test="headmrireason != null">
+        headmrireason = #{headmrireason,jdbcType=VARCHAR},
+      </if>
+      <if test="intell != null">
+        intell = #{intell,jdbcType=VARCHAR},
+      </if>
+      <if test="colorbody != null">
+        colorbody = #{colorbody,jdbcType=VARCHAR},
+      </if>
+      <if test="bloodwater != null">
+        bloodwater = #{bloodwater,jdbcType=VARCHAR},
+      </if>
+      <if test="check != null">
+        `check` = #{check,jdbcType=VARCHAR},
+      </if>
+      <if test="supersession != null">
+        supersession = #{supersession,jdbcType=VARCHAR},
+      </if>
+      <if test="ssreason != null">
+        ssreason = #{ssreason,jdbcType=VARCHAR},
+      </if>
+      <if test="other != null">
+        other = #{other,jdbcType=VARCHAR},
+      </if>
+      <if test="otherreason != null">
+        otherreason = #{otherreason,jdbcType=VARCHAR},
+      </if>
+      <if test="childId != null">
+        child_id = #{childId,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.join.autism.entity.HzhAssist.HzhAssist">
+    update hzh_assist
+    set pic = #{pic,jdbcType=VARCHAR},
+      headpic = #{headpic,jdbcType=VARCHAR},
+      headmri = #{headmri,jdbcType=VARCHAR},
+      headmrireason = #{headmrireason,jdbcType=VARCHAR},
+      intell = #{intell,jdbcType=VARCHAR},
+      colorbody = #{colorbody,jdbcType=VARCHAR},
+      bloodwater = #{bloodwater,jdbcType=VARCHAR},
+      `check` = #{check,jdbcType=VARCHAR},
+      supersession = #{supersession,jdbcType=VARCHAR},
+      ssreason = #{ssreason,jdbcType=VARCHAR},
+      other = #{other,jdbcType=VARCHAR},
+      otherreason = #{otherreason,jdbcType=VARCHAR},
+      child_id = #{childId,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+
+  <select id="mutiSelect" resultMap="BaseResultMap">
+    select * from hzh_assist where 1 = 1
+    <if test="pic != null">
+and pic = #{pic,jdbcType=VARCHAR}
+    </if>
+    <if test="headpic != null">
+and headpic = #{headpic,jdbcType=VARCHAR}
+    </if>
+    <if test="headmri != null">
+and headmri = #{headmri,jdbcType=VARCHAR}
+    </if>
+    <if test="headmrireason != null">
+and headmrireason = #{headmrireason,jdbcType=VARCHAR}
+    </if>
+    <if test="intell != null">
+and intell = #{intell,jdbcType=VARCHAR}
+    </if>
+    <if test="colorbody != null">
+and colorbody = #{colorbody,jdbcType=VARCHAR}
+    </if>
+    <if test="bloodwater != null">
+and bloodwater = #{bloodwater,jdbcType=VARCHAR}
+    </if>
+    <if test="check != null">
+and `check` = #{check,jdbcType=VARCHAR}
+    </if>
+    <if test="supersession != null">
+and supersession = #{supersession,jdbcType=VARCHAR}
+    </if>
+    <if test="ssreason != null">
+and ssreason = #{ssreason,jdbcType=VARCHAR}
+    </if>
+    <if test="other != null">
+and other = #{other,jdbcType=VARCHAR}
+    </if>
+    <if test="otherreason != null">
+and otherreason = #{otherreason,jdbcType=VARCHAR}
+    </if>
+    <if test="childId != null">
+and child_id = #{childId,jdbcType=INTEGER}
+    </if>
+  </select>
+</mapper>

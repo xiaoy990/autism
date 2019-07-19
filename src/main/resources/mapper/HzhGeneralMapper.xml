@@ -1,0 +1,492 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.join.autism.mapper.HzhGeneralMapper">
+  <resultMap id="BaseResultMap" type="com.join.autism.entity.HzhGeneral.HzhGeneral">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="birthday" jdbcType="VARCHAR" property="birthday" />
+    <result column="age" jdbcType="INTEGER" property="age" />
+    <result column="province" jdbcType="VARCHAR" property="province" />
+    <result column="city" jdbcType="VARCHAR" property="city" />
+    <result column="town" jdbcType="VARCHAR" property="town" />
+    <result column="nation" jdbcType="VARCHAR" property="nation" />
+    <result column="sfname" jdbcType="VARCHAR" property="sfname" />
+    <result column="relation" jdbcType="VARCHAR" property="relation" />
+    <result column="address" jdbcType="VARCHAR" property="address" />
+    <result column="mobile" jdbcType="VARCHAR" property="mobile" />
+    <result column="brosis" jdbcType="INTEGER" property="brosis" />
+    <result column="sicknum" jdbcType="VARCHAR" property="sicknum" />
+    <result column="doctor" jdbcType="VARCHAR" property="doctor" />
+    <result column="survey_time" jdbcType="VARCHAR" property="surveyTime" />
+    <result column="livenum" jdbcType="VARCHAR" property="livenum" />
+    <result column="six" jdbcType="VARCHAR" property="six" />
+    <result column="adder" jdbcType="VARCHAR" property="adder" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    id, `name`, birthday, age, province, city, town, nation, sfname, relation, address, 
+    mobile, brosis, sicknum, doctor, survey_time, livenum, six, adder
+  </sql>
+  <select id="selectByExample" parameterType="com.join.autism.entity.HzhGeneral.HzhGeneralExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from hzh_general
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+    <if test="limit != null">
+      <if test="offset != null">
+        limit ${offset}, ${limit}
+      </if>
+      <if test="offset == null">
+        limit ${limit}
+      </if>
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from hzh_general
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from hzh_general
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.join.autism.entity.HzhGeneral.HzhGeneralExample">
+    delete from hzh_general
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.join.autism.entity.HzhGeneral.HzhGeneral" useGeneratedKeys="true">
+    insert into hzh_general (`name`, birthday, age, 
+      province, city, town, 
+      nation, sfname, relation, 
+      address, mobile, brosis, 
+      sicknum, doctor, survey_time, 
+      livenum, six, adder
+      )
+    values (#{name,jdbcType=VARCHAR}, #{birthday,jdbcType=VARCHAR}, #{age,jdbcType=INTEGER}, 
+      #{province,jdbcType=VARCHAR}, #{city,jdbcType=VARCHAR}, #{town,jdbcType=VARCHAR}, 
+      #{nation,jdbcType=VARCHAR}, #{sfname,jdbcType=VARCHAR}, #{relation,jdbcType=VARCHAR}, 
+      #{address,jdbcType=VARCHAR}, #{mobile,jdbcType=VARCHAR}, #{brosis,jdbcType=INTEGER}, 
+      #{sicknum,jdbcType=VARCHAR}, #{doctor,jdbcType=VARCHAR}, #{surveyTime,jdbcType=VARCHAR}, 
+      #{livenum,jdbcType=VARCHAR}, #{six,jdbcType=VARCHAR}, #{adder,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.join.autism.entity.HzhGeneral.HzhGeneral" useGeneratedKeys="true">
+    insert into hzh_general
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="name != null">
+        `name`,
+      </if>
+      <if test="birthday != null">
+        birthday,
+      </if>
+      <if test="age != null">
+        age,
+      </if>
+      <if test="province != null">
+        province,
+      </if>
+      <if test="city != null">
+        city,
+      </if>
+      <if test="town != null">
+        town,
+      </if>
+      <if test="nation != null">
+        nation,
+      </if>
+      <if test="sfname != null">
+        sfname,
+      </if>
+      <if test="relation != null">
+        relation,
+      </if>
+      <if test="address != null">
+        address,
+      </if>
+      <if test="mobile != null">
+        mobile,
+      </if>
+      <if test="brosis != null">
+        brosis,
+      </if>
+      <if test="sicknum != null">
+        sicknum,
+      </if>
+      <if test="doctor != null">
+        doctor,
+      </if>
+      <if test="surveyTime != null">
+        survey_time,
+      </if>
+      <if test="livenum != null">
+        livenum,
+      </if>
+      <if test="six != null">
+        six,
+      </if>
+      <if test="adder != null">
+        adder,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="birthday != null">
+        #{birthday,jdbcType=VARCHAR},
+      </if>
+      <if test="age != null">
+        #{age,jdbcType=INTEGER},
+      </if>
+      <if test="province != null">
+        #{province,jdbcType=VARCHAR},
+      </if>
+      <if test="city != null">
+        #{city,jdbcType=VARCHAR},
+      </if>
+      <if test="town != null">
+        #{town,jdbcType=VARCHAR},
+      </if>
+      <if test="nation != null">
+        #{nation,jdbcType=VARCHAR},
+      </if>
+      <if test="sfname != null">
+        #{sfname,jdbcType=VARCHAR},
+      </if>
+      <if test="relation != null">
+        #{relation,jdbcType=VARCHAR},
+      </if>
+      <if test="address != null">
+        #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="mobile != null">
+        #{mobile,jdbcType=VARCHAR},
+      </if>
+      <if test="brosis != null">
+        #{brosis,jdbcType=INTEGER},
+      </if>
+      <if test="sicknum != null">
+        #{sicknum,jdbcType=VARCHAR},
+      </if>
+      <if test="doctor != null">
+        #{doctor,jdbcType=VARCHAR},
+      </if>
+      <if test="surveyTime != null">
+        #{surveyTime,jdbcType=VARCHAR},
+      </if>
+      <if test="livenum != null">
+        #{livenum,jdbcType=VARCHAR},
+      </if>
+      <if test="six != null">
+        #{six,jdbcType=VARCHAR},
+      </if>
+      <if test="adder != null">
+        #{adder,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.join.autism.entity.HzhGeneral.HzhGeneralExample" resultType="java.lang.Long">
+    select count(*) from hzh_general
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update hzh_general
+    <set>
+      <if test="record.id != null">
+        id = #{record.id,jdbcType=INTEGER},
+      </if>
+      <if test="record.name != null">
+        `name` = #{record.name,jdbcType=VARCHAR},
+      </if>
+      <if test="record.birthday != null">
+        birthday = #{record.birthday,jdbcType=VARCHAR},
+      </if>
+      <if test="record.age != null">
+        age = #{record.age,jdbcType=INTEGER},
+      </if>
+      <if test="record.province != null">
+        province = #{record.province,jdbcType=VARCHAR},
+      </if>
+      <if test="record.city != null">
+        city = #{record.city,jdbcType=VARCHAR},
+      </if>
+      <if test="record.town != null">
+        town = #{record.town,jdbcType=VARCHAR},
+      </if>
+      <if test="record.nation != null">
+        nation = #{record.nation,jdbcType=VARCHAR},
+      </if>
+      <if test="record.sfname != null">
+        sfname = #{record.sfname,jdbcType=VARCHAR},
+      </if>
+      <if test="record.relation != null">
+        relation = #{record.relation,jdbcType=VARCHAR},
+      </if>
+      <if test="record.address != null">
+        address = #{record.address,jdbcType=VARCHAR},
+      </if>
+      <if test="record.mobile != null">
+        mobile = #{record.mobile,jdbcType=VARCHAR},
+      </if>
+      <if test="record.brosis != null">
+        brosis = #{record.brosis,jdbcType=INTEGER},
+      </if>
+      <if test="record.sicknum != null">
+        sicknum = #{record.sicknum,jdbcType=VARCHAR},
+      </if>
+      <if test="record.doctor != null">
+        doctor = #{record.doctor,jdbcType=VARCHAR},
+      </if>
+      <if test="record.surveyTime != null">
+        survey_time = #{record.surveyTime,jdbcType=VARCHAR},
+      </if>
+      <if test="record.livenum != null">
+        livenum = #{record.livenum,jdbcType=VARCHAR},
+      </if>
+      <if test="record.six != null">
+        six = #{record.six,jdbcType=VARCHAR},
+      </if>
+      <if test="record.adder != null">
+        adder = #{record.adder,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update hzh_general
+    set id = #{record.id,jdbcType=INTEGER},
+      `name` = #{record.name,jdbcType=VARCHAR},
+      birthday = #{record.birthday,jdbcType=VARCHAR},
+      age = #{record.age,jdbcType=INTEGER},
+      province = #{record.province,jdbcType=VARCHAR},
+      city = #{record.city,jdbcType=VARCHAR},
+      town = #{record.town,jdbcType=VARCHAR},
+      nation = #{record.nation,jdbcType=VARCHAR},
+      sfname = #{record.sfname,jdbcType=VARCHAR},
+      relation = #{record.relation,jdbcType=VARCHAR},
+      address = #{record.address,jdbcType=VARCHAR},
+      mobile = #{record.mobile,jdbcType=VARCHAR},
+      brosis = #{record.brosis,jdbcType=INTEGER},
+      sicknum = #{record.sicknum,jdbcType=VARCHAR},
+      doctor = #{record.doctor,jdbcType=VARCHAR},
+      survey_time = #{record.surveyTime,jdbcType=VARCHAR},
+      livenum = #{record.livenum,jdbcType=VARCHAR},
+      six = #{record.six,jdbcType=VARCHAR},
+      adder = #{record.adder,jdbcType=VARCHAR}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.join.autism.entity.HzhGeneral.HzhGeneral">
+    update hzh_general
+    <set>
+      <if test="name != null">
+        `name` = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="birthday != null">
+        birthday = #{birthday,jdbcType=VARCHAR},
+      </if>
+      <if test="age != null">
+        age = #{age,jdbcType=INTEGER},
+      </if>
+      <if test="province != null">
+        province = #{province,jdbcType=VARCHAR},
+      </if>
+      <if test="city != null">
+        city = #{city,jdbcType=VARCHAR},
+      </if>
+      <if test="town != null">
+        town = #{town,jdbcType=VARCHAR},
+      </if>
+      <if test="nation != null">
+        nation = #{nation,jdbcType=VARCHAR},
+      </if>
+      <if test="sfname != null">
+        sfname = #{sfname,jdbcType=VARCHAR},
+      </if>
+      <if test="relation != null">
+        relation = #{relation,jdbcType=VARCHAR},
+      </if>
+      <if test="address != null">
+        address = #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="mobile != null">
+        mobile = #{mobile,jdbcType=VARCHAR},
+      </if>
+      <if test="brosis != null">
+        brosis = #{brosis,jdbcType=INTEGER},
+      </if>
+      <if test="sicknum != null">
+        sicknum = #{sicknum,jdbcType=VARCHAR},
+      </if>
+      <if test="doctor != null">
+        doctor = #{doctor,jdbcType=VARCHAR},
+      </if>
+      <if test="surveyTime != null">
+        survey_time = #{surveyTime,jdbcType=VARCHAR},
+      </if>
+      <if test="livenum != null">
+        livenum = #{livenum,jdbcType=VARCHAR},
+      </if>
+      <if test="six != null">
+        six = #{six,jdbcType=VARCHAR},
+      </if>
+      <if test="adder != null">
+        adder = #{adder,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.join.autism.entity.HzhGeneral.HzhGeneral">
+    update hzh_general
+    set `name` = #{name,jdbcType=VARCHAR},
+      birthday = #{birthday,jdbcType=VARCHAR},
+      age = #{age,jdbcType=INTEGER},
+      province = #{province,jdbcType=VARCHAR},
+      city = #{city,jdbcType=VARCHAR},
+      town = #{town,jdbcType=VARCHAR},
+      nation = #{nation,jdbcType=VARCHAR},
+      sfname = #{sfname,jdbcType=VARCHAR},
+      relation = #{relation,jdbcType=VARCHAR},
+      address = #{address,jdbcType=VARCHAR},
+      mobile = #{mobile,jdbcType=VARCHAR},
+      brosis = #{brosis,jdbcType=INTEGER},
+      sicknum = #{sicknum,jdbcType=VARCHAR},
+      doctor = #{doctor,jdbcType=VARCHAR},
+      survey_time = #{surveyTime,jdbcType=VARCHAR},
+      livenum = #{livenum,jdbcType=VARCHAR},
+      six = #{six,jdbcType=VARCHAR},
+      adder = #{adder,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+
+  <select id="mutiSelect" resultMap="BaseResultMap">
+    select * from hzh_general where 1 = 1
+    <if test="name != null">
+      and `name` = #{name,jdbcType=VARCHAR}
+    </if>
+    <if test="birthday != null">
+      and birthday = #{birthday,jdbcType=VARCHAR}
+    </if>
+    <if test="age != null">
+      and age = #{age,jdbcType=INTEGER}
+    </if>
+    <if test="province != null">
+      and province = #{province,jdbcType=VARCHAR}
+    </if>
+    <if test="city != null">
+      and city = #{city,jdbcType=VARCHAR}
+    </if>
+    <if test="town != null">
+      and town = #{town,jdbcType=VARCHAR}
+    </if>
+    <if test="nation != null">
+      and nation = #{nation,jdbcType=VARCHAR}
+    </if>
+    <if test="sfname != null">
+      and sfname = #{sfname,jdbcType=VARCHAR}
+    </if>
+    <if test="relation != null">
+      and relation = #{relation,jdbcType=VARCHAR}
+    </if>
+    <if test="address != null">
+      and address = #{address,jdbcType=VARCHAR}
+    </if>
+    <if test="mobile != null">
+      and mobile = #{mobile,jdbcType=VARCHAR}
+    </if>
+    <if test="brosis != null">
+      and brosis = #{brosis,jdbcType=INTEGER}
+    </if>
+    <if test="sicknum != null">
+      and sicknum = #{sicknum,jdbcType=VARCHAR}
+    </if>
+    <if test="doctor != null">
+      and doctor = #{doctor,jdbcType=VARCHAR}
+    </if>
+    <if test="surveyTime != null">
+      and survey_time = #{surveyTime,jdbcType=VARCHAR}
+    </if>
+    <if test="livenum != null">
+      and livenum = #{livenum,jdbcType=VARCHAR}
+    </if>
+    <if test="six != null">
+      and six = #{six,jdbcType=VARCHAR}
+    </if>
+    <if test="adder != null">
+      and adder = #{adder,jdbcType=VARCHAR}
+    </if>
+  </select>
+</mapper>

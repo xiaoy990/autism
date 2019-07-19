@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.join.autism.mapper.HzhFamilyMapper">
+  <resultMap id="BaseResultMap" type="com.join.autism.entity.HzhFamily.HzhFamily">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="motherage" jdbcType="INTEGER" property="motherage" />
+    <result column="fatherage" jdbcType="INTEGER" property="fatherage" />
+    <result column="momculture" jdbcType="VARCHAR" property="momculture" />
+    <result column="dadculture" jdbcType="VARCHAR" property="dadculture" />
+    <result column="mompross" jdbcType="VARCHAR" property="mompross" />
+    <result column="dadpross" jdbcType="VARCHAR" property="dadpross" />
+    <result column="child_id" jdbcType="INTEGER" property="childId" />
+    <result column="marriage" jdbcType="INTEGER" property="marriage" />
+    <result column="marriage_desc" jdbcType="VARCHAR" property="marriageDesc" />
+    <result column="much" jdbcType="VARCHAR" property="much" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    id, motherage, fatherage, momculture, dadculture, mompross, dadpross, child_id, marriage, 
+    marriage_desc, much
+  </sql>
+  <select id="selectByExample" parameterType="com.join.autism.entity.HzhFamily.HzhFamilyExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from hzh_family
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+    <if test="limit != null">
+      <if test="offset != null">
+        limit ${offset}, ${limit}
+      </if>
+      <if test="offset == null">
+        limit ${limit}
+      </if>
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from hzh_family
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from hzh_family
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.join.autism.entity.HzhFamily.HzhFamilyExample">
+    delete from hzh_family
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.join.autism.entity.HzhFamily.HzhFamily" useGeneratedKeys="true">
+    insert into hzh_family (motherage, fatherage, momculture, 
+      dadculture, mompross, dadpross, 
+      child_id, marriage, marriage_desc, 
+      much)
+    values (#{motherage,jdbcType=INTEGER}, #{fatherage,jdbcType=INTEGER}, #{momculture,jdbcType=VARCHAR}, 
+      #{dadculture,jdbcType=VARCHAR}, #{mompross,jdbcType=VARCHAR}, #{dadpross,jdbcType=VARCHAR}, 
+      #{childId,jdbcType=INTEGER}, #{marriage,jdbcType=INTEGER}, #{marriageDesc,jdbcType=VARCHAR}, 
+      #{much,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.join.autism.entity.HzhFamily.HzhFamily" useGeneratedKeys="true">
+    insert into hzh_family
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="motherage != null">
+        motherage,
+      </if>
+      <if test="fatherage != null">
+        fatherage,
+      </if>
+      <if test="momculture != null">
+        momculture,
+      </if>
+      <if test="dadculture != null">
+        dadculture,
+      </if>
+      <if test="mompross != null">
+        mompross,
+      </if>
+      <if test="dadpross != null">
+        dadpross,
+      </if>
+      <if test="childId != null">
+        child_id,
+      </if>
+      <if test="marriage != null">
+        marriage,
+      </if>
+      <if test="marriageDesc != null">
+        marriage_desc,
+      </if>
+      <if test="much != null">
+        much,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="motherage != null">
+        #{motherage,jdbcType=INTEGER},
+      </if>
+      <if test="fatherage != null">
+        #{fatherage,jdbcType=INTEGER},
+      </if>
+      <if test="momculture != null">
+        #{momculture,jdbcType=VARCHAR},
+      </if>
+      <if test="dadculture != null">
+        #{dadculture,jdbcType=VARCHAR},
+      </if>
+      <if test="mompross != null">
+        #{mompross,jdbcType=VARCHAR},
+      </if>
+      <if test="dadpross != null">
+        #{dadpross,jdbcType=VARCHAR},
+      </if>
+      <if test="childId != null">
+        #{childId,jdbcType=INTEGER},
+      </if>
+      <if test="marriage != null">
+        #{marriage,jdbcType=INTEGER},
+      </if>
+      <if test="marriageDesc != null">
+        #{marriageDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="much != null">
+        #{much,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.join.autism.entity.HzhFamily.HzhFamilyExample" resultType="java.lang.Long">
+    select count(*) from hzh_family
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update hzh_family
+    <set>
+      <if test="record.id != null">
+        id = #{record.id,jdbcType=INTEGER},
+      </if>
+      <if test="record.motherage != null">
+        motherage = #{record.motherage,jdbcType=INTEGER},
+      </if>
+      <if test="record.fatherage != null">
+        fatherage = #{record.fatherage,jdbcType=INTEGER},
+      </if>
+      <if test="record.momculture != null">
+        momculture = #{record.momculture,jdbcType=VARCHAR},
+      </if>
+      <if test="record.dadculture != null">
+        dadculture = #{record.dadculture,jdbcType=VARCHAR},
+      </if>
+      <if test="record.mompross != null">
+        mompross = #{record.mompross,jdbcType=VARCHAR},
+      </if>
+      <if test="record.dadpross != null">
+        dadpross = #{record.dadpross,jdbcType=VARCHAR},
+      </if>
+      <if test="record.childId != null">
+        child_id = #{record.childId,jdbcType=INTEGER},
+      </if>
+      <if test="record.marriage != null">
+        marriage = #{record.marriage,jdbcType=INTEGER},
+      </if>
+      <if test="record.marriageDesc != null">
+        marriage_desc = #{record.marriageDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="record.much != null">
+        much = #{record.much,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update hzh_family
+    set id = #{record.id,jdbcType=INTEGER},
+      motherage = #{record.motherage,jdbcType=INTEGER},
+      fatherage = #{record.fatherage,jdbcType=INTEGER},
+      momculture = #{record.momculture,jdbcType=VARCHAR},
+      dadculture = #{record.dadculture,jdbcType=VARCHAR},
+      mompross = #{record.mompross,jdbcType=VARCHAR},
+      dadpross = #{record.dadpross,jdbcType=VARCHAR},
+      child_id = #{record.childId,jdbcType=INTEGER},
+      marriage = #{record.marriage,jdbcType=INTEGER},
+      marriage_desc = #{record.marriageDesc,jdbcType=VARCHAR},
+      much = #{record.much,jdbcType=VARCHAR}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.join.autism.entity.HzhFamily.HzhFamily">
+    update hzh_family
+    <set>
+      <if test="motherage != null">
+        motherage = #{motherage,jdbcType=INTEGER},
+      </if>
+      <if test="fatherage != null">
+        fatherage = #{fatherage,jdbcType=INTEGER},
+      </if>
+      <if test="momculture != null">
+        momculture = #{momculture,jdbcType=VARCHAR},
+      </if>
+      <if test="dadculture != null">
+        dadculture = #{dadculture,jdbcType=VARCHAR},
+      </if>
+      <if test="mompross != null">
+        mompross = #{mompross,jdbcType=VARCHAR},
+      </if>
+      <if test="dadpross != null">
+        dadpross = #{dadpross,jdbcType=VARCHAR},
+      </if>
+      <if test="childId != null">
+        child_id = #{childId,jdbcType=INTEGER},
+      </if>
+      <if test="marriage != null">
+        marriage = #{marriage,jdbcType=INTEGER},
+      </if>
+      <if test="marriageDesc != null">
+        marriage_desc = #{marriageDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="much != null">
+        much = #{much,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.join.autism.entity.HzhFamily.HzhFamily">
+    update hzh_family
+    set motherage = #{motherage,jdbcType=INTEGER},
+      fatherage = #{fatherage,jdbcType=INTEGER},
+      momculture = #{momculture,jdbcType=VARCHAR},
+      dadculture = #{dadculture,jdbcType=VARCHAR},
+      mompross = #{mompross,jdbcType=VARCHAR},
+      dadpross = #{dadpross,jdbcType=VARCHAR},
+      child_id = #{childId,jdbcType=INTEGER},
+      marriage = #{marriage,jdbcType=INTEGER},
+      marriage_desc = #{marriageDesc,jdbcType=VARCHAR},
+      much = #{much,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

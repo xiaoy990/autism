@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.join.autism.mapper.HzhTreatMapper">
+  <resultMap id="BaseResultMap" type="com.join.autism.entity.HzhTreat.HzhTreat">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="firstdrug" jdbcType="VARCHAR" property="firstdrug" />
+    <result column="firstdrugreason" jdbcType="VARCHAR" property="firstdrugreason" />
+    <result column="anddrug" jdbcType="VARCHAR" property="anddrug" />
+    <result column="anddrugreason" jdbcType="VARCHAR" property="anddrugreason" />
+    <result column="othertreat" jdbcType="VARCHAR" property="othertreat" />
+    <result column="treatreason" jdbcType="VARCHAR" property="treatreason" />
+    <result column="firsttime" jdbcType="VARCHAR" property="firsttime" />
+    <result column="treatreturn" jdbcType="VARCHAR" property="treatreturn" />
+    <result column="firstdate" jdbcType="VARCHAR" property="firstdate" />
+    <result column="child_id" jdbcType="INTEGER" property="childId" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    id, firstdrug, firstdrugreason, anddrug, anddrugreason, othertreat, treatreason, 
+    firsttime, treatreturn, firstdate, child_id
+  </sql>
+  <select id="selectByExample" parameterType="com.join.autism.entity.HzhTreat.HzhTreatExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from hzh_treat
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+    <if test="limit != null">
+      <if test="offset != null">
+        limit ${offset}, ${limit}
+      </if>
+      <if test="offset == null">
+        limit ${limit}
+      </if>
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from hzh_treat
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from hzh_treat
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.join.autism.entity.HzhTreat.HzhTreatExample">
+    delete from hzh_treat
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.join.autism.entity.HzhTreat.HzhTreat" useGeneratedKeys="true">
+    insert into hzh_treat (firstdrug, firstdrugreason, anddrug, 
+      anddrugreason, othertreat, treatreason, 
+      firsttime, treatreturn, firstdate, 
+      child_id)
+    values (#{firstdrug,jdbcType=VARCHAR}, #{firstdrugreason,jdbcType=VARCHAR}, #{anddrug,jdbcType=VARCHAR}, 
+      #{anddrugreason,jdbcType=VARCHAR}, #{othertreat,jdbcType=VARCHAR}, #{treatreason,jdbcType=VARCHAR}, 
+      #{firsttime,jdbcType=VARCHAR}, #{treatreturn,jdbcType=VARCHAR}, #{firstdate,jdbcType=VARCHAR}, 
+      #{childId,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.join.autism.entity.HzhTreat.HzhTreat" useGeneratedKeys="true">
+    insert into hzh_treat
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="firstdrug != null">
+        firstdrug,
+      </if>
+      <if test="firstdrugreason != null">
+        firstdrugreason,
+      </if>
+      <if test="anddrug != null">
+        anddrug,
+      </if>
+      <if test="anddrugreason != null">
+        anddrugreason,
+      </if>
+      <if test="othertreat != null">
+        othertreat,
+      </if>
+      <if test="treatreason != null">
+        treatreason,
+      </if>
+      <if test="firsttime != null">
+        firsttime,
+      </if>
+      <if test="treatreturn != null">
+        treatreturn,
+      </if>
+      <if test="firstdate != null">
+        firstdate,
+      </if>
+      <if test="childId != null">
+        child_id,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="firstdrug != null">
+        #{firstdrug,jdbcType=VARCHAR},
+      </if>
+      <if test="firstdrugreason != null">
+        #{firstdrugreason,jdbcType=VARCHAR},
+      </if>
+      <if test="anddrug != null">
+        #{anddrug,jdbcType=VARCHAR},
+      </if>
+      <if test="anddrugreason != null">
+        #{anddrugreason,jdbcType=VARCHAR},
+      </if>
+      <if test="othertreat != null">
+        #{othertreat,jdbcType=VARCHAR},
+      </if>
+      <if test="treatreason != null">
+        #{treatreason,jdbcType=VARCHAR},
+      </if>
+      <if test="firsttime != null">
+        #{firsttime,jdbcType=VARCHAR},
+      </if>
+      <if test="treatreturn != null">
+        #{treatreturn,jdbcType=VARCHAR},
+      </if>
+      <if test="firstdate != null">
+        #{firstdate,jdbcType=VARCHAR},
+      </if>
+      <if test="childId != null">
+        #{childId,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.join.autism.entity.HzhTreat.HzhTreatExample" resultType="java.lang.Long">
+    select count(*) from hzh_treat
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update hzh_treat
+    <set>
+      <if test="record.id != null">
+        id = #{record.id,jdbcType=INTEGER},
+      </if>
+      <if test="record.firstdrug != null">
+        firstdrug = #{record.firstdrug,jdbcType=VARCHAR},
+      </if>
+      <if test="record.firstdrugreason != null">
+        firstdrugreason = #{record.firstdrugreason,jdbcType=VARCHAR},
+      </if>
+      <if test="record.anddrug != null">
+        anddrug = #{record.anddrug,jdbcType=VARCHAR},
+      </if>
+      <if test="record.anddrugreason != null">
+        anddrugreason = #{record.anddrugreason,jdbcType=VARCHAR},
+      </if>
+      <if test="record.othertreat != null">
+        othertreat = #{record.othertreat,jdbcType=VARCHAR},
+      </if>
+      <if test="record.treatreason != null">
+        treatreason = #{record.treatreason,jdbcType=VARCHAR},
+      </if>
+      <if test="record.firsttime != null">
+        firsttime = #{record.firsttime,jdbcType=VARCHAR},
+      </if>
+      <if test="record.treatreturn != null">
+        treatreturn = #{record.treatreturn,jdbcType=VARCHAR},
+      </if>
+      <if test="record.firstdate != null">
+        firstdate = #{record.firstdate,jdbcType=VARCHAR},
+      </if>
+      <if test="record.childId != null">
+        child_id = #{record.childId,jdbcType=INTEGER},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update hzh_treat
+    set id = #{record.id,jdbcType=INTEGER},
+      firstdrug = #{record.firstdrug,jdbcType=VARCHAR},
+      firstdrugreason = #{record.firstdrugreason,jdbcType=VARCHAR},
+      anddrug = #{record.anddrug,jdbcType=VARCHAR},
+      anddrugreason = #{record.anddrugreason,jdbcType=VARCHAR},
+      othertreat = #{record.othertreat,jdbcType=VARCHAR},
+      treatreason = #{record.treatreason,jdbcType=VARCHAR},
+      firsttime = #{record.firsttime,jdbcType=VARCHAR},
+      treatreturn = #{record.treatreturn,jdbcType=VARCHAR},
+      firstdate = #{record.firstdate,jdbcType=VARCHAR},
+      child_id = #{record.childId,jdbcType=INTEGER}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.join.autism.entity.HzhTreat.HzhTreat">
+    update hzh_treat
+    <set>
+      <if test="firstdrug != null">
+        firstdrug = #{firstdrug,jdbcType=VARCHAR},
+      </if>
+      <if test="firstdrugreason != null">
+        firstdrugreason = #{firstdrugreason,jdbcType=VARCHAR},
+      </if>
+      <if test="anddrug != null">
+        anddrug = #{anddrug,jdbcType=VARCHAR},
+      </if>
+      <if test="anddrugreason != null">
+        anddrugreason = #{anddrugreason,jdbcType=VARCHAR},
+      </if>
+      <if test="othertreat != null">
+        othertreat = #{othertreat,jdbcType=VARCHAR},
+      </if>
+      <if test="treatreason != null">
+        treatreason = #{treatreason,jdbcType=VARCHAR},
+      </if>
+      <if test="firsttime != null">
+        firsttime = #{firsttime,jdbcType=VARCHAR},
+      </if>
+      <if test="treatreturn != null">
+        treatreturn = #{treatreturn,jdbcType=VARCHAR},
+      </if>
+      <if test="firstdate != null">
+        firstdate = #{firstdate,jdbcType=VARCHAR},
+      </if>
+      <if test="childId != null">
+        child_id = #{childId,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.join.autism.entity.HzhTreat.HzhTreat">
+    update hzh_treat
+    set firstdrug = #{firstdrug,jdbcType=VARCHAR},
+      firstdrugreason = #{firstdrugreason,jdbcType=VARCHAR},
+      anddrug = #{anddrug,jdbcType=VARCHAR},
+      anddrugreason = #{anddrugreason,jdbcType=VARCHAR},
+      othertreat = #{othertreat,jdbcType=VARCHAR},
+      treatreason = #{treatreason,jdbcType=VARCHAR},
+      firsttime = #{firsttime,jdbcType=VARCHAR},
+      treatreturn = #{treatreturn,jdbcType=VARCHAR},
+      firstdate = #{firstdate,jdbcType=VARCHAR},
+      child_id = #{childId,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

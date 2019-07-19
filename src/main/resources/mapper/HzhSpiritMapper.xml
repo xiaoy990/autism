@@ -1,0 +1,434 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.join.autism.mapper.HzhSpiritMapper">
+  <resultMap id="BaseResultMap" type="com.join.autism.entity.HzhSpirit.HzhSpirit">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="sicknum" jdbcType="VARCHAR" property="sicknum" />
+    <result column="doctor" jdbcType="VARCHAR" property="doctor" />
+    <result column="datetime" jdbcType="VARCHAR" property="datetime" />
+    <result column="livenum" jdbcType="VARCHAR" property="livenum" />
+    <result column="nospeak" jdbcType="VARCHAR" property="nospeak" />
+    <result column="brains" jdbcType="VARCHAR" property="brains" />
+    <result column="speakslow" jdbcType="VARCHAR" property="speakslow" />
+    <result column="blues" jdbcType="VARCHAR" property="blues" />
+    <result column="anxious" jdbcType="VARCHAR" property="anxious" />
+    <result column="manic" jdbcType="VARCHAR" property="manic" />
+    <result column="split" jdbcType="VARCHAR" property="split" />
+    <result column="muchgo" jdbcType="VARCHAR" property="muchgo" />
+    <result column="social" jdbcType="VARCHAR" property="social" />
+    <result column="force" jdbcType="VARCHAR" property="force" />
+    <result column="choice" jdbcType="VARCHAR" property="choice" />
+    <result column="spirit" jdbcType="VARCHAR" property="spirit" />
+    <result column="other" jdbcType="VARCHAR" property="other" />
+    <result column="child_id" jdbcType="INTEGER" property="childId" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    id, sicknum, doctor, `datetime`, livenum, nospeak, brains, speakslow, blues, anxious, 
+    manic, split, muchgo, social, `force`, choice, spirit, other, child_id
+  </sql>
+  <select id="selectByExample" parameterType="com.join.autism.entity.HzhSpirit.HzhSpiritExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from hzh_spirit
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+    <if test="limit != null">
+      <if test="offset != null">
+        limit ${offset}, ${limit}
+      </if>
+      <if test="offset == null">
+        limit ${limit}
+      </if>
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from hzh_spirit
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from hzh_spirit
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.join.autism.entity.HzhSpirit.HzhSpiritExample">
+    delete from hzh_spirit
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.join.autism.entity.HzhSpirit.HzhSpirit" useGeneratedKeys="true">
+    insert into hzh_spirit (sicknum, doctor, `datetime`, 
+      livenum, nospeak, brains, 
+      speakslow, blues, anxious, 
+      manic, split, muchgo, 
+      social, `force`, choice, 
+      spirit, other, child_id
+      )
+    values (#{sicknum,jdbcType=VARCHAR}, #{doctor,jdbcType=VARCHAR}, #{datetime,jdbcType=VARCHAR}, 
+      #{livenum,jdbcType=VARCHAR}, #{nospeak,jdbcType=VARCHAR}, #{brains,jdbcType=VARCHAR}, 
+      #{speakslow,jdbcType=VARCHAR}, #{blues,jdbcType=VARCHAR}, #{anxious,jdbcType=VARCHAR}, 
+      #{manic,jdbcType=VARCHAR}, #{split,jdbcType=VARCHAR}, #{muchgo,jdbcType=VARCHAR}, 
+      #{social,jdbcType=VARCHAR}, #{force,jdbcType=VARCHAR}, #{choice,jdbcType=VARCHAR}, 
+      #{spirit,jdbcType=VARCHAR}, #{other,jdbcType=VARCHAR}, #{childId,jdbcType=INTEGER}
+      )
+  </insert>
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.join.autism.entity.HzhSpirit.HzhSpirit" useGeneratedKeys="true">
+    insert into hzh_spirit
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="sicknum != null">
+        sicknum,
+      </if>
+      <if test="doctor != null">
+        doctor,
+      </if>
+      <if test="datetime != null">
+        `datetime`,
+      </if>
+      <if test="livenum != null">
+        livenum,
+      </if>
+      <if test="nospeak != null">
+        nospeak,
+      </if>
+      <if test="brains != null">
+        brains,
+      </if>
+      <if test="speakslow != null">
+        speakslow,
+      </if>
+      <if test="blues != null">
+        blues,
+      </if>
+      <if test="anxious != null">
+        anxious,
+      </if>
+      <if test="manic != null">
+        manic,
+      </if>
+      <if test="split != null">
+        split,
+      </if>
+      <if test="muchgo != null">
+        muchgo,
+      </if>
+      <if test="social != null">
+        social,
+      </if>
+      <if test="force != null">
+        `force`,
+      </if>
+      <if test="choice != null">
+        choice,
+      </if>
+      <if test="spirit != null">
+        spirit,
+      </if>
+      <if test="other != null">
+        other,
+      </if>
+      <if test="childId != null">
+        child_id,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="sicknum != null">
+        #{sicknum,jdbcType=VARCHAR},
+      </if>
+      <if test="doctor != null">
+        #{doctor,jdbcType=VARCHAR},
+      </if>
+      <if test="datetime != null">
+        #{datetime,jdbcType=VARCHAR},
+      </if>
+      <if test="livenum != null">
+        #{livenum,jdbcType=VARCHAR},
+      </if>
+      <if test="nospeak != null">
+        #{nospeak,jdbcType=VARCHAR},
+      </if>
+      <if test="brains != null">
+        #{brains,jdbcType=VARCHAR},
+      </if>
+      <if test="speakslow != null">
+        #{speakslow,jdbcType=VARCHAR},
+      </if>
+      <if test="blues != null">
+        #{blues,jdbcType=VARCHAR},
+      </if>
+      <if test="anxious != null">
+        #{anxious,jdbcType=VARCHAR},
+      </if>
+      <if test="manic != null">
+        #{manic,jdbcType=VARCHAR},
+      </if>
+      <if test="split != null">
+        #{split,jdbcType=VARCHAR},
+      </if>
+      <if test="muchgo != null">
+        #{muchgo,jdbcType=VARCHAR},
+      </if>
+      <if test="social != null">
+        #{social,jdbcType=VARCHAR},
+      </if>
+      <if test="force != null">
+        #{force,jdbcType=VARCHAR},
+      </if>
+      <if test="choice != null">
+        #{choice,jdbcType=VARCHAR},
+      </if>
+      <if test="spirit != null">
+        #{spirit,jdbcType=VARCHAR},
+      </if>
+      <if test="other != null">
+        #{other,jdbcType=VARCHAR},
+      </if>
+      <if test="childId != null">
+        #{childId,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.join.autism.entity.HzhSpirit.HzhSpiritExample" resultType="java.lang.Long">
+    select count(*) from hzh_spirit
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update hzh_spirit
+    <set>
+      <if test="record.id != null">
+        id = #{record.id,jdbcType=INTEGER},
+      </if>
+      <if test="record.sicknum != null">
+        sicknum = #{record.sicknum,jdbcType=VARCHAR},
+      </if>
+      <if test="record.doctor != null">
+        doctor = #{record.doctor,jdbcType=VARCHAR},
+      </if>
+      <if test="record.datetime != null">
+        `datetime` = #{record.datetime,jdbcType=VARCHAR},
+      </if>
+      <if test="record.livenum != null">
+        livenum = #{record.livenum,jdbcType=VARCHAR},
+      </if>
+      <if test="record.nospeak != null">
+        nospeak = #{record.nospeak,jdbcType=VARCHAR},
+      </if>
+      <if test="record.brains != null">
+        brains = #{record.brains,jdbcType=VARCHAR},
+      </if>
+      <if test="record.speakslow != null">
+        speakslow = #{record.speakslow,jdbcType=VARCHAR},
+      </if>
+      <if test="record.blues != null">
+        blues = #{record.blues,jdbcType=VARCHAR},
+      </if>
+      <if test="record.anxious != null">
+        anxious = #{record.anxious,jdbcType=VARCHAR},
+      </if>
+      <if test="record.manic != null">
+        manic = #{record.manic,jdbcType=VARCHAR},
+      </if>
+      <if test="record.split != null">
+        split = #{record.split,jdbcType=VARCHAR},
+      </if>
+      <if test="record.muchgo != null">
+        muchgo = #{record.muchgo,jdbcType=VARCHAR},
+      </if>
+      <if test="record.social != null">
+        social = #{record.social,jdbcType=VARCHAR},
+      </if>
+      <if test="record.force != null">
+        `force` = #{record.force,jdbcType=VARCHAR},
+      </if>
+      <if test="record.choice != null">
+        choice = #{record.choice,jdbcType=VARCHAR},
+      </if>
+      <if test="record.spirit != null">
+        spirit = #{record.spirit,jdbcType=VARCHAR},
+      </if>
+      <if test="record.other != null">
+        other = #{record.other,jdbcType=VARCHAR},
+      </if>
+      <if test="record.childId != null">
+        child_id = #{record.childId,jdbcType=INTEGER},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update hzh_spirit
+    set id = #{record.id,jdbcType=INTEGER},
+      sicknum = #{record.sicknum,jdbcType=VARCHAR},
+      doctor = #{record.doctor,jdbcType=VARCHAR},
+      `datetime` = #{record.datetime,jdbcType=VARCHAR},
+      livenum = #{record.livenum,jdbcType=VARCHAR},
+      nospeak = #{record.nospeak,jdbcType=VARCHAR},
+      brains = #{record.brains,jdbcType=VARCHAR},
+      speakslow = #{record.speakslow,jdbcType=VARCHAR},
+      blues = #{record.blues,jdbcType=VARCHAR},
+      anxious = #{record.anxious,jdbcType=VARCHAR},
+      manic = #{record.manic,jdbcType=VARCHAR},
+      split = #{record.split,jdbcType=VARCHAR},
+      muchgo = #{record.muchgo,jdbcType=VARCHAR},
+      social = #{record.social,jdbcType=VARCHAR},
+      `force` = #{record.force,jdbcType=VARCHAR},
+      choice = #{record.choice,jdbcType=VARCHAR},
+      spirit = #{record.spirit,jdbcType=VARCHAR},
+      other = #{record.other,jdbcType=VARCHAR},
+      child_id = #{record.childId,jdbcType=INTEGER}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.join.autism.entity.HzhSpirit.HzhSpirit">
+    update hzh_spirit
+    <set>
+      <if test="sicknum != null">
+        sicknum = #{sicknum,jdbcType=VARCHAR},
+      </if>
+      <if test="doctor != null">
+        doctor = #{doctor,jdbcType=VARCHAR},
+      </if>
+      <if test="datetime != null">
+        `datetime` = #{datetime,jdbcType=VARCHAR},
+      </if>
+      <if test="livenum != null">
+        livenum = #{livenum,jdbcType=VARCHAR},
+      </if>
+      <if test="nospeak != null">
+        nospeak = #{nospeak,jdbcType=VARCHAR},
+      </if>
+      <if test="brains != null">
+        brains = #{brains,jdbcType=VARCHAR},
+      </if>
+      <if test="speakslow != null">
+        speakslow = #{speakslow,jdbcType=VARCHAR},
+      </if>
+      <if test="blues != null">
+        blues = #{blues,jdbcType=VARCHAR},
+      </if>
+      <if test="anxious != null">
+        anxious = #{anxious,jdbcType=VARCHAR},
+      </if>
+      <if test="manic != null">
+        manic = #{manic,jdbcType=VARCHAR},
+      </if>
+      <if test="split != null">
+        split = #{split,jdbcType=VARCHAR},
+      </if>
+      <if test="muchgo != null">
+        muchgo = #{muchgo,jdbcType=VARCHAR},
+      </if>
+      <if test="social != null">
+        social = #{social,jdbcType=VARCHAR},
+      </if>
+      <if test="force != null">
+        `force` = #{force,jdbcType=VARCHAR},
+      </if>
+      <if test="choice != null">
+        choice = #{choice,jdbcType=VARCHAR},
+      </if>
+      <if test="spirit != null">
+        spirit = #{spirit,jdbcType=VARCHAR},
+      </if>
+      <if test="other != null">
+        other = #{other,jdbcType=VARCHAR},
+      </if>
+      <if test="childId != null">
+        child_id = #{childId,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.join.autism.entity.HzhSpirit.HzhSpirit">
+    update hzh_spirit
+    set sicknum = #{sicknum,jdbcType=VARCHAR},
+      doctor = #{doctor,jdbcType=VARCHAR},
+      `datetime` = #{datetime,jdbcType=VARCHAR},
+      livenum = #{livenum,jdbcType=VARCHAR},
+      nospeak = #{nospeak,jdbcType=VARCHAR},
+      brains = #{brains,jdbcType=VARCHAR},
+      speakslow = #{speakslow,jdbcType=VARCHAR},
+      blues = #{blues,jdbcType=VARCHAR},
+      anxious = #{anxious,jdbcType=VARCHAR},
+      manic = #{manic,jdbcType=VARCHAR},
+      split = #{split,jdbcType=VARCHAR},
+      muchgo = #{muchgo,jdbcType=VARCHAR},
+      social = #{social,jdbcType=VARCHAR},
+      `force` = #{force,jdbcType=VARCHAR},
+      choice = #{choice,jdbcType=VARCHAR},
+      spirit = #{spirit,jdbcType=VARCHAR},
+      other = #{other,jdbcType=VARCHAR},
+      child_id = #{childId,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

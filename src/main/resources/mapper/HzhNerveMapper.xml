@@ -1,0 +1,403 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.join.autism.mapper.HzhNerveMapper">
+  <resultMap id="BaseResultMap" type="com.join.autism.entity.HzhNerve.HzhNerve">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="yes_no" jdbcType="INTEGER" property="yesNo" />
+    <result column="epilepsy" jdbcType="INTEGER" property="epilepsy" />
+    <result column="epilepsyreason" jdbcType="VARCHAR" property="epilepsyreason" />
+    <result column="tension" jdbcType="INTEGER" property="tension" />
+    <result column="tensionreason" jdbcType="VARCHAR" property="tensionreason" />
+    <result column="imbalance" jdbcType="INTEGER" property="imbalance" />
+    <result column="imbalancereason" jdbcType="VARCHAR" property="imbalancereason" />
+    <result column="gait" jdbcType="INTEGER" property="gait" />
+    <result column="gaitreason" jdbcType="VARCHAR" property="gaitreason" />
+    <result column="lncrease" jdbcType="INTEGER" property="lncrease" />
+    <result column="lncreasereason" jdbcType="VARCHAR" property="lncreasereason" />
+    <result column="weaken" jdbcType="INTEGER" property="weaken" />
+    <result column="weakenreason" jdbcType="VARCHAR" property="weakenreason" />
+    <result column="other" jdbcType="INTEGER" property="other" />
+    <result column="otherreason" jdbcType="VARCHAR" property="otherreason" />
+    <result column="child_id" jdbcType="INTEGER" property="childId" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    id, yes_no, epilepsy, epilepsyreason, tension, tensionreason, imbalance, imbalancereason, 
+    gait, gaitreason, lncrease, lncreasereason, weaken, weakenreason, other, otherreason, 
+    child_id
+  </sql>
+  <select id="selectByExample" parameterType="com.join.autism.entity.HzhNerve.HzhNerveExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from hzh_nerve
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+    <if test="limit != null">
+      <if test="offset != null">
+        limit ${offset}, ${limit}
+      </if>
+      <if test="offset == null">
+        limit ${limit}
+      </if>
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from hzh_nerve
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from hzh_nerve
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.join.autism.entity.HzhNerve.HzhNerveExample">
+    delete from hzh_nerve
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.join.autism.entity.HzhNerve.HzhNerve" useGeneratedKeys="true">
+    insert into hzh_nerve (yes_no, epilepsy, epilepsyreason, 
+      tension, tensionreason, imbalance, 
+      imbalancereason, gait, gaitreason, 
+      lncrease, lncreasereason, weaken, 
+      weakenreason, other, otherreason, 
+      child_id)
+    values (#{yesNo,jdbcType=INTEGER}, #{epilepsy,jdbcType=INTEGER}, #{epilepsyreason,jdbcType=VARCHAR}, 
+      #{tension,jdbcType=INTEGER}, #{tensionreason,jdbcType=VARCHAR}, #{imbalance,jdbcType=INTEGER}, 
+      #{imbalancereason,jdbcType=VARCHAR}, #{gait,jdbcType=INTEGER}, #{gaitreason,jdbcType=VARCHAR}, 
+      #{lncrease,jdbcType=INTEGER}, #{lncreasereason,jdbcType=VARCHAR}, #{weaken,jdbcType=INTEGER}, 
+      #{weakenreason,jdbcType=VARCHAR}, #{other,jdbcType=INTEGER}, #{otherreason,jdbcType=VARCHAR}, 
+      #{childId,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.join.autism.entity.HzhNerve.HzhNerve" useGeneratedKeys="true">
+    insert into hzh_nerve
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="yesNo != null">
+        yes_no,
+      </if>
+      <if test="epilepsy != null">
+        epilepsy,
+      </if>
+      <if test="epilepsyreason != null">
+        epilepsyreason,
+      </if>
+      <if test="tension != null">
+        tension,
+      </if>
+      <if test="tensionreason != null">
+        tensionreason,
+      </if>
+      <if test="imbalance != null">
+        imbalance,
+      </if>
+      <if test="imbalancereason != null">
+        imbalancereason,
+      </if>
+      <if test="gait != null">
+        gait,
+      </if>
+      <if test="gaitreason != null">
+        gaitreason,
+      </if>
+      <if test="lncrease != null">
+        lncrease,
+      </if>
+      <if test="lncreasereason != null">
+        lncreasereason,
+      </if>
+      <if test="weaken != null">
+        weaken,
+      </if>
+      <if test="weakenreason != null">
+        weakenreason,
+      </if>
+      <if test="other != null">
+        other,
+      </if>
+      <if test="otherreason != null">
+        otherreason,
+      </if>
+      <if test="childId != null">
+        child_id,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="yesNo != null">
+        #{yesNo,jdbcType=INTEGER},
+      </if>
+      <if test="epilepsy != null">
+        #{epilepsy,jdbcType=INTEGER},
+      </if>
+      <if test="epilepsyreason != null">
+        #{epilepsyreason,jdbcType=VARCHAR},
+      </if>
+      <if test="tension != null">
+        #{tension,jdbcType=INTEGER},
+      </if>
+      <if test="tensionreason != null">
+        #{tensionreason,jdbcType=VARCHAR},
+      </if>
+      <if test="imbalance != null">
+        #{imbalance,jdbcType=INTEGER},
+      </if>
+      <if test="imbalancereason != null">
+        #{imbalancereason,jdbcType=VARCHAR},
+      </if>
+      <if test="gait != null">
+        #{gait,jdbcType=INTEGER},
+      </if>
+      <if test="gaitreason != null">
+        #{gaitreason,jdbcType=VARCHAR},
+      </if>
+      <if test="lncrease != null">
+        #{lncrease,jdbcType=INTEGER},
+      </if>
+      <if test="lncreasereason != null">
+        #{lncreasereason,jdbcType=VARCHAR},
+      </if>
+      <if test="weaken != null">
+        #{weaken,jdbcType=INTEGER},
+      </if>
+      <if test="weakenreason != null">
+        #{weakenreason,jdbcType=VARCHAR},
+      </if>
+      <if test="other != null">
+        #{other,jdbcType=INTEGER},
+      </if>
+      <if test="otherreason != null">
+        #{otherreason,jdbcType=VARCHAR},
+      </if>
+      <if test="childId != null">
+        #{childId,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.join.autism.entity.HzhNerve.HzhNerveExample" resultType="java.lang.Long">
+    select count(*) from hzh_nerve
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update hzh_nerve
+    <set>
+      <if test="record.id != null">
+        id = #{record.id,jdbcType=INTEGER},
+      </if>
+      <if test="record.yesNo != null">
+        yes_no = #{record.yesNo,jdbcType=INTEGER},
+      </if>
+      <if test="record.epilepsy != null">
+        epilepsy = #{record.epilepsy,jdbcType=INTEGER},
+      </if>
+      <if test="record.epilepsyreason != null">
+        epilepsyreason = #{record.epilepsyreason,jdbcType=VARCHAR},
+      </if>
+      <if test="record.tension != null">
+        tension = #{record.tension,jdbcType=INTEGER},
+      </if>
+      <if test="record.tensionreason != null">
+        tensionreason = #{record.tensionreason,jdbcType=VARCHAR},
+      </if>
+      <if test="record.imbalance != null">
+        imbalance = #{record.imbalance,jdbcType=INTEGER},
+      </if>
+      <if test="record.imbalancereason != null">
+        imbalancereason = #{record.imbalancereason,jdbcType=VARCHAR},
+      </if>
+      <if test="record.gait != null">
+        gait = #{record.gait,jdbcType=INTEGER},
+      </if>
+      <if test="record.gaitreason != null">
+        gaitreason = #{record.gaitreason,jdbcType=VARCHAR},
+      </if>
+      <if test="record.lncrease != null">
+        lncrease = #{record.lncrease,jdbcType=INTEGER},
+      </if>
+      <if test="record.lncreasereason != null">
+        lncreasereason = #{record.lncreasereason,jdbcType=VARCHAR},
+      </if>
+      <if test="record.weaken != null">
+        weaken = #{record.weaken,jdbcType=INTEGER},
+      </if>
+      <if test="record.weakenreason != null">
+        weakenreason = #{record.weakenreason,jdbcType=VARCHAR},
+      </if>
+      <if test="record.other != null">
+        other = #{record.other,jdbcType=INTEGER},
+      </if>
+      <if test="record.otherreason != null">
+        otherreason = #{record.otherreason,jdbcType=VARCHAR},
+      </if>
+      <if test="record.childId != null">
+        child_id = #{record.childId,jdbcType=INTEGER},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update hzh_nerve
+    set id = #{record.id,jdbcType=INTEGER},
+      yes_no = #{record.yesNo,jdbcType=INTEGER},
+      epilepsy = #{record.epilepsy,jdbcType=INTEGER},
+      epilepsyreason = #{record.epilepsyreason,jdbcType=VARCHAR},
+      tension = #{record.tension,jdbcType=INTEGER},
+      tensionreason = #{record.tensionreason,jdbcType=VARCHAR},
+      imbalance = #{record.imbalance,jdbcType=INTEGER},
+      imbalancereason = #{record.imbalancereason,jdbcType=VARCHAR},
+      gait = #{record.gait,jdbcType=INTEGER},
+      gaitreason = #{record.gaitreason,jdbcType=VARCHAR},
+      lncrease = #{record.lncrease,jdbcType=INTEGER},
+      lncreasereason = #{record.lncreasereason,jdbcType=VARCHAR},
+      weaken = #{record.weaken,jdbcType=INTEGER},
+      weakenreason = #{record.weakenreason,jdbcType=VARCHAR},
+      other = #{record.other,jdbcType=INTEGER},
+      otherreason = #{record.otherreason,jdbcType=VARCHAR},
+      child_id = #{record.childId,jdbcType=INTEGER}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.join.autism.entity.HzhNerve.HzhNerve">
+    update hzh_nerve
+    <set>
+      <if test="yesNo != null">
+        yes_no = #{yesNo,jdbcType=INTEGER},
+      </if>
+      <if test="epilepsy != null">
+        epilepsy = #{epilepsy,jdbcType=INTEGER},
+      </if>
+      <if test="epilepsyreason != null">
+        epilepsyreason = #{epilepsyreason,jdbcType=VARCHAR},
+      </if>
+      <if test="tension != null">
+        tension = #{tension,jdbcType=INTEGER},
+      </if>
+      <if test="tensionreason != null">
+        tensionreason = #{tensionreason,jdbcType=VARCHAR},
+      </if>
+      <if test="imbalance != null">
+        imbalance = #{imbalance,jdbcType=INTEGER},
+      </if>
+      <if test="imbalancereason != null">
+        imbalancereason = #{imbalancereason,jdbcType=VARCHAR},
+      </if>
+      <if test="gait != null">
+        gait = #{gait,jdbcType=INTEGER},
+      </if>
+      <if test="gaitreason != null">
+        gaitreason = #{gaitreason,jdbcType=VARCHAR},
+      </if>
+      <if test="lncrease != null">
+        lncrease = #{lncrease,jdbcType=INTEGER},
+      </if>
+      <if test="lncreasereason != null">
+        lncreasereason = #{lncreasereason,jdbcType=VARCHAR},
+      </if>
+      <if test="weaken != null">
+        weaken = #{weaken,jdbcType=INTEGER},
+      </if>
+      <if test="weakenreason != null">
+        weakenreason = #{weakenreason,jdbcType=VARCHAR},
+      </if>
+      <if test="other != null">
+        other = #{other,jdbcType=INTEGER},
+      </if>
+      <if test="otherreason != null">
+        otherreason = #{otherreason,jdbcType=VARCHAR},
+      </if>
+      <if test="childId != null">
+        child_id = #{childId,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.join.autism.entity.HzhNerve.HzhNerve">
+    update hzh_nerve
+    set yes_no = #{yesNo,jdbcType=INTEGER},
+      epilepsy = #{epilepsy,jdbcType=INTEGER},
+      epilepsyreason = #{epilepsyreason,jdbcType=VARCHAR},
+      tension = #{tension,jdbcType=INTEGER},
+      tensionreason = #{tensionreason,jdbcType=VARCHAR},
+      imbalance = #{imbalance,jdbcType=INTEGER},
+      imbalancereason = #{imbalancereason,jdbcType=VARCHAR},
+      gait = #{gait,jdbcType=INTEGER},
+      gaitreason = #{gaitreason,jdbcType=VARCHAR},
+      lncrease = #{lncrease,jdbcType=INTEGER},
+      lncreasereason = #{lncreasereason,jdbcType=VARCHAR},
+      weaken = #{weaken,jdbcType=INTEGER},
+      weakenreason = #{weakenreason,jdbcType=VARCHAR},
+      other = #{other,jdbcType=INTEGER},
+      otherreason = #{otherreason,jdbcType=VARCHAR},
+      child_id = #{childId,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

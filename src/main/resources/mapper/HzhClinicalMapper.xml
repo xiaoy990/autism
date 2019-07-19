@@ -1,0 +1,1097 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.join.autism.mapper.HzhClinicalMapper">
+  <resultMap id="BaseResultMap" type="com.join.autism.entity.HzhClinical.HzhClinical">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="child_id" jdbcType="INTEGER" property="childId" />
+    <result column="option1" jdbcType="INTEGER" property="option1" />
+    <result column="option2" jdbcType="INTEGER" property="option2" />
+    <result column="option3" jdbcType="INTEGER" property="option3" />
+    <result column="option4" jdbcType="INTEGER" property="option4" />
+    <result column="option5" jdbcType="INTEGER" property="option5" />
+    <result column="option6" jdbcType="INTEGER" property="option6" />
+    <result column="option7" jdbcType="INTEGER" property="option7" />
+    <result column="option8" jdbcType="INTEGER" property="option8" />
+    <result column="option9" jdbcType="INTEGER" property="option9" />
+    <result column="option10" jdbcType="INTEGER" property="option10" />
+    <result column="option11" jdbcType="INTEGER" property="option11" />
+    <result column="option12" jdbcType="INTEGER" property="option12" />
+    <result column="option13" jdbcType="INTEGER" property="option13" />
+    <result column="option14" jdbcType="INTEGER" property="option14" />
+    <result column="option15" jdbcType="INTEGER" property="option15" />
+    <result column="option16" jdbcType="INTEGER" property="option16" />
+    <result column="option17" jdbcType="INTEGER" property="option17" />
+    <result column="option18" jdbcType="INTEGER" property="option18" />
+    <result column="option19" jdbcType="INTEGER" property="option19" />
+    <result column="option20" jdbcType="INTEGER" property="option20" />
+    <result column="option21" jdbcType="INTEGER" property="option21" />
+    <result column="option22" jdbcType="INTEGER" property="option22" />
+    <result column="option23" jdbcType="INTEGER" property="option23" />
+    <result column="option24" jdbcType="INTEGER" property="option24" />
+    <result column="option25" jdbcType="INTEGER" property="option25" />
+    <result column="option26" jdbcType="INTEGER" property="option26" />
+    <result column="option27" jdbcType="INTEGER" property="option27" />
+    <result column="option28" jdbcType="INTEGER" property="option28" />
+    <result column="option29" jdbcType="INTEGER" property="option29" />
+    <result column="option30" jdbcType="INTEGER" property="option30" />
+    <result column="option31" jdbcType="INTEGER" property="option31" />
+    <result column="option32" jdbcType="INTEGER" property="option32" />
+    <result column="option33" jdbcType="INTEGER" property="option33" />
+    <result column="option34" jdbcType="INTEGER" property="option34" />
+    <result column="option35" jdbcType="INTEGER" property="option35" />
+    <result column="option36" jdbcType="INTEGER" property="option36" />
+    <result column="option37" jdbcType="INTEGER" property="option37" />
+    <result column="option38" jdbcType="INTEGER" property="option38" />
+    <result column="option39" jdbcType="INTEGER" property="option39" />
+    <result column="option40" jdbcType="INTEGER" property="option40" />
+    <result column="option41" jdbcType="INTEGER" property="option41" />
+    <result column="option42" jdbcType="INTEGER" property="option42" />
+    <result column="option43" jdbcType="INTEGER" property="option43" />
+    <result column="option44" jdbcType="INTEGER" property="option44" />
+    <result column="option45" jdbcType="INTEGER" property="option45" />
+    <result column="option46" jdbcType="INTEGER" property="option46" />
+    <result column="option47" jdbcType="INTEGER" property="option47" />
+    <result column="option48" jdbcType="INTEGER" property="option48" />
+    <result column="option49" jdbcType="INTEGER" property="option49" />
+    <result column="option50" jdbcType="INTEGER" property="option50" />
+    <result column="option51" jdbcType="INTEGER" property="option51" />
+    <result column="option52" jdbcType="INTEGER" property="option52" />
+    <result column="option53" jdbcType="INTEGER" property="option53" />
+    <result column="option54" jdbcType="INTEGER" property="option54" />
+    <result column="option55" jdbcType="INTEGER" property="option55" />
+    <result column="option56" jdbcType="INTEGER" property="option56" />
+    <result column="option57" jdbcType="INTEGER" property="option57" />
+    <result column="frasum" jdbcType="INTEGER" property="frasum" />
+    <result column="addtime" jdbcType="INTEGER" property="addtime" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    id, child_id, option1, option2, option3, option4, option5, option6, option7, option8, 
+    option9, option10, option11, option12, option13, option14, option15, option16, option17, 
+    option18, option19, option20, option21, option22, option23, option24, option25, option26, 
+    option27, option28, option29, option30, option31, option32, option33, option34, option35, 
+    option36, option37, option38, option39, option40, option41, option42, option43, option44, 
+    option45, option46, option47, option48, option49, option50, option51, option52, option53, 
+    option54, option55, option56, option57, frasum, addtime
+  </sql>
+  <select id="selectByExample" parameterType="com.join.autism.entity.HzhClinical.HzhClinicalExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from hzh_clinical
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+    <if test="limit != null">
+      <if test="offset != null">
+        limit ${offset}, ${limit}
+      </if>
+      <if test="offset == null">
+        limit ${limit}
+      </if>
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from hzh_clinical
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from hzh_clinical
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.join.autism.entity.HzhClinical.HzhClinicalExample">
+    delete from hzh_clinical
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.join.autism.entity.HzhClinical.HzhClinical" useGeneratedKeys="true">
+    insert into hzh_clinical (child_id, option1, option2, 
+      option3, option4, option5, 
+      option6, option7, option8, 
+      option9, option10, option11, 
+      option12, option13, option14, 
+      option15, option16, option17, 
+      option18, option19, option20, 
+      option21, option22, option23, 
+      option24, option25, option26, 
+      option27, option28, option29, 
+      option30, option31, option32, 
+      option33, option34, option35, 
+      option36, option37, option38, 
+      option39, option40, option41, 
+      option42, option43, option44, 
+      option45, option46, option47, 
+      option48, option49, option50, 
+      option51, option52, option53, 
+      option54, option55, option56, 
+      option57, frasum, addtime
+      )
+    values (#{childId,jdbcType=INTEGER}, #{option1,jdbcType=INTEGER}, #{option2,jdbcType=INTEGER}, 
+      #{option3,jdbcType=INTEGER}, #{option4,jdbcType=INTEGER}, #{option5,jdbcType=INTEGER}, 
+      #{option6,jdbcType=INTEGER}, #{option7,jdbcType=INTEGER}, #{option8,jdbcType=INTEGER}, 
+      #{option9,jdbcType=INTEGER}, #{option10,jdbcType=INTEGER}, #{option11,jdbcType=INTEGER}, 
+      #{option12,jdbcType=INTEGER}, #{option13,jdbcType=INTEGER}, #{option14,jdbcType=INTEGER}, 
+      #{option15,jdbcType=INTEGER}, #{option16,jdbcType=INTEGER}, #{option17,jdbcType=INTEGER}, 
+      #{option18,jdbcType=INTEGER}, #{option19,jdbcType=INTEGER}, #{option20,jdbcType=INTEGER}, 
+      #{option21,jdbcType=INTEGER}, #{option22,jdbcType=INTEGER}, #{option23,jdbcType=INTEGER}, 
+      #{option24,jdbcType=INTEGER}, #{option25,jdbcType=INTEGER}, #{option26,jdbcType=INTEGER}, 
+      #{option27,jdbcType=INTEGER}, #{option28,jdbcType=INTEGER}, #{option29,jdbcType=INTEGER}, 
+      #{option30,jdbcType=INTEGER}, #{option31,jdbcType=INTEGER}, #{option32,jdbcType=INTEGER}, 
+      #{option33,jdbcType=INTEGER}, #{option34,jdbcType=INTEGER}, #{option35,jdbcType=INTEGER}, 
+      #{option36,jdbcType=INTEGER}, #{option37,jdbcType=INTEGER}, #{option38,jdbcType=INTEGER}, 
+      #{option39,jdbcType=INTEGER}, #{option40,jdbcType=INTEGER}, #{option41,jdbcType=INTEGER}, 
+      #{option42,jdbcType=INTEGER}, #{option43,jdbcType=INTEGER}, #{option44,jdbcType=INTEGER}, 
+      #{option45,jdbcType=INTEGER}, #{option46,jdbcType=INTEGER}, #{option47,jdbcType=INTEGER}, 
+      #{option48,jdbcType=INTEGER}, #{option49,jdbcType=INTEGER}, #{option50,jdbcType=INTEGER}, 
+      #{option51,jdbcType=INTEGER}, #{option52,jdbcType=INTEGER}, #{option53,jdbcType=INTEGER}, 
+      #{option54,jdbcType=INTEGER}, #{option55,jdbcType=INTEGER}, #{option56,jdbcType=INTEGER}, 
+      #{option57,jdbcType=INTEGER}, #{frasum,jdbcType=INTEGER}, #{addtime,jdbcType=INTEGER}
+      )
+  </insert>
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.join.autism.entity.HzhClinical.HzhClinical" useGeneratedKeys="true">
+    insert into hzh_clinical
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="childId != null">
+        child_id,
+      </if>
+      <if test="option1 != null">
+        option1,
+      </if>
+      <if test="option2 != null">
+        option2,
+      </if>
+      <if test="option3 != null">
+        option3,
+      </if>
+      <if test="option4 != null">
+        option4,
+      </if>
+      <if test="option5 != null">
+        option5,
+      </if>
+      <if test="option6 != null">
+        option6,
+      </if>
+      <if test="option7 != null">
+        option7,
+      </if>
+      <if test="option8 != null">
+        option8,
+      </if>
+      <if test="option9 != null">
+        option9,
+      </if>
+      <if test="option10 != null">
+        option10,
+      </if>
+      <if test="option11 != null">
+        option11,
+      </if>
+      <if test="option12 != null">
+        option12,
+      </if>
+      <if test="option13 != null">
+        option13,
+      </if>
+      <if test="option14 != null">
+        option14,
+      </if>
+      <if test="option15 != null">
+        option15,
+      </if>
+      <if test="option16 != null">
+        option16,
+      </if>
+      <if test="option17 != null">
+        option17,
+      </if>
+      <if test="option18 != null">
+        option18,
+      </if>
+      <if test="option19 != null">
+        option19,
+      </if>
+      <if test="option20 != null">
+        option20,
+      </if>
+      <if test="option21 != null">
+        option21,
+      </if>
+      <if test="option22 != null">
+        option22,
+      </if>
+      <if test="option23 != null">
+        option23,
+      </if>
+      <if test="option24 != null">
+        option24,
+      </if>
+      <if test="option25 != null">
+        option25,
+      </if>
+      <if test="option26 != null">
+        option26,
+      </if>
+      <if test="option27 != null">
+        option27,
+      </if>
+      <if test="option28 != null">
+        option28,
+      </if>
+      <if test="option29 != null">
+        option29,
+      </if>
+      <if test="option30 != null">
+        option30,
+      </if>
+      <if test="option31 != null">
+        option31,
+      </if>
+      <if test="option32 != null">
+        option32,
+      </if>
+      <if test="option33 != null">
+        option33,
+      </if>
+      <if test="option34 != null">
+        option34,
+      </if>
+      <if test="option35 != null">
+        option35,
+      </if>
+      <if test="option36 != null">
+        option36,
+      </if>
+      <if test="option37 != null">
+        option37,
+      </if>
+      <if test="option38 != null">
+        option38,
+      </if>
+      <if test="option39 != null">
+        option39,
+      </if>
+      <if test="option40 != null">
+        option40,
+      </if>
+      <if test="option41 != null">
+        option41,
+      </if>
+      <if test="option42 != null">
+        option42,
+      </if>
+      <if test="option43 != null">
+        option43,
+      </if>
+      <if test="option44 != null">
+        option44,
+      </if>
+      <if test="option45 != null">
+        option45,
+      </if>
+      <if test="option46 != null">
+        option46,
+      </if>
+      <if test="option47 != null">
+        option47,
+      </if>
+      <if test="option48 != null">
+        option48,
+      </if>
+      <if test="option49 != null">
+        option49,
+      </if>
+      <if test="option50 != null">
+        option50,
+      </if>
+      <if test="option51 != null">
+        option51,
+      </if>
+      <if test="option52 != null">
+        option52,
+      </if>
+      <if test="option53 != null">
+        option53,
+      </if>
+      <if test="option54 != null">
+        option54,
+      </if>
+      <if test="option55 != null">
+        option55,
+      </if>
+      <if test="option56 != null">
+        option56,
+      </if>
+      <if test="option57 != null">
+        option57,
+      </if>
+      <if test="frasum != null">
+        frasum,
+      </if>
+      <if test="addtime != null">
+        addtime,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="childId != null">
+        #{childId,jdbcType=INTEGER},
+      </if>
+      <if test="option1 != null">
+        #{option1,jdbcType=INTEGER},
+      </if>
+      <if test="option2 != null">
+        #{option2,jdbcType=INTEGER},
+      </if>
+      <if test="option3 != null">
+        #{option3,jdbcType=INTEGER},
+      </if>
+      <if test="option4 != null">
+        #{option4,jdbcType=INTEGER},
+      </if>
+      <if test="option5 != null">
+        #{option5,jdbcType=INTEGER},
+      </if>
+      <if test="option6 != null">
+        #{option6,jdbcType=INTEGER},
+      </if>
+      <if test="option7 != null">
+        #{option7,jdbcType=INTEGER},
+      </if>
+      <if test="option8 != null">
+        #{option8,jdbcType=INTEGER},
+      </if>
+      <if test="option9 != null">
+        #{option9,jdbcType=INTEGER},
+      </if>
+      <if test="option10 != null">
+        #{option10,jdbcType=INTEGER},
+      </if>
+      <if test="option11 != null">
+        #{option11,jdbcType=INTEGER},
+      </if>
+      <if test="option12 != null">
+        #{option12,jdbcType=INTEGER},
+      </if>
+      <if test="option13 != null">
+        #{option13,jdbcType=INTEGER},
+      </if>
+      <if test="option14 != null">
+        #{option14,jdbcType=INTEGER},
+      </if>
+      <if test="option15 != null">
+        #{option15,jdbcType=INTEGER},
+      </if>
+      <if test="option16 != null">
+        #{option16,jdbcType=INTEGER},
+      </if>
+      <if test="option17 != null">
+        #{option17,jdbcType=INTEGER},
+      </if>
+      <if test="option18 != null">
+        #{option18,jdbcType=INTEGER},
+      </if>
+      <if test="option19 != null">
+        #{option19,jdbcType=INTEGER},
+      </if>
+      <if test="option20 != null">
+        #{option20,jdbcType=INTEGER},
+      </if>
+      <if test="option21 != null">
+        #{option21,jdbcType=INTEGER},
+      </if>
+      <if test="option22 != null">
+        #{option22,jdbcType=INTEGER},
+      </if>
+      <if test="option23 != null">
+        #{option23,jdbcType=INTEGER},
+      </if>
+      <if test="option24 != null">
+        #{option24,jdbcType=INTEGER},
+      </if>
+      <if test="option25 != null">
+        #{option25,jdbcType=INTEGER},
+      </if>
+      <if test="option26 != null">
+        #{option26,jdbcType=INTEGER},
+      </if>
+      <if test="option27 != null">
+        #{option27,jdbcType=INTEGER},
+      </if>
+      <if test="option28 != null">
+        #{option28,jdbcType=INTEGER},
+      </if>
+      <if test="option29 != null">
+        #{option29,jdbcType=INTEGER},
+      </if>
+      <if test="option30 != null">
+        #{option30,jdbcType=INTEGER},
+      </if>
+      <if test="option31 != null">
+        #{option31,jdbcType=INTEGER},
+      </if>
+      <if test="option32 != null">
+        #{option32,jdbcType=INTEGER},
+      </if>
+      <if test="option33 != null">
+        #{option33,jdbcType=INTEGER},
+      </if>
+      <if test="option34 != null">
+        #{option34,jdbcType=INTEGER},
+      </if>
+      <if test="option35 != null">
+        #{option35,jdbcType=INTEGER},
+      </if>
+      <if test="option36 != null">
+        #{option36,jdbcType=INTEGER},
+      </if>
+      <if test="option37 != null">
+        #{option37,jdbcType=INTEGER},
+      </if>
+      <if test="option38 != null">
+        #{option38,jdbcType=INTEGER},
+      </if>
+      <if test="option39 != null">
+        #{option39,jdbcType=INTEGER},
+      </if>
+      <if test="option40 != null">
+        #{option40,jdbcType=INTEGER},
+      </if>
+      <if test="option41 != null">
+        #{option41,jdbcType=INTEGER},
+      </if>
+      <if test="option42 != null">
+        #{option42,jdbcType=INTEGER},
+      </if>
+      <if test="option43 != null">
+        #{option43,jdbcType=INTEGER},
+      </if>
+      <if test="option44 != null">
+        #{option44,jdbcType=INTEGER},
+      </if>
+      <if test="option45 != null">
+        #{option45,jdbcType=INTEGER},
+      </if>
+      <if test="option46 != null">
+        #{option46,jdbcType=INTEGER},
+      </if>
+      <if test="option47 != null">
+        #{option47,jdbcType=INTEGER},
+      </if>
+      <if test="option48 != null">
+        #{option48,jdbcType=INTEGER},
+      </if>
+      <if test="option49 != null">
+        #{option49,jdbcType=INTEGER},
+      </if>
+      <if test="option50 != null">
+        #{option50,jdbcType=INTEGER},
+      </if>
+      <if test="option51 != null">
+        #{option51,jdbcType=INTEGER},
+      </if>
+      <if test="option52 != null">
+        #{option52,jdbcType=INTEGER},
+      </if>
+      <if test="option53 != null">
+        #{option53,jdbcType=INTEGER},
+      </if>
+      <if test="option54 != null">
+        #{option54,jdbcType=INTEGER},
+      </if>
+      <if test="option55 != null">
+        #{option55,jdbcType=INTEGER},
+      </if>
+      <if test="option56 != null">
+        #{option56,jdbcType=INTEGER},
+      </if>
+      <if test="option57 != null">
+        #{option57,jdbcType=INTEGER},
+      </if>
+      <if test="frasum != null">
+        #{frasum,jdbcType=INTEGER},
+      </if>
+      <if test="addtime != null">
+        #{addtime,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.join.autism.entity.HzhClinical.HzhClinicalExample" resultType="java.lang.Long">
+    select count(*) from hzh_clinical
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update hzh_clinical
+    <set>
+      <if test="record.id != null">
+        id = #{record.id,jdbcType=INTEGER},
+      </if>
+      <if test="record.childId != null">
+        child_id = #{record.childId,jdbcType=INTEGER},
+      </if>
+      <if test="record.option1 != null">
+        option1 = #{record.option1,jdbcType=INTEGER},
+      </if>
+      <if test="record.option2 != null">
+        option2 = #{record.option2,jdbcType=INTEGER},
+      </if>
+      <if test="record.option3 != null">
+        option3 = #{record.option3,jdbcType=INTEGER},
+      </if>
+      <if test="record.option4 != null">
+        option4 = #{record.option4,jdbcType=INTEGER},
+      </if>
+      <if test="record.option5 != null">
+        option5 = #{record.option5,jdbcType=INTEGER},
+      </if>
+      <if test="record.option6 != null">
+        option6 = #{record.option6,jdbcType=INTEGER},
+      </if>
+      <if test="record.option7 != null">
+        option7 = #{record.option7,jdbcType=INTEGER},
+      </if>
+      <if test="record.option8 != null">
+        option8 = #{record.option8,jdbcType=INTEGER},
+      </if>
+      <if test="record.option9 != null">
+        option9 = #{record.option9,jdbcType=INTEGER},
+      </if>
+      <if test="record.option10 != null">
+        option10 = #{record.option10,jdbcType=INTEGER},
+      </if>
+      <if test="record.option11 != null">
+        option11 = #{record.option11,jdbcType=INTEGER},
+      </if>
+      <if test="record.option12 != null">
+        option12 = #{record.option12,jdbcType=INTEGER},
+      </if>
+      <if test="record.option13 != null">
+        option13 = #{record.option13,jdbcType=INTEGER},
+      </if>
+      <if test="record.option14 != null">
+        option14 = #{record.option14,jdbcType=INTEGER},
+      </if>
+      <if test="record.option15 != null">
+        option15 = #{record.option15,jdbcType=INTEGER},
+      </if>
+      <if test="record.option16 != null">
+        option16 = #{record.option16,jdbcType=INTEGER},
+      </if>
+      <if test="record.option17 != null">
+        option17 = #{record.option17,jdbcType=INTEGER},
+      </if>
+      <if test="record.option18 != null">
+        option18 = #{record.option18,jdbcType=INTEGER},
+      </if>
+      <if test="record.option19 != null">
+        option19 = #{record.option19,jdbcType=INTEGER},
+      </if>
+      <if test="record.option20 != null">
+        option20 = #{record.option20,jdbcType=INTEGER},
+      </if>
+      <if test="record.option21 != null">
+        option21 = #{record.option21,jdbcType=INTEGER},
+      </if>
+      <if test="record.option22 != null">
+        option22 = #{record.option22,jdbcType=INTEGER},
+      </if>
+      <if test="record.option23 != null">
+        option23 = #{record.option23,jdbcType=INTEGER},
+      </if>
+      <if test="record.option24 != null">
+        option24 = #{record.option24,jdbcType=INTEGER},
+      </if>
+      <if test="record.option25 != null">
+        option25 = #{record.option25,jdbcType=INTEGER},
+      </if>
+      <if test="record.option26 != null">
+        option26 = #{record.option26,jdbcType=INTEGER},
+      </if>
+      <if test="record.option27 != null">
+        option27 = #{record.option27,jdbcType=INTEGER},
+      </if>
+      <if test="record.option28 != null">
+        option28 = #{record.option28,jdbcType=INTEGER},
+      </if>
+      <if test="record.option29 != null">
+        option29 = #{record.option29,jdbcType=INTEGER},
+      </if>
+      <if test="record.option30 != null">
+        option30 = #{record.option30,jdbcType=INTEGER},
+      </if>
+      <if test="record.option31 != null">
+        option31 = #{record.option31,jdbcType=INTEGER},
+      </if>
+      <if test="record.option32 != null">
+        option32 = #{record.option32,jdbcType=INTEGER},
+      </if>
+      <if test="record.option33 != null">
+        option33 = #{record.option33,jdbcType=INTEGER},
+      </if>
+      <if test="record.option34 != null">
+        option34 = #{record.option34,jdbcType=INTEGER},
+      </if>
+      <if test="record.option35 != null">
+        option35 = #{record.option35,jdbcType=INTEGER},
+      </if>
+      <if test="record.option36 != null">
+        option36 = #{record.option36,jdbcType=INTEGER},
+      </if>
+      <if test="record.option37 != null">
+        option37 = #{record.option37,jdbcType=INTEGER},
+      </if>
+      <if test="record.option38 != null">
+        option38 = #{record.option38,jdbcType=INTEGER},
+      </if>
+      <if test="record.option39 != null">
+        option39 = #{record.option39,jdbcType=INTEGER},
+      </if>
+      <if test="record.option40 != null">
+        option40 = #{record.option40,jdbcType=INTEGER},
+      </if>
+      <if test="record.option41 != null">
+        option41 = #{record.option41,jdbcType=INTEGER},
+      </if>
+      <if test="record.option42 != null">
+        option42 = #{record.option42,jdbcType=INTEGER},
+      </if>
+      <if test="record.option43 != null">
+        option43 = #{record.option43,jdbcType=INTEGER},
+      </if>
+      <if test="record.option44 != null">
+        option44 = #{record.option44,jdbcType=INTEGER},
+      </if>
+      <if test="record.option45 != null">
+        option45 = #{record.option45,jdbcType=INTEGER},
+      </if>
+      <if test="record.option46 != null">
+        option46 = #{record.option46,jdbcType=INTEGER},
+      </if>
+      <if test="record.option47 != null">
+        option47 = #{record.option47,jdbcType=INTEGER},
+      </if>
+      <if test="record.option48 != null">
+        option48 = #{record.option48,jdbcType=INTEGER},
+      </if>
+      <if test="record.option49 != null">
+        option49 = #{record.option49,jdbcType=INTEGER},
+      </if>
+      <if test="record.option50 != null">
+        option50 = #{record.option50,jdbcType=INTEGER},
+      </if>
+      <if test="record.option51 != null">
+        option51 = #{record.option51,jdbcType=INTEGER},
+      </if>
+      <if test="record.option52 != null">
+        option52 = #{record.option52,jdbcType=INTEGER},
+      </if>
+      <if test="record.option53 != null">
+        option53 = #{record.option53,jdbcType=INTEGER},
+      </if>
+      <if test="record.option54 != null">
+        option54 = #{record.option54,jdbcType=INTEGER},
+      </if>
+      <if test="record.option55 != null">
+        option55 = #{record.option55,jdbcType=INTEGER},
+      </if>
+      <if test="record.option56 != null">
+        option56 = #{record.option56,jdbcType=INTEGER},
+      </if>
+      <if test="record.option57 != null">
+        option57 = #{record.option57,jdbcType=INTEGER},
+      </if>
+      <if test="record.frasum != null">
+        frasum = #{record.frasum,jdbcType=INTEGER},
+      </if>
+      <if test="record.addtime != null">
+        addtime = #{record.addtime,jdbcType=INTEGER},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update hzh_clinical
+    set id = #{record.id,jdbcType=INTEGER},
+      child_id = #{record.childId,jdbcType=INTEGER},
+      option1 = #{record.option1,jdbcType=INTEGER},
+      option2 = #{record.option2,jdbcType=INTEGER},
+      option3 = #{record.option3,jdbcType=INTEGER},
+      option4 = #{record.option4,jdbcType=INTEGER},
+      option5 = #{record.option5,jdbcType=INTEGER},
+      option6 = #{record.option6,jdbcType=INTEGER},
+      option7 = #{record.option7,jdbcType=INTEGER},
+      option8 = #{record.option8,jdbcType=INTEGER},
+      option9 = #{record.option9,jdbcType=INTEGER},
+      option10 = #{record.option10,jdbcType=INTEGER},
+      option11 = #{record.option11,jdbcType=INTEGER},
+      option12 = #{record.option12,jdbcType=INTEGER},
+      option13 = #{record.option13,jdbcType=INTEGER},
+      option14 = #{record.option14,jdbcType=INTEGER},
+      option15 = #{record.option15,jdbcType=INTEGER},
+      option16 = #{record.option16,jdbcType=INTEGER},
+      option17 = #{record.option17,jdbcType=INTEGER},
+      option18 = #{record.option18,jdbcType=INTEGER},
+      option19 = #{record.option19,jdbcType=INTEGER},
+      option20 = #{record.option20,jdbcType=INTEGER},
+      option21 = #{record.option21,jdbcType=INTEGER},
+      option22 = #{record.option22,jdbcType=INTEGER},
+      option23 = #{record.option23,jdbcType=INTEGER},
+      option24 = #{record.option24,jdbcType=INTEGER},
+      option25 = #{record.option25,jdbcType=INTEGER},
+      option26 = #{record.option26,jdbcType=INTEGER},
+      option27 = #{record.option27,jdbcType=INTEGER},
+      option28 = #{record.option28,jdbcType=INTEGER},
+      option29 = #{record.option29,jdbcType=INTEGER},
+      option30 = #{record.option30,jdbcType=INTEGER},
+      option31 = #{record.option31,jdbcType=INTEGER},
+      option32 = #{record.option32,jdbcType=INTEGER},
+      option33 = #{record.option33,jdbcType=INTEGER},
+      option34 = #{record.option34,jdbcType=INTEGER},
+      option35 = #{record.option35,jdbcType=INTEGER},
+      option36 = #{record.option36,jdbcType=INTEGER},
+      option37 = #{record.option37,jdbcType=INTEGER},
+      option38 = #{record.option38,jdbcType=INTEGER},
+      option39 = #{record.option39,jdbcType=INTEGER},
+      option40 = #{record.option40,jdbcType=INTEGER},
+      option41 = #{record.option41,jdbcType=INTEGER},
+      option42 = #{record.option42,jdbcType=INTEGER},
+      option43 = #{record.option43,jdbcType=INTEGER},
+      option44 = #{record.option44,jdbcType=INTEGER},
+      option45 = #{record.option45,jdbcType=INTEGER},
+      option46 = #{record.option46,jdbcType=INTEGER},
+      option47 = #{record.option47,jdbcType=INTEGER},
+      option48 = #{record.option48,jdbcType=INTEGER},
+      option49 = #{record.option49,jdbcType=INTEGER},
+      option50 = #{record.option50,jdbcType=INTEGER},
+      option51 = #{record.option51,jdbcType=INTEGER},
+      option52 = #{record.option52,jdbcType=INTEGER},
+      option53 = #{record.option53,jdbcType=INTEGER},
+      option54 = #{record.option54,jdbcType=INTEGER},
+      option55 = #{record.option55,jdbcType=INTEGER},
+      option56 = #{record.option56,jdbcType=INTEGER},
+      option57 = #{record.option57,jdbcType=INTEGER},
+      frasum = #{record.frasum,jdbcType=INTEGER},
+      addtime = #{record.addtime,jdbcType=INTEGER}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.join.autism.entity.HzhClinical.HzhClinical">
+    update hzh_clinical
+    <set>
+      <if test="childId != null">
+        child_id = #{childId,jdbcType=INTEGER},
+      </if>
+      <if test="option1 != null">
+        option1 = #{option1,jdbcType=INTEGER},
+      </if>
+      <if test="option2 != null">
+        option2 = #{option2,jdbcType=INTEGER},
+      </if>
+      <if test="option3 != null">
+        option3 = #{option3,jdbcType=INTEGER},
+      </if>
+      <if test="option4 != null">
+        option4 = #{option4,jdbcType=INTEGER},
+      </if>
+      <if test="option5 != null">
+        option5 = #{option5,jdbcType=INTEGER},
+      </if>
+      <if test="option6 != null">
+        option6 = #{option6,jdbcType=INTEGER},
+      </if>
+      <if test="option7 != null">
+        option7 = #{option7,jdbcType=INTEGER},
+      </if>
+      <if test="option8 != null">
+        option8 = #{option8,jdbcType=INTEGER},
+      </if>
+      <if test="option9 != null">
+        option9 = #{option9,jdbcType=INTEGER},
+      </if>
+      <if test="option10 != null">
+        option10 = #{option10,jdbcType=INTEGER},
+      </if>
+      <if test="option11 != null">
+        option11 = #{option11,jdbcType=INTEGER},
+      </if>
+      <if test="option12 != null">
+        option12 = #{option12,jdbcType=INTEGER},
+      </if>
+      <if test="option13 != null">
+        option13 = #{option13,jdbcType=INTEGER},
+      </if>
+      <if test="option14 != null">
+        option14 = #{option14,jdbcType=INTEGER},
+      </if>
+      <if test="option15 != null">
+        option15 = #{option15,jdbcType=INTEGER},
+      </if>
+      <if test="option16 != null">
+        option16 = #{option16,jdbcType=INTEGER},
+      </if>
+      <if test="option17 != null">
+        option17 = #{option17,jdbcType=INTEGER},
+      </if>
+      <if test="option18 != null">
+        option18 = #{option18,jdbcType=INTEGER},
+      </if>
+      <if test="option19 != null">
+        option19 = #{option19,jdbcType=INTEGER},
+      </if>
+      <if test="option20 != null">
+        option20 = #{option20,jdbcType=INTEGER},
+      </if>
+      <if test="option21 != null">
+        option21 = #{option21,jdbcType=INTEGER},
+      </if>
+      <if test="option22 != null">
+        option22 = #{option22,jdbcType=INTEGER},
+      </if>
+      <if test="option23 != null">
+        option23 = #{option23,jdbcType=INTEGER},
+      </if>
+      <if test="option24 != null">
+        option24 = #{option24,jdbcType=INTEGER},
+      </if>
+      <if test="option25 != null">
+        option25 = #{option25,jdbcType=INTEGER},
+      </if>
+      <if test="option26 != null">
+        option26 = #{option26,jdbcType=INTEGER},
+      </if>
+      <if test="option27 != null">
+        option27 = #{option27,jdbcType=INTEGER},
+      </if>
+      <if test="option28 != null">
+        option28 = #{option28,jdbcType=INTEGER},
+      </if>
+      <if test="option29 != null">
+        option29 = #{option29,jdbcType=INTEGER},
+      </if>
+      <if test="option30 != null">
+        option30 = #{option30,jdbcType=INTEGER},
+      </if>
+      <if test="option31 != null">
+        option31 = #{option31,jdbcType=INTEGER},
+      </if>
+      <if test="option32 != null">
+        option32 = #{option32,jdbcType=INTEGER},
+      </if>
+      <if test="option33 != null">
+        option33 = #{option33,jdbcType=INTEGER},
+      </if>
+      <if test="option34 != null">
+        option34 = #{option34,jdbcType=INTEGER},
+      </if>
+      <if test="option35 != null">
+        option35 = #{option35,jdbcType=INTEGER},
+      </if>
+      <if test="option36 != null">
+        option36 = #{option36,jdbcType=INTEGER},
+      </if>
+      <if test="option37 != null">
+        option37 = #{option37,jdbcType=INTEGER},
+      </if>
+      <if test="option38 != null">
+        option38 = #{option38,jdbcType=INTEGER},
+      </if>
+      <if test="option39 != null">
+        option39 = #{option39,jdbcType=INTEGER},
+      </if>
+      <if test="option40 != null">
+        option40 = #{option40,jdbcType=INTEGER},
+      </if>
+      <if test="option41 != null">
+        option41 = #{option41,jdbcType=INTEGER},
+      </if>
+      <if test="option42 != null">
+        option42 = #{option42,jdbcType=INTEGER},
+      </if>
+      <if test="option43 != null">
+        option43 = #{option43,jdbcType=INTEGER},
+      </if>
+      <if test="option44 != null">
+        option44 = #{option44,jdbcType=INTEGER},
+      </if>
+      <if test="option45 != null">
+        option45 = #{option45,jdbcType=INTEGER},
+      </if>
+      <if test="option46 != null">
+        option46 = #{option46,jdbcType=INTEGER},
+      </if>
+      <if test="option47 != null">
+        option47 = #{option47,jdbcType=INTEGER},
+      </if>
+      <if test="option48 != null">
+        option48 = #{option48,jdbcType=INTEGER},
+      </if>
+      <if test="option49 != null">
+        option49 = #{option49,jdbcType=INTEGER},
+      </if>
+      <if test="option50 != null">
+        option50 = #{option50,jdbcType=INTEGER},
+      </if>
+      <if test="option51 != null">
+        option51 = #{option51,jdbcType=INTEGER},
+      </if>
+      <if test="option52 != null">
+        option52 = #{option52,jdbcType=INTEGER},
+      </if>
+      <if test="option53 != null">
+        option53 = #{option53,jdbcType=INTEGER},
+      </if>
+      <if test="option54 != null">
+        option54 = #{option54,jdbcType=INTEGER},
+      </if>
+      <if test="option55 != null">
+        option55 = #{option55,jdbcType=INTEGER},
+      </if>
+      <if test="option56 != null">
+        option56 = #{option56,jdbcType=INTEGER},
+      </if>
+      <if test="option57 != null">
+        option57 = #{option57,jdbcType=INTEGER},
+      </if>
+      <if test="frasum != null">
+        frasum = #{frasum,jdbcType=INTEGER},
+      </if>
+      <if test="addtime != null">
+        addtime = #{addtime,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.join.autism.entity.HzhClinical.HzhClinical">
+    update hzh_clinical
+    set child_id = #{childId,jdbcType=INTEGER},
+      option1 = #{option1,jdbcType=INTEGER},
+      option2 = #{option2,jdbcType=INTEGER},
+      option3 = #{option3,jdbcType=INTEGER},
+      option4 = #{option4,jdbcType=INTEGER},
+      option5 = #{option5,jdbcType=INTEGER},
+      option6 = #{option6,jdbcType=INTEGER},
+      option7 = #{option7,jdbcType=INTEGER},
+      option8 = #{option8,jdbcType=INTEGER},
+      option9 = #{option9,jdbcType=INTEGER},
+      option10 = #{option10,jdbcType=INTEGER},
+      option11 = #{option11,jdbcType=INTEGER},
+      option12 = #{option12,jdbcType=INTEGER},
+      option13 = #{option13,jdbcType=INTEGER},
+      option14 = #{option14,jdbcType=INTEGER},
+      option15 = #{option15,jdbcType=INTEGER},
+      option16 = #{option16,jdbcType=INTEGER},
+      option17 = #{option17,jdbcType=INTEGER},
+      option18 = #{option18,jdbcType=INTEGER},
+      option19 = #{option19,jdbcType=INTEGER},
+      option20 = #{option20,jdbcType=INTEGER},
+      option21 = #{option21,jdbcType=INTEGER},
+      option22 = #{option22,jdbcType=INTEGER},
+      option23 = #{option23,jdbcType=INTEGER},
+      option24 = #{option24,jdbcType=INTEGER},
+      option25 = #{option25,jdbcType=INTEGER},
+      option26 = #{option26,jdbcType=INTEGER},
+      option27 = #{option27,jdbcType=INTEGER},
+      option28 = #{option28,jdbcType=INTEGER},
+      option29 = #{option29,jdbcType=INTEGER},
+      option30 = #{option30,jdbcType=INTEGER},
+      option31 = #{option31,jdbcType=INTEGER},
+      option32 = #{option32,jdbcType=INTEGER},
+      option33 = #{option33,jdbcType=INTEGER},
+      option34 = #{option34,jdbcType=INTEGER},
+      option35 = #{option35,jdbcType=INTEGER},
+      option36 = #{option36,jdbcType=INTEGER},
+      option37 = #{option37,jdbcType=INTEGER},
+      option38 = #{option38,jdbcType=INTEGER},
+      option39 = #{option39,jdbcType=INTEGER},
+      option40 = #{option40,jdbcType=INTEGER},
+      option41 = #{option41,jdbcType=INTEGER},
+      option42 = #{option42,jdbcType=INTEGER},
+      option43 = #{option43,jdbcType=INTEGER},
+      option44 = #{option44,jdbcType=INTEGER},
+      option45 = #{option45,jdbcType=INTEGER},
+      option46 = #{option46,jdbcType=INTEGER},
+      option47 = #{option47,jdbcType=INTEGER},
+      option48 = #{option48,jdbcType=INTEGER},
+      option49 = #{option49,jdbcType=INTEGER},
+      option50 = #{option50,jdbcType=INTEGER},
+      option51 = #{option51,jdbcType=INTEGER},
+      option52 = #{option52,jdbcType=INTEGER},
+      option53 = #{option53,jdbcType=INTEGER},
+      option54 = #{option54,jdbcType=INTEGER},
+      option55 = #{option55,jdbcType=INTEGER},
+      option56 = #{option56,jdbcType=INTEGER},
+      option57 = #{option57,jdbcType=INTEGER},
+      frasum = #{frasum,jdbcType=INTEGER},
+      addtime = #{addtime,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

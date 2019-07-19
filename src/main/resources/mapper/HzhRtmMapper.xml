@@ -1,0 +1,497 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.join.autism.mapper.HzhRtmMapper">
+  <resultMap id="BaseResultMap" type="com.join.autism.entity.HzhRtm.HzhRtm">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="child_id" jdbcType="INTEGER" property="childId" />
+    <result column="is_look" jdbcType="INTEGER" property="isLook" />
+    <result column="is_hearing" jdbcType="INTEGER" property="isHearing" />
+    <result column="is_game" jdbcType="INTEGER" property="isGame" />
+    <result column="is_climbing" jdbcType="INTEGER" property="isClimbing" />
+    <result column="is_finger" jdbcType="INTEGER" property="isFinger" />
+    <result column="is_help" jdbcType="INTEGER" property="isHelp" />
+    <result column="is_interest" jdbcType="INTEGER" property="isInterest" />
+    <result column="is_children" jdbcType="INTEGER" property="isChildren" />
+    <result column="is_parents_look" jdbcType="INTEGER" property="isParentsLook" />
+    <result column="is_response" jdbcType="INTEGER" property="isResponse" />
+    <result column="is_smile_response" jdbcType="INTEGER" property="isSmileResponse" />
+    <result column="is_noise" jdbcType="INTEGER" property="isNoise" />
+    <result column="is_go" jdbcType="INTEGER" property="isGo" />
+    <result column="is_eye" jdbcType="INTEGER" property="isEye" />
+    <result column="is_imitate" jdbcType="INTEGER" property="isImitate" />
+    <result column="is_search" jdbcType="INTEGER" property="isSearch" />
+    <result column="is_attract" jdbcType="INTEGER" property="isAttract" />
+    <result column="is_understand" jdbcType="INTEGER" property="isUnderstand" />
+    <result column="is_reaction" jdbcType="INTEGER" property="isReaction" />
+    <result column="is_movement" jdbcType="INTEGER" property="isMovement" />
+    <result column="addtime" jdbcType="INTEGER" property="addtime" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    id, child_id, is_look, is_hearing, is_game, is_climbing, is_finger, is_help, is_interest, 
+    is_children, is_parents_look, is_response, is_smile_response, is_noise, is_go, is_eye, 
+    is_imitate, is_search, is_attract, is_understand, is_reaction, is_movement, addtime
+  </sql>
+  <select id="selectByExample" parameterType="com.join.autism.entity.HzhRtm.HzhRtmExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from hzh_rtm
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+    <if test="limit != null">
+      <if test="offset != null">
+        limit ${offset}, ${limit}
+      </if>
+      <if test="offset == null">
+        limit ${limit}
+      </if>
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from hzh_rtm
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from hzh_rtm
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.join.autism.entity.HzhRtm.HzhRtmExample">
+    delete from hzh_rtm
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.join.autism.entity.HzhRtm.HzhRtm" useGeneratedKeys="true">
+    insert into hzh_rtm (child_id, is_look, is_hearing, 
+      is_game, is_climbing, is_finger, 
+      is_help, is_interest, is_children, 
+      is_parents_look, is_response, is_smile_response, 
+      is_noise, is_go, is_eye, 
+      is_imitate, is_search, is_attract, 
+      is_understand, is_reaction, is_movement, 
+      addtime)
+    values (#{childId,jdbcType=INTEGER}, #{isLook,jdbcType=INTEGER}, #{isHearing,jdbcType=INTEGER}, 
+      #{isGame,jdbcType=INTEGER}, #{isClimbing,jdbcType=INTEGER}, #{isFinger,jdbcType=INTEGER}, 
+      #{isHelp,jdbcType=INTEGER}, #{isInterest,jdbcType=INTEGER}, #{isChildren,jdbcType=INTEGER}, 
+      #{isParentsLook,jdbcType=INTEGER}, #{isResponse,jdbcType=INTEGER}, #{isSmileResponse,jdbcType=INTEGER}, 
+      #{isNoise,jdbcType=INTEGER}, #{isGo,jdbcType=INTEGER}, #{isEye,jdbcType=INTEGER}, 
+      #{isImitate,jdbcType=INTEGER}, #{isSearch,jdbcType=INTEGER}, #{isAttract,jdbcType=INTEGER}, 
+      #{isUnderstand,jdbcType=INTEGER}, #{isReaction,jdbcType=INTEGER}, #{isMovement,jdbcType=INTEGER}, 
+      #{addtime,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.join.autism.entity.HzhRtm.HzhRtm" useGeneratedKeys="true">
+    insert into hzh_rtm
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="childId != null">
+        child_id,
+      </if>
+      <if test="isLook != null">
+        is_look,
+      </if>
+      <if test="isHearing != null">
+        is_hearing,
+      </if>
+      <if test="isGame != null">
+        is_game,
+      </if>
+      <if test="isClimbing != null">
+        is_climbing,
+      </if>
+      <if test="isFinger != null">
+        is_finger,
+      </if>
+      <if test="isHelp != null">
+        is_help,
+      </if>
+      <if test="isInterest != null">
+        is_interest,
+      </if>
+      <if test="isChildren != null">
+        is_children,
+      </if>
+      <if test="isParentsLook != null">
+        is_parents_look,
+      </if>
+      <if test="isResponse != null">
+        is_response,
+      </if>
+      <if test="isSmileResponse != null">
+        is_smile_response,
+      </if>
+      <if test="isNoise != null">
+        is_noise,
+      </if>
+      <if test="isGo != null">
+        is_go,
+      </if>
+      <if test="isEye != null">
+        is_eye,
+      </if>
+      <if test="isImitate != null">
+        is_imitate,
+      </if>
+      <if test="isSearch != null">
+        is_search,
+      </if>
+      <if test="isAttract != null">
+        is_attract,
+      </if>
+      <if test="isUnderstand != null">
+        is_understand,
+      </if>
+      <if test="isReaction != null">
+        is_reaction,
+      </if>
+      <if test="isMovement != null">
+        is_movement,
+      </if>
+      <if test="addtime != null">
+        addtime,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="childId != null">
+        #{childId,jdbcType=INTEGER},
+      </if>
+      <if test="isLook != null">
+        #{isLook,jdbcType=INTEGER},
+      </if>
+      <if test="isHearing != null">
+        #{isHearing,jdbcType=INTEGER},
+      </if>
+      <if test="isGame != null">
+        #{isGame,jdbcType=INTEGER},
+      </if>
+      <if test="isClimbing != null">
+        #{isClimbing,jdbcType=INTEGER},
+      </if>
+      <if test="isFinger != null">
+        #{isFinger,jdbcType=INTEGER},
+      </if>
+      <if test="isHelp != null">
+        #{isHelp,jdbcType=INTEGER},
+      </if>
+      <if test="isInterest != null">
+        #{isInterest,jdbcType=INTEGER},
+      </if>
+      <if test="isChildren != null">
+        #{isChildren,jdbcType=INTEGER},
+      </if>
+      <if test="isParentsLook != null">
+        #{isParentsLook,jdbcType=INTEGER},
+      </if>
+      <if test="isResponse != null">
+        #{isResponse,jdbcType=INTEGER},
+      </if>
+      <if test="isSmileResponse != null">
+        #{isSmileResponse,jdbcType=INTEGER},
+      </if>
+      <if test="isNoise != null">
+        #{isNoise,jdbcType=INTEGER},
+      </if>
+      <if test="isGo != null">
+        #{isGo,jdbcType=INTEGER},
+      </if>
+      <if test="isEye != null">
+        #{isEye,jdbcType=INTEGER},
+      </if>
+      <if test="isImitate != null">
+        #{isImitate,jdbcType=INTEGER},
+      </if>
+      <if test="isSearch != null">
+        #{isSearch,jdbcType=INTEGER},
+      </if>
+      <if test="isAttract != null">
+        #{isAttract,jdbcType=INTEGER},
+      </if>
+      <if test="isUnderstand != null">
+        #{isUnderstand,jdbcType=INTEGER},
+      </if>
+      <if test="isReaction != null">
+        #{isReaction,jdbcType=INTEGER},
+      </if>
+      <if test="isMovement != null">
+        #{isMovement,jdbcType=INTEGER},
+      </if>
+      <if test="addtime != null">
+        #{addtime,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.join.autism.entity.HzhRtm.HzhRtmExample" resultType="java.lang.Long">
+    select count(*) from hzh_rtm
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update hzh_rtm
+    <set>
+      <if test="record.id != null">
+        id = #{record.id,jdbcType=INTEGER},
+      </if>
+      <if test="record.childId != null">
+        child_id = #{record.childId,jdbcType=INTEGER},
+      </if>
+      <if test="record.isLook != null">
+        is_look = #{record.isLook,jdbcType=INTEGER},
+      </if>
+      <if test="record.isHearing != null">
+        is_hearing = #{record.isHearing,jdbcType=INTEGER},
+      </if>
+      <if test="record.isGame != null">
+        is_game = #{record.isGame,jdbcType=INTEGER},
+      </if>
+      <if test="record.isClimbing != null">
+        is_climbing = #{record.isClimbing,jdbcType=INTEGER},
+      </if>
+      <if test="record.isFinger != null">
+        is_finger = #{record.isFinger,jdbcType=INTEGER},
+      </if>
+      <if test="record.isHelp != null">
+        is_help = #{record.isHelp,jdbcType=INTEGER},
+      </if>
+      <if test="record.isInterest != null">
+        is_interest = #{record.isInterest,jdbcType=INTEGER},
+      </if>
+      <if test="record.isChildren != null">
+        is_children = #{record.isChildren,jdbcType=INTEGER},
+      </if>
+      <if test="record.isParentsLook != null">
+        is_parents_look = #{record.isParentsLook,jdbcType=INTEGER},
+      </if>
+      <if test="record.isResponse != null">
+        is_response = #{record.isResponse,jdbcType=INTEGER},
+      </if>
+      <if test="record.isSmileResponse != null">
+        is_smile_response = #{record.isSmileResponse,jdbcType=INTEGER},
+      </if>
+      <if test="record.isNoise != null">
+        is_noise = #{record.isNoise,jdbcType=INTEGER},
+      </if>
+      <if test="record.isGo != null">
+        is_go = #{record.isGo,jdbcType=INTEGER},
+      </if>
+      <if test="record.isEye != null">
+        is_eye = #{record.isEye,jdbcType=INTEGER},
+      </if>
+      <if test="record.isImitate != null">
+        is_imitate = #{record.isImitate,jdbcType=INTEGER},
+      </if>
+      <if test="record.isSearch != null">
+        is_search = #{record.isSearch,jdbcType=INTEGER},
+      </if>
+      <if test="record.isAttract != null">
+        is_attract = #{record.isAttract,jdbcType=INTEGER},
+      </if>
+      <if test="record.isUnderstand != null">
+        is_understand = #{record.isUnderstand,jdbcType=INTEGER},
+      </if>
+      <if test="record.isReaction != null">
+        is_reaction = #{record.isReaction,jdbcType=INTEGER},
+      </if>
+      <if test="record.isMovement != null">
+        is_movement = #{record.isMovement,jdbcType=INTEGER},
+      </if>
+      <if test="record.addtime != null">
+        addtime = #{record.addtime,jdbcType=INTEGER},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update hzh_rtm
+    set id = #{record.id,jdbcType=INTEGER},
+      child_id = #{record.childId,jdbcType=INTEGER},
+      is_look = #{record.isLook,jdbcType=INTEGER},
+      is_hearing = #{record.isHearing,jdbcType=INTEGER},
+      is_game = #{record.isGame,jdbcType=INTEGER},
+      is_climbing = #{record.isClimbing,jdbcType=INTEGER},
+      is_finger = #{record.isFinger,jdbcType=INTEGER},
+      is_help = #{record.isHelp,jdbcType=INTEGER},
+      is_interest = #{record.isInterest,jdbcType=INTEGER},
+      is_children = #{record.isChildren,jdbcType=INTEGER},
+      is_parents_look = #{record.isParentsLook,jdbcType=INTEGER},
+      is_response = #{record.isResponse,jdbcType=INTEGER},
+      is_smile_response = #{record.isSmileResponse,jdbcType=INTEGER},
+      is_noise = #{record.isNoise,jdbcType=INTEGER},
+      is_go = #{record.isGo,jdbcType=INTEGER},
+      is_eye = #{record.isEye,jdbcType=INTEGER},
+      is_imitate = #{record.isImitate,jdbcType=INTEGER},
+      is_search = #{record.isSearch,jdbcType=INTEGER},
+      is_attract = #{record.isAttract,jdbcType=INTEGER},
+      is_understand = #{record.isUnderstand,jdbcType=INTEGER},
+      is_reaction = #{record.isReaction,jdbcType=INTEGER},
+      is_movement = #{record.isMovement,jdbcType=INTEGER},
+      addtime = #{record.addtime,jdbcType=INTEGER}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.join.autism.entity.HzhRtm.HzhRtm">
+    update hzh_rtm
+    <set>
+      <if test="childId != null">
+        child_id = #{childId,jdbcType=INTEGER},
+      </if>
+      <if test="isLook != null">
+        is_look = #{isLook,jdbcType=INTEGER},
+      </if>
+      <if test="isHearing != null">
+        is_hearing = #{isHearing,jdbcType=INTEGER},
+      </if>
+      <if test="isGame != null">
+        is_game = #{isGame,jdbcType=INTEGER},
+      </if>
+      <if test="isClimbing != null">
+        is_climbing = #{isClimbing,jdbcType=INTEGER},
+      </if>
+      <if test="isFinger != null">
+        is_finger = #{isFinger,jdbcType=INTEGER},
+      </if>
+      <if test="isHelp != null">
+        is_help = #{isHelp,jdbcType=INTEGER},
+      </if>
+      <if test="isInterest != null">
+        is_interest = #{isInterest,jdbcType=INTEGER},
+      </if>
+      <if test="isChildren != null">
+        is_children = #{isChildren,jdbcType=INTEGER},
+      </if>
+      <if test="isParentsLook != null">
+        is_parents_look = #{isParentsLook,jdbcType=INTEGER},
+      </if>
+      <if test="isResponse != null">
+        is_response = #{isResponse,jdbcType=INTEGER},
+      </if>
+      <if test="isSmileResponse != null">
+        is_smile_response = #{isSmileResponse,jdbcType=INTEGER},
+      </if>
+      <if test="isNoise != null">
+        is_noise = #{isNoise,jdbcType=INTEGER},
+      </if>
+      <if test="isGo != null">
+        is_go = #{isGo,jdbcType=INTEGER},
+      </if>
+      <if test="isEye != null">
+        is_eye = #{isEye,jdbcType=INTEGER},
+      </if>
+      <if test="isImitate != null">
+        is_imitate = #{isImitate,jdbcType=INTEGER},
+      </if>
+      <if test="isSearch != null">
+        is_search = #{isSearch,jdbcType=INTEGER},
+      </if>
+      <if test="isAttract != null">
+        is_attract = #{isAttract,jdbcType=INTEGER},
+      </if>
+      <if test="isUnderstand != null">
+        is_understand = #{isUnderstand,jdbcType=INTEGER},
+      </if>
+      <if test="isReaction != null">
+        is_reaction = #{isReaction,jdbcType=INTEGER},
+      </if>
+      <if test="isMovement != null">
+        is_movement = #{isMovement,jdbcType=INTEGER},
+      </if>
+      <if test="addtime != null">
+        addtime = #{addtime,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.join.autism.entity.HzhRtm.HzhRtm">
+    update hzh_rtm
+    set child_id = #{childId,jdbcType=INTEGER},
+      is_look = #{isLook,jdbcType=INTEGER},
+      is_hearing = #{isHearing,jdbcType=INTEGER},
+      is_game = #{isGame,jdbcType=INTEGER},
+      is_climbing = #{isClimbing,jdbcType=INTEGER},
+      is_finger = #{isFinger,jdbcType=INTEGER},
+      is_help = #{isHelp,jdbcType=INTEGER},
+      is_interest = #{isInterest,jdbcType=INTEGER},
+      is_children = #{isChildren,jdbcType=INTEGER},
+      is_parents_look = #{isParentsLook,jdbcType=INTEGER},
+      is_response = #{isResponse,jdbcType=INTEGER},
+      is_smile_response = #{isSmileResponse,jdbcType=INTEGER},
+      is_noise = #{isNoise,jdbcType=INTEGER},
+      is_go = #{isGo,jdbcType=INTEGER},
+      is_eye = #{isEye,jdbcType=INTEGER},
+      is_imitate = #{isImitate,jdbcType=INTEGER},
+      is_search = #{isSearch,jdbcType=INTEGER},
+      is_attract = #{isAttract,jdbcType=INTEGER},
+      is_understand = #{isUnderstand,jdbcType=INTEGER},
+      is_reaction = #{isReaction,jdbcType=INTEGER},
+      is_movement = #{isMovement,jdbcType=INTEGER},
+      addtime = #{addtime,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

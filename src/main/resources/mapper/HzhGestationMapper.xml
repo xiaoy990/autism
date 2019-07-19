@@ -1,0 +1,797 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.join.autism.mapper.HzhGestationMapper">
+  <resultMap id="BaseResultMap" type="com.join.autism.entity.HzhGestation.HzhGestation">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="close" jdbcType="INTEGER" property="close" />
+    <result column="closereason" jdbcType="VARCHAR" property="closereason" />
+    <result column="abortioncount" jdbcType="INTEGER" property="abortioncount" />
+    <result column="abortionreason" jdbcType="VARCHAR" property="abortionreason" />
+    <result column="assist" jdbcType="INTEGER" property="assist" />
+    <result column="assistreason" jdbcType="VARCHAR" property="assistreason" />
+    <result column="amniotic" jdbcType="VARCHAR" property="amniotic" />
+    <result column="amnioticreason" jdbcType="VARCHAR" property="amnioticreason" />
+    <result column="highblood" jdbcType="INTEGER" property="highblood" />
+    <result column="highbloodreason" jdbcType="VARCHAR" property="highbloodreason" />
+    <result column="babygo" jdbcType="INTEGER" property="babygo" />
+    <result column="babygoreason" jdbcType="VARCHAR" property="babygoreason" />
+    <result column="blood" jdbcType="INTEGER" property="blood" />
+    <result column="bloodreason" jdbcType="VARCHAR" property="bloodreason" />
+    <result column="sugarwater" jdbcType="INTEGER" property="sugarwater" />
+    <result column="sugarwaterreason" jdbcType="VARCHAR" property="sugarwaterreason" />
+    <result column="blues" jdbcType="INTEGER" property="blues" />
+    <result column="bluesreason" jdbcType="VARCHAR" property="bluesreason" />
+    <result column="other" jdbcType="INTEGER" property="other" />
+    <result column="otherreason" jdbcType="VARCHAR" property="otherreason" />
+    <result column="drug" jdbcType="INTEGER" property="drug" />
+    <result column="drugreason" jdbcType="VARCHAR" property="drugreason" />
+    <result column="bear" jdbcType="INTEGER" property="bear" />
+    <result column="bearreason" jdbcType="VARCHAR" property="bearreason" />
+    <result column="xray" jdbcType="INTEGER" property="xray" />
+    <result column="xrayreason" jdbcType="VARCHAR" property="xrayreason" />
+    <result column="bads" jdbcType="INTEGER" property="bads" />
+    <result column="badsreason" jdbcType="VARCHAR" property="badsreason" />
+    <result column="fidge" jdbcType="INTEGER" property="fidge" />
+    <result column="fidgereason" jdbcType="VARCHAR" property="fidgereason" />
+    <result column="vitamd" jdbcType="INTEGER" property="vitamd" />
+    <result column="vitamdreason" jdbcType="VARCHAR" property="vitamdreason" />
+    <result column="child_id" jdbcType="INTEGER" property="childId" />
+    <result column="stress" jdbcType="INTEGER" property="stress" />
+    <result column="stressreason" jdbcType="VARCHAR" property="stressreason" />
+    <result column="xiyan" jdbcType="INTEGER" property="xiyan" />
+    <result column="yesuan" jdbcType="INTEGER" property="yesuan" />
+    <result column="bingdu" jdbcType="INTEGER" property="bingdu" />
+    <result column="xiyans" jdbcType="VARCHAR" property="xiyans" />
+    <result column="yesuans" jdbcType="VARCHAR" property="yesuans" />
+    <result column="bingdus" jdbcType="VARCHAR" property="bingdus" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    id, `close`, closereason, abortioncount, abortionreason, assist, assistreason, amniotic, 
+    amnioticreason, highblood, highbloodreason, babygo, babygoreason, blood, bloodreason, 
+    sugarwater, sugarwaterreason, blues, bluesreason, other, otherreason, drug, drugreason, 
+    bear, bearreason, xray, xrayreason, bads, badsreason, fidge, fidgereason, vitamd, 
+    vitamdreason, child_id, stress, stressreason, xiyan, yesuan, bingdu, xiyans, yesuans, 
+    bingdus
+  </sql>
+  <select id="selectByExample" parameterType="com.join.autism.entity.HzhGestation.HzhGestationExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from hzh_gestation
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+    <if test="limit != null">
+      <if test="offset != null">
+        limit ${offset}, ${limit}
+      </if>
+      <if test="offset == null">
+        limit ${limit}
+      </if>
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from hzh_gestation
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from hzh_gestation
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.join.autism.entity.HzhGestation.HzhGestationExample">
+    delete from hzh_gestation
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.join.autism.entity.HzhGestation.HzhGestation" useGeneratedKeys="true">
+    insert into hzh_gestation (`close`, closereason, abortioncount, 
+      abortionreason, assist, assistreason, 
+      amniotic, amnioticreason, highblood, 
+      highbloodreason, babygo, babygoreason, 
+      blood, bloodreason, sugarwater, 
+      sugarwaterreason, blues, bluesreason, 
+      other, otherreason, drug, 
+      drugreason, bear, bearreason, 
+      xray, xrayreason, bads, 
+      badsreason, fidge, fidgereason, 
+      vitamd, vitamdreason, child_id, 
+      stress, stressreason, xiyan, 
+      yesuan, bingdu, xiyans, 
+      yesuans, bingdus)
+    values (#{close,jdbcType=INTEGER}, #{closereason,jdbcType=VARCHAR}, #{abortioncount,jdbcType=INTEGER}, 
+      #{abortionreason,jdbcType=VARCHAR}, #{assist,jdbcType=INTEGER}, #{assistreason,jdbcType=VARCHAR}, 
+      #{amniotic,jdbcType=VARCHAR}, #{amnioticreason,jdbcType=VARCHAR}, #{highblood,jdbcType=INTEGER}, 
+      #{highbloodreason,jdbcType=VARCHAR}, #{babygo,jdbcType=INTEGER}, #{babygoreason,jdbcType=VARCHAR}, 
+      #{blood,jdbcType=INTEGER}, #{bloodreason,jdbcType=VARCHAR}, #{sugarwater,jdbcType=INTEGER}, 
+      #{sugarwaterreason,jdbcType=VARCHAR}, #{blues,jdbcType=INTEGER}, #{bluesreason,jdbcType=VARCHAR}, 
+      #{other,jdbcType=INTEGER}, #{otherreason,jdbcType=VARCHAR}, #{drug,jdbcType=INTEGER}, 
+      #{drugreason,jdbcType=VARCHAR}, #{bear,jdbcType=INTEGER}, #{bearreason,jdbcType=VARCHAR}, 
+      #{xray,jdbcType=INTEGER}, #{xrayreason,jdbcType=VARCHAR}, #{bads,jdbcType=INTEGER}, 
+      #{badsreason,jdbcType=VARCHAR}, #{fidge,jdbcType=INTEGER}, #{fidgereason,jdbcType=VARCHAR}, 
+      #{vitamd,jdbcType=INTEGER}, #{vitamdreason,jdbcType=VARCHAR}, #{childId,jdbcType=INTEGER}, 
+      #{stress,jdbcType=INTEGER}, #{stressreason,jdbcType=VARCHAR}, #{xiyan,jdbcType=INTEGER}, 
+      #{yesuan,jdbcType=INTEGER}, #{bingdu,jdbcType=INTEGER}, #{xiyans,jdbcType=VARCHAR}, 
+      #{yesuans,jdbcType=VARCHAR}, #{bingdus,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.join.autism.entity.HzhGestation.HzhGestation" useGeneratedKeys="true">
+    insert into hzh_gestation
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="close != null">
+        `close`,
+      </if>
+      <if test="closereason != null">
+        closereason,
+      </if>
+      <if test="abortioncount != null">
+        abortioncount,
+      </if>
+      <if test="abortionreason != null">
+        abortionreason,
+      </if>
+      <if test="assist != null">
+        assist,
+      </if>
+      <if test="assistreason != null">
+        assistreason,
+      </if>
+      <if test="amniotic != null">
+        amniotic,
+      </if>
+      <if test="amnioticreason != null">
+        amnioticreason,
+      </if>
+      <if test="highblood != null">
+        highblood,
+      </if>
+      <if test="highbloodreason != null">
+        highbloodreason,
+      </if>
+      <if test="babygo != null">
+        babygo,
+      </if>
+      <if test="babygoreason != null">
+        babygoreason,
+      </if>
+      <if test="blood != null">
+        blood,
+      </if>
+      <if test="bloodreason != null">
+        bloodreason,
+      </if>
+      <if test="sugarwater != null">
+        sugarwater,
+      </if>
+      <if test="sugarwaterreason != null">
+        sugarwaterreason,
+      </if>
+      <if test="blues != null">
+        blues,
+      </if>
+      <if test="bluesreason != null">
+        bluesreason,
+      </if>
+      <if test="other != null">
+        other,
+      </if>
+      <if test="otherreason != null">
+        otherreason,
+      </if>
+      <if test="drug != null">
+        drug,
+      </if>
+      <if test="drugreason != null">
+        drugreason,
+      </if>
+      <if test="bear != null">
+        bear,
+      </if>
+      <if test="bearreason != null">
+        bearreason,
+      </if>
+      <if test="xray != null">
+        xray,
+      </if>
+      <if test="xrayreason != null">
+        xrayreason,
+      </if>
+      <if test="bads != null">
+        bads,
+      </if>
+      <if test="badsreason != null">
+        badsreason,
+      </if>
+      <if test="fidge != null">
+        fidge,
+      </if>
+      <if test="fidgereason != null">
+        fidgereason,
+      </if>
+      <if test="vitamd != null">
+        vitamd,
+      </if>
+      <if test="vitamdreason != null">
+        vitamdreason,
+      </if>
+      <if test="childId != null">
+        child_id,
+      </if>
+      <if test="stress != null">
+        stress,
+      </if>
+      <if test="stressreason != null">
+        stressreason,
+      </if>
+      <if test="xiyan != null">
+        xiyan,
+      </if>
+      <if test="yesuan != null">
+        yesuan,
+      </if>
+      <if test="bingdu != null">
+        bingdu,
+      </if>
+      <if test="xiyans != null">
+        xiyans,
+      </if>
+      <if test="yesuans != null">
+        yesuans,
+      </if>
+      <if test="bingdus != null">
+        bingdus,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="close != null">
+        #{close,jdbcType=INTEGER},
+      </if>
+      <if test="closereason != null">
+        #{closereason,jdbcType=VARCHAR},
+      </if>
+      <if test="abortioncount != null">
+        #{abortioncount,jdbcType=INTEGER},
+      </if>
+      <if test="abortionreason != null">
+        #{abortionreason,jdbcType=VARCHAR},
+      </if>
+      <if test="assist != null">
+        #{assist,jdbcType=INTEGER},
+      </if>
+      <if test="assistreason != null">
+        #{assistreason,jdbcType=VARCHAR},
+      </if>
+      <if test="amniotic != null">
+        #{amniotic,jdbcType=VARCHAR},
+      </if>
+      <if test="amnioticreason != null">
+        #{amnioticreason,jdbcType=VARCHAR},
+      </if>
+      <if test="highblood != null">
+        #{highblood,jdbcType=INTEGER},
+      </if>
+      <if test="highbloodreason != null">
+        #{highbloodreason,jdbcType=VARCHAR},
+      </if>
+      <if test="babygo != null">
+        #{babygo,jdbcType=INTEGER},
+      </if>
+      <if test="babygoreason != null">
+        #{babygoreason,jdbcType=VARCHAR},
+      </if>
+      <if test="blood != null">
+        #{blood,jdbcType=INTEGER},
+      </if>
+      <if test="bloodreason != null">
+        #{bloodreason,jdbcType=VARCHAR},
+      </if>
+      <if test="sugarwater != null">
+        #{sugarwater,jdbcType=INTEGER},
+      </if>
+      <if test="sugarwaterreason != null">
+        #{sugarwaterreason,jdbcType=VARCHAR},
+      </if>
+      <if test="blues != null">
+        #{blues,jdbcType=INTEGER},
+      </if>
+      <if test="bluesreason != null">
+        #{bluesreason,jdbcType=VARCHAR},
+      </if>
+      <if test="other != null">
+        #{other,jdbcType=INTEGER},
+      </if>
+      <if test="otherreason != null">
+        #{otherreason,jdbcType=VARCHAR},
+      </if>
+      <if test="drug != null">
+        #{drug,jdbcType=INTEGER},
+      </if>
+      <if test="drugreason != null">
+        #{drugreason,jdbcType=VARCHAR},
+      </if>
+      <if test="bear != null">
+        #{bear,jdbcType=INTEGER},
+      </if>
+      <if test="bearreason != null">
+        #{bearreason,jdbcType=VARCHAR},
+      </if>
+      <if test="xray != null">
+        #{xray,jdbcType=INTEGER},
+      </if>
+      <if test="xrayreason != null">
+        #{xrayreason,jdbcType=VARCHAR},
+      </if>
+      <if test="bads != null">
+        #{bads,jdbcType=INTEGER},
+      </if>
+      <if test="badsreason != null">
+        #{badsreason,jdbcType=VARCHAR},
+      </if>
+      <if test="fidge != null">
+        #{fidge,jdbcType=INTEGER},
+      </if>
+      <if test="fidgereason != null">
+        #{fidgereason,jdbcType=VARCHAR},
+      </if>
+      <if test="vitamd != null">
+        #{vitamd,jdbcType=INTEGER},
+      </if>
+      <if test="vitamdreason != null">
+        #{vitamdreason,jdbcType=VARCHAR},
+      </if>
+      <if test="childId != null">
+        #{childId,jdbcType=INTEGER},
+      </if>
+      <if test="stress != null">
+        #{stress,jdbcType=INTEGER},
+      </if>
+      <if test="stressreason != null">
+        #{stressreason,jdbcType=VARCHAR},
+      </if>
+      <if test="xiyan != null">
+        #{xiyan,jdbcType=INTEGER},
+      </if>
+      <if test="yesuan != null">
+        #{yesuan,jdbcType=INTEGER},
+      </if>
+      <if test="bingdu != null">
+        #{bingdu,jdbcType=INTEGER},
+      </if>
+      <if test="xiyans != null">
+        #{xiyans,jdbcType=VARCHAR},
+      </if>
+      <if test="yesuans != null">
+        #{yesuans,jdbcType=VARCHAR},
+      </if>
+      <if test="bingdus != null">
+        #{bingdus,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.join.autism.entity.HzhGestation.HzhGestationExample" resultType="java.lang.Long">
+    select count(*) from hzh_gestation
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update hzh_gestation
+    <set>
+      <if test="record.id != null">
+        id = #{record.id,jdbcType=INTEGER},
+      </if>
+      <if test="record.close != null">
+        `close` = #{record.close,jdbcType=INTEGER},
+      </if>
+      <if test="record.closereason != null">
+        closereason = #{record.closereason,jdbcType=VARCHAR},
+      </if>
+      <if test="record.abortioncount != null">
+        abortioncount = #{record.abortioncount,jdbcType=INTEGER},
+      </if>
+      <if test="record.abortionreason != null">
+        abortionreason = #{record.abortionreason,jdbcType=VARCHAR},
+      </if>
+      <if test="record.assist != null">
+        assist = #{record.assist,jdbcType=INTEGER},
+      </if>
+      <if test="record.assistreason != null">
+        assistreason = #{record.assistreason,jdbcType=VARCHAR},
+      </if>
+      <if test="record.amniotic != null">
+        amniotic = #{record.amniotic,jdbcType=VARCHAR},
+      </if>
+      <if test="record.amnioticreason != null">
+        amnioticreason = #{record.amnioticreason,jdbcType=VARCHAR},
+      </if>
+      <if test="record.highblood != null">
+        highblood = #{record.highblood,jdbcType=INTEGER},
+      </if>
+      <if test="record.highbloodreason != null">
+        highbloodreason = #{record.highbloodreason,jdbcType=VARCHAR},
+      </if>
+      <if test="record.babygo != null">
+        babygo = #{record.babygo,jdbcType=INTEGER},
+      </if>
+      <if test="record.babygoreason != null">
+        babygoreason = #{record.babygoreason,jdbcType=VARCHAR},
+      </if>
+      <if test="record.blood != null">
+        blood = #{record.blood,jdbcType=INTEGER},
+      </if>
+      <if test="record.bloodreason != null">
+        bloodreason = #{record.bloodreason,jdbcType=VARCHAR},
+      </if>
+      <if test="record.sugarwater != null">
+        sugarwater = #{record.sugarwater,jdbcType=INTEGER},
+      </if>
+      <if test="record.sugarwaterreason != null">
+        sugarwaterreason = #{record.sugarwaterreason,jdbcType=VARCHAR},
+      </if>
+      <if test="record.blues != null">
+        blues = #{record.blues,jdbcType=INTEGER},
+      </if>
+      <if test="record.bluesreason != null">
+        bluesreason = #{record.bluesreason,jdbcType=VARCHAR},
+      </if>
+      <if test="record.other != null">
+        other = #{record.other,jdbcType=INTEGER},
+      </if>
+      <if test="record.otherreason != null">
+        otherreason = #{record.otherreason,jdbcType=VARCHAR},
+      </if>
+      <if test="record.drug != null">
+        drug = #{record.drug,jdbcType=INTEGER},
+      </if>
+      <if test="record.drugreason != null">
+        drugreason = #{record.drugreason,jdbcType=VARCHAR},
+      </if>
+      <if test="record.bear != null">
+        bear = #{record.bear,jdbcType=INTEGER},
+      </if>
+      <if test="record.bearreason != null">
+        bearreason = #{record.bearreason,jdbcType=VARCHAR},
+      </if>
+      <if test="record.xray != null">
+        xray = #{record.xray,jdbcType=INTEGER},
+      </if>
+      <if test="record.xrayreason != null">
+        xrayreason = #{record.xrayreason,jdbcType=VARCHAR},
+      </if>
+      <if test="record.bads != null">
+        bads = #{record.bads,jdbcType=INTEGER},
+      </if>
+      <if test="record.badsreason != null">
+        badsreason = #{record.badsreason,jdbcType=VARCHAR},
+      </if>
+      <if test="record.fidge != null">
+        fidge = #{record.fidge,jdbcType=INTEGER},
+      </if>
+      <if test="record.fidgereason != null">
+        fidgereason = #{record.fidgereason,jdbcType=VARCHAR},
+      </if>
+      <if test="record.vitamd != null">
+        vitamd = #{record.vitamd,jdbcType=INTEGER},
+      </if>
+      <if test="record.vitamdreason != null">
+        vitamdreason = #{record.vitamdreason,jdbcType=VARCHAR},
+      </if>
+      <if test="record.childId != null">
+        child_id = #{record.childId,jdbcType=INTEGER},
+      </if>
+      <if test="record.stress != null">
+        stress = #{record.stress,jdbcType=INTEGER},
+      </if>
+      <if test="record.stressreason != null">
+        stressreason = #{record.stressreason,jdbcType=VARCHAR},
+      </if>
+      <if test="record.xiyan != null">
+        xiyan = #{record.xiyan,jdbcType=INTEGER},
+      </if>
+      <if test="record.yesuan != null">
+        yesuan = #{record.yesuan,jdbcType=INTEGER},
+      </if>
+      <if test="record.bingdu != null">
+        bingdu = #{record.bingdu,jdbcType=INTEGER},
+      </if>
+      <if test="record.xiyans != null">
+        xiyans = #{record.xiyans,jdbcType=VARCHAR},
+      </if>
+      <if test="record.yesuans != null">
+        yesuans = #{record.yesuans,jdbcType=VARCHAR},
+      </if>
+      <if test="record.bingdus != null">
+        bingdus = #{record.bingdus,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update hzh_gestation
+    set id = #{record.id,jdbcType=INTEGER},
+      `close` = #{record.close,jdbcType=INTEGER},
+      closereason = #{record.closereason,jdbcType=VARCHAR},
+      abortioncount = #{record.abortioncount,jdbcType=INTEGER},
+      abortionreason = #{record.abortionreason,jdbcType=VARCHAR},
+      assist = #{record.assist,jdbcType=INTEGER},
+      assistreason = #{record.assistreason,jdbcType=VARCHAR},
+      amniotic = #{record.amniotic,jdbcType=VARCHAR},
+      amnioticreason = #{record.amnioticreason,jdbcType=VARCHAR},
+      highblood = #{record.highblood,jdbcType=INTEGER},
+      highbloodreason = #{record.highbloodreason,jdbcType=VARCHAR},
+      babygo = #{record.babygo,jdbcType=INTEGER},
+      babygoreason = #{record.babygoreason,jdbcType=VARCHAR},
+      blood = #{record.blood,jdbcType=INTEGER},
+      bloodreason = #{record.bloodreason,jdbcType=VARCHAR},
+      sugarwater = #{record.sugarwater,jdbcType=INTEGER},
+      sugarwaterreason = #{record.sugarwaterreason,jdbcType=VARCHAR},
+      blues = #{record.blues,jdbcType=INTEGER},
+      bluesreason = #{record.bluesreason,jdbcType=VARCHAR},
+      other = #{record.other,jdbcType=INTEGER},
+      otherreason = #{record.otherreason,jdbcType=VARCHAR},
+      drug = #{record.drug,jdbcType=INTEGER},
+      drugreason = #{record.drugreason,jdbcType=VARCHAR},
+      bear = #{record.bear,jdbcType=INTEGER},
+      bearreason = #{record.bearreason,jdbcType=VARCHAR},
+      xray = #{record.xray,jdbcType=INTEGER},
+      xrayreason = #{record.xrayreason,jdbcType=VARCHAR},
+      bads = #{record.bads,jdbcType=INTEGER},
+      badsreason = #{record.badsreason,jdbcType=VARCHAR},
+      fidge = #{record.fidge,jdbcType=INTEGER},
+      fidgereason = #{record.fidgereason,jdbcType=VARCHAR},
+      vitamd = #{record.vitamd,jdbcType=INTEGER},
+      vitamdreason = #{record.vitamdreason,jdbcType=VARCHAR},
+      child_id = #{record.childId,jdbcType=INTEGER},
+      stress = #{record.stress,jdbcType=INTEGER},
+      stressreason = #{record.stressreason,jdbcType=VARCHAR},
+      xiyan = #{record.xiyan,jdbcType=INTEGER},
+      yesuan = #{record.yesuan,jdbcType=INTEGER},
+      bingdu = #{record.bingdu,jdbcType=INTEGER},
+      xiyans = #{record.xiyans,jdbcType=VARCHAR},
+      yesuans = #{record.yesuans,jdbcType=VARCHAR},
+      bingdus = #{record.bingdus,jdbcType=VARCHAR}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.join.autism.entity.HzhGestation.HzhGestation">
+    update hzh_gestation
+    <set>
+      <if test="close != null">
+        `close` = #{close,jdbcType=INTEGER},
+      </if>
+      <if test="closereason != null">
+        closereason = #{closereason,jdbcType=VARCHAR},
+      </if>
+      <if test="abortioncount != null">
+        abortioncount = #{abortioncount,jdbcType=INTEGER},
+      </if>
+      <if test="abortionreason != null">
+        abortionreason = #{abortionreason,jdbcType=VARCHAR},
+      </if>
+      <if test="assist != null">
+        assist = #{assist,jdbcType=INTEGER},
+      </if>
+      <if test="assistreason != null">
+        assistreason = #{assistreason,jdbcType=VARCHAR},
+      </if>
+      <if test="amniotic != null">
+        amniotic = #{amniotic,jdbcType=VARCHAR},
+      </if>
+      <if test="amnioticreason != null">
+        amnioticreason = #{amnioticreason,jdbcType=VARCHAR},
+      </if>
+      <if test="highblood != null">
+        highblood = #{highblood,jdbcType=INTEGER},
+      </if>
+      <if test="highbloodreason != null">
+        highbloodreason = #{highbloodreason,jdbcType=VARCHAR},
+      </if>
+      <if test="babygo != null">
+        babygo = #{babygo,jdbcType=INTEGER},
+      </if>
+      <if test="babygoreason != null">
+        babygoreason = #{babygoreason,jdbcType=VARCHAR},
+      </if>
+      <if test="blood != null">
+        blood = #{blood,jdbcType=INTEGER},
+      </if>
+      <if test="bloodreason != null">
+        bloodreason = #{bloodreason,jdbcType=VARCHAR},
+      </if>
+      <if test="sugarwater != null">
+        sugarwater = #{sugarwater,jdbcType=INTEGER},
+      </if>
+      <if test="sugarwaterreason != null">
+        sugarwaterreason = #{sugarwaterreason,jdbcType=VARCHAR},
+      </if>
+      <if test="blues != null">
+        blues = #{blues,jdbcType=INTEGER},
+      </if>
+      <if test="bluesreason != null">
+        bluesreason = #{bluesreason,jdbcType=VARCHAR},
+      </if>
+      <if test="other != null">
+        other = #{other,jdbcType=INTEGER},
+      </if>
+      <if test="otherreason != null">
+        otherreason = #{otherreason,jdbcType=VARCHAR},
+      </if>
+      <if test="drug != null">
+        drug = #{drug,jdbcType=INTEGER},
+      </if>
+      <if test="drugreason != null">
+        drugreason = #{drugreason,jdbcType=VARCHAR},
+      </if>
+      <if test="bear != null">
+        bear = #{bear,jdbcType=INTEGER},
+      </if>
+      <if test="bearreason != null">
+        bearreason = #{bearreason,jdbcType=VARCHAR},
+      </if>
+      <if test="xray != null">
+        xray = #{xray,jdbcType=INTEGER},
+      </if>
+      <if test="xrayreason != null">
+        xrayreason = #{xrayreason,jdbcType=VARCHAR},
+      </if>
+      <if test="bads != null">
+        bads = #{bads,jdbcType=INTEGER},
+      </if>
+      <if test="badsreason != null">
+        badsreason = #{badsreason,jdbcType=VARCHAR},
+      </if>
+      <if test="fidge != null">
+        fidge = #{fidge,jdbcType=INTEGER},
+      </if>
+      <if test="fidgereason != null">
+        fidgereason = #{fidgereason,jdbcType=VARCHAR},
+      </if>
+      <if test="vitamd != null">
+        vitamd = #{vitamd,jdbcType=INTEGER},
+      </if>
+      <if test="vitamdreason != null">
+        vitamdreason = #{vitamdreason,jdbcType=VARCHAR},
+      </if>
+      <if test="childId != null">
+        child_id = #{childId,jdbcType=INTEGER},
+      </if>
+      <if test="stress != null">
+        stress = #{stress,jdbcType=INTEGER},
+      </if>
+      <if test="stressreason != null">
+        stressreason = #{stressreason,jdbcType=VARCHAR},
+      </if>
+      <if test="xiyan != null">
+        xiyan = #{xiyan,jdbcType=INTEGER},
+      </if>
+      <if test="yesuan != null">
+        yesuan = #{yesuan,jdbcType=INTEGER},
+      </if>
+      <if test="bingdu != null">
+        bingdu = #{bingdu,jdbcType=INTEGER},
+      </if>
+      <if test="xiyans != null">
+        xiyans = #{xiyans,jdbcType=VARCHAR},
+      </if>
+      <if test="yesuans != null">
+        yesuans = #{yesuans,jdbcType=VARCHAR},
+      </if>
+      <if test="bingdus != null">
+        bingdus = #{bingdus,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.join.autism.entity.HzhGestation.HzhGestation">
+    update hzh_gestation
+    set `close` = #{close,jdbcType=INTEGER},
+      closereason = #{closereason,jdbcType=VARCHAR},
+      abortioncount = #{abortioncount,jdbcType=INTEGER},
+      abortionreason = #{abortionreason,jdbcType=VARCHAR},
+      assist = #{assist,jdbcType=INTEGER},
+      assistreason = #{assistreason,jdbcType=VARCHAR},
+      amniotic = #{amniotic,jdbcType=VARCHAR},
+      amnioticreason = #{amnioticreason,jdbcType=VARCHAR},
+      highblood = #{highblood,jdbcType=INTEGER},
+      highbloodreason = #{highbloodreason,jdbcType=VARCHAR},
+      babygo = #{babygo,jdbcType=INTEGER},
+      babygoreason = #{babygoreason,jdbcType=VARCHAR},
+      blood = #{blood,jdbcType=INTEGER},
+      bloodreason = #{bloodreason,jdbcType=VARCHAR},
+      sugarwater = #{sugarwater,jdbcType=INTEGER},
+      sugarwaterreason = #{sugarwaterreason,jdbcType=VARCHAR},
+      blues = #{blues,jdbcType=INTEGER},
+      bluesreason = #{bluesreason,jdbcType=VARCHAR},
+      other = #{other,jdbcType=INTEGER},
+      otherreason = #{otherreason,jdbcType=VARCHAR},
+      drug = #{drug,jdbcType=INTEGER},
+      drugreason = #{drugreason,jdbcType=VARCHAR},
+      bear = #{bear,jdbcType=INTEGER},
+      bearreason = #{bearreason,jdbcType=VARCHAR},
+      xray = #{xray,jdbcType=INTEGER},
+      xrayreason = #{xrayreason,jdbcType=VARCHAR},
+      bads = #{bads,jdbcType=INTEGER},
+      badsreason = #{badsreason,jdbcType=VARCHAR},
+      fidge = #{fidge,jdbcType=INTEGER},
+      fidgereason = #{fidgereason,jdbcType=VARCHAR},
+      vitamd = #{vitamd,jdbcType=INTEGER},
+      vitamdreason = #{vitamdreason,jdbcType=VARCHAR},
+      child_id = #{childId,jdbcType=INTEGER},
+      stress = #{stress,jdbcType=INTEGER},
+      stressreason = #{stressreason,jdbcType=VARCHAR},
+      xiyan = #{xiyan,jdbcType=INTEGER},
+      yesuan = #{yesuan,jdbcType=INTEGER},
+      bingdu = #{bingdu,jdbcType=INTEGER},
+      xiyans = #{xiyans,jdbcType=VARCHAR},
+      yesuans = #{yesuans,jdbcType=VARCHAR},
+      bingdus = #{bingdus,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

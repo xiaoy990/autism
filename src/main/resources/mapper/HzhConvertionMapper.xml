@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.join.autism.mapper.HzhConvertionMapper">
+  <resultMap id="BaseResultMap" type="com.join.autism.entity.HzhConvertion.HzhConvertion">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="sleep" jdbcType="INTEGER" property="sleep" />
+    <result column="sleepreason" jdbcType="VARCHAR" property="sleepreason" />
+    <result column="eat" jdbcType="INTEGER" property="eat" />
+    <result column="eatreason" jdbcType="VARCHAR" property="eatreason" />
+    <result column="fat" jdbcType="INTEGER" property="fat" />
+    <result column="fatreason" jdbcType="VARCHAR" property="fatreason" />
+    <result column="active" jdbcType="INTEGER" property="active" />
+    <result column="activereason" jdbcType="VARCHAR" property="activereason" />
+    <result column="thin" jdbcType="INTEGER" property="thin" />
+    <result column="thinreason" jdbcType="VARCHAR" property="thinreason" />
+    <result column="child_id" jdbcType="INTEGER" property="childId" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    id, sleep, sleepreason, eat, eatreason, fat, fatreason, active, activereason, thin, 
+    thinreason, child_id
+  </sql>
+  <select id="selectByExample" parameterType="com.join.autism.entity.HzhConvertion.HzhConvertionExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from hzh_convertion
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+    <if test="limit != null">
+      <if test="offset != null">
+        limit ${offset}, ${limit}
+      </if>
+      <if test="offset == null">
+        limit ${limit}
+      </if>
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from hzh_convertion
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from hzh_convertion
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.join.autism.entity.HzhConvertion.HzhConvertionExample">
+    delete from hzh_convertion
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.join.autism.entity.HzhConvertion.HzhConvertion" useGeneratedKeys="true">
+    insert into hzh_convertion (sleep, sleepreason, eat, 
+      eatreason, fat, fatreason, 
+      active, activereason, thin, 
+      thinreason, child_id)
+    values (#{sleep,jdbcType=INTEGER}, #{sleepreason,jdbcType=VARCHAR}, #{eat,jdbcType=INTEGER}, 
+      #{eatreason,jdbcType=VARCHAR}, #{fat,jdbcType=INTEGER}, #{fatreason,jdbcType=VARCHAR}, 
+      #{active,jdbcType=INTEGER}, #{activereason,jdbcType=VARCHAR}, #{thin,jdbcType=INTEGER}, 
+      #{thinreason,jdbcType=VARCHAR}, #{childId,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.join.autism.entity.HzhConvertion.HzhConvertion" useGeneratedKeys="true">
+    insert into hzh_convertion
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="sleep != null">
+        sleep,
+      </if>
+      <if test="sleepreason != null">
+        sleepreason,
+      </if>
+      <if test="eat != null">
+        eat,
+      </if>
+      <if test="eatreason != null">
+        eatreason,
+      </if>
+      <if test="fat != null">
+        fat,
+      </if>
+      <if test="fatreason != null">
+        fatreason,
+      </if>
+      <if test="active != null">
+        active,
+      </if>
+      <if test="activereason != null">
+        activereason,
+      </if>
+      <if test="thin != null">
+        thin,
+      </if>
+      <if test="thinreason != null">
+        thinreason,
+      </if>
+      <if test="childId != null">
+        child_id,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="sleep != null">
+        #{sleep,jdbcType=INTEGER},
+      </if>
+      <if test="sleepreason != null">
+        #{sleepreason,jdbcType=VARCHAR},
+      </if>
+      <if test="eat != null">
+        #{eat,jdbcType=INTEGER},
+      </if>
+      <if test="eatreason != null">
+        #{eatreason,jdbcType=VARCHAR},
+      </if>
+      <if test="fat != null">
+        #{fat,jdbcType=INTEGER},
+      </if>
+      <if test="fatreason != null">
+        #{fatreason,jdbcType=VARCHAR},
+      </if>
+      <if test="active != null">
+        #{active,jdbcType=INTEGER},
+      </if>
+      <if test="activereason != null">
+        #{activereason,jdbcType=VARCHAR},
+      </if>
+      <if test="thin != null">
+        #{thin,jdbcType=INTEGER},
+      </if>
+      <if test="thinreason != null">
+        #{thinreason,jdbcType=VARCHAR},
+      </if>
+      <if test="childId != null">
+        #{childId,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.join.autism.entity.HzhConvertion.HzhConvertionExample" resultType="java.lang.Long">
+    select count(*) from hzh_convertion
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update hzh_convertion
+    <set>
+      <if test="record.id != null">
+        id = #{record.id,jdbcType=INTEGER},
+      </if>
+      <if test="record.sleep != null">
+        sleep = #{record.sleep,jdbcType=INTEGER},
+      </if>
+      <if test="record.sleepreason != null">
+        sleepreason = #{record.sleepreason,jdbcType=VARCHAR},
+      </if>
+      <if test="record.eat != null">
+        eat = #{record.eat,jdbcType=INTEGER},
+      </if>
+      <if test="record.eatreason != null">
+        eatreason = #{record.eatreason,jdbcType=VARCHAR},
+      </if>
+      <if test="record.fat != null">
+        fat = #{record.fat,jdbcType=INTEGER},
+      </if>
+      <if test="record.fatreason != null">
+        fatreason = #{record.fatreason,jdbcType=VARCHAR},
+      </if>
+      <if test="record.active != null">
+        active = #{record.active,jdbcType=INTEGER},
+      </if>
+      <if test="record.activereason != null">
+        activereason = #{record.activereason,jdbcType=VARCHAR},
+      </if>
+      <if test="record.thin != null">
+        thin = #{record.thin,jdbcType=INTEGER},
+      </if>
+      <if test="record.thinreason != null">
+        thinreason = #{record.thinreason,jdbcType=VARCHAR},
+      </if>
+      <if test="record.childId != null">
+        child_id = #{record.childId,jdbcType=INTEGER},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update hzh_convertion
+    set id = #{record.id,jdbcType=INTEGER},
+      sleep = #{record.sleep,jdbcType=INTEGER},
+      sleepreason = #{record.sleepreason,jdbcType=VARCHAR},
+      eat = #{record.eat,jdbcType=INTEGER},
+      eatreason = #{record.eatreason,jdbcType=VARCHAR},
+      fat = #{record.fat,jdbcType=INTEGER},
+      fatreason = #{record.fatreason,jdbcType=VARCHAR},
+      active = #{record.active,jdbcType=INTEGER},
+      activereason = #{record.activereason,jdbcType=VARCHAR},
+      thin = #{record.thin,jdbcType=INTEGER},
+      thinreason = #{record.thinreason,jdbcType=VARCHAR},
+      child_id = #{record.childId,jdbcType=INTEGER}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.join.autism.entity.HzhConvertion.HzhConvertion">
+    update hzh_convertion
+    <set>
+      <if test="sleep != null">
+        sleep = #{sleep,jdbcType=INTEGER},
+      </if>
+      <if test="sleepreason != null">
+        sleepreason = #{sleepreason,jdbcType=VARCHAR},
+      </if>
+      <if test="eat != null">
+        eat = #{eat,jdbcType=INTEGER},
+      </if>
+      <if test="eatreason != null">
+        eatreason = #{eatreason,jdbcType=VARCHAR},
+      </if>
+      <if test="fat != null">
+        fat = #{fat,jdbcType=INTEGER},
+      </if>
+      <if test="fatreason != null">
+        fatreason = #{fatreason,jdbcType=VARCHAR},
+      </if>
+      <if test="active != null">
+        active = #{active,jdbcType=INTEGER},
+      </if>
+      <if test="activereason != null">
+        activereason = #{activereason,jdbcType=VARCHAR},
+      </if>
+      <if test="thin != null">
+        thin = #{thin,jdbcType=INTEGER},
+      </if>
+      <if test="thinreason != null">
+        thinreason = #{thinreason,jdbcType=VARCHAR},
+      </if>
+      <if test="childId != null">
+        child_id = #{childId,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.join.autism.entity.HzhConvertion.HzhConvertion">
+    update hzh_convertion
+    set sleep = #{sleep,jdbcType=INTEGER},
+      sleepreason = #{sleepreason,jdbcType=VARCHAR},
+      eat = #{eat,jdbcType=INTEGER},
+      eatreason = #{eatreason,jdbcType=VARCHAR},
+      fat = #{fat,jdbcType=INTEGER},
+      fatreason = #{fatreason,jdbcType=VARCHAR},
+      active = #{active,jdbcType=INTEGER},
+      activereason = #{activereason,jdbcType=VARCHAR},
+      thin = #{thin,jdbcType=INTEGER},
+      thinreason = #{thinreason,jdbcType=VARCHAR},
+      child_id = #{childId,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>
