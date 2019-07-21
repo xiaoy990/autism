@@ -20,7 +20,7 @@ public class HzhGeneralServiceImpl implements HzhGeneralService {
     }
 
     @Override
-    public HzhGeneral selectHzhAssistByPK(Integer id) {
+    public HzhGeneral selectHzhGeneralByPK(Integer id) {
         return hzhGeneralMapper.selectByPrimaryKey(id);
     }
 
@@ -30,7 +30,12 @@ public class HzhGeneralServiceImpl implements HzhGeneralService {
     }
 
     @Override
-    public void delHzhAssistByPK(Integer id) {
+    public void delHzhGeneralByPK(Integer id) {
         hzhGeneralMapper.deleteByPrimaryKey(id);
+    }
+
+    @Override
+    public void updateGeneral(HzhGeneral hzhGeneral) {
+        hzhGeneralMapper.updateByPrimaryKey(hzhGeneral);
     }
 }

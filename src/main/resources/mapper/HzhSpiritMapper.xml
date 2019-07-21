@@ -431,4 +431,62 @@
       child_id = #{childId,jdbcType=INTEGER}
     where id = #{id,jdbcType=INTEGER}
   </update>
+
+  <select id="mutiSelect" resultMap="BaseResultMap">
+    select * from hzh_spirit where 1=1
+    <if test="sicknum != null">
+      and sicknum = #{sicknum,jdbcType=VARCHAR}
+    </if>
+    <if test="doctor != null">
+      and doctor = #{doctor,jdbcType=VARCHAR}
+    </if>
+    <if test="datetime != null">
+      and `datetime` = #{datetime,jdbcType=VARCHAR}
+    </if>
+    <if test="livenum != null">
+      and livenum = #{livenum,jdbcType=VARCHAR}
+    </if>
+    <if test="nospeak != null">
+      and nospeak = #{nospeak,jdbcType=VARCHAR}
+    </if>
+    <if test="brains != null">
+      and brains = #{brains,jdbcType=VARCHAR}
+    </if>
+    <if test="speakslow != null">
+      and speakslow = #{speakslow,jdbcType=VARCHAR}
+    </if>
+    <if test="blues != null">
+      and blues = #{blues,jdbcType=VARCHAR}
+    </if>
+    <if test="anxious != null">
+      and anxious = #{anxious,jdbcType=VARCHAR}
+    </if>
+    <if test="manic != null">
+      and manic = #{manic,jdbcType=VARCHAR}
+    </if>
+    <if test="split != null">
+      and split = #{split,jdbcType=VARCHAR}
+    </if>
+    <if test="muchgo != null">
+      and muchgo = #{muchgo,jdbcType=VARCHAR}
+    </if>
+    <if test="social != null">
+      and social = #{social,jdbcType=VARCHAR}
+    </if>
+    <if test="force != null">
+      and `force` = #{force,jdbcType=VARCHAR}
+    </if>
+    <if test="choice != null">
+      and choice = #{choice,jdbcType=VARCHAR}
+    </if>
+    <if test="spirit != null">
+      and spirit = #{spirit,jdbcType=VARCHAR}
+    </if>
+    <if test="other != null">
+      and other = #{other,jdbcType=VARCHAR}
+    </if>
+    <if test="childId != null">
+      and child_id = #{childId,jdbcType=INTEGER}
+    </if>
+  </select>
 </mapper>

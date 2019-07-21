@@ -1,9 +1,8 @@
-package com.join.autism.service.HzhAssistService.impl;
+package com.join.autism.service.hzhAssistService.impl;
 
 import com.join.autism.entity.HzhAssist.HzhAssist;
-import com.join.autism.entity.HzhAssist.HzhAssistExample;
 import com.join.autism.mapper.HzhAssistMapper;
-import com.join.autism.service.HzhAssistService.HzhAssistService;
+import com.join.autism.service.hzhAssistService.HzhAssistService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

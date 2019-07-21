@@ -1,4 +1,4 @@
-package com.join.autism.service.HzhAssistService;
+package com.join.autism.service.hzhAssistService;
 
 import com.join.autism.entity.HzhAssist.HzhAssist;
 

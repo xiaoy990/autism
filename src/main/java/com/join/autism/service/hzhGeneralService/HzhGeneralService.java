@@ -6,7 +6,8 @@ import java.util.List;
 
 public interface HzhGeneralService {
     public List<HzhGeneral> selectHzhGeneral(HzhGeneral hzhGeneral);
-    public HzhGeneral selectHzhAssistByPK(Integer id);
+    public HzhGeneral selectHzhGeneralByPK(Integer id);
     public void insertHzhGeneral(HzhGeneral hzhGeneral);
-    public void delHzhAssistByPK(Integer id);
+    public void delHzhGeneralByPK(Integer id);
+    public void updateGeneral(HzhGeneral hzhGeneral);
 }

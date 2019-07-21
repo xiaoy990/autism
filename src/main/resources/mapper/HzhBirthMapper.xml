@@ -574,4 +574,89 @@
       child_id = #{childId,jdbcType=INTEGER}
     where id = #{id,jdbcType=INTEGER}
   </update>
+
+  <select id="mutiSelect" resultMap="BaseResultMap">
+    select * from hzh_birth where  1=1
+    <if test="birth != null">
+      and birth = #{birth,jdbcType=INTEGER}
+    </if>
+    <if test="birthreason != null">
+      and birthreason = #{birthreason,jdbcType=VARCHAR}
+    </if>
+    <if test="kg != null">
+      and kg = #{kg,jdbcType=VARCHAR}
+    </if>
+    <if test="score != null">
+      and score = #{score,jdbcType=INTEGER}
+    </if>
+    <if test="scorereason != null">
+      and scorereason = #{scorereason,jdbcType=VARCHAR}
+    </if>
+    <if test="gogo != null">
+      and gogo = #{gogo,jdbcType=INTEGER}
+    </if>
+    <if test="gogoreason != null">
+      and gogoreason = #{gogoreason,jdbcType=VARCHAR}
+    </if>
+    <if test="assist != null">
+      and assist = #{assist,jdbcType=INTEGER}
+    </if>
+    <if test="assistreason != null">
+      and assistreason = #{assistreason,jdbcType=VARCHAR}
+    </if>
+    <if test="compl != null">
+      and compl = #{compl,jdbcType=VARCHAR}
+    </if>
+    <if test="complreason != null">
+      and complreason = #{complreason,jdbcType=VARCHAR}
+    </if>
+    <if test="mombra != null">
+      and mombra = #{mombra,jdbcType=INTEGER}
+    </if>
+    <if test="mombrareason != null">
+      and mombrareason = #{mombrareason,jdbcType=VARCHAR}
+    </if>
+    <if test="bradiff != null">
+      and bradiff = #{bradiff,jdbcType=VARCHAR}
+    </if>
+    <if test="bradiffreason != null">
+      and bradiffreason = #{bradiffreason,jdbcType=VARCHAR}
+    </if>
+    <if test="grow != null">
+      and grow = #{grow,jdbcType=INTEGER}
+    </if>
+    <if test="growreason != null">
+      and growreason = #{growreason,jdbcType=VARCHAR}
+    </if>
+    <if test="growslowreason != null">
+      and growslowreason = #{growslowreason,jdbcType=VARCHAR}
+    </if>
+    <if test="monthup != null">
+      and monthup = #{monthup,jdbcType=INTEGER}
+    </if>
+    <if test="monthroll != null">
+      and monthroll = #{monthroll,jdbcType=INTEGER}
+    </if>
+    <if test="monthsit != null">
+      and monthsit = #{monthsit,jdbcType=INTEGER}
+    </if>
+    <if test="monthclimb != null">
+      and monthclimb = #{monthclimb,jdbcType=INTEGER}
+    </if>
+    <if test="monthgo != null">
+      and monthgo = #{monthgo,jdbcType=INTEGER}
+    </if>
+    <if test="speakreason != null">
+      and speakreason = #{speakreason,jdbcType=VARCHAR}
+    </if>
+    <if test="vitamd != null">
+      and vitamd = #{vitamd,jdbcType=INTEGER}
+    </if>
+    <if test="vitamdreason != null">
+      and vitamdreason = #{vitamdreason,jdbcType=VARCHAR}
+    </if>
+    <if test="childId != null">
+      and child_id = #{childId,jdbcType=INTEGER}
+    </if>
+  </select>
 </mapper>

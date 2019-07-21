@@ -573,4 +573,89 @@
       child_id = #{childId,jdbcType=INTEGER}
     where id = #{id,jdbcType=INTEGER}
   </update>
+
+  <select id="mutiSelect" resultMap="BaseResultMap">
+    select  * from hzh_inborn where 1=1
+    <if test="sicknum != null">
+       and sicknum = #{sicknum,jdbcType=VARCHAR}
+    </if>
+    <if test="doctor != null">
+       and doctor = #{doctor,jdbcType=VARCHAR}
+    </if>
+    <if test="datetime != null">
+       and `datetime` = #{datetime,jdbcType=VARCHAR}
+    </if>
+    <if test="livenum != null">
+       and livenum = #{livenum,jdbcType=VARCHAR}
+    </if>
+    <if test="skull != null">
+       and skull = #{skull,jdbcType=VARCHAR}
+    </if>
+    <if test="skullreason != null">
+       and skullreason = #{skullreason,jdbcType=VARCHAR}
+    </if>
+    <if test="ear != null">
+       and ear = #{ear,jdbcType=VARCHAR}
+    </if>
+    <if test="earreason != null">
+      and earreason = #{earreason,jdbcType=VARCHAR}
+    </if>
+    <if test="eye != null">
+       and eye = #{eye,jdbcType=VARCHAR}
+    </if>
+    <if test="eyereason != null">
+       and eyereason = #{eyereason,jdbcType=VARCHAR}
+    </if>
+    <if test="nose != null">
+       and nose = #{nose,jdbcType=VARCHAR}
+    </if>
+    <if test="nosereason != null">
+      nosereason = #{nosereason,jdbcType=VARCHAR}
+    </if>
+    <if test="center != null">
+       and center = #{center,jdbcType=VARCHAR}
+    </if>
+    <if test="centerreason != null">
+      centerreason = #{centerreason,jdbcType=VARCHAR}
+    </if>
+    <if test="mouth != null">
+       and mouth = #{mouth,jdbcType=VARCHAR}
+    </if>
+    <if test="mouthreason != null">
+       and mouthreason = #{mouthreason,jdbcType=VARCHAR}
+    </if>
+    <if test="jaw != null">
+       and jaw = #{jaw,jdbcType=VARCHAR}
+    </if>
+    <if test="jawreason != null">
+       and jawreason = #{jawreason,jdbcType=VARCHAR}
+    </if>
+    <if test="breast != null">
+       and breast = #{breast,jdbcType=VARCHAR}
+    </if>
+    <if test="breastreason != null">
+       and breastreason = #{breastreason,jdbcType=VARCHAR}
+    </if>
+    <if test="footleg != null">
+      and footleg = #{footleg,jdbcType=VARCHAR}
+    </if>
+    <if test="footlegreason != null">
+      and footlegreason = #{footlegreason,jdbcType=VARCHAR}
+    </if>
+    <if test="heart != null">
+      and heart = #{heart,jdbcType=VARCHAR}
+    </if>
+    <if test="belly != null">
+      and belly = #{belly,jdbcType=VARCHAR}
+    </if>
+    <if test="skin != null">
+      and skin = #{skin,jdbcType=VARCHAR}
+    </if>
+    <if test="otherreason != null">
+      and otherreason = #{otherreason,jdbcType=VARCHAR}
+    </if>
+    <if test="childId != null">
+      and child_id = #{childId,jdbcType=INTEGER}
+    </if>
+  </select>
 </mapper>

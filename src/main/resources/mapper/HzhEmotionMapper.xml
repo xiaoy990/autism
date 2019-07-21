@@ -431,4 +431,62 @@
       addtime = #{addtime,jdbcType=INTEGER}
     where id = #{id,jdbcType=INTEGER}
   </update>
+
+  <select id="mutiSelect" resultMap="BaseResultMap">
+    select * from hzh_emotion where 1=1
+    <if test="childId != null">
+      and child_id = #{childId,jdbcType=INTEGER}
+    </if>
+    <if test="rela != null">
+      and rela = #{rela,jdbcType=INTEGER}
+    </if>
+    <if test="imitate != null">
+      and imitate = #{imitate,jdbcType=INTEGER}
+    </if>
+    <if test="emotion != null">
+      and emotion = #{emotion,jdbcType=INTEGER}
+    </if>
+    <if test="motion != null">
+      and motion = #{motion,jdbcType=INTEGER}
+    </if>
+    <if test="nonlife != null">
+      and nonlife = #{nonlife,jdbcType=INTEGER}
+    </if>
+    <if test="change != null">
+      and `change` = #{change,jdbcType=INTEGER}
+    </if>
+    <if test="vision != null">
+      and vision = #{vision,jdbcType=INTEGER}
+    </if>
+    <if test="hearing != null">
+      and hearing = #{hearing,jdbcType=INTEGER}
+    </if>
+    <if test="nearby != null">
+      and nearby = #{nearby,jdbcType=INTEGER}
+    </if>
+    <if test="anxious != null">
+      and anxious = #{anxious,jdbcType=INTEGER}
+    </if>
+    <if test="language != null">
+      and `language` = #{language,jdbcType=INTEGER}
+    </if>
+    <if test="nolan != null">
+      and nolan = #{nolan,jdbcType=INTEGER}
+    </if>
+    <if test="activity != null">
+      and activity = #{activity,jdbcType=INTEGER}
+    </if>
+    <if test="intelligence != null">
+      and intelligence = #{intelligence,jdbcType=INTEGER}
+    </if>
+    <if test="impression != null">
+      and impression = #{impression,jdbcType=INTEGER}
+    </if>
+    <if test="frasum != null">
+      and frasum = #{frasum,jdbcType=INTEGER}
+    </if>
+    <if test="addtime != null">
+      and addtime = #{addtime,jdbcType=INTEGER}
+    </if>
+  </select>
 </mapper>

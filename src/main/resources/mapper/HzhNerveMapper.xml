@@ -400,4 +400,56 @@
       child_id = #{childId,jdbcType=INTEGER}
     where id = #{id,jdbcType=INTEGER}
   </update>
+
+  <select id="mutiSelect" resultMap="BaseResultMap">
+    select * from hzh_nerve where 1=1
+    <if test="yesNo != null">
+      and yes_no = #{yesNo,jdbcType=INTEGER}
+    </if>
+    <if test="epilepsy != null">
+      and epilepsy = #{epilepsy,jdbcType=INTEGER}
+    </if>
+    <if test="epilepsyreason != null">
+      and epilepsyreason = #{epilepsyreason,jdbcType=VARCHAR}
+    </if>
+    <if test="tension != null">
+      and tension = #{tension,jdbcType=INTEGER}
+    </if>
+    <if test="tensionreason != null">
+      and tensionreason = #{tensionreason,jdbcType=VARCHAR}
+    </if>
+    <if test="imbalance != null">
+      and imbalance = #{imbalance,jdbcType=INTEGER}
+    </if>
+    <if test="imbalancereason != null">
+      and imbalancereason = #{imbalancereason,jdbcType=VARCHAR}
+    </if>
+    <if test="gait != null">
+      and gait = #{gait,jdbcType=INTEGER}
+    </if>
+    <if test="gaitreason != null">
+      and gaitreason = #{gaitreason,jdbcType=VARCHAR}
+    </if>
+    <if test="lncrease != null">
+      and lncrease = #{lncrease,jdbcType=INTEGER}
+    </if>
+    <if test="lncreasereason != null">
+      and lncreasereason = #{lncreasereason,jdbcType=VARCHAR}
+    </if>
+    <if test="weaken != null">
+      and weaken = #{weaken,jdbcType=INTEGER}
+    </if>
+    <if test="weakenreason != null">
+      and weakenreason = #{weakenreason,jdbcType=VARCHAR}
+    </if>
+    <if test="other != null">
+      and other = #{other,jdbcType=INTEGER}
+    </if>
+    <if test="otherreason != null">
+      and otherreason = #{otherreason,jdbcType=VARCHAR}
+    </if>
+    <if test="childId != null">
+      and child_id = #{childId,jdbcType=INTEGER}
+    </if>
+  </select>
 </mapper>

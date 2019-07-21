@@ -3,12 +3,12 @@ spring:
     active: dev
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://127.0.0.1/db_autism?useSSL=false
+    url: jdbc:mysql://127.0.0.1/db_autism?useSSL=false&serverTimezone=UTC
     username: root
     password: mysql
 
 server:
-  port: 8080
+  port: 8888
 
 mybatis:
   mapper-locations: classpath:mapper/*.xml

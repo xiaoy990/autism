@@ -494,4 +494,74 @@
       addtime = #{addtime,jdbcType=INTEGER}
     where id = #{id,jdbcType=INTEGER}
   </update>
+
+  <select id="mutiSelect" resultMap="BaseResultMap">
+    select * from hzh_rtm where 1=1
+    <if test="childId != null">
+      and child_id = #{childId,jdbcType=INTEGER}
+    </if>
+    <if test="isLook != null">
+      and is_look = #{isLook,jdbcType=INTEGER}
+    </if>
+    <if test="isHearing != null">
+      and is_hearing = #{isHearing,jdbcType=INTEGER}
+    </if>
+    <if test="isGame != null">
+      and is_game = #{isGame,jdbcType=INTEGER}
+    </if>
+    <if test="isClimbing != null">
+      and is_climbing = #{isClimbing,jdbcType=INTEGER}
+    </if>
+    <if test="isFinger != null">
+      and is_finger = #{isFinger,jdbcType=INTEGER}
+    </if>
+    <if test="isHelp != null">
+      and is_help = #{isHelp,jdbcType=INTEGER}
+    </if>
+    <if test="isInterest != null">
+      and is_interest = #{isInterest,jdbcType=INTEGER}
+    </if>
+    <if test="isChildren != null">
+      and is_children = #{isChildren,jdbcType=INTEGER}
+    </if>
+    <if test="isParentsLook != null">
+      and is_parents_look = #{isParentsLook,jdbcType=INTEGER}
+    </if>
+    <if test="isResponse != null">
+      and is_response = #{isResponse,jdbcType=INTEGER}
+    </if>
+    <if test="isSmileResponse != null">
+      and is_smile_response = #{isSmileResponse,jdbcType=INTEGER}
+    </if>
+    <if test="isNoise != null">
+      and is_noise = #{isNoise,jdbcType=INTEGER}
+    </if>
+    <if test="isGo != null">
+      and is_go = #{isGo,jdbcType=INTEGER}
+    </if>
+    <if test="isEye != null">
+      and is_eye = #{isEye,jdbcType=INTEGER}
+    </if>
+    <if test="isImitate != null">
+      and is_imitate = #{isImitate,jdbcType=INTEGER}
+    </if>
+    <if test="isSearch != null">
+      and is_search = #{isSearch,jdbcType=INTEGER}
+    </if>
+    <if test="isAttract != null">
+      and is_attract = #{isAttract,jdbcType=INTEGER}
+    </if>
+    <if test="isUnderstand != null">
+      and is_understand = #{isUnderstand,jdbcType=INTEGER}
+    </if>
+    <if test="isReaction != null">
+      and is_reaction = #{isReaction,jdbcType=INTEGER}
+    </if>
+    <if test="isMovement != null">
+      and is_movement = #{isMovement,jdbcType=INTEGER}
+    </if>
+    <if test="addtime != null">
+      and addtime = #{addtime,jdbcType=INTEGER}
+    </if>
+  </select>
 </mapper>
