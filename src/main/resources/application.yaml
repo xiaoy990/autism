@@ -3,10 +3,12 @@ spring:
     active: dev
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://127.0.0.1/db_autism?useSSL=false&serverTimezone=UTC
+    url: jdbc:mysql://127.0.0.1/db_autism?useSSL=false&serverTimezone=UTC&charactorEncoding=UTF-8
     username: root
     password: mysql
-
+logging:
+  level:
+    com.join.autism.mapper  : debug
 server:
   port: 8888
 
@@ -18,8 +20,14 @@ mybatis:
 spring:
   profiles: prod
   datasource:
-    url: jdbc:mysql://47.103.10.220/db_autism?useSSL=false&serverTimezone=UTC&charactorEncoding=utf-8
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://47.103.10.220/db_autism?useSSL=false&serverTimezone=UTC&useUnicode=true&characterEncoding=utf8
     username: root
     password: Join666
+  http:
+    encoding:
+      charset: UTF-8
+      force: true
+      enabled: true
 server:
-  port: 6666
+  port: 8888

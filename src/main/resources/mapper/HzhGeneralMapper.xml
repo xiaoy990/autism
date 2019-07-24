@@ -434,59 +434,66 @@
 
   <select id="mutiSelect" resultMap="BaseResultMap">
     select * from hzh_general where 1 = 1
-    <if test="name != null">
-      and `name` = #{name,jdbcType=VARCHAR}
+    <if test="CSG.minAge!= null and CSG.maxAge != null">
+      and age between #{CSG.minAge,jdbcType=INTEGER} and #{CSG.maxAge,jdbcType=INTEGER}
     </if>
-    <if test="birthday != null">
-      and birthday = #{birthday,jdbcType=VARCHAR}
+    <if test="hzhGeneral.name != null and hzhGeneral.name != ''">
+      and `name` like concat('%','${hzhGeneral.name}','%')
     </if>
-    <if test="age != null">
-      and age = #{age,jdbcType=INTEGER}
+    <if test="hzhGeneral.birthday != null and hzhGeneral.birthday != ''">
+      and birthday = #{hzhGeneral.birthday,jdbcType=VARCHAR}
     </if>
-    <if test="province != null">
-      and province = #{province,jdbcType=VARCHAR}
+    <if test="hzhGeneral.province != null and hzhGeneral.province != ''">
+      and province = #{hzhGeneral.province,jdbcType=VARCHAR}
     </if>
-    <if test="city != null">
-      and city = #{city,jdbcType=VARCHAR}
+    <if test="hzhGeneral.city != null and hzhGeneral.city != '' ">
+      and city = #{hzhGeneral.city,jdbcType=VARCHAR}
     </if>
-    <if test="town != null">
-      and town = #{town,jdbcType=VARCHAR}
+    <if test="hzhGeneral.town != null and hzhGeneral.town != '' ">
+      and town = #{hzhGeneral.town,jdbcType=VARCHAR}
     </if>
-    <if test="nation != null">
-      and nation = #{nation,jdbcType=VARCHAR}
+    <if test="hzhGeneral.nation != null and hzhGeneral.nation != '' ">
+      and nation = #{hzhGeneral.nation,jdbcType=VARCHAR}
     </if>
-    <if test="sfname != null">
-      and sfname = #{sfname,jdbcType=VARCHAR}
+    <if test="hzhGeneral.sfname != null and hzhGeneral.sfname != '' ">
+      and sfname = like concat('%','${hzhGeneral.sfname}','%')
     </if>
-    <if test="relation != null">
-      and relation = #{relation,jdbcType=VARCHAR}
+    <if test="hzhGeneral.relation != null and hzhGeneral.relation != '' ">
+      and relation = #{hzhGeneral.relation,jdbcType=VARCHAR}
     </if>
-    <if test="address != null">
-      and address = #{address,jdbcType=VARCHAR}
+    <if test="hzhGeneral.address != null and hzhGeneral.address != '' ">
+      and address = #{hzhGeneral.address,jdbcType=VARCHAR}
     </if>
-    <if test="mobile != null">
-      and mobile = #{mobile,jdbcType=VARCHAR}
+    <if test="hzhGeneral.mobile != null and hzhGeneral.mobile != '' ">
+      and mobile = #{hzhGeneral.mobile,jdbcType=VARCHAR}
     </if>
-    <if test="brosis != null">
-      and brosis = #{brosis,jdbcType=INTEGER}
+    <if test="hzhGeneral.brosis != null and hzhGeneral.brosis != '' ">
+      and brosis = #{hzhGeneral.brosis,jdbcType=INTEGER}
     </if>
-    <if test="sicknum != null">
-      and sicknum = #{sicknum,jdbcType=VARCHAR}
+    <if test="hzhGeneral.sicknum != null and hzhGeneral.sicknum != '' ">
+      and sicknum = #{hzhGeneral.sicknum,jdbcType=VARCHAR}
     </if>
-    <if test="doctor != null">
-      and doctor = #{doctor,jdbcType=VARCHAR}
+    <if test="hzhGeneral.doctor != null and hzhGeneral.doctor != '' ">
+      and doctor = #{hzhGeneral.doctor,jdbcType=VARCHAR}
     </if>
-    <if test="surveyTime != null">
-      and survey_time = #{surveyTime,jdbcType=VARCHAR}
+    <if test="CSG.minSurTime != null and CSG.maxSurTime != '' and CSG.minSurTime != '' and CSG.maxSurTime != null">
+      and survey_time between #{CSG.minSurTime,jdbcType=VARCHAR} and #{CSG.maxSurTime,jdbcType=VARCHAR}
     </if>
-    <if test="livenum != null">
-      and livenum = #{livenum,jdbcType=VARCHAR}
+    <if test="hzhGeneral.livenum != null and hzhGeneral.livenum != '' ">
+      and livenum = #{hzhGeneral.livenum,jdbcType=VARCHAR}
     </if>
-    <if test="six != null">
-      and six = #{six,jdbcType=VARCHAR}
+    <if test="hzhGeneral.six != null and hzhGeneral.six != '' ">
+      and six = #{hzhGeneral.six,jdbcType=VARCHAR}
     </if>
-    <if test="adder != null">
-      and adder = #{adder,jdbcType=VARCHAR}
+    <if test="hzhGeneral.adder != null and hzhGeneral.adder !=  '' ">
+      and adder = #{hzhGeneral.adder,jdbcType=VARCHAR}
     </if>
+    order by id desc
+  </select>
+  
+  <select id="fuzzySearch" resultMap="BaseResultMap">
+    select * from hzh_general where `name`
+    like concat('%','${key}','%')
+    or `name` like concat('%','${key}','%')
   </select>
 </mapper>

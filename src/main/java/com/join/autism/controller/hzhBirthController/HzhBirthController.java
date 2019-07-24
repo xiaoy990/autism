@@ -2,7 +2,6 @@ package com.join.autism.controller.hzhBirthController;
 
 import com.join.autism.entity.HzhBirth.HzhBirth;
 import com.join.autism.service.hzhBirthService.HzhBirthService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -15,11 +14,12 @@ import java.util.List;
 @CrossOrigin
 @RestController
 @RequestMapping("birth")
-
 public class HzhBirthController {
 
-    @Autowired
-    HzhBirthService hzhBirthService;
+    private final HzhBirthService hzhBirthService;
+    public HzhBirthController(HzhBirthService hzhBirthService) {
+        this.hzhBirthService = hzhBirthService;
+    }
 
     /**
      * 查找出生和喂养情况
