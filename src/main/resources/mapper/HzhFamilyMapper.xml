@@ -14,6 +14,102 @@
     <result column="marriage_desc" jdbcType="VARCHAR" property="marriageDesc" />
     <result column="much" jdbcType="VARCHAR" property="much" />
   </resultMap>
+
+  <!--增加-->
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.join.autism.entity.HzhFamily.HzhFamily" useGeneratedKeys="true">
+    insert into hzh_family (motherage, fatherage, momculture,
+      dadculture, mompross, dadpross,
+      child_id, marriage, marriage_desc,
+      much)
+    values (#{motherage,jdbcType=INTEGER}, #{fatherage,jdbcType=INTEGER}, #{momculture,jdbcType=VARCHAR},
+      #{dadculture,jdbcType=VARCHAR}, #{mompross,jdbcType=VARCHAR}, #{dadpross,jdbcType=VARCHAR},
+      #{childId,jdbcType=INTEGER}, #{marriage,jdbcType=INTEGER}, #{marriageDesc,jdbcType=VARCHAR},
+      #{much,jdbcType=VARCHAR})
+  </insert>
+
+  <!--根据id删除-->
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from hzh_family
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+
+  <!--根据id修改-->
+  <update id="updateByPrimaryKeySelective" parameterType="com.join.autism.entity.HzhFamily.HzhFamily">
+    update hzh_family
+    <set>
+      <if test="motherage != null">
+        motherage = #{motherage,jdbcType=INTEGER},
+      </if>
+      <if test="fatherage != null">
+        fatherage = #{fatherage,jdbcType=INTEGER},
+      </if>
+      <if test="momculture != null">
+        momculture = #{momculture,jdbcType=VARCHAR},
+      </if>
+      <if test="dadculture != null">
+        dadculture = #{dadculture,jdbcType=VARCHAR},
+      </if>
+      <if test="mompross != null">
+        mompross = #{mompross,jdbcType=VARCHAR},
+      </if>
+      <if test="dadpross != null">
+        dadpross = #{dadpross,jdbcType=VARCHAR},
+      </if>
+      <if test="childId != null">
+        child_id = #{childId,jdbcType=INTEGER},
+      </if>
+      <if test="marriage != null">
+        marriage = #{marriage,jdbcType=INTEGER},
+      </if>
+      <if test="marriageDesc != null">
+        marriage_desc = #{marriageDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="much != null">
+        much = #{much,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+
+  <!--多条件查询-->
+  <select id="mutiSelect" resultType="com.join.autism.entity.HzhFamily.HzhFamily" >
+    select hzh_family.* from hzh_family where 1=1
+    <if test="motherage != null">
+      and motherage = #{motherage,jdbcType=INTEGER}
+    </if>
+    <if test="fatherage != null">
+      and fatherage = #{fatherage,jdbcType=INTEGER}
+    </if>
+    <if test="momculture != null">
+      and momculture = #{momculture,jdbcType=VARCHAR}
+    </if>
+    <if test="dadculture != null">
+      and dadculture = #{dadculture,jdbcType=VARCHAR}
+    </if>
+    <if test="mompross != null">
+      and mompross = #{mompross,jdbcType=VARCHAR}
+    </if>
+    <if test="dadpross != null">
+      and dadpross = #{dadpross,jdbcType=VARCHAR}
+    </if>
+    <if test="childId != null">
+      and child_id = #{childId,jdbcType=INTEGER}
+    </if>
+    <if test="marriage != null">
+      and marriage = #{marriage,jdbcType=INTEGER}
+    </if>
+    <if test="marriageDesc != null">
+      and marriage_desc = #{marriageDesc,jdbcType=VARCHAR}
+    </if>
+    <if test="much != null">
+      and much = #{much,jdbcType=VARCHAR}
+    </if>
+  </select>
+
+
+
+
+
   <sql id="Example_Where_Clause">
     <where>
       <foreach collection="oredCriteria" item="criteria" separator="or">
@@ -104,26 +200,12 @@
     from hzh_family
     where id = #{id,jdbcType=INTEGER}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
-    delete from hzh_family
-    where id = #{id,jdbcType=INTEGER}
-  </delete>
   <delete id="deleteByExample" parameterType="com.join.autism.entity.HzhFamily.HzhFamilyExample">
     delete from hzh_family
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.join.autism.entity.HzhFamily.HzhFamily" useGeneratedKeys="true">
-    insert into hzh_family (motherage, fatherage, momculture, 
-      dadculture, mompross, dadpross, 
-      child_id, marriage, marriage_desc, 
-      much)
-    values (#{motherage,jdbcType=INTEGER}, #{fatherage,jdbcType=INTEGER}, #{momculture,jdbcType=VARCHAR}, 
-      #{dadculture,jdbcType=VARCHAR}, #{mompross,jdbcType=VARCHAR}, #{dadpross,jdbcType=VARCHAR}, 
-      #{childId,jdbcType=INTEGER}, #{marriage,jdbcType=INTEGER}, #{marriageDesc,jdbcType=VARCHAR}, 
-      #{much,jdbcType=VARCHAR})
-  </insert>
   <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.join.autism.entity.HzhFamily.HzhFamily" useGeneratedKeys="true">
     insert into hzh_family
     <trim prefix="(" suffix=")" suffixOverrides=",">
@@ -254,42 +336,6 @@
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
-  </update>
-  <update id="updateByPrimaryKeySelective" parameterType="com.join.autism.entity.HzhFamily.HzhFamily">
-    update hzh_family
-    <set>
-      <if test="motherage != null">
-        motherage = #{motherage,jdbcType=INTEGER},
-      </if>
-      <if test="fatherage != null">
-        fatherage = #{fatherage,jdbcType=INTEGER},
-      </if>
-      <if test="momculture != null">
-        momculture = #{momculture,jdbcType=VARCHAR},
-      </if>
-      <if test="dadculture != null">
-        dadculture = #{dadculture,jdbcType=VARCHAR},
-      </if>
-      <if test="mompross != null">
-        mompross = #{mompross,jdbcType=VARCHAR},
-      </if>
-      <if test="dadpross != null">
-        dadpross = #{dadpross,jdbcType=VARCHAR},
-      </if>
-      <if test="childId != null">
-        child_id = #{childId,jdbcType=INTEGER},
-      </if>
-      <if test="marriage != null">
-        marriage = #{marriage,jdbcType=INTEGER},
-      </if>
-      <if test="marriageDesc != null">
-        marriage_desc = #{marriageDesc,jdbcType=VARCHAR},
-      </if>
-      <if test="much != null">
-        much = #{much,jdbcType=VARCHAR},
-      </if>
-    </set>
-    where id = #{id,jdbcType=INTEGER}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.join.autism.entity.HzhFamily.HzhFamily">
     update hzh_family
