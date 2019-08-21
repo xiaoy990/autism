@@ -1,6 +1,7 @@
 package com.join.autism.controller.hzhSpiritController;
 
 import com.join.autism.entity.HzhSpirit.HzhSpirit;
+import com.join.autism.entity.HzhSpirit.HzhSpiritDto;
 import com.join.autism.service.hzhSpiritService.HzhSpiritService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -21,7 +22,7 @@ public class HzhSpiritController {
     HzhSpiritService hzhSpiritService;
 
     @RequestMapping("selectSpirit")
-    public List<HzhSpirit> queryAll(HzhSpirit hzhSpirit){
+    public List<HzhSpiritDto> queryAll(HzhSpirit hzhSpirit){
         return hzhSpiritService.selectHzhSpirit(hzhSpirit);
     }
 

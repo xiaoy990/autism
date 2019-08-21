@@ -1,7 +1,7 @@
 package com.join.autism.mapper;
 
-import com.join.autism.entity.HzhAssist.HzhAssist;
 import com.join.autism.entity.HzhFamily.HzhFamily;
+import com.join.autism.entity.HzhFamily.HzhFamilyDto;
 import com.join.autism.entity.HzhFamily.HzhFamilyExample;
 import org.springframework.stereotype.Repository;
 
@@ -12,5 +12,5 @@ import java.util.List;
  */
 @Repository
 public interface HzhFamilyMapper extends MyBatisBaseDao<HzhFamily, Integer, HzhFamilyExample> {
-    List<HzhFamily> mutiSelect(HzhFamily hzhFamily);
+    List<HzhFamilyDto> mutiSelect(HzhFamily hzhFamily);
 }

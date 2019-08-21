@@ -1,6 +1,7 @@
 package com.join.autism.service.hzhFamilyService;
 
 import com.join.autism.entity.HzhFamily.HzhFamily;
+import com.join.autism.entity.HzhFamily.HzhFamilyDto;
 
 import java.util.List;
 
@@ -33,5 +34,5 @@ public interface HzhFamilyService {
      * 多条件查询
      * @return
      */
-    public List<HzhFamily> mutiSelectFamily(HzhFamily hzhFamily);
+    public List<HzhFamilyDto> mutiSelectFamily(HzhFamily hzhFamily);
 }

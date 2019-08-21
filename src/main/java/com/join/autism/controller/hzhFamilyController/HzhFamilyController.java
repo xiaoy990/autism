@@ -1,9 +1,9 @@
 package com.join.autism.controller.hzhFamilyController;
 
 import com.join.autism.entity.HzhFamily.HzhFamily;
+import com.join.autism.entity.HzhFamily.HzhFamilyDto;
 import com.join.autism.service.hzhFamilyService.HzhFamilyService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -85,16 +85,13 @@ public class HzhFamilyController {
 
     /**
      * 多条件查询
-     * @param model
      * @return
      */
     @RequestMapping(value = "/mutiSelectFamily")
-    public List<HzhFamily> mutiSelectFamily(Model model){
-        List<HzhFamily> mutiSelectFamilyList = null;
-        HzhFamily hzhFamily = new HzhFamily();
+    public List<HzhFamilyDto> mutiSelectFamily(HzhFamily hzhFamily){
+        List<HzhFamilyDto> mutiSelectFamilyList = null;
         try {
             mutiSelectFamilyList = hzhFamilyService.mutiSelectFamily(hzhFamily);
-            model.addAttribute("mutiSelectFamilyList",mutiSelectFamilyList);
         }catch (Exception e){
             e.printStackTrace();
         }

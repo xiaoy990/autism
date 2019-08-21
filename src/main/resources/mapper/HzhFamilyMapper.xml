@@ -15,6 +15,22 @@
     <result column="much" jdbcType="VARCHAR" property="much" />
   </resultMap>
 
+  <resultMap id="MutiSelectResultMap" type="com.join.autism.entity.HzhFamily.HzhFamilyDto">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="motherage" jdbcType="INTEGER" property="motherage" />
+    <result column="fatherage" jdbcType="INTEGER" property="fatherage" />
+    <result column="momculture" jdbcType="VARCHAR" property="momculture" />
+    <result column="dadculture" jdbcType="VARCHAR" property="dadculture" />
+    <result column="mompross" jdbcType="VARCHAR" property="mompross" />
+    <result column="dadpross" jdbcType="VARCHAR" property="dadpross" />
+    <result column="child_id" jdbcType="INTEGER" property="childId" />
+    <result column="marriage" jdbcType="INTEGER" property="marriage" />
+    <result column="marriage_desc" jdbcType="VARCHAR" property="marriageDesc" />
+    <result column="much" jdbcType="VARCHAR" property="much" />
+    <result column="name" property="name"/>
+    <result column="sicknum" property="sicknum"/>
+  </resultMap>
+
   <!--增加-->
   <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.join.autism.entity.HzhFamily.HzhFamily" useGeneratedKeys="true">
     insert into hzh_family (motherage, fatherage, momculture,
@@ -72,43 +88,43 @@
   </update>
 
   <!--多条件查询-->
-  <select id="mutiSelect" resultType="com.join.autism.entity.HzhFamily.HzhFamily" >
-    select hzh_family.* from hzh_family where 1=1
-    <if test="motherage != null">
+  <select id="mutiSelect" resultMap="MutiSelectResultMap" >
+    select <include refid="mutiSelect_Column_List" />,`name`,g.sicknum from hzh_family f left join hzh_general g on (g.id = f.child_id)
+    where 1 = 1
+    <if test="childId != null">
+      and f.child_id = #{childId}
+    </if>
+    <if test="motherage != null and motherage != ''" >
       and motherage = #{motherage,jdbcType=INTEGER}
     </if>
-    <if test="fatherage != null">
+    <if test="fatherage != null and fatherage != ''">
       and fatherage = #{fatherage,jdbcType=INTEGER}
     </if>
-    <if test="momculture != null">
+    <if test="momculture != null and momculture != ''">
       and momculture = #{momculture,jdbcType=VARCHAR}
     </if>
-    <if test="dadculture != null">
+    <if test="dadculture != null and dadculture != ''">
       and dadculture = #{dadculture,jdbcType=VARCHAR}
     </if>
-    <if test="mompross != null">
+    <if test="mompross != null and mompross != ''">
       and mompross = #{mompross,jdbcType=VARCHAR}
     </if>
-    <if test="dadpross != null">
+    <if test="dadpross != null and dadpross != ''">
       and dadpross = #{dadpross,jdbcType=VARCHAR}
     </if>
-    <if test="childId != null">
+    <if test="childId != null and childId != ''">
       and child_id = #{childId,jdbcType=INTEGER}
     </if>
-    <if test="marriage != null">
+    <if test="marriage != null and marriage != ''">
       and marriage = #{marriage,jdbcType=INTEGER}
     </if>
-    <if test="marriageDesc != null">
+    <if test="marriageDesc != null and marriageDesc != ''">
       and marriage_desc = #{marriageDesc,jdbcType=VARCHAR}
     </if>
-    <if test="much != null">
+    <if test="much != null and much != ''">
       and much = #{much,jdbcType=VARCHAR}
     </if>
   </select>
-
-
-
-
 
   <sql id="Example_Where_Clause">
     <where>
@@ -169,7 +185,11 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    id, motherage, fatherage, momculture, dadculture, mompross, dadpross, child_id, marriage, 
+    id, motherage, fatherage, momculture, dadculture, mompross, dadpross, child_id, marriage,
+    marriage_desc, much
+  </sql>
+  <sql id="mutiSelect_Column_List">
+    f.id, motherage, fatherage, momculture, dadculture, mompross, dadpross, child_id, marriage,
     marriage_desc, much
   </sql>
   <select id="selectByExample" parameterType="com.join.autism.entity.HzhFamily.HzhFamilyExample" resultMap="BaseResultMap">

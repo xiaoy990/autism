@@ -1,7 +1,7 @@
 package com.join.autism.service.hzhSpiritService.impl;
 
-import com.join.autism.entity.HzhAssist.HzhAssist;
 import com.join.autism.entity.HzhSpirit.HzhSpirit;
+import com.join.autism.entity.HzhSpirit.HzhSpiritDto;
 import com.join.autism.mapper.HzhSpiritMapper;
 import com.join.autism.service.hzhSpiritService.HzhSpiritService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,7 +16,7 @@ public class HzhSpiritServiceImpl implements HzhSpiritService {
     HzhSpiritMapper hzhSpiritMapper;
 
     @Override
-    public List<HzhSpirit> selectHzhSpirit(HzhSpirit hzhSpirit) {
+    public List<HzhSpiritDto> selectHzhSpirit(HzhSpirit hzhSpirit) {
         return hzhSpiritMapper.mutiSelect(hzhSpirit);
     }
 

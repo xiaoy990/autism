@@ -22,6 +22,29 @@
     <result column="other" jdbcType="VARCHAR" property="other" />
     <result column="child_id" jdbcType="INTEGER" property="childId" />
   </resultMap>
+  <resultMap id="mutiSelectDto" type="com.join.autism.entity.HzhSpirit.HzhSpiritDto">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="sicknum" jdbcType="VARCHAR" property="sicknum" />
+    <result column="doctor" jdbcType="VARCHAR" property="doctor" />
+    <result column="datetime" jdbcType="VARCHAR" property="datetime" />
+    <result column="livenum" jdbcType="VARCHAR" property="livenum" />
+    <result column="nospeak" jdbcType="VARCHAR" property="nospeak" />
+    <result column="brains" jdbcType="VARCHAR" property="brains" />
+    <result column="speakslow" jdbcType="VARCHAR" property="speakslow" />
+    <result column="blues" jdbcType="VARCHAR" property="blues" />
+    <result column="anxious" jdbcType="VARCHAR" property="anxious" />
+    <result column="manic" jdbcType="VARCHAR" property="manic" />
+    <result column="split" jdbcType="VARCHAR" property="split" />
+    <result column="muchgo" jdbcType="VARCHAR" property="muchgo" />
+    <result column="social" jdbcType="VARCHAR" property="social" />
+    <result column="force" jdbcType="VARCHAR" property="force" />
+    <result column="choice" jdbcType="VARCHAR" property="choice" />
+    <result column="spirit" jdbcType="VARCHAR" property="spirit" />
+    <result column="other" jdbcType="VARCHAR" property="other" />
+    <result column="child_id" jdbcType="INTEGER" property="childId" />
+    <result column="name" property="name"/>
+    <result column="sickNum" property="sicknum"/>
+  </resultMap>
   <sql id="Example_Where_Clause">
     <where>
       <foreach collection="oredCriteria" item="criteria" separator="or">
@@ -84,6 +107,10 @@
     id, sicknum, doctor, `datetime`, livenum, nospeak, brains, speakslow, blues, anxious, 
     manic, split, muchgo, social, `force`, choice, spirit, other, child_id
   </sql>
+  <sql id="mutiSelect_Column_List">
+    s.id, g.sicknum, s.doctor, `datetime`, s.livenum, nospeak, brains, speakslow, blues, anxious,
+    manic, split, muchgo, social, `force`, choice, spirit, other, child_id
+  </sql>
   <select id="selectByExample" parameterType="com.join.autism.entity.HzhSpirit.HzhSpiritExample" resultMap="BaseResultMap">
     select
     <if test="distinct">
@@ -126,14 +153,14 @@
     insert into hzh_spirit (sicknum, doctor, `datetime`, 
       livenum, nospeak, brains, 
       speakslow, blues, anxious, 
-      manic, split, muchgo, 
+      manic, split, muchgo,
       social, `force`, choice, 
       spirit, other, child_id
       )
     values (#{sicknum,jdbcType=VARCHAR}, #{doctor,jdbcType=VARCHAR}, #{datetime,jdbcType=VARCHAR}, 
       #{livenum,jdbcType=VARCHAR}, #{nospeak,jdbcType=VARCHAR}, #{brains,jdbcType=VARCHAR}, 
       #{speakslow,jdbcType=VARCHAR}, #{blues,jdbcType=VARCHAR}, #{anxious,jdbcType=VARCHAR}, 
-      #{manic,jdbcType=VARCHAR}, #{split,jdbcType=VARCHAR}, #{muchgo,jdbcType=VARCHAR}, 
+      #{manic,jdbcType=VARCHAR}, #{split,jdbcType=VARCHAR}, #{muchgo,jdbcType=VARCHAR},
       #{social,jdbcType=VARCHAR}, #{force,jdbcType=VARCHAR}, #{choice,jdbcType=VARCHAR}, 
       #{spirit,jdbcType=VARCHAR}, #{other,jdbcType=VARCHAR}, #{childId,jdbcType=INTEGER}
       )
@@ -432,8 +459,13 @@
     where id = #{id,jdbcType=INTEGER}
   </update>
 
-  <select id="mutiSelect" resultMap="BaseResultMap">
-    select * from hzh_spirit where 1=1
+  <select id="mutiSelect" resultMap="mutiSelectDto">
+    select
+    <include refid="mutiSelect_Column_List" />,`name`,s.sicknum
+    from hzh_spirit s left join hzh_general g on (g.id = s.child_id) where 1=1
+    <if test="childId != null">
+      and s.child_id = #{childId}
+    </if>
     <if test="sicknum != null">
       and sicknum = #{sicknum,jdbcType=VARCHAR}
     </if>
