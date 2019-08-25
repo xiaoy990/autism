@@ -1,6 +1,8 @@
 package com.join.autism.service.hzhNerveService.impl;
 
+import com.join.autism.entity.HzhGeneral.HzhGeneral;
 import com.join.autism.entity.HzhNerve.HzhNerve;
+import com.join.autism.entity.HzhNerve.HzhNerveDto;
 import com.join.autism.mapper.HzhNerveMapper;
 import com.join.autism.service.hzhNerveService.HzhNerveService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,8 +17,8 @@ public class HzhNerveServiceImpl implements HzhNerveService {
     HzhNerveMapper hzhNerveMapper;
 
     @Override
-    public List<HzhNerve> selectHzhNerve(HzhNerve hzhNerve) {
-        return hzhNerveMapper.mutiSelect(hzhNerve);
+    public List<HzhNerveDto> selectHzhNerve(HzhNerve hzhNerve, HzhGeneral hzhGeneral) {
+        return hzhNerveMapper.mutiSelect(hzhNerve,hzhGeneral);
     }
 
     @Override
@@ -32,5 +34,10 @@ public class HzhNerveServiceImpl implements HzhNerveService {
     @Override
     public void delHzhNerveByPK(Integer id) {
         hzhNerveMapper.deleteByPrimaryKey(id);
+    }
+
+    @Override
+    public void updateNerve(HzhNerve hzhNerve) {
+        hzhNerveMapper.updateByPrimaryKey(hzhNerve);
     }
 }

@@ -1,7 +1,10 @@
 package com.join.autism.mapper;
 
+import com.join.autism.entity.HzhGeneral.HzhGeneral;
 import com.join.autism.entity.HzhNerve.HzhNerve;
+import com.join.autism.entity.HzhNerve.HzhNerveDto;
 import com.join.autism.entity.HzhNerve.HzhNerveExample;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -11,5 +14,5 @@ import java.util.List;
  */
 @Repository
 public interface HzhNerveMapper extends MyBatisBaseDao<HzhNerve, Integer, HzhNerveExample> {
-    List<HzhNerve> mutiSelect(HzhNerve hzhNerve);
+    List<HzhNerveDto> mutiSelect(@Param("hzhNerve") HzhNerve hzhNerve,@Param("hzhGeneral") HzhGeneral hzhGeneral);
 }

@@ -14,8 +14,11 @@ import java.util.List;
 @Service
 public class HzhGeneralServiceImpl implements HzhGeneralService {
 
-    @Autowired
-    HzhGeneralMapper hzhGeneralMapper;
+    private final HzhGeneralMapper hzhGeneralMapper;
+
+    public HzhGeneralServiceImpl(HzhGeneralMapper hzhGeneralMapper) {
+        this.hzhGeneralMapper = hzhGeneralMapper;
+    }
 
     @Override
     public List<HzhGeneral> selectHzhGeneral(HzhGeneral hzhGeneral, CriteriaSupportGeneral criteriaSupportGeneral) {

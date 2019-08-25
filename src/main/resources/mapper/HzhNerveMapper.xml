@@ -20,6 +20,27 @@
     <result column="otherreason" jdbcType="VARCHAR" property="otherreason" />
     <result column="child_id" jdbcType="INTEGER" property="childId" />
   </resultMap>
+  <resultMap id="MutiSelectResultMap" type="com.join.autism.entity.HzhNerve.HzhNerveDto">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="yes_no" jdbcType="INTEGER" property="yesNo" />
+    <result column="epilepsy" jdbcType="INTEGER" property="epilepsy" />
+    <result column="epilepsyreason" jdbcType="VARCHAR" property="epilepsyreason" />
+    <result column="tension" jdbcType="INTEGER" property="tension" />
+    <result column="tensionreason" jdbcType="VARCHAR" property="tensionreason" />
+    <result column="imbalance" jdbcType="INTEGER" property="imbalance" />
+    <result column="imbalancereason" jdbcType="VARCHAR" property="imbalancereason" />
+    <result column="gait" jdbcType="INTEGER" property="gait" />
+    <result column="gaitreason" jdbcType="VARCHAR" property="gaitreason" />
+    <result column="lncrease" jdbcType="INTEGER" property="lncrease" />
+    <result column="lncreasereason" jdbcType="VARCHAR" property="lncreasereason" />
+    <result column="weaken" jdbcType="INTEGER" property="weaken" />
+    <result column="weakenreason" jdbcType="VARCHAR" property="weakenreason" />
+    <result column="other" jdbcType="INTEGER" property="other" />
+    <result column="otherreason" jdbcType="VARCHAR" property="otherreason" />
+    <result column="child_id" jdbcType="INTEGER" property="childId" />
+    <result column="name" property="name"/>
+    <result column="sicknum" property="sicknum"/>
+  </resultMap>
   <sql id="Example_Where_Clause">
     <where>
       <foreach collection="oredCriteria" item="criteria" separator="or">
@@ -81,6 +102,11 @@
   <sql id="Base_Column_List">
     id, yes_no, epilepsy, epilepsyreason, tension, tensionreason, imbalance, imbalancereason, 
     gait, gaitreason, lncrease, lncreasereason, weaken, weakenreason, other, otherreason, 
+    child_id
+  </sql>
+  <sql id="mutiSelect_Column_List">
+    n.id, yes_no, epilepsy, epilepsyreason, tension, tensionreason, imbalance, imbalancereason,
+    gait, gaitreason, lncrease, lncreasereason, weaken, weakenreason, other, otherreason,
     child_id
   </sql>
   <select id="selectByExample" parameterType="com.join.autism.entity.HzhNerve.HzhNerveExample" resultMap="BaseResultMap">
@@ -401,55 +427,62 @@
     where id = #{id,jdbcType=INTEGER}
   </update>
 
-  <select id="mutiSelect" resultMap="BaseResultMap">
-    select * from hzh_nerve where 1=1
-    <if test="yesNo != null">
-      and yes_no = #{yesNo,jdbcType=INTEGER}
+  <select id="mutiSelect" resultMap="MutiSelectResultMap">
+    select <include refid="mutiSelect_Column_List" />,`name`,g.sicknum from hzh_nerve n left join hzh_general g on (g.id = n.child_id)
+    where 1=1
+    <if test="hzhGeneral.name != null and hzhGeneral.name != ''">
+      and g.name like concat('%','${hzhGeneral.name}','%')
     </if>
-    <if test="epilepsy != null">
-      and epilepsy = #{epilepsy,jdbcType=INTEGER}
+    <if test="hzhNerve.childId != null and hzhNerve.childId != ''">
+      and n.child_id = #{hzhNerve.childId}
     </if>
-    <if test="epilepsyreason != null">
-      and epilepsyreason = #{epilepsyreason,jdbcType=VARCHAR}
+    <if test="hzhNerve.yesNo != null">
+      and yes_no = #{hzhNerve.yesNo,jdbcType=INTEGER}
     </if>
-    <if test="tension != null">
-      and tension = #{tension,jdbcType=INTEGER}
+    <if test="hzhNerve.epilepsy != null">
+      and epilepsy = #{hzhNerve.epilepsy,jdbcType=INTEGER}
     </if>
-    <if test="tensionreason != null">
-      and tensionreason = #{tensionreason,jdbcType=VARCHAR}
+    <if test="hzhNerve.epilepsyreason != null and hzhNerve.epilepsyreason != ''">
+      and epilepsyreason = #{hzhNerve.epilepsyreason,jdbcType=VARCHAR}
     </if>
-    <if test="imbalance != null">
-      and imbalance = #{imbalance,jdbcType=INTEGER}
+    <if test="hzhNerve.tension != null and hzhNerve.tension != ''">
+      and tension = #{hzhNerve.tension,jdbcType=INTEGER}
     </if>
-    <if test="imbalancereason != null">
-      and imbalancereason = #{imbalancereason,jdbcType=VARCHAR}
+    <if test="hzhNerve.tensionreason != null and hzhNerve.tensionreason != ''">
+      and tensionreason = #{hzhNerve.tensionreason,jdbcType=VARCHAR}
     </if>
-    <if test="gait != null">
-      and gait = #{gait,jdbcType=INTEGER}
+    <if test="hzhNerve.imbalance != null">
+      and imbalance = #{hzhNerve.imbalance,jdbcType=INTEGER}
     </if>
-    <if test="gaitreason != null">
-      and gaitreason = #{gaitreason,jdbcType=VARCHAR}
+    <if test="hzhNerve.imbalancereason != null and hzhNerve.imbalancereason != ''">
+      and imbalancereason = #{hzhNerve.imbalancereason,jdbcType=VARCHAR}
     </if>
-    <if test="lncrease != null">
-      and lncrease = #{lncrease,jdbcType=INTEGER}
+    <if test="hzhNerve.gait != null">
+      and gait = #{hzhNerve.gait,jdbcType=INTEGER}
     </if>
-    <if test="lncreasereason != null">
-      and lncreasereason = #{lncreasereason,jdbcType=VARCHAR}
+    <if test="hzhNerve.gaitreason != null and hzhNerve.gaitreason != ''">
+      and gaitreason = #{hzhNerve.gaitreason,jdbcType=VARCHAR}
     </if>
-    <if test="weaken != null">
-      and weaken = #{weaken,jdbcType=INTEGER}
+    <if test="hzhNerve.lncrease != null">
+      and lncrease = #{hzhNerve.lncrease,jdbcType=INTEGER}
     </if>
-    <if test="weakenreason != null">
-      and weakenreason = #{weakenreason,jdbcType=VARCHAR}
+    <if test="hzhNerve.lncreasereason != null and hzhNerve.lncreasereason != ''">
+      and lncreasereason = #{hzhNerve.lncreasereason,jdbcType=VARCHAR}
     </if>
-    <if test="other != null">
-      and other = #{other,jdbcType=INTEGER}
+    <if test="hzhNerve.weaken != null">
+      and weaken = #{hzhNerve.weaken,jdbcType=INTEGER}
     </if>
-    <if test="otherreason != null">
-      and otherreason = #{otherreason,jdbcType=VARCHAR}
+    <if test="hzhNerve.weakenreason != null and hzhNerve.weakenreason != ''">
+      and weakenreason = #{hzhNerve.weakenreason,jdbcType=VARCHAR}
     </if>
-    <if test="childId != null">
-      and child_id = #{childId,jdbcType=INTEGER}
+    <if test="hzhNerve.other != null">
+      and other = #{hzhNerve.other,jdbcType=INTEGER}
+    </if>
+    <if test="hzhNerve.otherreason != null and hzhNerve.otherreason != '' ">
+      and otherreason = #{hzhNerve.otherreason,jdbcType=VARCHAR}
+    </if>
+    <if test="hzhNerve.childId != null">
+      and child_id = #{hzhNerve.childId,jdbcType=INTEGER}
     </if>
   </select>
 </mapper>
