@@ -1,6 +1,7 @@
 package com.join.autism.controller.HzhEmotionController;
 
 import com.join.autism.entity.HzhEmotion.HzhEmotion;
+import com.join.autism.entity.HzhEmotion.HzhEmotionDto;
 import com.join.autism.service.hzhEmotionService.HzhEmotionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -18,13 +19,12 @@ import java.util.List;
 public class HzhEmotionController {
 
     private final HzhEmotionService hzhEmotionService;
-    @Autowired
     public HzhEmotionController(HzhEmotionService hzhEmotionService){
         this.hzhEmotionService = hzhEmotionService;
     }
 
     @RequestMapping("selectEmotion")
-    public List<HzhEmotion> selectHzhEmotion(HzhEmotion hzhEmotion){
+    public List<HzhEmotionDto> selectHzhEmotion(HzhEmotion hzhEmotion){
         return hzhEmotionService.selectHzhEmotion(hzhEmotion);
     }
 

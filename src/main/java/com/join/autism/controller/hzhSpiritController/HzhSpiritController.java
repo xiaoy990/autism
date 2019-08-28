@@ -3,7 +3,6 @@ package com.join.autism.controller.hzhSpiritController;
 import com.join.autism.entity.HzhSpirit.HzhSpirit;
 import com.join.autism.entity.HzhSpirit.HzhSpiritDto;
 import com.join.autism.service.hzhSpiritService.HzhSpiritService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -18,17 +17,29 @@ import java.util.List;
 @RequestMapping("spirit")
 public class HzhSpiritController {
 
-    @Autowired
-    HzhSpiritService hzhSpiritService;
+    private final HzhSpiritService hzhSpiritService;
+
+    public HzhSpiritController(HzhSpiritService hzhSpiritService) {
+        this.hzhSpiritService = hzhSpiritService;
+    }
 
     @RequestMapping("selectSpirit")
     public List<HzhSpiritDto> queryAll(HzhSpirit hzhSpirit){
         return hzhSpiritService.selectHzhSpirit(hzhSpirit);
     }
 
-    @RequestMapping("addSpirit")
-    public String insertSpirit(HzhSpirit hzhSpirit){
+    @RequestMapping("insertSpirit")
+    public void insertSpirit(HzhSpirit hzhSpirit){
         hzhSpiritService.insertHzhSpirit(hzhSpirit);
-        return "200";
+    }
+
+    @RequestMapping("deleteSpirit")
+    public void delSpirit(HzhSpirit hzhSpirit){
+        hzhSpiritService.delHzhSpiritByPK(hzhSpirit.getId());
+    }
+
+    @RequestMapping("updateSpirit")
+    public void update(HzhSpirit hzhSpirit){
+        hzhSpiritService.updateHzhSpirit(hzhSpirit);
     }
 }

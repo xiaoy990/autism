@@ -1,5 +1,6 @@
 package com.join.autism.controller.hzhInbornController;
 
+import com.join.autism.entity.HzhInborn.HzhInbornDto;
 import com.join.autism.entity.HzhInborn.HzhInborn;
 import com.join.autism.service.hzhInbornService.HzhInbornService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,7 +26,7 @@ public class HzhInbornController {
     }
 
     @RequestMapping("selectInborn")
-    public List<HzhInborn> selectInborn(HzhInborn hzhInborn){
+    public List<HzhInbornDto> selectInborn(HzhInborn hzhInborn){
         return hzhInbornService.selectHzhInborn(hzhInborn);
     }
 

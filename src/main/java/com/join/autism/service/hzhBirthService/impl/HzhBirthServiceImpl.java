@@ -1,9 +1,9 @@
 package com.join.autism.service.hzhBirthService.impl;
 
 import com.join.autism.entity.HzhBirth.HzhBirth;
+import com.join.autism.entity.HzhBirth.HzhBirthDto;
 import com.join.autism.mapper.HzhBirthMapper;
 import com.join.autism.service.hzhBirthService.HzhBirthService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -11,11 +11,14 @@ import java.util.List;
 @Service
 public class HzhBirthServiceImpl implements HzhBirthService {
 
-    @Autowired
-    HzhBirthMapper hzhBirthMapper;
+    private final HzhBirthMapper hzhBirthMapper;
+
+    public HzhBirthServiceImpl(HzhBirthMapper hzhBirthMapper) {
+        this.hzhBirthMapper = hzhBirthMapper;
+    }
 
     @Override
-    public List<HzhBirth> selectHzhBirth(HzhBirth hzhBirth) {
+    public List<HzhBirthDto> selectHzhBirth(HzhBirth hzhBirth) {
         return hzhBirthMapper.mutiSelect(hzhBirth);
     }
 
@@ -32,5 +35,10 @@ public class HzhBirthServiceImpl implements HzhBirthService {
     @Override
     public void delHzhBirthByPK(Integer id) {
         hzhBirthMapper.deleteByPrimaryKey(id);
+    }
+
+    @Override
+    public void updateBirth(HzhBirth hzhBirth) {
+        hzhBirthMapper.updateByPrimaryKey(hzhBirth);
     }
 }

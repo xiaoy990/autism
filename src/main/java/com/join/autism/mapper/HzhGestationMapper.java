@@ -1,6 +1,7 @@
 package com.join.autism.mapper;
 
 import com.join.autism.entity.HzhGestation.HzhGestation;
+import com.join.autism.entity.HzhGestation.HzhGestationDto;
 import com.join.autism.entity.HzhGestation.HzhGestationExample;
 import org.springframework.stereotype.Repository;
 
@@ -11,5 +12,5 @@ import java.util.List;
  */
 @Repository
 public interface HzhGestationMapper extends MyBatisBaseDao<HzhGestation, Integer, HzhGestationExample> {
-    List<HzhGestation> mutiSelect(HzhGestation hzhGestation);
+    List<HzhGestationDto> mutiSelect(HzhGestation hzhGestation);
 }

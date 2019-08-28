@@ -2,6 +2,7 @@ package com.join.autism.controller.hzhGestationController;
 
 import com.join.autism.entity.HzhFamily.HzhFamily;
 import com.join.autism.entity.HzhGestation.HzhGestation;
+import com.join.autism.entity.HzhGestation.HzhGestationDto;
 import com.join.autism.service.hzhGestationService.HzhGestationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
@@ -93,8 +94,8 @@ public class HzhGestationController {
      * @return
      */
     @RequestMapping(value = "/mutiSelectGestation")
-    public List<HzhGestation> mutiSelectGestation(Model model){
-        List<HzhGestation> mutiSelectGestationList = null;
+    public List<HzhGestationDto> mutiSelectGestation(Model model){
+        List<HzhGestationDto> mutiSelectGestationList = null;
         try {
             mutiSelectGestationList = hzhGestationService.mutiSelectGestation();
             model.addAttribute("mutiSelectGestationList",mutiSelectGestationList);

@@ -1,5 +1,6 @@
 package com.join.autism.service.hzhGestationService.impl;
 import com.join.autism.entity.HzhGestation.HzhGestation;
+import com.join.autism.entity.HzhGestation.HzhGestationDto;
 import com.join.autism.mapper.HzhGestationMapper;
 import com.join.autism.service.hzhGestationService.HzhGestationService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -51,9 +52,9 @@ public class HzhGestationServiceImpl implements HzhGestationService{
      * @return
      */
     @Override
-    public List<HzhGestation> mutiSelectGestation(){
+    public List<HzhGestationDto> mutiSelectGestation(){
         HzhGestation hzhGestation = new HzhGestation();
-        List<HzhGestation> mutiSelectGestationList = hzhGestationMapper.mutiSelect(hzhGestation);
+        List<HzhGestationDto> mutiSelectGestationList = hzhGestationMapper.mutiSelect(hzhGestation);
         return mutiSelectGestationList;
     }
 

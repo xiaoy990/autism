@@ -1,6 +1,7 @@
 package com.join.autism.service.hzhGestationService;
 
 import com.join.autism.entity.HzhGestation.HzhGestation;
+import com.join.autism.entity.HzhGestation.HzhGestationDto;
 
 import java.util.List;
 
@@ -33,5 +34,5 @@ public interface HzhGestationService {
      * 多条件查询
      * @return
      */
-    public List<HzhGestation> mutiSelectGestation();
+    public List<HzhGestationDto> mutiSelectGestation();
 }

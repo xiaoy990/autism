@@ -31,6 +31,37 @@
     <result column="otherreason" jdbcType="VARCHAR" property="otherreason" />
     <result column="child_id" jdbcType="INTEGER" property="childId" />
   </resultMap>
+  <resultMap id="mutiSelectResultMap" type="com.join.autism.entity.HzhInborn.HzhInbornDto">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="sicknum" jdbcType="VARCHAR" property="sicknum" />
+    <result column="doctor" jdbcType="VARCHAR" property="doctor" />
+    <result column="datetime" jdbcType="VARCHAR" property="datetime" />
+    <result column="livenum" jdbcType="VARCHAR" property="livenum" />
+    <result column="skull" jdbcType="VARCHAR" property="skull" />
+    <result column="skullreason" jdbcType="VARCHAR" property="skullreason" />
+    <result column="ear" jdbcType="VARCHAR" property="ear" />
+    <result column="earreason" jdbcType="VARCHAR" property="earreason" />
+    <result column="eye" jdbcType="VARCHAR" property="eye" />
+    <result column="eyereason" jdbcType="VARCHAR" property="eyereason" />
+    <result column="nose" jdbcType="VARCHAR" property="nose" />
+    <result column="nosereason" jdbcType="VARCHAR" property="nosereason" />
+    <result column="center" jdbcType="VARCHAR" property="center" />
+    <result column="centerreason" jdbcType="VARCHAR" property="centerreason" />
+    <result column="mouth" jdbcType="VARCHAR" property="mouth" />
+    <result column="mouthreason" jdbcType="VARCHAR" property="mouthreason" />
+    <result column="jaw" jdbcType="VARCHAR" property="jaw" />
+    <result column="jawreason" jdbcType="VARCHAR" property="jawreason" />
+    <result column="breast" jdbcType="VARCHAR" property="breast" />
+    <result column="breastreason" jdbcType="VARCHAR" property="breastreason" />
+    <result column="footleg" jdbcType="VARCHAR" property="footleg" />
+    <result column="footlegreason" jdbcType="VARCHAR" property="footlegreason" />
+    <result column="heart" jdbcType="VARCHAR" property="heart" />
+    <result column="belly" jdbcType="VARCHAR" property="belly" />
+    <result column="skin" jdbcType="VARCHAR" property="skin" />
+    <result column="otherreason" jdbcType="VARCHAR" property="otherreason" />
+    <result column="child_id" jdbcType="INTEGER" property="childId" />
+    <result column="name" property="name"/>
+  </resultMap>
   <sql id="Example_Where_Clause">
     <where>
       <foreach collection="oredCriteria" item="criteria" separator="or">
@@ -93,6 +124,12 @@
     id, sicknum, doctor, `datetime`, livenum, skull, skullreason, ear, earreason, eye, 
     eyereason, nose, nosereason, center, centerreason, mouth, mouthreason, jaw, jawreason, 
     breast, breastreason, footleg, footlegreason, heart, belly, skin, otherreason, child_id
+  </sql>
+  <sql id="mutiSelect_Column_List">
+    i.id, i.sicknum, i.doctor, `datetime`, i.livenum, skull, skullreason, ear, earreason, eye,
+    eyereason, nose, nosereason, center, centerreason, mouth, mouthreason, jaw, jawreason,
+    breast, breastreason, footleg, footlegreason, heart, belly, skin, otherreason, child_id,
+    g.name
   </sql>
   <select id="selectByExample" parameterType="com.join.autism.entity.HzhInborn.HzhInbornExample" resultMap="BaseResultMap">
     select
@@ -574,8 +611,8 @@
     where id = #{id,jdbcType=INTEGER}
   </update>
 
-  <select id="mutiSelect" resultMap="BaseResultMap">
-    select  * from hzh_inborn where 1=1
+  <select id="mutiSelect" resultMap="mutiSelectResultMap">
+    select <include refid="mutiSelect_Column_List"/> from hzh_inborn i left join hzh_general g on (i.child_id = g.id) where 1=1
     <if test="sicknum != null">
        and sicknum = #{sicknum,jdbcType=VARCHAR}
     </if>

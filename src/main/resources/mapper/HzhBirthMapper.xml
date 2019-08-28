@@ -31,6 +31,39 @@
     <result column="vitamdreason" jdbcType="VARCHAR" property="vitamdreason" />
     <result column="child_id" jdbcType="INTEGER" property="childId" />
   </resultMap>
+  <resultMap id="mutiSelectResultMap" type="com.join.autism.entity.HzhBirth.HzhBirth">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="birth" jdbcType="INTEGER" property="birth" />
+    <result column="birthreason" jdbcType="VARCHAR" property="birthreason" />
+    <result column="kg" jdbcType="VARCHAR" property="kg" />
+    <result column="score" jdbcType="INTEGER" property="score" />
+    <result column="scorereason" jdbcType="VARCHAR" property="scorereason" />
+    <result column="gogo" jdbcType="INTEGER" property="gogo" />
+    <result column="gogoreason" jdbcType="VARCHAR" property="gogoreason" />
+    <result column="assist" jdbcType="INTEGER" property="assist" />
+    <result column="assistreason" jdbcType="VARCHAR" property="assistreason" />
+    <result column="compl" jdbcType="VARCHAR" property="compl" />
+    <result column="complreason" jdbcType="VARCHAR" property="complreason" />
+    <result column="mombra" jdbcType="INTEGER" property="mombra" />
+    <result column="mombrareason" jdbcType="VARCHAR" property="mombrareason" />
+    <result column="bradiff" jdbcType="VARCHAR" property="bradiff" />
+    <result column="bradiffreason" jdbcType="VARCHAR" property="bradiffreason" />
+    <result column="grow" jdbcType="INTEGER" property="grow" />
+    <result column="growreason" jdbcType="VARCHAR" property="growreason" />
+    <result column="growslowreason" jdbcType="VARCHAR" property="growslowreason" />
+    <result column="monthup" jdbcType="INTEGER" property="monthup" />
+    <result column="monthroll" jdbcType="INTEGER" property="monthroll" />
+    <result column="monthsit" jdbcType="INTEGER" property="monthsit" />
+    <result column="monthclimb" jdbcType="INTEGER" property="monthclimb" />
+    <result column="monthgo" jdbcType="INTEGER" property="monthgo" />
+    <result column="speakreason" jdbcType="VARCHAR" property="speakreason" />
+    <result column="vitamd" jdbcType="INTEGER" property="vitamd" />
+    <result column="vitamdreason" jdbcType="VARCHAR" property="vitamdreason" />
+    <result column="child_id" jdbcType="INTEGER" property="childId" />
+    <result column="name" property="name"/>
+    <result column="sicknum" property="sicknum"/>
+    <result column="doctor" property="doctor"/>
+  </resultMap>
   <sql id="Example_Where_Clause">
     <where>
       <foreach collection="oredCriteria" item="criteria" separator="or">
@@ -94,6 +127,12 @@
     compl, complreason, mombra, mombrareason, bradiff, bradiffreason, grow, growreason, 
     growslowreason, monthup, monthroll, monthsit, monthclimb, monthgo, speakreason, vitamd, 
     vitamdreason, child_id
+  </sql>
+  <sql id="mutiSelect_Column_List">
+    b.id, birth, birthreason, kg, score, scorereason, gogo, gogoreason, assist, assistreason,
+    compl, complreason, mombra, mombrareason, bradiff, bradiffreason, grow, growreason,
+    growslowreason, monthup, monthroll, monthsit, monthclimb, monthgo, speakreason, vitamd,
+    vitamdreason, child_id, g.name,g.sicknum,g.doctor
   </sql>
   <select id="selectByExample" parameterType="com.join.autism.entity.HzhBirth.HzhBirthExample" resultMap="BaseResultMap">
     select
@@ -575,8 +614,8 @@
     where id = #{id,jdbcType=INTEGER}
   </update>
 
-  <select id="mutiSelect" resultMap="BaseResultMap">
-    select * from hzh_birth where  1=1
+  <select id="mutiSelect" resultMap="mutiSelectResultMap">
+    select <include refid="mutiSelect_Column_List"/> from hzh_birth b left join hzh_general g on ( b.child_id = g.id )where  1=1
     <if test="birth != null">
       and birth = #{birth,jdbcType=INTEGER}
     </if>

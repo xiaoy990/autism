@@ -1,6 +1,7 @@
 package com.join.autism.controller.hzhBirthController;
 
 import com.join.autism.entity.HzhBirth.HzhBirth;
+import com.join.autism.entity.HzhBirth.HzhBirthDto;
 import com.join.autism.service.hzhBirthService.HzhBirthService;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -26,7 +27,7 @@ public class HzhBirthController {
      * @Param hzhBirth包括了任何传入的属性组合，若不传入默认为null，即该条件不做限制
      * */
     @RequestMapping("selectBirth")
-    public List<HzhBirth> selectBirth(HzhBirth hzhBirth){
+    public List<HzhBirthDto> selectBirth(HzhBirth hzhBirth){
         return hzhBirthService.selectHzhBirth(hzhBirth);
     }
     /**
@@ -36,4 +37,10 @@ public class HzhBirthController {
     public void addBirth(HzhBirth hzhBirth){
         hzhBirthService.insertHzhBirth(hzhBirth);
     }
+
+    @RequestMapping("deleteBirth")
+    public void deleteBirth(HzhBirth hzhBirth){hzhBirthService.delHzhBirthByPK(hzhBirth.getId());}
+
+    @RequestMapping("updateBirth")
+    public void updateBirth(HzhBirth hzhBirth){hzhBirthService.updateBirth(hzhBirth);}
 }

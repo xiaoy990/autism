@@ -34,4 +34,9 @@ public class HzhSpiritServiceImpl implements HzhSpiritService {
     public void delHzhSpiritByPK(Integer id) {
         hzhSpiritMapper.deleteByPrimaryKey(id);
     }
+
+    @Override
+    public void updateHzhSpirit(HzhSpirit hzhSpirit) {
+        hzhSpiritMapper.updateByPrimaryKey(hzhSpirit);
+    }
 }

@@ -10,4 +10,5 @@ public interface HzhSpiritService {
     HzhSpirit selectHzhSpiritByPK(Integer id);
     void insertHzhSpirit(HzhSpirit hzhSpirit);
     void delHzhSpiritByPK(Integer id);
+    void updateHzhSpirit(HzhSpirit hzhSpirit);
 }

@@ -1,6 +1,7 @@
 package com.join.autism.service.hzhRtmService.impl;
 
 import com.join.autism.entity.HzhRtm.HzhRtm;
+import com.join.autism.entity.HzhRtm.HzhRtmDto;
 import com.join.autism.mapper.HzhRtmMapper;
 import com.join.autism.service.hzhRtmService.HzhRtmService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,7 +19,7 @@ public class HzhRtmServiceImpl implements HzhRtmService {
     }
 
     @Override
-    public List<HzhRtm> selectHzhRtm(HzhRtm hzhRtm) {
+    public List<HzhRtmDto> selectHzhRtm(HzhRtm hzhRtm) {
         return hzhRtmMapper.mutiSelect(hzhRtm);
     }
 

@@ -26,6 +26,34 @@
     <result column="is_movement" jdbcType="INTEGER" property="isMovement" />
     <result column="addtime" jdbcType="INTEGER" property="addtime" />
   </resultMap>
+  <resultMap id="mutiSelectResultMap" type="com.join.autism.entity.HzhRtm.HzhRtmDto">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="child_id" jdbcType="INTEGER" property="childId" />
+    <result column="is_look" jdbcType="INTEGER" property="isLook" />
+    <result column="is_hearing" jdbcType="INTEGER" property="isHearing" />
+    <result column="is_game" jdbcType="INTEGER" property="isGame" />
+    <result column="is_climbing" jdbcType="INTEGER" property="isClimbing" />
+    <result column="is_finger" jdbcType="INTEGER" property="isFinger" />
+    <result column="is_help" jdbcType="INTEGER" property="isHelp" />
+    <result column="is_interest" jdbcType="INTEGER" property="isInterest" />
+    <result column="is_children" jdbcType="INTEGER" property="isChildren" />
+    <result column="is_parents_look" jdbcType="INTEGER" property="isParentsLook" />
+    <result column="is_response" jdbcType="INTEGER" property="isResponse" />
+    <result column="is_smile_response" jdbcType="INTEGER" property="isSmileResponse" />
+    <result column="is_noise" jdbcType="INTEGER" property="isNoise" />
+    <result column="is_go" jdbcType="INTEGER" property="isGo" />
+    <result column="is_eye" jdbcType="INTEGER" property="isEye" />
+    <result column="is_imitate" jdbcType="INTEGER" property="isImitate" />
+    <result column="is_search" jdbcType="INTEGER" property="isSearch" />
+    <result column="is_attract" jdbcType="INTEGER" property="isAttract" />
+    <result column="is_understand" jdbcType="INTEGER" property="isUnderstand" />
+    <result column="is_reaction" jdbcType="INTEGER" property="isReaction" />
+    <result column="is_movement" jdbcType="INTEGER" property="isMovement" />
+    <result column="addtime" jdbcType="INTEGER" property="addtime" />
+    <result column="name" property="name"/>
+    <result column="sicknum" property="sicknum"/>
+    <result column="doctor" property="doctor"/>
+  </resultMap>
   <sql id="Example_Where_Clause">
     <where>
       <foreach collection="oredCriteria" item="criteria" separator="or">
@@ -88,6 +116,12 @@
     id, child_id, is_look, is_hearing, is_game, is_climbing, is_finger, is_help, is_interest, 
     is_children, is_parents_look, is_response, is_smile_response, is_noise, is_go, is_eye, 
     is_imitate, is_search, is_attract, is_understand, is_reaction, is_movement, addtime
+  </sql>
+  <sql id="mutiSelect_Column_List">
+    r.id, child_id, is_look, is_hearing, is_game, is_climbing, is_finger, is_help, is_interest,
+    is_children, is_parents_look, is_response, is_smile_response, is_noise, is_go, is_eye,
+    is_imitate, is_search, is_attract, is_understand, is_reaction, is_movement, addtime,
+    g.name, g.sicknum, g.doctor
   </sql>
   <select id="selectByExample" parameterType="com.join.autism.entity.HzhRtm.HzhRtmExample" resultMap="BaseResultMap">
     select
@@ -495,8 +529,8 @@
     where id = #{id,jdbcType=INTEGER}
   </update>
 
-  <select id="mutiSelect" resultMap="BaseResultMap">
-    select * from hzh_rtm where 1=1
+  <select id="mutiSelect" resultMap="mutiSelectResultMap">
+    select <include refid="mutiSelect_Column_List"/> from hzh_rtm r left join hzh_general g on (r.child_id = g.id) where 1=1
     <if test="childId != null">
       and child_id = #{childId,jdbcType=INTEGER}
     </if>

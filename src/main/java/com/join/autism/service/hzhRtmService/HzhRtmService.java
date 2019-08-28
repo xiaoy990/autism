@@ -1,11 +1,12 @@
 package com.join.autism.service.hzhRtmService;
 
 import com.join.autism.entity.HzhRtm.HzhRtm;
+import com.join.autism.entity.HzhRtm.HzhRtmDto;
 
 import java.util.List;
 
 public interface HzhRtmService {
-    List<HzhRtm> selectHzhRtm(HzhRtm hzhRtm);
+    List<HzhRtmDto> selectHzhRtm(HzhRtm hzhRtm);
     HzhRtm selectHzhRtmByPK(Integer id);
     void insertHzhRtm(HzhRtm hzhRtm);
     void delHzhRtmByPK(Integer id);

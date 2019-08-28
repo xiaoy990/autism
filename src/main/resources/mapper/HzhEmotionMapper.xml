@@ -22,6 +22,30 @@
     <result column="frasum" jdbcType="INTEGER" property="frasum" />
     <result column="addtime" jdbcType="INTEGER" property="addtime" />
   </resultMap>
+  <resultMap id="mutiSelectResultMap" type="com.join.autism.entity.HzhEmotion.HzhEmotionDto">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="child_id" jdbcType="INTEGER" property="childId" />
+    <result column="rela" jdbcType="INTEGER" property="rela" />
+    <result column="imitate" jdbcType="INTEGER" property="imitate" />
+    <result column="emotion" jdbcType="INTEGER" property="emotion" />
+    <result column="motion" jdbcType="INTEGER" property="motion" />
+    <result column="nonlife" jdbcType="INTEGER" property="nonlife" />
+    <result column="change" jdbcType="INTEGER" property="change" />
+    <result column="vision" jdbcType="INTEGER" property="vision" />
+    <result column="hearing" jdbcType="INTEGER" property="hearing" />
+    <result column="nearby" jdbcType="INTEGER" property="nearby" />
+    <result column="anxious" jdbcType="INTEGER" property="anxious" />
+    <result column="language" jdbcType="INTEGER" property="language" />
+    <result column="nolan" jdbcType="INTEGER" property="nolan" />
+    <result column="activity" jdbcType="INTEGER" property="activity" />
+    <result column="intelligence" jdbcType="INTEGER" property="intelligence" />
+    <result column="impression" jdbcType="INTEGER" property="impression" />
+    <result column="frasum" jdbcType="INTEGER" property="frasum" />
+    <result column="addtime" jdbcType="INTEGER" property="addtime" />
+    <result column="name" property="name"/>
+    <result column="sicknum" property="sicknum"/>
+    <result column="doctor" property="doctor"/>
+  </resultMap>
   <sql id="Example_Where_Clause">
     <where>
       <foreach collection="oredCriteria" item="criteria" separator="or">
@@ -83,6 +107,10 @@
   <sql id="Base_Column_List">
     id, child_id, rela, imitate, emotion, motion, nonlife, `change`, vision, hearing, 
     nearby, anxious, `language`, nolan, activity, intelligence, impression, frasum, addtime
+  </sql>
+  <sql id="mutiSelect_Column_List">
+    e.id, child_id, rela, imitate, emotion, motion, nonlife, `change`, vision, hearing,
+    nearby, anxious, `language`, nolan, activity, intelligence, impression, frasum, addtime, g.name, g.doctor,g.sicknum
   </sql>
   <select id="selectByExample" parameterType="com.join.autism.entity.HzhEmotion.HzhEmotionExample" resultMap="BaseResultMap">
     select
@@ -432,8 +460,8 @@
     where id = #{id,jdbcType=INTEGER}
   </update>
 
-  <select id="mutiSelect" resultMap="BaseResultMap">
-    select * from hzh_emotion where 1=1
+  <select id="mutiSelect" resultMap="mutiSelectResultMap">
+    select <include refid="mutiSelect_Column_List"/> from hzh_emotion e left join hzh_general g on (e.child_id = g.id) where 1=1
     <if test="childId != null">
       and child_id = #{childId,jdbcType=INTEGER}
     </if>

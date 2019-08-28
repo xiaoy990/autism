@@ -1,6 +1,7 @@
 package com.join.autism.controller.hzhRtmControlelr;
 
 import com.join.autism.entity.HzhRtm.HzhRtm;
+import com.join.autism.entity.HzhRtm.HzhRtmDto;
 import com.join.autism.service.hzhRtmService.HzhRtmService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -24,7 +25,7 @@ public class HzhRtmController {
     }
 
     @RequestMapping("selectRtm")
-    public List<HzhRtm> selectRtm(HzhRtm hzhRtm){
+    public List<HzhRtmDto> selectRtm(HzhRtm hzhRtm){
         return hzhRtmService.selectHzhRtm(hzhRtm);
     }
 

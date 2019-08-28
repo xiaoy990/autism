@@ -1,6 +1,7 @@
 package com.join.autism.mapper;
 
 import com.join.autism.entity.HzhRtm.HzhRtm;
+import com.join.autism.entity.HzhRtm.HzhRtmDto;
 import com.join.autism.entity.HzhRtm.HzhRtmExample;
 import org.springframework.stereotype.Repository;
 
@@ -12,5 +13,5 @@ import java.util.List;
 @Repository
 public interface HzhRtmMapper extends MyBatisBaseDao<HzhRtm, Integer, HzhRtmExample> {
 
-    public List<HzhRtm> mutiSelect(HzhRtm hzhRtm);
+    List<HzhRtmDto> mutiSelect(HzhRtm hzhRtm);
 }
