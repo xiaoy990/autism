@@ -33,7 +33,7 @@ public class HzhBirthController {
     /**
      * 添加出生和喂养情况，允许有空存在
      * */
-    @RequestMapping("addBirth")
+    @RequestMapping("insertBirth")
     public void addBirth(HzhBirth hzhBirth){
         hzhBirthService.insertHzhBirth(hzhBirth);
     }

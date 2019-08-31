@@ -31,7 +31,7 @@
     <result column="vitamdreason" jdbcType="VARCHAR" property="vitamdreason" />
     <result column="child_id" jdbcType="INTEGER" property="childId" />
   </resultMap>
-  <resultMap id="mutiSelectResultMap" type="com.join.autism.entity.HzhBirth.HzhBirth">
+  <resultMap id="mutiSelectResultMap" type="com.join.autism.entity.HzhBirth.HzhBirthDto">
     <id column="id" jdbcType="INTEGER" property="id" />
     <result column="birth" jdbcType="INTEGER" property="birth" />
     <result column="birthreason" jdbcType="VARCHAR" property="birthreason" />

@@ -13,6 +13,121 @@
     <result column="intel_content" jdbcType="VARCHAR" property="intelContent" />
     <result column="child_id" jdbcType="INTEGER" property="childId" />
   </resultMap>
+
+  <resultMap id="MutiSelectResultMap" type="com.join.autism.entity.HzhOther.HzhOtherDto">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="stature" jdbcType="VARCHAR" property="stature" />
+    <result column="weight" jdbcType="VARCHAR" property="weight" />
+    <result column="head" jdbcType="VARCHAR" property="head" />
+    <result column="intel" jdbcType="VARCHAR" property="intel" />
+    <result column="drug" jdbcType="VARCHAR" property="drug" />
+    <result column="act" jdbcType="VARCHAR" property="act" />
+    <result column="other" jdbcType="VARCHAR" property="other" />
+    <result column="intel_content" jdbcType="VARCHAR" property="intelContent" />
+    <result column="child_id" jdbcType="INTEGER" property="childId" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="sicknum" jdbcType="VARCHAR" property="sicknum" />
+    <result column="doctor" jdbcType="VARCHAR" property="doctor" />
+    <result column="survey_time" jdbcType="VARCHAR" property="surveyTime" />
+    <result column="livenum" jdbcType="VARCHAR" property="livenum" />
+  </resultMap>
+
+  <!--增加-->
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.join.autism.entity.HzhOther.HzhOther" useGeneratedKeys="true">
+    insert into hzh_other (stature, weight, head,
+      intel, drug, act, other,
+      intel_content, child_id)
+    values (#{stature,jdbcType=VARCHAR}, #{weight,jdbcType=VARCHAR}, #{head,jdbcType=VARCHAR},
+      #{intel,jdbcType=VARCHAR}, #{drug,jdbcType=VARCHAR}, #{act,jdbcType=VARCHAR}, #{other,jdbcType=VARCHAR},
+      #{intelContent,jdbcType=VARCHAR}, #{childId,jdbcType=INTEGER})
+  </insert>
+
+  <!--根据id删除-->
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from hzh_other
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+
+  <!--根据id修改-->
+  <update id="updateByPrimaryKeySelective" parameterType="com.join.autism.entity.HzhOther.HzhOther">
+    update hzh_other
+    <set>
+      <if test="stature != null">
+        stature = #{stature,jdbcType=VARCHAR},
+      </if>
+      <if test="weight != null">
+        weight = #{weight,jdbcType=VARCHAR},
+      </if>
+      <if test="head != null">
+        head = #{head,jdbcType=VARCHAR},
+      </if>
+      <if test="intel != null">
+        intel = #{intel,jdbcType=VARCHAR},
+      </if>
+      <if test="drug != null">
+        drug = #{drug,jdbcType=VARCHAR},
+      </if>
+      <if test="act != null">
+        act = #{act,jdbcType=VARCHAR},
+      </if>
+      <if test="other != null">
+        other = #{other,jdbcType=VARCHAR},
+      </if>
+      <if test="intelContent != null">
+        intel_content = #{intelContent,jdbcType=VARCHAR},
+      </if>
+      <if test="childId != null">
+        child_id = #{childId,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+
+  <sql id="Base_Column_List">
+    id, stature, weight, head, intel, drug, act, other, intel_content, child_id
+  </sql>
+
+  <sql id="mutiSelect_Column_List">
+    other.id, stature, weight, head, intel, drug, act, other, intel_content, child_id
+  </sql>
+
+  <!--多条件查询-->
+  <select id="mutiSelect" resultMap="MutiSelectResultMap">
+    select <include refid="mutiSelect_Column_List"/>,`name`,g.sicknum,g.doctor,g.survey_time,g.livenum from hzh_other other left join hzh_general g on (g.id = other.child_id)
+    where 1 = 1
+    <if test="other.stature != null and other.stature != ''">
+      and other.stature = #{other.stature,jdbcType=VARCHAR}
+    </if>
+    <if test="other.weight != null and other.weight != ''">
+      and other.weight = #{other.weight,jdbcType=VARCHAR}
+    </if>
+    <if test="other.head != null and other.head != ''">
+      and other.head = #{other.head,jdbcType=VARCHAR}
+    </if>
+    <if test="other.intel != null and other.intel != ''">
+      and other.intel = #{other.intel,jdbcType=VARCHAR}
+    </if>
+    <if test="other.drug != null and other.drug != ''">
+      and other.drug = #{other.drug,jdbcType=VARCHAR}
+    </if>
+    <if test="other.act != null and other.act != ''">
+      and other.act = #{other.act,jdbcType=VARCHAR}
+    </if>
+    <if test="other.other != null and other.other != ''">
+      and other.other = #{other.other,jdbcType=VARCHAR}
+    </if>
+    <if test="other.intelContent != null and other.intelContent != ''">
+      and other.intel_content = #{other.intelContent,jdbcType=VARCHAR}
+    </if>
+    <if test="other.childId != null and other.childId != ''">
+      and other.child_id = #{other.childId,jdbcType=INTEGER}
+    </if>
+  </select>
+
+
+
+
+
   <sql id="Example_Where_Clause">
     <where>
       <foreach collection="oredCriteria" item="criteria" separator="or">
@@ -71,9 +186,6 @@
       </foreach>
     </where>
   </sql>
-  <sql id="Base_Column_List">
-    id, stature, weight, head, intel, drug, act, other, intel_content, child_id
-  </sql>
   <select id="selectByExample" parameterType="com.join.autism.entity.HzhOther.HzhOtherExample" resultMap="BaseResultMap">
     select
     <if test="distinct">
@@ -102,24 +214,12 @@
     from hzh_other
     where id = #{id,jdbcType=INTEGER}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
-    delete from hzh_other
-    where id = #{id,jdbcType=INTEGER}
-  </delete>
   <delete id="deleteByExample" parameterType="com.join.autism.entity.HzhOther.HzhOtherExample">
     delete from hzh_other
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.join.autism.entity.HzhOther.HzhOther" useGeneratedKeys="true">
-    insert into hzh_other (stature, weight, head, 
-      intel, drug, act, other, 
-      intel_content, child_id)
-    values (#{stature,jdbcType=VARCHAR}, #{weight,jdbcType=VARCHAR}, #{head,jdbcType=VARCHAR}, 
-      #{intel,jdbcType=VARCHAR}, #{drug,jdbcType=VARCHAR}, #{act,jdbcType=VARCHAR}, #{other,jdbcType=VARCHAR}, 
-      #{intelContent,jdbcType=VARCHAR}, #{childId,jdbcType=INTEGER})
-  </insert>
   <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.join.autism.entity.HzhOther.HzhOther" useGeneratedKeys="true">
     insert into hzh_other
     <trim prefix="(" suffix=")" suffixOverrides=",">
@@ -240,39 +340,6 @@
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
-  </update>
-  <update id="updateByPrimaryKeySelective" parameterType="com.join.autism.entity.HzhOther.HzhOther">
-    update hzh_other
-    <set>
-      <if test="stature != null">
-        stature = #{stature,jdbcType=VARCHAR},
-      </if>
-      <if test="weight != null">
-        weight = #{weight,jdbcType=VARCHAR},
-      </if>
-      <if test="head != null">
-        head = #{head,jdbcType=VARCHAR},
-      </if>
-      <if test="intel != null">
-        intel = #{intel,jdbcType=VARCHAR},
-      </if>
-      <if test="drug != null">
-        drug = #{drug,jdbcType=VARCHAR},
-      </if>
-      <if test="act != null">
-        act = #{act,jdbcType=VARCHAR},
-      </if>
-      <if test="other != null">
-        other = #{other,jdbcType=VARCHAR},
-      </if>
-      <if test="intelContent != null">
-        intel_content = #{intelContent,jdbcType=VARCHAR},
-      </if>
-      <if test="childId != null">
-        child_id = #{childId,jdbcType=INTEGER},
-      </if>
-    </set>
-    where id = #{id,jdbcType=INTEGER}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.join.autism.entity.HzhOther.HzhOther">
     update hzh_other

@@ -1,8 +1,10 @@
 package com.join.autism.mapper;
 
-import com.join.autism.entity.HzhFamily.HzhFamily;
+import com.join.autism.entity.HzhGeneral.HzhGeneral;
 import com.join.autism.entity.HzhOther.HzhOther;
+import com.join.autism.entity.HzhOther.HzhOtherDto;
 import com.join.autism.entity.HzhOther.HzhOtherExample;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -12,5 +14,5 @@ import java.util.List;
  */
 @Repository
 public interface HzhOtherMapper extends MyBatisBaseDao<HzhOther, Integer, HzhOtherExample> {
-    List<HzhOther> mutiSelect(HzhOther hzhOther);
+    List<HzhOtherDto> mutiSelect(@Param("other") HzhOther hzhOther, @Param("general") HzhGeneral hzhGeneral);
 }

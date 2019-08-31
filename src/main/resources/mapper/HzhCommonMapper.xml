@@ -27,6 +27,242 @@
     <result column="vaccinreason" jdbcType="VARCHAR" property="vaccinreason" />
     <result column="child_id" jdbcType="INTEGER" property="childId" />
   </resultMap>
+
+  <resultMap id="MutiSelectResultMap" type="com.join.autism.entity.HzhCommon.HzhCommonDto">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="low" jdbcType="INTEGER" property="low" />
+    <result column="lowreason" jdbcType="VARCHAR" property="lowreason" />
+    <result column="infect" jdbcType="INTEGER" property="infect" />
+    <result column="infectreason" jdbcType="VARCHAR" property="infectreason" />
+    <result column="stop" jdbcType="INTEGER" property="stop" />
+    <result column="stopreason" jdbcType="VARCHAR" property="stopreason" />
+    <result column="high" jdbcType="INTEGER" property="high" />
+    <result column="highreason" jdbcType="VARCHAR" property="highreason" />
+    <result column="around" jdbcType="INTEGER" property="around" />
+    <result column="aroundreason" jdbcType="VARCHAR" property="aroundreason" />
+    <result column="listen" jdbcType="INTEGER" property="listen" />
+    <result column="is_audiphones" jdbcType="INTEGER" property="isAudiphones" />
+    <result column="listenreason" jdbcType="VARCHAR" property="listenreason" />
+    <result column="eye" jdbcType="INTEGER" property="eye" />
+    <result column="is_glasses" jdbcType="INTEGER" property="isGlasses" />
+    <result column="eyereason" jdbcType="VARCHAR" property="eyereason" />
+    <result column="disease" jdbcType="INTEGER" property="disease" />
+    <result column="diseasereason" jdbcType="VARCHAR" property="diseasereason" />
+    <result column="lax" jdbcType="INTEGER" property="lax" />
+    <result column="laxreason" jdbcType="VARCHAR" property="laxreason" />
+    <result column="vaccin" jdbcType="INTEGER" property="vaccin" />
+    <result column="vaccinreason" jdbcType="VARCHAR" property="vaccinreason" />
+    <result column="child_id" jdbcType="INTEGER" property="childId" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="sicknum" jdbcType="VARCHAR" property="sicknum" />
+    <result column="doctor" jdbcType="VARCHAR" property="doctor" />
+    <result column="survey_time" jdbcType="VARCHAR" property="surveyTime" />
+    <result column="livenum" jdbcType="VARCHAR" property="livenum" />
+  </resultMap>
+
+
+
+  <!--增加-->
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.join.autism.entity.HzhCommon.HzhCommon" useGeneratedKeys="true">
+    insert into hzh_common (low, lowreason, infect,
+      infectreason, stop, stopreason,
+      high, highreason, around,
+      aroundreason, `listen`, is_audiphones,
+      listenreason, eye, is_glasses,
+      eyereason, disease, diseasereason,
+      lax, laxreason, vaccin,
+      vaccinreason, child_id)
+    values (#{low,jdbcType=INTEGER}, #{lowreason,jdbcType=VARCHAR}, #{infect,jdbcType=INTEGER},
+      #{infectreason,jdbcType=VARCHAR}, #{stop,jdbcType=INTEGER}, #{stopreason,jdbcType=VARCHAR},
+      #{high,jdbcType=INTEGER}, #{highreason,jdbcType=VARCHAR}, #{around,jdbcType=INTEGER},
+      #{aroundreason,jdbcType=VARCHAR}, #{listen,jdbcType=INTEGER}, #{isAudiphones,jdbcType=INTEGER},
+      #{listenreason,jdbcType=VARCHAR}, #{eye,jdbcType=INTEGER}, #{isGlasses,jdbcType=INTEGER},
+      #{eyereason,jdbcType=VARCHAR}, #{disease,jdbcType=INTEGER}, #{diseasereason,jdbcType=VARCHAR},
+      #{lax,jdbcType=INTEGER}, #{laxreason,jdbcType=VARCHAR}, #{vaccin,jdbcType=INTEGER},
+      #{vaccinreason,jdbcType=VARCHAR}, #{childId,jdbcType=INTEGER})
+  </insert>
+
+  <!--根据id删除-->
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from hzh_common
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+
+  <!--根据id修改-->
+  <update id="updateByPrimaryKeySelective" parameterType="com.join.autism.entity.HzhCommon.HzhCommon">
+    update hzh_common
+    <set>
+      <if test="low != null">
+        low = #{low,jdbcType=INTEGER},
+      </if>
+      <if test="lowreason != null">
+        lowreason = #{lowreason,jdbcType=VARCHAR},
+      </if>
+      <if test="infect != null">
+        infect = #{infect,jdbcType=INTEGER},
+      </if>
+      <if test="infectreason != null">
+        infectreason = #{infectreason,jdbcType=VARCHAR},
+      </if>
+      <if test="stop != null">
+        stop = #{stop,jdbcType=INTEGER},
+      </if>
+      <if test="stopreason != null">
+        stopreason = #{stopreason,jdbcType=VARCHAR},
+      </if>
+      <if test="high != null">
+        high = #{high,jdbcType=INTEGER},
+      </if>
+      <if test="highreason != null">
+        highreason = #{highreason,jdbcType=VARCHAR},
+      </if>
+      <if test="around != null">
+        around = #{around,jdbcType=INTEGER},
+      </if>
+      <if test="aroundreason != null">
+        aroundreason = #{aroundreason,jdbcType=VARCHAR},
+      </if>
+      <if test="listen != null">
+        `listen` = #{listen,jdbcType=INTEGER},
+      </if>
+      <if test="isAudiphones != null">
+        is_audiphones = #{isAudiphones,jdbcType=INTEGER},
+      </if>
+      <if test="listenreason != null">
+        listenreason = #{listenreason,jdbcType=VARCHAR},
+      </if>
+      <if test="eye != null">
+        eye = #{eye,jdbcType=INTEGER},
+      </if>
+      <if test="isGlasses != null">
+        is_glasses = #{isGlasses,jdbcType=INTEGER},
+      </if>
+      <if test="eyereason != null">
+        eyereason = #{eyereason,jdbcType=VARCHAR},
+      </if>
+      <if test="disease != null">
+        disease = #{disease,jdbcType=INTEGER},
+      </if>
+      <if test="diseasereason != null">
+        diseasereason = #{diseasereason,jdbcType=VARCHAR},
+      </if>
+      <if test="lax != null">
+        lax = #{lax,jdbcType=INTEGER},
+      </if>
+      <if test="laxreason != null">
+        laxreason = #{laxreason,jdbcType=VARCHAR},
+      </if>
+      <if test="vaccin != null">
+        vaccin = #{vaccin,jdbcType=INTEGER},
+      </if>
+      <if test="vaccinreason != null">
+        vaccinreason = #{vaccinreason,jdbcType=VARCHAR},
+      </if>
+      <if test="childId != null">
+        child_id = #{childId,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+
+
+  <sql id="Base_Column_List">
+    id, low, lowreason, infect, infectreason, stop, stopreason, high, highreason, around,
+    aroundreason, `listen`, is_audiphones, listenreason, eye, is_glasses, eyereason,
+    disease, diseasereason, lax, laxreason, vaccin, vaccinreason, child_id
+  </sql>
+
+  <sql id="mutiSelect_Column_List">
+    common.id, low, lowreason, infect, infectreason, stop, stopreason, high, highreason, around,
+    aroundreason, common.listen, is_audiphones, listenreason, eye, is_glasses, eyereason,
+    disease, diseasereason, lax, laxreason, vaccin, vaccinreason, child_id
+  </sql>
+  
+  <!--多条件查询-->
+  <select id="mutiSelect" resultMap="MutiSelectResultMap">
+    select <include refid="mutiSelect_Column_List"/>,`name`,g.sicknum,g.doctor,g.survey_time,g.livenum from hzh_common common left join hzh_general g on (g.id = common.child_id)
+    where 1 = 1
+    <if test="common.low != null">
+      and common.low = #{common.low,jdbcType=INTEGER}
+    </if>
+    <if test="common.lowreason != null">
+      and common.lowreason = #{common.lowreason,jdbcType=VARCHAR}
+    </if>
+    <if test="common.infect != null">
+      and common.infect = #{common.infect,jdbcType=INTEGER}
+    </if>
+    <if test="common.infectreason != null">
+      and common.infectreason = #{common.infectreason,jdbcType=VARCHAR}
+    </if>
+    <if test="common.stop != null">
+      and common.stop = #{common.stop,jdbcType=INTEGER}
+    </if>
+    <if test="common.stopreason != null">
+      and common.stopreason = #{common.stopreason,jdbcType=VARCHAR}
+    </if>
+    <if test="common.high != null">
+      and common.high = #{common.high,jdbcType=INTEGER}
+    </if>
+    <if test="common.highreason != null">
+      and common.highreason = #{common.highreason,jdbcType=VARCHAR}
+    </if>
+    <if test="common.around != null">
+      and common.around = #{common.around,jdbcType=INTEGER}
+    </if>
+    <if test="common.aroundreason != null">
+      and common.aroundreason = #{common.aroundreason,jdbcType=VARCHAR}
+    </if>
+    <if test="common.listen != null">
+      and common.listen = #{common.listen,jdbcType=INTEGER}
+    </if>
+    <if test="common.isAudiphones != null">
+      and common.is_audiphones = #{common.isAudiphones,jdbcType=INTEGER}
+    </if>
+    <if test="common.listenreason != null">
+      and common.listenreason = #{common.listenreason,jdbcType=VARCHAR}
+    </if>
+    <if test="common.eye != null">
+      and common.eye = #{common.eye,jdbcType=INTEGER}
+    </if>
+    <if test="common.isGlasses != null">
+      and common.is_glasses = #{common.isGlasses,jdbcType=INTEGER}
+    </if>
+    <if test="common.eyereason != null">
+      and common.eyereason = #{common.eyereason,jdbcType=VARCHAR}
+    </if>
+    <if test="common.disease != null">
+      and common.disease = #{common.disease,jdbcType=INTEGER}
+    </if>
+    <if test="common.diseasereason != null">
+      and common.diseasereason = #{common.diseasereason,jdbcType=VARCHAR}
+    </if>
+    <if test="common.lax != null">
+      and common.lax = #{common.lax,jdbcType=INTEGER}
+    </if>
+    <if test="common.laxreason != null">
+      and common.laxreason = #{common.laxreason,jdbcType=VARCHAR}
+    </if>
+    <if test="common.vaccin != null">
+      and common.vaccin = #{common.vaccin,jdbcType=INTEGER}
+    </if>
+    <if test="common.vaccinreason != null">
+      and common.vaccinreason = #{common.vaccinreason,jdbcType=VARCHAR}
+    </if>
+    <if test="common.childId != null">
+      and common.child_id = #{common.childId,jdbcType=INTEGER}
+    </if>
+  </select>
+
+
+
+
+
+
+
+
+
+
+
   <sql id="Example_Where_Clause">
     <where>
       <foreach collection="oredCriteria" item="criteria" separator="or">
@@ -85,11 +321,7 @@
       </foreach>
     </where>
   </sql>
-  <sql id="Base_Column_List">
-    id, low, lowreason, infect, infectreason, stop, stopreason, high, highreason, around, 
-    aroundreason, `listen`, is_audiphones, listenreason, eye, is_glasses, eyereason, 
-    disease, diseasereason, lax, laxreason, vaccin, vaccinreason, child_id
-  </sql>
+
   <select id="selectByExample" parameterType="com.join.autism.entity.HzhCommon.HzhCommonExample" resultMap="BaseResultMap">
     select
     <if test="distinct">
@@ -118,34 +350,14 @@
     from hzh_common
     where id = #{id,jdbcType=INTEGER}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
-    delete from hzh_common
-    where id = #{id,jdbcType=INTEGER}
-  </delete>
+
   <delete id="deleteByExample" parameterType="com.join.autism.entity.HzhCommon.HzhCommonExample">
     delete from hzh_common
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.join.autism.entity.HzhCommon.HzhCommon" useGeneratedKeys="true">
-    insert into hzh_common (low, lowreason, infect, 
-      infectreason, stop, stopreason, 
-      high, highreason, around, 
-      aroundreason, `listen`, is_audiphones, 
-      listenreason, eye, is_glasses, 
-      eyereason, disease, diseasereason, 
-      lax, laxreason, vaccin, 
-      vaccinreason, child_id)
-    values (#{low,jdbcType=INTEGER}, #{lowreason,jdbcType=VARCHAR}, #{infect,jdbcType=INTEGER}, 
-      #{infectreason,jdbcType=VARCHAR}, #{stop,jdbcType=INTEGER}, #{stopreason,jdbcType=VARCHAR}, 
-      #{high,jdbcType=INTEGER}, #{highreason,jdbcType=VARCHAR}, #{around,jdbcType=INTEGER}, 
-      #{aroundreason,jdbcType=VARCHAR}, #{listen,jdbcType=INTEGER}, #{isAudiphones,jdbcType=INTEGER}, 
-      #{listenreason,jdbcType=VARCHAR}, #{eye,jdbcType=INTEGER}, #{isGlasses,jdbcType=INTEGER}, 
-      #{eyereason,jdbcType=VARCHAR}, #{disease,jdbcType=INTEGER}, #{diseasereason,jdbcType=VARCHAR}, 
-      #{lax,jdbcType=INTEGER}, #{laxreason,jdbcType=VARCHAR}, #{vaccin,jdbcType=INTEGER}, 
-      #{vaccinreason,jdbcType=VARCHAR}, #{childId,jdbcType=INTEGER})
-  </insert>
+
   <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.join.autism.entity.HzhCommon.HzhCommon" useGeneratedKeys="true">
     insert into hzh_common
     <trim prefix="(" suffix=")" suffixOverrides=",">
@@ -406,81 +618,6 @@
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
-  </update>
-  <update id="updateByPrimaryKeySelective" parameterType="com.join.autism.entity.HzhCommon.HzhCommon">
-    update hzh_common
-    <set>
-      <if test="low != null">
-        low = #{low,jdbcType=INTEGER},
-      </if>
-      <if test="lowreason != null">
-        lowreason = #{lowreason,jdbcType=VARCHAR},
-      </if>
-      <if test="infect != null">
-        infect = #{infect,jdbcType=INTEGER},
-      </if>
-      <if test="infectreason != null">
-        infectreason = #{infectreason,jdbcType=VARCHAR},
-      </if>
-      <if test="stop != null">
-        stop = #{stop,jdbcType=INTEGER},
-      </if>
-      <if test="stopreason != null">
-        stopreason = #{stopreason,jdbcType=VARCHAR},
-      </if>
-      <if test="high != null">
-        high = #{high,jdbcType=INTEGER},
-      </if>
-      <if test="highreason != null">
-        highreason = #{highreason,jdbcType=VARCHAR},
-      </if>
-      <if test="around != null">
-        around = #{around,jdbcType=INTEGER},
-      </if>
-      <if test="aroundreason != null">
-        aroundreason = #{aroundreason,jdbcType=VARCHAR},
-      </if>
-      <if test="listen != null">
-        `listen` = #{listen,jdbcType=INTEGER},
-      </if>
-      <if test="isAudiphones != null">
-        is_audiphones = #{isAudiphones,jdbcType=INTEGER},
-      </if>
-      <if test="listenreason != null">
-        listenreason = #{listenreason,jdbcType=VARCHAR},
-      </if>
-      <if test="eye != null">
-        eye = #{eye,jdbcType=INTEGER},
-      </if>
-      <if test="isGlasses != null">
-        is_glasses = #{isGlasses,jdbcType=INTEGER},
-      </if>
-      <if test="eyereason != null">
-        eyereason = #{eyereason,jdbcType=VARCHAR},
-      </if>
-      <if test="disease != null">
-        disease = #{disease,jdbcType=INTEGER},
-      </if>
-      <if test="diseasereason != null">
-        diseasereason = #{diseasereason,jdbcType=VARCHAR},
-      </if>
-      <if test="lax != null">
-        lax = #{lax,jdbcType=INTEGER},
-      </if>
-      <if test="laxreason != null">
-        laxreason = #{laxreason,jdbcType=VARCHAR},
-      </if>
-      <if test="vaccin != null">
-        vaccin = #{vaccin,jdbcType=INTEGER},
-      </if>
-      <if test="vaccinreason != null">
-        vaccinreason = #{vaccinreason,jdbcType=VARCHAR},
-      </if>
-      <if test="childId != null">
-        child_id = #{childId,jdbcType=INTEGER},
-      </if>
-    </set>
-    where id = #{id,jdbcType=INTEGER}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.join.autism.entity.HzhCommon.HzhCommon">
     update hzh_common

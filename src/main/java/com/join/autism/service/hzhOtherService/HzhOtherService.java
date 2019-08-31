@@ -1,6 +1,8 @@
 package com.join.autism.service.hzhOtherService;
 
+import com.join.autism.entity.HzhGeneral.HzhGeneral;
 import com.join.autism.entity.HzhOther.HzhOther;
+import com.join.autism.entity.HzhOther.HzhOtherDto;
 
 import java.util.List;
 
@@ -33,5 +35,5 @@ public interface HzhOtherService {
      * 多条件查询
      * @return
      */
-    public List<HzhOther> mutiSelectOther();
+    public List<HzhOtherDto> mutiSelectOther(HzhOther hzhOther, HzhGeneral hzhGeneral);
 }

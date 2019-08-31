@@ -15,7 +15,7 @@ import java.util.List;
  * */
 @CrossOrigin
 @RestController
-@RequestMapping("rtm")
+@RequestMapping("HzhRtm")
 public class HzhRtmController {
 
     private final HzhRtmService hzhRtmService;
@@ -24,22 +24,22 @@ public class HzhRtmController {
         this.hzhRtmService = hzhRtmService;
     }
 
-    @RequestMapping("selectRtm")
+    @RequestMapping("selectHzhRtm")
     public List<HzhRtmDto> selectRtm(HzhRtm hzhRtm){
         return hzhRtmService.selectHzhRtm(hzhRtm);
     }
 
-    @RequestMapping("addRtm")
+    @RequestMapping("insertHzhRtm")
     public void addRtm(HzhRtm hzhRtm){
         hzhRtmService.insertHzhRtm(hzhRtm);
     }
 
-    @RequestMapping("delRtm")
+    @RequestMapping("deleteHzhRtm")
     public void delRtm(HzhRtm hzhRtm){
         hzhRtmService.delHzhRtmByPK(hzhRtm.getId());
     }
 
-    @RequestMapping("updateRtm")
+    @RequestMapping("updateHzhRtm")
     public void updateRtm(HzhRtm hzhRtm){
         hzhRtmService.updateHzhRtm(hzhRtm);
     }

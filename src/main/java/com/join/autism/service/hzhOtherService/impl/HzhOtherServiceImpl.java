@@ -1,6 +1,8 @@
 package com.join.autism.service.hzhOtherService.impl;
 
+import com.join.autism.entity.HzhGeneral.HzhGeneral;
 import com.join.autism.entity.HzhOther.HzhOther;
+import com.join.autism.entity.HzhOther.HzhOtherDto;
 import com.join.autism.mapper.HzhOtherMapper;
 import com.join.autism.service.hzhOtherService.HzhOtherService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -52,10 +54,7 @@ public class HzhOtherServiceImpl implements HzhOtherService {
      * @return
      */
     @Override
-    public List<HzhOther> mutiSelectOther(){
-        HzhOther hzhOther = new HzhOther();
-        List<HzhOther> mutiSelectOtherList;
-        mutiSelectOtherList = hzhOtherMapper.mutiSelect(hzhOther);
-        return mutiSelectOtherList;
+    public List<HzhOtherDto> mutiSelectOther(HzhOther hzhOther, HzhGeneral hzhGeneral){
+        return hzhOtherMapper.mutiSelect(hzhOther,hzhGeneral);
     }
 }

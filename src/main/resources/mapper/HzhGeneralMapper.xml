@@ -456,7 +456,7 @@
       and nation = #{hzhGeneral.nation,jdbcType=VARCHAR}
     </if>
     <if test="hzhGeneral.sfname != null and hzhGeneral.sfname != '' ">
-      and sfname = like concat('%','${hzhGeneral.sfname}','%')
+      and sfname like concat('%','${hzhGeneral.sfname}','%')
     </if>
     <if test="hzhGeneral.relation != null and hzhGeneral.relation != '' ">
       and relation = #{hzhGeneral.relation,jdbcType=VARCHAR}
