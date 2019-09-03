@@ -154,7 +154,7 @@
       lncrease, lncreasereason, weaken, 
       weakenreason, other, otherreason, 
       child_id)
-    values (#{yesNo,jdbcType=INTEGER}, #{epilepsy,jdbcType=INTEGER}, #{epilepsyreason,jdbcType=VARCHAR}, 
+    values (0, #{epilepsy,jdbcType=INTEGER}, #{epilepsyreason,jdbcType=VARCHAR},
       #{tension,jdbcType=INTEGER}, #{tensionreason,jdbcType=VARCHAR}, #{imbalance,jdbcType=INTEGER}, 
       #{imbalancereason,jdbcType=VARCHAR}, #{gait,jdbcType=INTEGER}, #{gaitreason,jdbcType=VARCHAR}, 
       #{lncrease,jdbcType=INTEGER}, #{lncreasereason,jdbcType=VARCHAR}, #{weaken,jdbcType=INTEGER}, 

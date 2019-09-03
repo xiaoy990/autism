@@ -11,47 +11,47 @@ public class HzhCommon implements Serializable {
 
     private Integer low;
 
-    private String lowreason;
+    private String lowreason = "";
 
     private Integer infect;
 
-    private String infectreason;
+    private String infectreason = "";
 
     private Integer stop;
 
-    private String stopreason;
+    private String stopreason = "";
 
     private Integer high;
 
-    private String highreason;
+    private String highreason = "";
 
     private Integer around;
 
-    private String aroundreason;
+    private String aroundreason = "";
 
     private Integer listen;
 
-    private Integer isAudiphones;
+    private Integer isAudiphones = 0;
 
-    private String listenreason;
+    private String listenreason = "";
 
     private Integer eye;
 
-    private Integer isGlasses;
+    private Integer isGlasses = 0;
 
-    private String eyereason;
+    private String eyereason = "";
 
     private Integer disease;
 
-    private String diseasereason;
+    private String diseasereason = "";
 
     private Integer lax;
 
-    private String laxreason;
+    private String laxreason = "";
 
     private Integer vaccin;
 
-    private String vaccinreason;
+    private String vaccinreason = "";
 
     private Integer childId;
 

@@ -11,73 +11,73 @@ public class HzhGestation implements Serializable {
 
     private Integer close;
 
-    private String closereason;
+    private String closereason = "";
 
     private Integer abortioncount;
 
-    private String abortionreason;
+    private String abortionreason = "";
 
     private Integer assist;
 
-    private String assistreason;
+    private String assistreason = "";
 
     private String amniotic;
 
-    private String amnioticreason;
+    private String amnioticreason = "";
 
     private Integer highblood;
 
-    private String highbloodreason;
+    private String highbloodreason = "";
 
     private Integer babygo;
 
-    private String babygoreason;
+    private String babygoreason = "";
 
     private Integer blood;
 
-    private String bloodreason;
+    private String bloodreason = "";
 
     private Integer sugarwater;
 
-    private String sugarwaterreason;
+    private String sugarwaterreason = "";
 
     private Integer blues;
 
-    private String bluesreason;
+    private String bluesreason = "";
 
     private Integer other;
 
-    private String otherreason;
+    private String otherreason = "";
 
     private Integer drug;
 
-    private String drugreason;
+    private String drugreason = "";
 
     private Integer bear;
 
-    private String bearreason;
+    private String bearreason = "";
 
     private Integer xray;
 
-    private String xrayreason;
+    private String xrayreason = "";
 
     private Integer bads;
 
-    private String badsreason;
+    private String badsreason = "";
 
     private Integer fidge;
 
-    private String fidgereason;
+    private String fidgereason = "";
 
     private Integer vitamd;
 
-    private String vitamdreason;
+    private String vitamdreason = "";
 
     private Integer childId;
 
     private Integer stress;
 
-    private String stressreason;
+    private String stressreason = "";
 
     private Integer xiyan;
 
@@ -85,11 +85,11 @@ public class HzhGestation implements Serializable {
 
     private Integer bingdu;
 
-    private String xiyans;
+    private String xiyans = "";
 
-    private String yesuans;
+    private String yesuans = "";
 
-    private String bingdus;
+    private String bingdus = "";
 
     private static final long serialVersionUID = 1L;
 

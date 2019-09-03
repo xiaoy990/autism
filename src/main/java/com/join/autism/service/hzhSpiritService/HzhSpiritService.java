@@ -11,4 +11,5 @@ public interface HzhSpiritService {
     void insertHzhSpirit(HzhSpirit hzhSpirit);
     void delHzhSpiritByPK(Integer id);
     void updateHzhSpirit(HzhSpirit hzhSpirit);
+    String queryAllSpirits(HzhSpirit hzhSpirit) throws IllegalAccessException;
 }

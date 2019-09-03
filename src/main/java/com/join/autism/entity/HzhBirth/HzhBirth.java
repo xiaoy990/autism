@@ -11,39 +11,39 @@ public class HzhBirth implements Serializable {
 
     private Integer birth;
 
-    private String birthreason;
+    private String birthreason = "";
 
-    private String kg;
+    private String kg = "";
 
     private Integer score;
 
-    private String scorereason;
+    private String scorereason = "";
 
     private Integer gogo;
 
-    private String gogoreason;
+    private String gogoreason = "";
 
     private Integer assist;
 
-    private String assistreason;
+    private String assistreason = "";
 
-    private String compl;
+    private String compl = "";
 
-    private String complreason;
+    private String complreason = "";
 
     private Integer mombra;
 
-    private String mombrareason;
+    private String mombrareason = "";
 
-    private String bradiff;
+    private String bradiff = "";
 
-    private String bradiffreason;
+    private String bradiffreason = "";
 
     private Integer grow;
 
-    private String growreason;
+    private String growreason = "";
 
-    private String growslowreason;
+    private String growslowreason = "";
 
     private Integer monthup;
 
@@ -55,11 +55,11 @@ public class HzhBirth implements Serializable {
 
     private Integer monthgo;
 
-    private String speakreason;
+    private String speakreason = "";
 
     private Integer vitamd;
 
-    private String vitamdreason;
+    private String vitamdreason = "";
 
     private Integer childId;
 

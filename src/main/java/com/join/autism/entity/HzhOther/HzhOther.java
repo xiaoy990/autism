@@ -9,21 +9,21 @@ import java.io.Serializable;
 public class HzhOther implements Serializable {
     private Integer id;
 
-    private String stature;
+    private String stature = "";
 
-    private String weight;
+    private String weight = "";
 
-    private String head;
+    private String head = "";
 
-    private String intel;
+    private String intel = "";
 
-    private String drug;
+    private String drug = "";
 
-    private String act;
+    private String act = "";
 
-    private String other;
+    private String other = "";
 
-    private String intelContent;
+    private String intelContent = "";
 
     private Integer childId;
 

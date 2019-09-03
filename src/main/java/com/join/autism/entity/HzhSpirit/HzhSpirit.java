@@ -9,39 +9,39 @@ import java.io.Serializable;
 public class HzhSpirit implements Serializable {
     private Integer id;
 
-    private String sicknum;
+    private String sicknum = "";
 
-    private String doctor;
+    private String doctor = "";
 
-    private String datetime;
+    private String datetime = "";
 
-    private String livenum;
+    private String livenum = "";
 
-    private String nospeak;
+    private String nospeak = "";
 
-    private String brains;
+    private String brains = "";
 
-    private String speakslow;
+    private String speakslow = "";
 
-    private String blues;
+    private String blues = "";
 
-    private String anxious;
+    private String anxious = "";
 
-    private String manic;
+    private String manic = "";
 
-    private String split;
+    private String split = "";
 
-    private String muchgo;
+    private String muchgo = "";
 
-    private String social;
+    private String social = "";
 
-    private String force;
+    private String force = "";
 
-    private String choice;
+    private String choice = "";
 
-    private String spirit;
+    private String spirit = "";
 
-    private String other;
+    private String other = "";
 
     private Integer childId;
 

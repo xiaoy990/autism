@@ -13,13 +13,13 @@ public class HzhFamily implements Serializable {
 
     private Integer fatherage;
 
-    private String momculture;
+    private String momculture = "";
 
-    private String dadculture;
+    private String dadculture = "";
 
-    private String mompross;
+    private String mompross = "";
 
-    private String dadpross;
+    private String dadpross = "";
 
     private Integer childId;
 

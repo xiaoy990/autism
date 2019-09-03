@@ -13,31 +13,31 @@ public class HzhNerve implements Serializable {
 
     private Integer epilepsy;
 
-    private String epilepsyreason;
+    private String epilepsyreason = "";
 
     private Integer tension;
 
-    private String tensionreason;
+    private String tensionreason = "";
 
     private Integer imbalance;
 
-    private String imbalancereason;
+    private String imbalancereason = "";
 
     private Integer gait;
 
-    private String gaitreason;
+    private String gaitreason = "";
 
     private Integer lncrease;
 
-    private String lncreasereason;
+    private String lncreasereason = "";
 
     private Integer weaken;
 
-    private String weakenreason;
+    private String weakenreason = "";
 
     private Integer other;
 
-    private String otherreason;
+    private String otherreason = "";
 
     private Integer childId;
 
