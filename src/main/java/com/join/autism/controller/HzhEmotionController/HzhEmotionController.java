@@ -16,7 +16,7 @@ import java.util.List;
  * */
 @CrossOrigin
 @RestController
-@RequestMapping("emotion")
+@RequestMapping("HzhEmotion")
 public class HzhEmotionController {
 
     private final HzhEmotionService hzhEmotionService;
@@ -31,12 +31,12 @@ public class HzhEmotionController {
         return hzhEmotionService.selectHzhEmotion(hzhEmotion);
     }
 
-    @RequestMapping("addEmotion")
+    @RequestMapping("insertEmotion")
     public void addHzhEmotion(HzhEmotion hzhEmotion){
         hzhEmotionService.insertHzhEmotion(hzhEmotion);
     }
 
-    @RequestMapping("delEmotion")
+    @RequestMapping("deleteEmotion")
     public void delHzhEmotion(HzhEmotion hzhEmotion){
         hzhEmotionService.delHzhEmotionByPK(hzhEmotion.getId());
     }

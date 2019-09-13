@@ -115,7 +115,7 @@
     <if test="childId != null and childId != ''">
       and child_id = #{childId,jdbcType=INTEGER}
     </if>
-    <if test="marriage != null and marriage != ''">
+    <if test="marriage != null">
       and marriage = #{marriage,jdbcType=INTEGER}
     </if>
     <if test="marriageDesc != null and marriageDesc != ''">
@@ -190,7 +190,7 @@
   </sql>
   <sql id="mutiSelect_Column_List">
     f.id, motherage, fatherage, momculture, dadculture, mompross, dadpross, child_id, marriage,
-    marriage_desc, much
+    marriage_desc, much,g.doctor
   </sql>
   <select id="selectByExample" parameterType="com.join.autism.entity.HzhFamily.HzhFamilyExample" resultMap="BaseResultMap">
     select

@@ -15,6 +15,140 @@
     <result column="thinreason" jdbcType="VARCHAR" property="thinreason" />
     <result column="child_id" jdbcType="INTEGER" property="childId" />
   </resultMap>
+
+  <resultMap id="MutiSelectResultMap" type="com.join.autism.entity.HzhConvertion.HzhConvertion">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="sleep" jdbcType="INTEGER" property="sleep" />
+    <result column="sleepreason" jdbcType="VARCHAR" property="sleepreason" />
+    <result column="eat" jdbcType="INTEGER" property="eat" />
+    <result column="eatreason" jdbcType="VARCHAR" property="eatreason" />
+    <result column="fat" jdbcType="INTEGER" property="fat" />
+    <result column="fatreason" jdbcType="VARCHAR" property="fatreason" />
+    <result column="active" jdbcType="INTEGER" property="active" />
+    <result column="activereason" jdbcType="VARCHAR" property="activereason" />
+    <result column="thin" jdbcType="INTEGER" property="thin" />
+    <result column="thinreason" jdbcType="VARCHAR" property="thinreason" />
+    <result column="child_id" jdbcType="INTEGER" property="childId" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="sicknum" jdbcType="VARCHAR" property="sicknum" />
+    <result column="doctor" jdbcType="VARCHAR" property="doctor" />
+    <result column="surveyTime" jdbcType="VARCHAR" property="surveyTime" />
+    <result column="livenum" jdbcType="VARCHAR" property="livenum" />
+  </resultMap>
+
+  <!--增加-->
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.join.autism.entity.HzhConvertion.HzhConvertion" useGeneratedKeys="true">
+    insert into hzh_convertion (sleep, sleepreason, eat,
+      eatreason, fat, fatreason,
+      active, activereason, thin,
+      thinreason, child_id)
+    values (#{sleep,jdbcType=INTEGER}, #{sleepreason,jdbcType=VARCHAR}, #{eat,jdbcType=INTEGER},
+      #{eatreason,jdbcType=VARCHAR}, #{fat,jdbcType=INTEGER}, #{fatreason,jdbcType=VARCHAR},
+      #{active,jdbcType=INTEGER}, #{activereason,jdbcType=VARCHAR}, #{thin,jdbcType=INTEGER},
+      #{thinreason,jdbcType=VARCHAR}, #{childId,jdbcType=INTEGER})
+  </insert>
+
+  <!--根据id删除-->
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from hzh_convertion
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+
+  <!--根据id修改-->
+  <update id="updateByPrimaryKeySelective" parameterType="com.join.autism.entity.HzhConvertion.HzhConvertion">
+    update hzh_convertion
+    <set>
+      <if test="sleep != null">
+        sleep = #{sleep,jdbcType=INTEGER},
+      </if>
+      <if test="sleepreason != null">
+        sleepreason = #{sleepreason,jdbcType=VARCHAR},
+      </if>
+      <if test="eat != null">
+        eat = #{eat,jdbcType=INTEGER},
+      </if>
+      <if test="eatreason != null">
+        eatreason = #{eatreason,jdbcType=VARCHAR},
+      </if>
+      <if test="fat != null">
+        fat = #{fat,jdbcType=INTEGER},
+      </if>
+      <if test="fatreason != null">
+        fatreason = #{fatreason,jdbcType=VARCHAR},
+      </if>
+      <if test="active != null">
+        active = #{active,jdbcType=INTEGER},
+      </if>
+      <if test="activereason != null">
+        activereason = #{activereason,jdbcType=VARCHAR},
+      </if>
+      <if test="thin != null">
+        thin = #{thin,jdbcType=INTEGER},
+      </if>
+      <if test="thinreason != null">
+        thinreason = #{thinreason,jdbcType=VARCHAR},
+      </if>
+      <if test="childId != null">
+        child_id = #{childId,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+
+  <sql id="Base_Column_List">
+    id, sleep, sleepreason, eat, eatreason, fat, fatreason, active, activereason, thin,
+    thinreason, child_id
+  </sql>
+  <sql id="mutiSelect_Column_List">
+    convertion.id, sleep, sleepreason, eat, eatreason, fat, fatreason, active, activereason, thin,
+    thinreason, child_id
+  </sql>
+
+  <!--多条件查询-->
+  <select id="mutiSelect" resultMap="MutiSelectResultMap">
+    select <include refid="mutiSelect_Column_List"/>,`name`,g.sickname,g.doctor,g.surveyTime,g.livenum from hzh_convertion convertion left join hzh_general g on (g.id = convertion.child_id)
+    where 1 = 1
+    <if test="sleep != null">
+      and sleep = #{sleep,jdbcType=INTEGER}
+    </if>
+    <if test="sleepreason != null">
+      and sleepreason = #{sleepreason,jdbcType=VARCHAR}
+    </if>
+    <if test="eat != null">
+      and eat = #{eat,jdbcType=INTEGER}
+    </if>
+    <if test="eatreason != null">
+      and eatreason = #{eatreason,jdbcType=VARCHAR}
+    </if>
+    <if test="fat != null">
+      and fat = #{fat,jdbcType=INTEGER}
+    </if>
+    <if test="fatreason != null">
+      and fatreason = #{fatreason,jdbcType=VARCHAR}
+    </if>
+    <if test="active != null">
+      and active = #{active,jdbcType=INTEGER}
+    </if>
+    <if test="activereason != null">
+      and activereason = #{activereason,jdbcType=VARCHAR}
+    </if>
+    <if test="thin != null">
+      and thin = #{thin,jdbcType=INTEGER}
+    </if>
+    <if test="thinreason != null">
+      and thinreason = #{thinreason,jdbcType=VARCHAR}
+    </if>
+    <if test="childId != null">
+      and child_id = #{childId,jdbcType=INTEGER}
+    </if>
+  </select>
+
+
+
+
+
+
+
   <sql id="Example_Where_Clause">
     <where>
       <foreach collection="oredCriteria" item="criteria" separator="or">
@@ -73,10 +207,7 @@
       </foreach>
     </where>
   </sql>
-  <sql id="Base_Column_List">
-    id, sleep, sleepreason, eat, eatreason, fat, fatreason, active, activereason, thin, 
-    thinreason, child_id
-  </sql>
+
   <select id="selectByExample" parameterType="com.join.autism.entity.HzhConvertion.HzhConvertionExample" resultMap="BaseResultMap">
     select
     <if test="distinct">
@@ -105,26 +236,13 @@
     from hzh_convertion
     where id = #{id,jdbcType=INTEGER}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
-    delete from hzh_convertion
-    where id = #{id,jdbcType=INTEGER}
-  </delete>
   <delete id="deleteByExample" parameterType="com.join.autism.entity.HzhConvertion.HzhConvertionExample">
     delete from hzh_convertion
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.join.autism.entity.HzhConvertion.HzhConvertion" useGeneratedKeys="true">
-    insert into hzh_convertion (sleep, sleepreason, eat, 
-      eatreason, fat, fatreason, 
-      active, activereason, thin, 
-      thinreason, child_id)
-    values (#{sleep,jdbcType=INTEGER}, #{sleepreason,jdbcType=VARCHAR}, #{eat,jdbcType=INTEGER}, 
-      #{eatreason,jdbcType=VARCHAR}, #{fat,jdbcType=INTEGER}, #{fatreason,jdbcType=VARCHAR}, 
-      #{active,jdbcType=INTEGER}, #{activereason,jdbcType=VARCHAR}, #{thin,jdbcType=INTEGER}, 
-      #{thinreason,jdbcType=VARCHAR}, #{childId,jdbcType=INTEGER})
-  </insert>
+
   <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.join.autism.entity.HzhConvertion.HzhConvertion" useGeneratedKeys="true">
     insert into hzh_convertion
     <trim prefix="(" suffix=")" suffixOverrides=",">
@@ -266,45 +384,7 @@
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
-  <update id="updateByPrimaryKeySelective" parameterType="com.join.autism.entity.HzhConvertion.HzhConvertion">
-    update hzh_convertion
-    <set>
-      <if test="sleep != null">
-        sleep = #{sleep,jdbcType=INTEGER},
-      </if>
-      <if test="sleepreason != null">
-        sleepreason = #{sleepreason,jdbcType=VARCHAR},
-      </if>
-      <if test="eat != null">
-        eat = #{eat,jdbcType=INTEGER},
-      </if>
-      <if test="eatreason != null">
-        eatreason = #{eatreason,jdbcType=VARCHAR},
-      </if>
-      <if test="fat != null">
-        fat = #{fat,jdbcType=INTEGER},
-      </if>
-      <if test="fatreason != null">
-        fatreason = #{fatreason,jdbcType=VARCHAR},
-      </if>
-      <if test="active != null">
-        active = #{active,jdbcType=INTEGER},
-      </if>
-      <if test="activereason != null">
-        activereason = #{activereason,jdbcType=VARCHAR},
-      </if>
-      <if test="thin != null">
-        thin = #{thin,jdbcType=INTEGER},
-      </if>
-      <if test="thinreason != null">
-        thinreason = #{thinreason,jdbcType=VARCHAR},
-      </if>
-      <if test="childId != null">
-        child_id = #{childId,jdbcType=INTEGER},
-      </if>
-    </set>
-    where id = #{id,jdbcType=INTEGER}
-  </update>
+
   <update id="updateByPrimaryKey" parameterType="com.join.autism.entity.HzhConvertion.HzhConvertion">
     update hzh_convertion
     set sleep = #{sleep,jdbcType=INTEGER},

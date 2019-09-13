@@ -8,6 +8,7 @@
     <result column="answerB" jdbcType="VARCHAR" property="answerb" />
     <result column="answerC" jdbcType="VARCHAR" property="answerc" />
     <result column="answerD" jdbcType="VARCHAR" property="answerd" />
+    <result column="keyName" property="keyName"/>
   </resultMap>
   <sql id="Example_Where_Clause">
     <where>
@@ -68,7 +69,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    id, question, answerA, answerB, answerC, answerD
+    id, question, answerA, answerB, answerC, answerD, keyName
   </sql>
   <select id="selectByExample" parameterType="com.join.autism.entity.HzhEmotion.QuestionEmotionExample" resultMap="BaseResultMap">
     select

@@ -856,97 +856,97 @@
     <if test="close != null">
       and `close` = #{close,jdbcType=INTEGER}
     </if>
-    <if test="closereason != null">
+    <if test="closereason != null and closereason != ''">
       and closereason = #{closereason,jdbcType=VARCHAR}
     </if>
     <if test="abortioncount != null">
       and abortioncount = #{abortioncount,jdbcType=INTEGER}
     </if>
-    <if test="abortionreason != null">
+    <if test="abortionreason != null and abortionreason != ''">
       and abortionreason = #{abortionreason,jdbcType=VARCHAR}
     </if>
     <if test="assist != null">
       and assist = #{assist,jdbcType=INTEGER}
     </if>
-    <if test="assistreason != null">
+    <if test="assistreason != null and assistreason != ''">
       and assistreason = #{assistreason,jdbcType=VARCHAR}
     </if>
-    <if test="amniotic != null">
+    <if test="amniotic != null and amniotic != ''">
       and amniotic = #{amniotic,jdbcType=VARCHAR}
     </if>
-    <if test="amnioticreason != null">
+    <if test="amnioticreason != null and amnioticreason != ''">
       and amnioticreason = #{amnioticreason,jdbcType=VARCHAR}
     </if>
     <if test="highblood != null">
       and highblood = #{highblood,jdbcType=INTEGER}
     </if>
-    <if test="highbloodreason != null">
+    <if test="highbloodreason != null and highbloodreason != ''">
       and highbloodreason = #{highbloodreason,jdbcType=VARCHAR}
     </if>
     <if test="babygo != null">
       and babygo = #{babygo,jdbcType=INTEGER}
     </if>
-    <if test="babygoreason != null">
+    <if test="babygoreason != null and babygoreason != ''">
       and babygoreason = #{babygoreason,jdbcType=VARCHAR}
     </if>
     <if test="blood != null">
       and blood = #{blood,jdbcType=INTEGER}
     </if>
-    <if test="bloodreason != null">
+    <if test="bloodreason != null and bloodreason != ''">
       and bloodreason = #{bloodreason,jdbcType=VARCHAR}
     </if>
     <if test="sugarwater != null">
       and sugarwater = #{sugarwater,jdbcType=INTEGER}
     </if>
-    <if test="sugarwaterreason != null">
+    <if test="sugarwaterreason != null and sugarwaterreason != ''">
       and sugarwaterreason = #{sugarwaterreason,jdbcType=VARCHAR}
     </if>
     <if test="blues != null">
       and blues = #{blues,jdbcType=INTEGER}
     </if>
-    <if test="bluesreason != null">
+    <if test="bluesreason != null and bluesreason != ''">
       and bluesreason = #{bluesreason,jdbcType=VARCHAR}
     </if>
     <if test="other != null">
       and other = #{other,jdbcType=INTEGER}
     </if>
-    <if test="otherreason != null">
+    <if test="otherreason != null and otherreason != ''">
       and otherreason = #{otherreason,jdbcType=VARCHAR}
     </if>
     <if test="drug != null">
       and drug = #{drug,jdbcType=INTEGER}
     </if>
-    <if test="drugreason != null">
+    <if test="drugreason != null and drugreason != ''">
       and drugreason = #{drugreason,jdbcType=VARCHAR}
     </if>
     <if test="bear != null">
       and bear = #{bear,jdbcType=INTEGER}
     </if>
-    <if test="bearreason != null">
+    <if test="bearreason != null and bearreason != ''">
       and bearreason = #{bearreason,jdbcType=VARCHAR}
     </if>
     <if test="xray != null">
       and xray = #{xray,jdbcType=INTEGER}
     </if>
-    <if test="xrayreason != null">
+    <if test="xrayreason != null and xrayreason != ''">
       and xrayreason = #{xrayreason,jdbcType=VARCHAR}
     </if>
     <if test="bads != null">
       and bads = #{bads,jdbcType=INTEGER}
     </if>
-    <if test="badsreason != null">
+    <if test="badsreason != null and badsreason != ''">
       and badsreason = #{badsreason,jdbcType=VARCHAR}
     </if>
     <if test="fidge != null">
       and fidge = #{fidge,jdbcType=INTEGER}
     </if>
-    <if test="fidgereason != null">
+    <if test="fidgereason != null and fidgereason != ''">
       and fidgereason = #{fidgereason,jdbcType=VARCHAR}
     </if>
     <if test="vitamd != null">
       and vitamd = #{vitamd,jdbcType=INTEGER}
     </if>
-    <if test="vitamdreason != null">
+    <if test="vitamdreason != null and vitamdreason != ''">
       and vitamdreason = #{vitamdreason,jdbcType=VARCHAR}
     </if>
     <if test="childId != null">
@@ -955,7 +955,7 @@
     <if test="stress != null">
       and stress = #{stress,jdbcType=INTEGER}
     </if>
-    <if test="stressreason != null">
+    <if test="stressreason != null and stressreason != ''">
       and stressreason = #{stressreason,jdbcType=VARCHAR}
     </if>
     <if test="xiyan != null">
@@ -967,13 +967,13 @@
     <if test="bingdu != null">
       and bingdu = #{bingdu,jdbcType=INTEGER}
     </if>
-    <if test="xiyans != null">
+    <if test="xiyans != null and xiyans != ''">
       and xiyans = #{xiyans,jdbcType=VARCHAR}
     </if>
-    <if test="yesuans != null">
+    <if test="yesuans != null and yesuans != ''">
       and yesuans = #{yesuans,jdbcType=VARCHAR}
     </if>
-    <if test="bingdus != null">
+    <if test="bingdus != null and bingdus != ''">
       and bingdus = #{bingdus,jdbcType=VARCHAR}
     </if>
   </select>

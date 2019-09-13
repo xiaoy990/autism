@@ -616,82 +616,82 @@
 
   <select id="mutiSelect" resultMap="mutiSelectResultMap">
     select <include refid="mutiSelect_Column_List"/> from hzh_birth b left join hzh_general g on ( b.child_id = g.id )where  1=1
-    <if test="birth != null">
+    <if test="birth != null and birth != ''">
       and birth = #{birth,jdbcType=INTEGER}
     </if>
-    <if test="birthreason != null">
+    <if test="birthreason != null and birthreason != ''">
       and birthreason = #{birthreason,jdbcType=VARCHAR}
     </if>
-    <if test="kg != null">
+    <if test="kg != null and kg != ''">
       and kg = #{kg,jdbcType=VARCHAR}
     </if>
-    <if test="score != null">
+    <if test="score != null and score != ''">
       and score = #{score,jdbcType=INTEGER}
     </if>
-    <if test="scorereason != null">
+    <if test="scorereason != null and scorereason != ''">
       and scorereason = #{scorereason,jdbcType=VARCHAR}
     </if>
-    <if test="gogo != null">
+    <if test="gogo != null and gogo != ''">
       and gogo = #{gogo,jdbcType=INTEGER}
     </if>
-    <if test="gogoreason != null">
+    <if test="gogoreason != null and gogoreason != ''">
       and gogoreason = #{gogoreason,jdbcType=VARCHAR}
     </if>
-    <if test="assist != null">
+    <if test="assist != null and assist != ''">
       and assist = #{assist,jdbcType=INTEGER}
     </if>
-    <if test="assistreason != null">
+    <if test="assistreason != null and assistreason != ''">
       and assistreason = #{assistreason,jdbcType=VARCHAR}
     </if>
-    <if test="compl != null">
+    <if test="compl != null and compl != ''">
       and compl = #{compl,jdbcType=VARCHAR}
     </if>
-    <if test="complreason != null">
+    <if test="complreason != null and complreason != ''">
       and complreason = #{complreason,jdbcType=VARCHAR}
     </if>
-    <if test="mombra != null">
+    <if test="mombra != null and mombra != ''">
       and mombra = #{mombra,jdbcType=INTEGER}
     </if>
-    <if test="mombrareason != null">
+    <if test="mombrareason != null and mombrareason != ''">
       and mombrareason = #{mombrareason,jdbcType=VARCHAR}
     </if>
-    <if test="bradiff != null">
+    <if test="bradiff != null and bradiff != ''">
       and bradiff = #{bradiff,jdbcType=VARCHAR}
     </if>
-    <if test="bradiffreason != null">
+    <if test="bradiffreason != null and bradiffreason != ''">
       and bradiffreason = #{bradiffreason,jdbcType=VARCHAR}
     </if>
-    <if test="grow != null">
+    <if test="grow != null and grow != ''">
       and grow = #{grow,jdbcType=INTEGER}
     </if>
-    <if test="growreason != null">
+    <if test="growreason != null and growreason != ''">
       and growreason = #{growreason,jdbcType=VARCHAR}
     </if>
-    <if test="growslowreason != null">
+    <if test="growslowreason != null and growslowreason != ''">
       and growslowreason = #{growslowreason,jdbcType=VARCHAR}
     </if>
-    <if test="monthup != null">
+    <if test="monthup != null and monthup != ''">
       and monthup = #{monthup,jdbcType=INTEGER}
     </if>
-    <if test="monthroll != null">
+    <if test="monthroll != null and monthroll != ''">
       and monthroll = #{monthroll,jdbcType=INTEGER}
     </if>
-    <if test="monthsit != null">
+    <if test="monthsit != null and monthsit != ''">
       and monthsit = #{monthsit,jdbcType=INTEGER}
     </if>
-    <if test="monthclimb != null">
+    <if test="monthclimb != null and monthclimb != ''">
       and monthclimb = #{monthclimb,jdbcType=INTEGER}
     </if>
-    <if test="monthgo != null">
+    <if test="monthgo != null and monthgo != ''">
       and monthgo = #{monthgo,jdbcType=INTEGER}
     </if>
-    <if test="speakreason != null">
+    <if test="speakreason != null and speakreason != ''">
       and speakreason = #{speakreason,jdbcType=VARCHAR}
     </if>
-    <if test="vitamd != null">
+    <if test="vitamd != null and vitamd != ''">
       and vitamd = #{vitamd,jdbcType=INTEGER}
     </if>
-    <if test="vitamdreason != null">
+    <if test="vitamdreason != null and vitamdreason != ''">
       and vitamdreason = #{vitamdreason,jdbcType=VARCHAR}
     </if>
     <if test="childId != null">

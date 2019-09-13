@@ -34,8 +34,30 @@ public class QuestionEmotion implements Serializable {
      */
     private String answerd;
 
-    private static final long serialVersionUID = 1L;
+    private String keyName;
 
+    private String value = "1";
+
+    public String getValue() {
+        return value;
+    }
+
+    public void setValue(String value) {
+        this.value = value;
+    }
+
+    public static long getSerialVersionUID() {
+        return serialVersionUID;
+    }
+
+    private static final long serialVersionUID = 1L;
+    public String getKeyName() {
+        return keyName;
+    }
+
+    public void setKeyName(String keyName) {
+        this.keyName = keyName;
+    }
     public Integer getId() {
         return id;
     }
@@ -85,6 +107,19 @@ public class QuestionEmotion implements Serializable {
     }
 
     @Override
+    public String toString() {
+        return "QuestionEmotion{" +
+                "id=" + id +
+                ", question='" + question + '\'' +
+                ", answera='" + answera + '\'' +
+                ", answerb='" + answerb + '\'' +
+                ", answerc='" + answerc + '\'' +
+                ", answerd='" + answerd + '\'' +
+                ", keyName='" + keyName + '\'' +
+                '}';
+    }
+
+    @Override
     public boolean equals(Object that) {
         if (this == that) {
             return true;
@@ -117,20 +152,4 @@ public class QuestionEmotion implements Serializable {
         return result;
     }
 
-    @Override
-    public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append(getClass().getSimpleName());
-        sb.append(" [");
-        sb.append("Hash = ").append(hashCode());
-        sb.append(", id=").append(id);
-        sb.append(", question=").append(question);
-        sb.append(", answera=").append(answera);
-        sb.append(", answerb=").append(answerb);
-        sb.append(", answerc=").append(answerc);
-        sb.append(", answerd=").append(answerd);
-        sb.append(", serialVersionUID=").append(serialVersionUID);
-        sb.append("]");
-        return sb.toString();
-    }
 }
