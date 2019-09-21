@@ -63,6 +63,528 @@
     <result column="question_sum" jdbcType="INTEGER" property="questionSum" />
     <result column="child_id" jdbcType="INTEGER" property="childId" />
   </resultMap>
+  
+  <resultMap id="MutiSelectResultMap" type="com.join.autism.entity.HzhThreemon.HzhThreemonDto">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="question1" jdbcType="INTEGER" property="question1" />
+    <result column="question2" jdbcType="INTEGER" property="question2" />
+    <result column="question3" jdbcType="INTEGER" property="question3" />
+    <result column="question4" jdbcType="INTEGER" property="question4" />
+    <result column="question5" jdbcType="INTEGER" property="question5" />
+    <result column="question6" jdbcType="INTEGER" property="question6" />
+    <result column="question7" jdbcType="INTEGER" property="question7" />
+    <result column="question8" jdbcType="INTEGER" property="question8" />
+    <result column="question9" jdbcType="INTEGER" property="question9" />
+    <result column="question10" jdbcType="INTEGER" property="question10" />
+    <result column="question11" jdbcType="INTEGER" property="question11" />
+    <result column="question12" jdbcType="INTEGER" property="question12" />
+    <result column="question13" jdbcType="INTEGER" property="question13" />
+    <result column="question14" jdbcType="INTEGER" property="question14" />
+    <result column="question15" jdbcType="INTEGER" property="question15" />
+    <result column="question16" jdbcType="INTEGER" property="question16" />
+    <result column="question17" jdbcType="INTEGER" property="question17" />
+    <result column="question18" jdbcType="INTEGER" property="question18" />
+    <result column="question19" jdbcType="INTEGER" property="question19" />
+    <result column="question20" jdbcType="INTEGER" property="question20" />
+    <result column="question21" jdbcType="INTEGER" property="question21" />
+    <result column="question22" jdbcType="INTEGER" property="question22" />
+    <result column="question23" jdbcType="INTEGER" property="question23" />
+    <result column="question24" jdbcType="INTEGER" property="question24" />
+    <result column="question25" jdbcType="INTEGER" property="question25" />
+    <result column="question26" jdbcType="INTEGER" property="question26" />
+    <result column="question27" jdbcType="INTEGER" property="question27" />
+    <result column="question28" jdbcType="INTEGER" property="question28" />
+    <result column="question29" jdbcType="INTEGER" property="question29" />
+    <result column="question30" jdbcType="INTEGER" property="question30" />
+    <result column="question31" jdbcType="INTEGER" property="question31" />
+    <result column="question32" jdbcType="INTEGER" property="question32" />
+    <result column="question33" jdbcType="INTEGER" property="question33" />
+    <result column="question34" jdbcType="INTEGER" property="question34" />
+    <result column="question35" jdbcType="INTEGER" property="question35" />
+    <result column="question36" jdbcType="INTEGER" property="question36" />
+    <result column="question37" jdbcType="INTEGER" property="question37" />
+    <result column="question38" jdbcType="INTEGER" property="question38" />
+    <result column="question39" jdbcType="INTEGER" property="question39" />
+    <result column="question40" jdbcType="INTEGER" property="question40" />
+    <result column="question41" jdbcType="INTEGER" property="question41" />
+    <result column="question42" jdbcType="INTEGER" property="question42" />
+    <result column="question43" jdbcType="INTEGER" property="question43" />
+    <result column="question44" jdbcType="INTEGER" property="question44" />
+    <result column="question45" jdbcType="INTEGER" property="question45" />
+    <result column="question46" jdbcType="INTEGER" property="question46" />
+    <result column="question47" jdbcType="INTEGER" property="question47" />
+    <result column="question48" jdbcType="INTEGER" property="question48" />
+    <result column="question49" jdbcType="INTEGER" property="question49" />
+    <result column="question50" jdbcType="INTEGER" property="question50" />
+    <result column="question51" jdbcType="INTEGER" property="question51" />
+    <result column="question52" jdbcType="INTEGER" property="question52" />
+    <result column="question53" jdbcType="INTEGER" property="question53" />
+    <result column="question54" jdbcType="INTEGER" property="question54" />
+    <result column="question55" jdbcType="INTEGER" property="question55" />
+    <result column="question56" jdbcType="INTEGER" property="question56" />
+    <result column="question57" jdbcType="INTEGER" property="question57" />
+    <result column="question_sum" jdbcType="INTEGER" property="questionSum" />
+    <result column="child_id" jdbcType="INTEGER" property="childId" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="sicknum" jdbcType="VARCHAR" property="sicknum" />
+    <result column="doctor" jdbcType="VARCHAR" property="doctor" />
+    <result column="surveyTime" jdbcType="VARCHAR" property="surveyTime" />
+    <result column="livenum" jdbcType="VARCHAR" property="livenum" />
+  </resultMap>
+  
+  <!--增加-->
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.join.autism.entity.HzhThreemon.HzhThreemon" useGeneratedKeys="true">
+    insert into hzh_threemon (question1, question2, question3, 
+      question4, question5, question6, 
+      question7, question8, question9, 
+      question10, question11, question12, 
+      question13, question14, question15, 
+      question16, question17, question18, 
+      question19, question20, question21, 
+      question22, question23, question24, 
+      question25, question26, question27, 
+      question28, question29, question30, 
+      question31, question32, question33, 
+      question34, question35, question36, 
+      question37, question38, question39, 
+      question40, question41, question42, 
+      question43, question44, question45, 
+      question46, question47, question48, 
+      question49, question50, question51, 
+      question52, question53, question54, 
+      question55, question56, question57, 
+      question_sum, child_id)
+    values (#{question1,jdbcType=INTEGER}, #{question2,jdbcType=INTEGER}, #{question3,jdbcType=INTEGER}, 
+      #{question4,jdbcType=INTEGER}, #{question5,jdbcType=INTEGER}, #{question6,jdbcType=INTEGER}, 
+      #{question7,jdbcType=INTEGER}, #{question8,jdbcType=INTEGER}, #{question9,jdbcType=INTEGER}, 
+      #{question10,jdbcType=INTEGER}, #{question11,jdbcType=INTEGER}, #{question12,jdbcType=INTEGER}, 
+      #{question13,jdbcType=INTEGER}, #{question14,jdbcType=INTEGER}, #{question15,jdbcType=INTEGER}, 
+      #{question16,jdbcType=INTEGER}, #{question17,jdbcType=INTEGER}, #{question18,jdbcType=INTEGER}, 
+      #{question19,jdbcType=INTEGER}, #{question20,jdbcType=INTEGER}, #{question21,jdbcType=INTEGER}, 
+      #{question22,jdbcType=INTEGER}, #{question23,jdbcType=INTEGER}, #{question24,jdbcType=INTEGER}, 
+      #{question25,jdbcType=INTEGER}, #{question26,jdbcType=INTEGER}, #{question27,jdbcType=INTEGER}, 
+      #{question28,jdbcType=INTEGER}, #{question29,jdbcType=INTEGER}, #{question30,jdbcType=INTEGER}, 
+      #{question31,jdbcType=INTEGER}, #{question32,jdbcType=INTEGER}, #{question33,jdbcType=INTEGER}, 
+      #{question34,jdbcType=INTEGER}, #{question35,jdbcType=INTEGER}, #{question36,jdbcType=INTEGER}, 
+      #{question37,jdbcType=INTEGER}, #{question38,jdbcType=INTEGER}, #{question39,jdbcType=INTEGER}, 
+      #{question40,jdbcType=INTEGER}, #{question41,jdbcType=INTEGER}, #{question42,jdbcType=INTEGER}, 
+      #{question43,jdbcType=INTEGER}, #{question44,jdbcType=INTEGER}, #{question45,jdbcType=INTEGER}, 
+      #{question46,jdbcType=INTEGER}, #{question47,jdbcType=INTEGER}, #{question48,jdbcType=INTEGER}, 
+      #{question49,jdbcType=INTEGER}, #{question50,jdbcType=INTEGER}, #{question51,jdbcType=INTEGER}, 
+      #{question52,jdbcType=INTEGER}, #{question53,jdbcType=INTEGER}, #{question54,jdbcType=INTEGER}, 
+      #{question55,jdbcType=INTEGER}, #{question56,jdbcType=INTEGER}, #{question57,jdbcType=INTEGER}, 
+      #{questionSum,jdbcType=INTEGER}, #{childId,jdbcType=INTEGER})
+  </insert>
+  
+  <!--根据id删除-->
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from hzh_threemon
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  
+  <!--根据id修改-->
+  <update id="updateByPrimaryKeySelective" parameterType="com.join.autism.entity.HzhThreemon.HzhThreemon">
+    update hzh_threemon
+    <set>
+      <if test="question1 != null">
+        question1 = #{question1,jdbcType=INTEGER},
+      </if>
+      <if test="question2 != null">
+        question2 = #{question2,jdbcType=INTEGER},
+      </if>
+      <if test="question3 != null">
+        question3 = #{question3,jdbcType=INTEGER},
+      </if>
+      <if test="question4 != null">
+        question4 = #{question4,jdbcType=INTEGER},
+      </if>
+      <if test="question5 != null">
+        question5 = #{question5,jdbcType=INTEGER},
+      </if>
+      <if test="question6 != null">
+        question6 = #{question6,jdbcType=INTEGER},
+      </if>
+      <if test="question7 != null">
+        question7 = #{question7,jdbcType=INTEGER},
+      </if>
+      <if test="question8 != null">
+        question8 = #{question8,jdbcType=INTEGER},
+      </if>
+      <if test="question9 != null">
+        question9 = #{question9,jdbcType=INTEGER},
+      </if>
+      <if test="question10 != null">
+        question10 = #{question10,jdbcType=INTEGER},
+      </if>
+      <if test="question11 != null">
+        question11 = #{question11,jdbcType=INTEGER},
+      </if>
+      <if test="question12 != null">
+        question12 = #{question12,jdbcType=INTEGER},
+      </if>
+      <if test="question13 != null">
+        question13 = #{question13,jdbcType=INTEGER},
+      </if>
+      <if test="question14 != null">
+        question14 = #{question14,jdbcType=INTEGER},
+      </if>
+      <if test="question15 != null">
+        question15 = #{question15,jdbcType=INTEGER},
+      </if>
+      <if test="question16 != null">
+        question16 = #{question16,jdbcType=INTEGER},
+      </if>
+      <if test="question17 != null">
+        question17 = #{question17,jdbcType=INTEGER},
+      </if>
+      <if test="question18 != null">
+        question18 = #{question18,jdbcType=INTEGER},
+      </if>
+      <if test="question19 != null">
+        question19 = #{question19,jdbcType=INTEGER},
+      </if>
+      <if test="question20 != null">
+        question20 = #{question20,jdbcType=INTEGER},
+      </if>
+      <if test="question21 != null">
+        question21 = #{question21,jdbcType=INTEGER},
+      </if>
+      <if test="question22 != null">
+        question22 = #{question22,jdbcType=INTEGER},
+      </if>
+      <if test="question23 != null">
+        question23 = #{question23,jdbcType=INTEGER},
+      </if>
+      <if test="question24 != null">
+        question24 = #{question24,jdbcType=INTEGER},
+      </if>
+      <if test="question25 != null">
+        question25 = #{question25,jdbcType=INTEGER},
+      </if>
+      <if test="question26 != null">
+        question26 = #{question26,jdbcType=INTEGER},
+      </if>
+      <if test="question27 != null">
+        question27 = #{question27,jdbcType=INTEGER},
+      </if>
+      <if test="question28 != null">
+        question28 = #{question28,jdbcType=INTEGER},
+      </if>
+      <if test="question29 != null">
+        question29 = #{question29,jdbcType=INTEGER},
+      </if>
+      <if test="question30 != null">
+        question30 = #{question30,jdbcType=INTEGER},
+      </if>
+      <if test="question31 != null">
+        question31 = #{question31,jdbcType=INTEGER},
+      </if>
+      <if test="question32 != null">
+        question32 = #{question32,jdbcType=INTEGER},
+      </if>
+      <if test="question33 != null">
+        question33 = #{question33,jdbcType=INTEGER},
+      </if>
+      <if test="question34 != null">
+        question34 = #{question34,jdbcType=INTEGER},
+      </if>
+      <if test="question35 != null">
+        question35 = #{question35,jdbcType=INTEGER},
+      </if>
+      <if test="question36 != null">
+        question36 = #{question36,jdbcType=INTEGER},
+      </if>
+      <if test="question37 != null">
+        question37 = #{question37,jdbcType=INTEGER},
+      </if>
+      <if test="question38 != null">
+        question38 = #{question38,jdbcType=INTEGER},
+      </if>
+      <if test="question39 != null">
+        question39 = #{question39,jdbcType=INTEGER},
+      </if>
+      <if test="question40 != null">
+        question40 = #{question40,jdbcType=INTEGER},
+      </if>
+      <if test="question41 != null">
+        question41 = #{question41,jdbcType=INTEGER},
+      </if>
+      <if test="question42 != null">
+        question42 = #{question42,jdbcType=INTEGER},
+      </if>
+      <if test="question43 != null">
+        question43 = #{question43,jdbcType=INTEGER},
+      </if>
+      <if test="question44 != null">
+        question44 = #{question44,jdbcType=INTEGER},
+      </if>
+      <if test="question45 != null">
+        question45 = #{question45,jdbcType=INTEGER},
+      </if>
+      <if test="question46 != null">
+        question46 = #{question46,jdbcType=INTEGER},
+      </if>
+      <if test="question47 != null">
+        question47 = #{question47,jdbcType=INTEGER},
+      </if>
+      <if test="question48 != null">
+        question48 = #{question48,jdbcType=INTEGER},
+      </if>
+      <if test="question49 != null">
+        question49 = #{question49,jdbcType=INTEGER},
+      </if>
+      <if test="question50 != null">
+        question50 = #{question50,jdbcType=INTEGER},
+      </if>
+      <if test="question51 != null">
+        question51 = #{question51,jdbcType=INTEGER},
+      </if>
+      <if test="question52 != null">
+        question52 = #{question52,jdbcType=INTEGER},
+      </if>
+      <if test="question53 != null">
+        question53 = #{question53,jdbcType=INTEGER},
+      </if>
+      <if test="question54 != null">
+        question54 = #{question54,jdbcType=INTEGER},
+      </if>
+      <if test="question55 != null">
+        question55 = #{question55,jdbcType=INTEGER},
+      </if>
+      <if test="question56 != null">
+        question56 = #{question56,jdbcType=INTEGER},
+      </if>
+      <if test="question57 != null">
+        question57 = #{question57,jdbcType=INTEGER},
+      </if>
+      <if test="questionSum != null">
+        question_sum = #{questionSum,jdbcType=INTEGER},
+      </if>
+      <if test="childId != null">
+        child_id = #{childId,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+
+  <sql id="Base_Column_List">
+    id, question1, question2, question3, question4, question5, question6, question7, 
+    question8, question9, question10, question11, question12, question13, question14, 
+    question15, question16, question17, question18, question19, question20, question21, 
+    question22, question23, question24, question25, question26, question27, question28, 
+    question29, question30, question31, question32, question33, question34, question35, 
+    question36, question37, question38, question39, question40, question41, question42, 
+    question43, question44, question45, question46, question47, question48, question49, 
+    question50, question51, question52, question53, question54, question55, question56, 
+    question57, question_sum, child_id
+  </sql>
+
+  <sql id="mutiSelect_Column_List">
+    threemon.id, question1, question2, question3, question4, question5, question6, question7, 
+    question8, question9, question10, question11, question12, question13, question14, 
+    question15, question16, question17, question18, question19, question20, question21, 
+    question22, question23, question24, question25, question26, question27, question28, 
+    question29, question30, question31, question32, question33, question34, question35, 
+    question36, question37, question38, question39, question40, question41, question42, 
+    question43, question44, question45, question46, question47, question48, question49, 
+    question50, question51, question52, question53, question54, question55, question56, 
+    question57, question_sum, child_id
+  </sql>
+  
+  <!--多条件查询-->
+  <select id="mutiSelect" resultMap="MutiSelectResultMap">
+    select <include refid="mutiSelect_Column_List"/>,`name`,g.sicknum,g.doctor,g.survey_time,g.livenum from hzh_threemon threemon left join hzh_general g on (g.id = threemon.child_id)
+    where 1 = 1
+    <if test="question1 != null">
+      and question1 = #{question1,jdbcType=INTEGER}
+    </if>
+    <if test="question2 != null">
+      and question2 = #{question2,jdbcType=INTEGER}
+    </if>
+    <if test="question3 != null">
+      and question3 = #{question3,jdbcType=INTEGER}
+    </if>
+    <if test="question4 != null">
+      and question4 = #{question4,jdbcType=INTEGER}
+    </if>
+    <if test="question5 != null">
+      and question5 = #{question5,jdbcType=INTEGER}
+    </if>
+    <if test="question6 != null">
+      and question6 = #{question6,jdbcType=INTEGER}
+    </if>
+    <if test="question7 != null">
+      and question7 = #{question7,jdbcType=INTEGER}
+    </if>
+    <if test="question8 != null">
+      and question8 = #{question8,jdbcType=INTEGER}
+    </if>
+    <if test="question9 != null">
+      and question9 = #{question9,jdbcType=INTEGER}
+    </if>
+    <if test="question10 != null">
+      and question10 = #{question10,jdbcType=INTEGER}
+    </if>
+    <if test="question11 != null">
+      and question11 = #{question11,jdbcType=INTEGER}
+    </if>
+    <if test="question12 != null">
+      and question12 = #{question12,jdbcType=INTEGER}
+    </if>
+    <if test="question13 != null">
+      and question13 = #{question13,jdbcType=INTEGER}
+    </if>
+    <if test="question14 != null">
+      and question14 = #{question14,jdbcType=INTEGER}
+    </if>
+    <if test="question15 != null">
+      and question15 = #{question15,jdbcType=INTEGER}
+    </if>
+    <if test="question16 != null">
+      and question16 = #{question16,jdbcType=INTEGER}
+    </if>
+    <if test="question17 != null">
+      and question17 = #{question17,jdbcType=INTEGER}
+    </if>
+    <if test="question18 != null">
+      and question18 = #{question18,jdbcType=INTEGER}
+    </if>
+    <if test="question19 != null">
+      and question19 = #{question19,jdbcType=INTEGER}
+    </if>
+    <if test="question20 != null">
+      and question20 = #{question20,jdbcType=INTEGER}
+    </if>
+    <if test="question21 != null">
+      and question21 = #{question21,jdbcType=INTEGER}
+    </if>
+    <if test="question22 != null">
+      and question22 = #{question22,jdbcType=INTEGER}
+    </if>
+    <if test="question23 != null">
+      and question23 = #{question23,jdbcType=INTEGER}
+    </if>
+    <if test="question24 != null">
+      and question24 = #{question24,jdbcType=INTEGER}
+    </if>
+    <if test="question25 != null">
+      and question25 = #{question25,jdbcType=INTEGER}
+    </if>
+    <if test="question26 != null">
+      and question26 = #{question26,jdbcType=INTEGER}
+    </if>
+    <if test="question27 != null">
+      and question27 = #{question27,jdbcType=INTEGER}
+    </if>
+    <if test="question28 != null">
+      and question28 = #{question28,jdbcType=INTEGER}
+    </if>
+    <if test="question29 != null">
+      and question29 = #{question29,jdbcType=INTEGER}
+    </if>
+    <if test="question30 != null">
+      and question30 = #{question30,jdbcType=INTEGER}
+    </if>
+    <if test="question31 != null">
+      and question31 = #{question31,jdbcType=INTEGER}
+    </if>
+    <if test="question32 != null">
+      and question32 = #{question32,jdbcType=INTEGER}
+    </if>
+    <if test="question33 != null">
+      and question33 = #{question33,jdbcType=INTEGER}
+    </if>
+    <if test="question34 != null">
+      and question34 = #{question34,jdbcType=INTEGER}
+    </if>
+    <if test="question35 != null">
+      and question35 = #{question35,jdbcType=INTEGER}
+    </if>
+    <if test="question36 != null">
+      and question36 = #{question36,jdbcType=INTEGER}
+    </if>
+    <if test="question37 != null">
+      and question37 = #{question37,jdbcType=INTEGER}
+    </if>
+    <if test="question38 != null">
+      and question38 = #{question38,jdbcType=INTEGER}
+    </if>
+    <if test="question39 != null">
+      and question39 = #{question39,jdbcType=INTEGER}
+    </if>
+    <if test="question40 != null">
+      and question40 = #{question40,jdbcType=INTEGER}
+    </if>
+    <if test="question41 != null">
+      and question41 = #{question41,jdbcType=INTEGER}
+    </if>
+    <if test="question42 != null">
+      and question42 = #{question42,jdbcType=INTEGER}
+    </if>
+    <if test="question43 != null">
+      and question43 = #{question43,jdbcType=INTEGER}
+    </if>
+    <if test="question44 != null">
+      and question44 = #{question44,jdbcType=INTEGER}
+    </if>
+    <if test="question45 != null">
+      and question45 = #{question45,jdbcType=INTEGER}
+    </if>
+    <if test="question46 != null">
+      and question46 = #{question46,jdbcType=INTEGER}
+    </if>
+    <if test="question47 != null">
+      and question47 = #{question47,jdbcType=INTEGER}
+    </if>
+    <if test="question48 != null">
+      and question48 = #{question48,jdbcType=INTEGER}
+    </if>
+    <if test="question49 != null">
+      and question49 = #{question49,jdbcType=INTEGER}
+    </if>
+    <if test="question50 != null">
+      and question50 = #{question50,jdbcType=INTEGER}
+    </if>
+    <if test="question51 != null">
+      and question51 = #{question51,jdbcType=INTEGER}
+    </if>
+    <if test="question52 != null">
+      and question52 = #{question52,jdbcType=INTEGER}
+    </if>
+    <if test="question53 != null">
+      and question53 = #{question53,jdbcType=INTEGER}
+    </if>
+    <if test="question54 != null">
+      and question54 = #{question54,jdbcType=INTEGER}
+    </if>
+    <if test="question55 != null">
+      and question55 = #{question55,jdbcType=INTEGER}
+    </if>
+    <if test="question56 != null">
+      and question56 = #{question56,jdbcType=INTEGER}
+    </if>
+    <if test="question57 != null">
+      and question57 = #{question57,jdbcType=INTEGER}
+    </if>
+    <if test="questionSum != null">
+      and question_sum = #{questionSum,jdbcType=INTEGER}
+    </if>
+    <if test="childId != null">
+      and child_id = #{childId,jdbcType=INTEGER}
+    </if>
+  </select>
+  
+  
+  
+  
+
+
+
+  
+  
+  
+  
+  
   <sql id="Example_Where_Clause">
     <where>
       <foreach collection="oredCriteria" item="criteria" separator="or">
@@ -121,17 +643,6 @@
       </foreach>
     </where>
   </sql>
-  <sql id="Base_Column_List">
-    id, question1, question2, question3, question4, question5, question6, question7, 
-    question8, question9, question10, question11, question12, question13, question14, 
-    question15, question16, question17, question18, question19, question20, question21, 
-    question22, question23, question24, question25, question26, question27, question28, 
-    question29, question30, question31, question32, question33, question34, question35, 
-    question36, question37, question38, question39, question40, question41, question42, 
-    question43, question44, question45, question46, question47, question48, question49, 
-    question50, question51, question52, question53, question54, question55, question56, 
-    question57, question_sum, child_id
-  </sql>
   <select id="selectByExample" parameterType="com.join.autism.entity.HzhThreemon.HzhThreemonExample" resultMap="BaseResultMap">
     select
     <if test="distinct">
@@ -160,58 +671,12 @@
     from hzh_threemon
     where id = #{id,jdbcType=INTEGER}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
-    delete from hzh_threemon
-    where id = #{id,jdbcType=INTEGER}
-  </delete>
   <delete id="deleteByExample" parameterType="com.join.autism.entity.HzhThreemon.HzhThreemonExample">
     delete from hzh_threemon
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.join.autism.entity.HzhThreemon.HzhThreemon" useGeneratedKeys="true">
-    insert into hzh_threemon (question1, question2, question3, 
-      question4, question5, question6, 
-      question7, question8, question9, 
-      question10, question11, question12, 
-      question13, question14, question15, 
-      question16, question17, question18, 
-      question19, question20, question21, 
-      question22, question23, question24, 
-      question25, question26, question27, 
-      question28, question29, question30, 
-      question31, question32, question33, 
-      question34, question35, question36, 
-      question37, question38, question39, 
-      question40, question41, question42, 
-      question43, question44, question45, 
-      question46, question47, question48, 
-      question49, question50, question51, 
-      question52, question53, question54, 
-      question55, question56, question57, 
-      question_sum, child_id)
-    values (#{question1,jdbcType=INTEGER}, #{question2,jdbcType=INTEGER}, #{question3,jdbcType=INTEGER}, 
-      #{question4,jdbcType=INTEGER}, #{question5,jdbcType=INTEGER}, #{question6,jdbcType=INTEGER}, 
-      #{question7,jdbcType=INTEGER}, #{question8,jdbcType=INTEGER}, #{question9,jdbcType=INTEGER}, 
-      #{question10,jdbcType=INTEGER}, #{question11,jdbcType=INTEGER}, #{question12,jdbcType=INTEGER}, 
-      #{question13,jdbcType=INTEGER}, #{question14,jdbcType=INTEGER}, #{question15,jdbcType=INTEGER}, 
-      #{question16,jdbcType=INTEGER}, #{question17,jdbcType=INTEGER}, #{question18,jdbcType=INTEGER}, 
-      #{question19,jdbcType=INTEGER}, #{question20,jdbcType=INTEGER}, #{question21,jdbcType=INTEGER}, 
-      #{question22,jdbcType=INTEGER}, #{question23,jdbcType=INTEGER}, #{question24,jdbcType=INTEGER}, 
-      #{question25,jdbcType=INTEGER}, #{question26,jdbcType=INTEGER}, #{question27,jdbcType=INTEGER}, 
-      #{question28,jdbcType=INTEGER}, #{question29,jdbcType=INTEGER}, #{question30,jdbcType=INTEGER}, 
-      #{question31,jdbcType=INTEGER}, #{question32,jdbcType=INTEGER}, #{question33,jdbcType=INTEGER}, 
-      #{question34,jdbcType=INTEGER}, #{question35,jdbcType=INTEGER}, #{question36,jdbcType=INTEGER}, 
-      #{question37,jdbcType=INTEGER}, #{question38,jdbcType=INTEGER}, #{question39,jdbcType=INTEGER}, 
-      #{question40,jdbcType=INTEGER}, #{question41,jdbcType=INTEGER}, #{question42,jdbcType=INTEGER}, 
-      #{question43,jdbcType=INTEGER}, #{question44,jdbcType=INTEGER}, #{question45,jdbcType=INTEGER}, 
-      #{question46,jdbcType=INTEGER}, #{question47,jdbcType=INTEGER}, #{question48,jdbcType=INTEGER}, 
-      #{question49,jdbcType=INTEGER}, #{question50,jdbcType=INTEGER}, #{question51,jdbcType=INTEGER}, 
-      #{question52,jdbcType=INTEGER}, #{question53,jdbcType=INTEGER}, #{question54,jdbcType=INTEGER}, 
-      #{question55,jdbcType=INTEGER}, #{question56,jdbcType=INTEGER}, #{question57,jdbcType=INTEGER}, 
-      #{questionSum,jdbcType=INTEGER}, #{childId,jdbcType=INTEGER})
-  </insert>
   <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.join.autism.entity.HzhThreemon.HzhThreemon" useGeneratedKeys="true">
     insert into hzh_threemon
     <trim prefix="(" suffix=")" suffixOverrides=",">
@@ -832,189 +1297,6 @@
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
-  </update>
-  <update id="updateByPrimaryKeySelective" parameterType="com.join.autism.entity.HzhThreemon.HzhThreemon">
-    update hzh_threemon
-    <set>
-      <if test="question1 != null">
-        question1 = #{question1,jdbcType=INTEGER},
-      </if>
-      <if test="question2 != null">
-        question2 = #{question2,jdbcType=INTEGER},
-      </if>
-      <if test="question3 != null">
-        question3 = #{question3,jdbcType=INTEGER},
-      </if>
-      <if test="question4 != null">
-        question4 = #{question4,jdbcType=INTEGER},
-      </if>
-      <if test="question5 != null">
-        question5 = #{question5,jdbcType=INTEGER},
-      </if>
-      <if test="question6 != null">
-        question6 = #{question6,jdbcType=INTEGER},
-      </if>
-      <if test="question7 != null">
-        question7 = #{question7,jdbcType=INTEGER},
-      </if>
-      <if test="question8 != null">
-        question8 = #{question8,jdbcType=INTEGER},
-      </if>
-      <if test="question9 != null">
-        question9 = #{question9,jdbcType=INTEGER},
-      </if>
-      <if test="question10 != null">
-        question10 = #{question10,jdbcType=INTEGER},
-      </if>
-      <if test="question11 != null">
-        question11 = #{question11,jdbcType=INTEGER},
-      </if>
-      <if test="question12 != null">
-        question12 = #{question12,jdbcType=INTEGER},
-      </if>
-      <if test="question13 != null">
-        question13 = #{question13,jdbcType=INTEGER},
-      </if>
-      <if test="question14 != null">
-        question14 = #{question14,jdbcType=INTEGER},
-      </if>
-      <if test="question15 != null">
-        question15 = #{question15,jdbcType=INTEGER},
-      </if>
-      <if test="question16 != null">
-        question16 = #{question16,jdbcType=INTEGER},
-      </if>
-      <if test="question17 != null">
-        question17 = #{question17,jdbcType=INTEGER},
-      </if>
-      <if test="question18 != null">
-        question18 = #{question18,jdbcType=INTEGER},
-      </if>
-      <if test="question19 != null">
-        question19 = #{question19,jdbcType=INTEGER},
-      </if>
-      <if test="question20 != null">
-        question20 = #{question20,jdbcType=INTEGER},
-      </if>
-      <if test="question21 != null">
-        question21 = #{question21,jdbcType=INTEGER},
-      </if>
-      <if test="question22 != null">
-        question22 = #{question22,jdbcType=INTEGER},
-      </if>
-      <if test="question23 != null">
-        question23 = #{question23,jdbcType=INTEGER},
-      </if>
-      <if test="question24 != null">
-        question24 = #{question24,jdbcType=INTEGER},
-      </if>
-      <if test="question25 != null">
-        question25 = #{question25,jdbcType=INTEGER},
-      </if>
-      <if test="question26 != null">
-        question26 = #{question26,jdbcType=INTEGER},
-      </if>
-      <if test="question27 != null">
-        question27 = #{question27,jdbcType=INTEGER},
-      </if>
-      <if test="question28 != null">
-        question28 = #{question28,jdbcType=INTEGER},
-      </if>
-      <if test="question29 != null">
-        question29 = #{question29,jdbcType=INTEGER},
-      </if>
-      <if test="question30 != null">
-        question30 = #{question30,jdbcType=INTEGER},
-      </if>
-      <if test="question31 != null">
-        question31 = #{question31,jdbcType=INTEGER},
-      </if>
-      <if test="question32 != null">
-        question32 = #{question32,jdbcType=INTEGER},
-      </if>
-      <if test="question33 != null">
-        question33 = #{question33,jdbcType=INTEGER},
-      </if>
-      <if test="question34 != null">
-        question34 = #{question34,jdbcType=INTEGER},
-      </if>
-      <if test="question35 != null">
-        question35 = #{question35,jdbcType=INTEGER},
-      </if>
-      <if test="question36 != null">
-        question36 = #{question36,jdbcType=INTEGER},
-      </if>
-      <if test="question37 != null">
-        question37 = #{question37,jdbcType=INTEGER},
-      </if>
-      <if test="question38 != null">
-        question38 = #{question38,jdbcType=INTEGER},
-      </if>
-      <if test="question39 != null">
-        question39 = #{question39,jdbcType=INTEGER},
-      </if>
-      <if test="question40 != null">
-        question40 = #{question40,jdbcType=INTEGER},
-      </if>
-      <if test="question41 != null">
-        question41 = #{question41,jdbcType=INTEGER},
-      </if>
-      <if test="question42 != null">
-        question42 = #{question42,jdbcType=INTEGER},
-      </if>
-      <if test="question43 != null">
-        question43 = #{question43,jdbcType=INTEGER},
-      </if>
-      <if test="question44 != null">
-        question44 = #{question44,jdbcType=INTEGER},
-      </if>
-      <if test="question45 != null">
-        question45 = #{question45,jdbcType=INTEGER},
-      </if>
-      <if test="question46 != null">
-        question46 = #{question46,jdbcType=INTEGER},
-      </if>
-      <if test="question47 != null">
-        question47 = #{question47,jdbcType=INTEGER},
-      </if>
-      <if test="question48 != null">
-        question48 = #{question48,jdbcType=INTEGER},
-      </if>
-      <if test="question49 != null">
-        question49 = #{question49,jdbcType=INTEGER},
-      </if>
-      <if test="question50 != null">
-        question50 = #{question50,jdbcType=INTEGER},
-      </if>
-      <if test="question51 != null">
-        question51 = #{question51,jdbcType=INTEGER},
-      </if>
-      <if test="question52 != null">
-        question52 = #{question52,jdbcType=INTEGER},
-      </if>
-      <if test="question53 != null">
-        question53 = #{question53,jdbcType=INTEGER},
-      </if>
-      <if test="question54 != null">
-        question54 = #{question54,jdbcType=INTEGER},
-      </if>
-      <if test="question55 != null">
-        question55 = #{question55,jdbcType=INTEGER},
-      </if>
-      <if test="question56 != null">
-        question56 = #{question56,jdbcType=INTEGER},
-      </if>
-      <if test="question57 != null">
-        question57 = #{question57,jdbcType=INTEGER},
-      </if>
-      <if test="questionSum != null">
-        question_sum = #{questionSum,jdbcType=INTEGER},
-      </if>
-      <if test="childId != null">
-        child_id = #{childId,jdbcType=INTEGER},
-      </if>
-    </set>
-    where id = #{id,jdbcType=INTEGER}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.join.autism.entity.HzhThreemon.HzhThreemon">
     update hzh_threemon

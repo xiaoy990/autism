@@ -34,7 +34,7 @@ public class HzhCommonController {
      * @param hzhCommon
      * @return
      */
-    @RequestMapping(value = "/insertHzhCommon")
+    @RequestMapping(value = "/insertCommon")
     public HzhCommon insertHzhCommon(HzhCommon hzhCommon){
         try {
             hzhCommonService.insertHzhCommon(hzhCommon);

@@ -19,7 +19,7 @@ import java.util.List;
 
 @CrossOrigin
 @RestController
-@RequestMapping("/HzhConvertion")
+@RequestMapping("/HzhConvention")
 public class HzhConvertionController {
 
     private final
@@ -34,7 +34,7 @@ public class HzhConvertionController {
      * @param hzhConvertion
      * @return
      */
-    @RequestMapping(value = "/insertHzhConvertion")
+    @RequestMapping(value = "/insertConvention")
     public HzhConvertion insertHzhConvertion(HzhConvertion hzhConvertion){
         try {
             hzhConvertionService.insertHzhConvertion(hzhConvertion);
@@ -48,7 +48,7 @@ public class HzhConvertionController {
      * 根据id删除
      * @param id
      */
-    @RequestMapping(value = "/deleteHzhConvertion")
+    @RequestMapping(value = "/deleteConvention")
     public void deleteHzhConvertion(Integer id){
         try {
             hzhConvertionService.deleteHzhConvertion(id);
@@ -62,7 +62,7 @@ public class HzhConvertionController {
      * @param hzhConvertion
      * @return
      */
-    @RequestMapping(value = "/updateHzhConvertion")
+    @RequestMapping(value = "/updateConvention")
     public HzhConvertion updateHzhConvertion(HzhConvertion hzhConvertion){
         try {
             hzhConvertionService.updateHzhConvertion(hzhConvertion);
@@ -78,7 +78,7 @@ public class HzhConvertionController {
      * @param hzhGeneral
      * @return
      */
-    @RequestMapping(value = "/mutiSelectConvertion")
+    @RequestMapping(value = "/selectConvention")
     public List<HzhConvertionDto> mutiSelectConvertion(HzhConvertion hzhConvertion, HzhGeneral hzhGeneral){
         List<HzhConvertionDto> mutiSelectConvertionList = null;
         try {

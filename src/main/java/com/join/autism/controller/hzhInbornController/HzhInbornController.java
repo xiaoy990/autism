@@ -15,7 +15,7 @@ import java.util.List;
  * */
 @CrossOrigin
 @RestController
-@RequestMapping("inborn")
+@RequestMapping("HzhInborn")
 
 public class HzhInbornController {
 
@@ -30,12 +30,12 @@ public class HzhInbornController {
         return hzhInbornService.selectHzhInborn(hzhInborn);
     }
 
-    @RequestMapping("addInborn")
+    @RequestMapping("insertInborn")
     public void addInborn(HzhInborn hzhInborn){
         hzhInbornService.insertHzhInborn(hzhInborn);
     }
 
-    @RequestMapping("delInborn")
+    @RequestMapping("deleteInborn")
     public void delInborn(HzhInborn hzhInborn){
         hzhInbornService.delHzhInbornByPK(hzhInborn.getId());
     }

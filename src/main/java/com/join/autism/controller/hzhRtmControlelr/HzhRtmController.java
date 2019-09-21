@@ -2,7 +2,9 @@ package com.join.autism.controller.hzhRtmControlelr;
 
 import com.join.autism.entity.HzhRtm.HzhRtm;
 import com.join.autism.entity.HzhRtm.HzhRtmDto;
+import com.join.autism.entity.HzhRtm.RtmQuestions;
 import com.join.autism.service.hzhRtmService.HzhRtmService;
+import com.join.autism.service.hzhRtmService.RtmQuestionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,9 +21,11 @@ import java.util.List;
 public class HzhRtmController {
 
     private final HzhRtmService hzhRtmService;
+    private final RtmQuestionService rtmQuestionService;
     @Autowired
-    public HzhRtmController(HzhRtmService hzhRtmService){
+    public HzhRtmController(HzhRtmService hzhRtmService, RtmQuestionService rtmQuestionService){
         this.hzhRtmService = hzhRtmService;
+        this.rtmQuestionService = rtmQuestionService;
     }
 
     @RequestMapping("selectHzhRtm")
@@ -42,5 +46,10 @@ public class HzhRtmController {
     @RequestMapping("updateHzhRtm")
     public void updateRtm(HzhRtm hzhRtm){
         hzhRtmService.updateHzhRtm(hzhRtm);
+    }
+
+    @RequestMapping("selectRtmQuestions")
+    public List<RtmQuestions> queryRtmQuestions(){
+        return rtmQuestionService.queryAllQuestions();
     }
 }

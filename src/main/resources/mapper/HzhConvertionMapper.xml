@@ -16,7 +16,7 @@
     <result column="child_id" jdbcType="INTEGER" property="childId" />
   </resultMap>
 
-  <resultMap id="MutiSelectResultMap" type="com.join.autism.entity.HzhConvertion.HzhConvertion">
+  <resultMap id="MutiSelectResultMap" type="com.join.autism.entity.HzhConvertion.HzhConvertionDto">
     <id column="id" jdbcType="INTEGER" property="id" />
     <result column="sleep" jdbcType="INTEGER" property="sleep" />
     <result column="sleepreason" jdbcType="VARCHAR" property="sleepreason" />
@@ -106,40 +106,40 @@
 
   <!--多条件查询-->
   <select id="mutiSelect" resultMap="MutiSelectResultMap">
-    select <include refid="mutiSelect_Column_List"/>,`name`,g.sickname,g.doctor,g.surveyTime,g.livenum from hzh_convertion convertion left join hzh_general g on (g.id = convertion.child_id)
+    select <include refid="mutiSelect_Column_List"/>,`name`,g.sicknum,g.doctor,g.survey_time,g.livenum from hzh_convertion convertion left join hzh_general g on (g.id = convertion.child_id)
     where 1 = 1
-    <if test="sleep != null">
-      and sleep = #{sleep,jdbcType=INTEGER}
+    <if test="hzhConvertion.sleep != null">
+      and hzhConvertion.sleep = #{sleep,jdbcType=INTEGER}
     </if>
-    <if test="sleepreason != null">
-      and sleepreason = #{sleepreason,jdbcType=VARCHAR}
+    <if test="hzhConvertion.sleepreason != null">
+      and hzhConvertion.sleepreason = #{sleepreason,jdbcType=VARCHAR}
     </if>
-    <if test="eat != null">
-      and eat = #{eat,jdbcType=INTEGER}
+    <if test="hzhConvertion.eat != null">
+      and hzhConvertion.eat = #{eat,jdbcType=INTEGER}
     </if>
-    <if test="eatreason != null">
-      and eatreason = #{eatreason,jdbcType=VARCHAR}
+    <if test="hzhConvertion.eatreason != null">
+      and hzhConvertion.eatreason = #{eatreason,jdbcType=VARCHAR}
     </if>
-    <if test="fat != null">
-      and fat = #{fat,jdbcType=INTEGER}
+    <if test="hzhConvertion.fat != null">
+      and hzhConvertion.fat = #{fat,jdbcType=INTEGER}
     </if>
-    <if test="fatreason != null">
-      and fatreason = #{fatreason,jdbcType=VARCHAR}
+    <if test="hzhConvertion.fatreason != null">
+      and hzhConvertion.fatreason = #{fatreason,jdbcType=VARCHAR}
     </if>
-    <if test="active != null">
-      and active = #{active,jdbcType=INTEGER}
+    <if test="hzhConvertion.active != null">
+      and hzhConvertion.active = #{active,jdbcType=INTEGER}
     </if>
-    <if test="activereason != null">
-      and activereason = #{activereason,jdbcType=VARCHAR}
+    <if test="hzhConvertion.activereason != null">
+      and hzhConvertion.activereason = #{activereason,jdbcType=VARCHAR}
     </if>
-    <if test="thin != null">
-      and thin = #{thin,jdbcType=INTEGER}
+    <if test="hzhConvertion.thin != null">
+      and hzhConvertion.thin = #{thin,jdbcType=INTEGER}
     </if>
-    <if test="thinreason != null">
-      and thinreason = #{thinreason,jdbcType=VARCHAR}
+    <if test="hzhConvertion.thinreason != null">
+      and hzhConvertion.thinreason = #{thinreason,jdbcType=VARCHAR}
     </if>
-    <if test="childId != null">
-      and child_id = #{childId,jdbcType=INTEGER}
+    <if test="hzhConvertion.childId != null">
+      and hzhConvertion.child_id = #{childId,jdbcType=INTEGER}
     </if>
   </select>
 
