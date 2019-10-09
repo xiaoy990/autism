@@ -22,12 +22,13 @@ public class HzhGeneralServiceImpl implements HzhGeneralService {
 
     @Override
     public List<HzhGeneral> selectHzhGeneral(HzhGeneral hzhGeneral, CriteriaSupportGeneral criteriaSupportGeneral) {
-        hzhGeneral.setSurveyTime(formatDateFromDB(hzhGeneral.getSurveyTime()));
-        hzhGeneral.setBirthday(formatDateFromDB(hzhGeneral.getBirthday()));
+//        hzhGeneral.setSurveyTime(formatDateFromDB(hzhGeneral.getSurveyTime()));
+//        hzhGeneral.setBirthday(formatDateFromDB(hzhGeneral.getBirthday()));
         if (criteriaSupportGeneral.getMinSurTime() != null && criteriaSupportGeneral.getMinSurTime() != "") {
             criteriaSupportGeneral.setMinSurTime(criteriaSupportGeneral.getMinSurTime().replaceAll("-",""));
             criteriaSupportGeneral.setMaxSurTime(criteriaSupportGeneral.getMaxSurTime().replaceAll("-",""));
         }
+        System.out.println("service: "+hzhGeneral.getBirthday()+" "+hzhGeneral.getSurveyTime());
         List<HzhGeneral> hzhGenerals = hzhGeneralMapper.mutiSelect(hzhGeneral, criteriaSupportGeneral);
         for (HzhGeneral hzh : hzhGenerals) {
             hzh.setBirthday(formatDateFromDB(hzh.getBirthday()));
@@ -149,13 +150,13 @@ public class HzhGeneralServiceImpl implements HzhGeneralService {
     /**
      * 转换标准日期格式到yyyy-mm-dd的形式，已弃用
      * */
-    private String formatDateFromFront(String originDate){
-        if (originDate.length()<11){
+    private String formatDateFromFront(String originDate) {
+        if (originDate.length() < 11) {
             return originDate;
         }
         String[] splits = originDate.split(" ");
         StringBuffer stringBuffer = new StringBuffer();
-        stringBuffer.append(splits[3]+"-"+String.format("%02d",Month.valueOf(splits[1]).ordinal())+"-"+String.format("%02d",Integer.valueOf(splits[2])));
+        stringBuffer.append(splits[3] + "-" + String.format("%02d", Month.valueOf(splits[1]).ordinal()) + "-" + String.format("%02d", Integer.valueOf(splits[2])));
         return stringBuffer.toString();
     }
 }

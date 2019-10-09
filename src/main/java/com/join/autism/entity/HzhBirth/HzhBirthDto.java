@@ -3,57 +3,57 @@ package com.join.autism.entity.HzhBirth;
 public class HzhBirthDto {
     private Integer id;
 
-    private Integer birth;
+    private String birth;
 
-    private String birthreason;
+    private String birthreason = "";
 
-    private String kg;
+    private String kg = "";
 
-    private Integer score;
+    private String score;
 
-    private String scorereason;
+    private String scorereason = "";
 
-    private Integer gogo;
+    private String gogo;
 
-    private String gogoreason;
+    private String gogoreason = "";
 
-    private Integer assist;
+    private String assist;
 
-    private String assistreason;
+    private String assistreason = "";
 
-    private String compl;
+    private String compl = "";
 
-    private String complreason;
+    private String complreason = "";
 
-    private Integer mombra;
+    private String mombra;
 
-    private String mombrareason;
+    private String mombrareason = "";
 
-    private String bradiff;
+    private String bradiff = "";
 
-    private String bradiffreason;
+    private String bradiffreason = "";
 
-    private Integer grow;
+    private String grow;
 
-    private String growreason;
+    private String growreason = "";
 
-    private String growslowreason;
+    private String growslowreason = "";
 
-    private Integer monthup;
+    private String monthup;
 
-    private Integer monthroll;
+    private String monthroll;
 
-    private Integer monthsit;
+    private String monthsit;
 
-    private Integer monthclimb;
+    private String monthclimb;
 
-    private Integer monthgo;
+    private String monthgo;
 
-    private String speakreason;
+    private String speakreason = "";
 
-    private Integer vitamd;
+    private String vitamd;
 
-    private String vitamdreason;
+    private String vitamdreason = "";
 
     private Integer childId;
 
@@ -63,6 +63,8 @@ public class HzhBirthDto {
 
     private String doctor;
 
+    public HzhBirthDto(){}
+
     public Integer getId() {
         return id;
     }
@@ -71,11 +73,11 @@ public class HzhBirthDto {
         this.id = id;
     }
 
-    public Integer getBirth() {
+    public String getBirth() {
         return birth;
     }
 
-    public void setBirth(Integer birth) {
+    public void setBirth(String birth) {
         this.birth = birth;
     }
 
@@ -95,11 +97,11 @@ public class HzhBirthDto {
         this.kg = kg;
     }
 
-    public Integer getScore() {
+    public String getScore() {
         return score;
     }
 
-    public void setScore(Integer score) {
+    public void setScore(String score) {
         this.score = score;
     }
 
@@ -111,11 +113,11 @@ public class HzhBirthDto {
         this.scorereason = scorereason;
     }
 
-    public Integer getGogo() {
+    public String getGogo() {
         return gogo;
     }
 
-    public void setGogo(Integer gogo) {
+    public void setGogo(String gogo) {
         this.gogo = gogo;
     }
 
@@ -127,11 +129,11 @@ public class HzhBirthDto {
         this.gogoreason = gogoreason;
     }
 
-    public Integer getAssist() {
+    public String getAssist() {
         return assist;
     }
 
-    public void setAssist(Integer assist) {
+    public void setAssist(String assist) {
         this.assist = assist;
     }
 
@@ -159,11 +161,11 @@ public class HzhBirthDto {
         this.complreason = complreason;
     }
 
-    public Integer getMombra() {
+    public String getMombra() {
         return mombra;
     }
 
-    public void setMombra(Integer mombra) {
+    public void setMombra(String mombra) {
         this.mombra = mombra;
     }
 
@@ -191,11 +193,11 @@ public class HzhBirthDto {
         this.bradiffreason = bradiffreason;
     }
 
-    public Integer getGrow() {
+    public String getGrow() {
         return grow;
     }
 
-    public void setGrow(Integer grow) {
+    public void setGrow(String grow) {
         this.grow = grow;
     }
 
@@ -215,43 +217,43 @@ public class HzhBirthDto {
         this.growslowreason = growslowreason;
     }
 
-    public Integer getMonthup() {
+    public String getMonthup() {
         return monthup;
     }
 
-    public void setMonthup(Integer monthup) {
+    public void setMonthup(String monthup) {
         this.monthup = monthup;
     }
 
-    public Integer getMonthroll() {
+    public String getMonthroll() {
         return monthroll;
     }
 
-    public void setMonthroll(Integer monthroll) {
+    public void setMonthroll(String monthroll) {
         this.monthroll = monthroll;
     }
 
-    public Integer getMonthsit() {
+    public String getMonthsit() {
         return monthsit;
     }
 
-    public void setMonthsit(Integer monthsit) {
+    public void setMonthsit(String monthsit) {
         this.monthsit = monthsit;
     }
 
-    public Integer getMonthclimb() {
+    public String getMonthclimb() {
         return monthclimb;
     }
 
-    public void setMonthclimb(Integer monthclimb) {
+    public void setMonthclimb(String monthclimb) {
         this.monthclimb = monthclimb;
     }
 
-    public Integer getMonthgo() {
+    public String getMonthgo() {
         return monthgo;
     }
 
-    public void setMonthgo(Integer monthgo) {
+    public void setMonthgo(String monthgo) {
         this.monthgo = monthgo;
     }
 
@@ -263,11 +265,11 @@ public class HzhBirthDto {
         this.speakreason = speakreason;
     }
 
-    public Integer getVitamd() {
+    public String getVitamd() {
         return vitamd;
     }
 
-    public void setVitamd(Integer vitamd) {
+    public void setVitamd(String vitamd) {
         this.vitamd = vitamd;
     }
 

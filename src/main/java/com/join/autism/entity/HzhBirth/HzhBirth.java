@@ -9,21 +9,21 @@ import java.io.Serializable;
 public class HzhBirth implements Serializable {
     private Integer id;
 
-    private Integer birth;
+    private String birth;
 
     private String birthreason = "";
 
     private String kg = "";
 
-    private Integer score;
+    private String score;
 
     private String scorereason = "";
 
-    private Integer gogo;
+    private String gogo;
 
     private String gogoreason = "";
 
-    private Integer assist;
+    private String assist;
 
     private String assistreason = "";
 
@@ -31,7 +31,7 @@ public class HzhBirth implements Serializable {
 
     private String complreason = "";
 
-    private Integer mombra;
+    private String mombra;
 
     private String mombrareason = "";
 
@@ -39,29 +39,31 @@ public class HzhBirth implements Serializable {
 
     private String bradiffreason = "";
 
-    private Integer grow;
+    private String grow;
 
     private String growreason = "";
 
     private String growslowreason = "";
 
-    private Integer monthup;
+    private String monthup;
 
-    private Integer monthroll;
+    private String monthroll;
 
-    private Integer monthsit;
+    private String monthsit;
 
-    private Integer monthclimb;
+    private String monthclimb;
 
-    private Integer monthgo;
+    private String monthgo;
 
     private String speakreason = "";
 
-    private Integer vitamd;
+    private String vitamd;
 
     private String vitamdreason = "";
 
     private Integer childId;
+
+    public HzhBirth(){}
 
     private static final long serialVersionUID = 1L;
 
@@ -73,11 +75,11 @@ public class HzhBirth implements Serializable {
         this.id = id;
     }
 
-    public Integer getBirth() {
+    public String getBirth() {
         return birth;
     }
 
-    public void setBirth(Integer birth) {
+    public void setBirth(String birth) {
         this.birth = birth;
     }
 
@@ -97,11 +99,11 @@ public class HzhBirth implements Serializable {
         this.kg = kg;
     }
 
-    public Integer getScore() {
+    public String getScore() {
         return score;
     }
 
-    public void setScore(Integer score) {
+    public void setScore(String score) {
         this.score = score;
     }
 
@@ -113,11 +115,11 @@ public class HzhBirth implements Serializable {
         this.scorereason = scorereason;
     }
 
-    public Integer getGogo() {
+    public String getGogo() {
         return gogo;
     }
 
-    public void setGogo(Integer gogo) {
+    public void setGogo(String gogo) {
         this.gogo = gogo;
     }
 
@@ -129,11 +131,11 @@ public class HzhBirth implements Serializable {
         this.gogoreason = gogoreason;
     }
 
-    public Integer getAssist() {
+    public String getAssist() {
         return assist;
     }
 
-    public void setAssist(Integer assist) {
+    public void setAssist(String assist) {
         this.assist = assist;
     }
 
@@ -161,11 +163,11 @@ public class HzhBirth implements Serializable {
         this.complreason = complreason;
     }
 
-    public Integer getMombra() {
+    public String getMombra() {
         return mombra;
     }
 
-    public void setMombra(Integer mombra) {
+    public void setMombra(String mombra) {
         this.mombra = mombra;
     }
 
@@ -193,11 +195,11 @@ public class HzhBirth implements Serializable {
         this.bradiffreason = bradiffreason;
     }
 
-    public Integer getGrow() {
+    public String getGrow() {
         return grow;
     }
 
-    public void setGrow(Integer grow) {
+    public void setGrow(String grow) {
         this.grow = grow;
     }
 
@@ -217,43 +219,43 @@ public class HzhBirth implements Serializable {
         this.growslowreason = growslowreason;
     }
 
-    public Integer getMonthup() {
+    public String getMonthup() {
         return monthup;
     }
 
-    public void setMonthup(Integer monthup) {
+    public void setMonthup(String monthup) {
         this.monthup = monthup;
     }
 
-    public Integer getMonthroll() {
+    public String getMonthroll() {
         return monthroll;
     }
 
-    public void setMonthroll(Integer monthroll) {
+    public void setMonthroll(String monthroll) {
         this.monthroll = monthroll;
     }
 
-    public Integer getMonthsit() {
+    public String getMonthsit() {
         return monthsit;
     }
 
-    public void setMonthsit(Integer monthsit) {
+    public void setMonthsit(String monthsit) {
         this.monthsit = monthsit;
     }
 
-    public Integer getMonthclimb() {
+    public String getMonthclimb() {
         return monthclimb;
     }
 
-    public void setMonthclimb(Integer monthclimb) {
+    public void setMonthclimb(String monthclimb) {
         this.monthclimb = monthclimb;
     }
 
-    public Integer getMonthgo() {
+    public String getMonthgo() {
         return monthgo;
     }
 
-    public void setMonthgo(Integer monthgo) {
+    public void setMonthgo(String monthgo) {
         this.monthgo = monthgo;
     }
 
@@ -265,11 +267,11 @@ public class HzhBirth implements Serializable {
         this.speakreason = speakreason;
     }
 
-    public Integer getVitamd() {
+    public String getVitamd() {
         return vitamd;
     }
 
-    public void setVitamd(Integer vitamd) {
+    public void setVitamd(String vitamd) {
         this.vitamd = vitamd;
     }
 

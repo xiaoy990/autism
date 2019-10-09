@@ -3,61 +3,61 @@
 <mapper namespace="com.join.autism.mapper.HzhBirthMapper">
   <resultMap id="BaseResultMap" type="com.join.autism.entity.HzhBirth.HzhBirth">
     <id column="id" jdbcType="INTEGER" property="id" />
-    <result column="birth" jdbcType="INTEGER" property="birth" />
+    <result column="birth" jdbcType="VARCHAR" property="birth" />
     <result column="birthreason" jdbcType="VARCHAR" property="birthreason" />
     <result column="kg" jdbcType="VARCHAR" property="kg" />
-    <result column="score" jdbcType="INTEGER" property="score" />
+    <result column="score" jdbcType="VARCHAR" property="score" />
     <result column="scorereason" jdbcType="VARCHAR" property="scorereason" />
-    <result column="gogo" jdbcType="INTEGER" property="gogo" />
+    <result column="gogo" jdbcType="VARCHAR" property="gogo" />
     <result column="gogoreason" jdbcType="VARCHAR" property="gogoreason" />
-    <result column="assist" jdbcType="INTEGER" property="assist" />
+    <result column="assist" jdbcType="VARCHAR" property="assist" />
     <result column="assistreason" jdbcType="VARCHAR" property="assistreason" />
     <result column="compl" jdbcType="VARCHAR" property="compl" />
     <result column="complreason" jdbcType="VARCHAR" property="complreason" />
-    <result column="mombra" jdbcType="INTEGER" property="mombra" />
+    <result column="mombra" jdbcType="VARCHAR" property="mombra" />
     <result column="mombrareason" jdbcType="VARCHAR" property="mombrareason" />
     <result column="bradiff" jdbcType="VARCHAR" property="bradiff" />
     <result column="bradiffreason" jdbcType="VARCHAR" property="bradiffreason" />
-    <result column="grow" jdbcType="INTEGER" property="grow" />
+    <result column="grow" jdbcType="VARCHAR" property="grow" />
     <result column="growreason" jdbcType="VARCHAR" property="growreason" />
     <result column="growslowreason" jdbcType="VARCHAR" property="growslowreason" />
-    <result column="monthup" jdbcType="INTEGER" property="monthup" />
-    <result column="monthroll" jdbcType="INTEGER" property="monthroll" />
-    <result column="monthsit" jdbcType="INTEGER" property="monthsit" />
-    <result column="monthclimb" jdbcType="INTEGER" property="monthclimb" />
-    <result column="monthgo" jdbcType="INTEGER" property="monthgo" />
+    <result column="monthup" jdbcType="VARCHAR" property="monthup" />
+    <result column="monthroll" jdbcType="VARCHAR" property="monthroll" />
+    <result column="monthsit" jdbcType="VARCHAR" property="monthsit" />
+    <result column="monthclimb" jdbcType="VARCHAR" property="monthclimb" />
+    <result column="monthgo" jdbcType="VARCHAR" property="monthgo" />
     <result column="speakreason" jdbcType="VARCHAR" property="speakreason" />
-    <result column="vitamd" jdbcType="INTEGER" property="vitamd" />
+    <result column="vitamd" jdbcType="VARCHAR" property="vitamd" />
     <result column="vitamdreason" jdbcType="VARCHAR" property="vitamdreason" />
     <result column="child_id" jdbcType="INTEGER" property="childId" />
   </resultMap>
   <resultMap id="mutiSelectResultMap" type="com.join.autism.entity.HzhBirth.HzhBirthDto">
     <id column="id" jdbcType="INTEGER" property="id" />
-    <result column="birth" jdbcType="INTEGER" property="birth" />
+    <result column="birth" jdbcType="VARCHAR" property="birth" />
     <result column="birthreason" jdbcType="VARCHAR" property="birthreason" />
     <result column="kg" jdbcType="VARCHAR" property="kg" />
-    <result column="score" jdbcType="INTEGER" property="score" />
+    <result column="score" jdbcType="VARCHAR" property="score" />
     <result column="scorereason" jdbcType="VARCHAR" property="scorereason" />
-    <result column="gogo" jdbcType="INTEGER" property="gogo" />
+    <result column="gogo" jdbcType="VARCHAR" property="gogo" />
     <result column="gogoreason" jdbcType="VARCHAR" property="gogoreason" />
-    <result column="assist" jdbcType="INTEGER" property="assist" />
+    <result column="assist" jdbcType="VARCHAR" property="assist" />
     <result column="assistreason" jdbcType="VARCHAR" property="assistreason" />
     <result column="compl" jdbcType="VARCHAR" property="compl" />
     <result column="complreason" jdbcType="VARCHAR" property="complreason" />
-    <result column="mombra" jdbcType="INTEGER" property="mombra" />
+    <result column="mombra" jdbcType="VARCHAR" property="mombra" />
     <result column="mombrareason" jdbcType="VARCHAR" property="mombrareason" />
     <result column="bradiff" jdbcType="VARCHAR" property="bradiff" />
     <result column="bradiffreason" jdbcType="VARCHAR" property="bradiffreason" />
-    <result column="grow" jdbcType="INTEGER" property="grow" />
+    <result column="grow" jdbcType="VARCHAR" property="grow" />
     <result column="growreason" jdbcType="VARCHAR" property="growreason" />
     <result column="growslowreason" jdbcType="VARCHAR" property="growslowreason" />
-    <result column="monthup" jdbcType="INTEGER" property="monthup" />
-    <result column="monthroll" jdbcType="INTEGER" property="monthroll" />
-    <result column="monthsit" jdbcType="INTEGER" property="monthsit" />
-    <result column="monthclimb" jdbcType="INTEGER" property="monthclimb" />
-    <result column="monthgo" jdbcType="INTEGER" property="monthgo" />
+    <result column="monthup" jdbcType="VARCHAR" property="monthup" />
+    <result column="monthroll" jdbcType="VARCHAR" property="monthroll" />
+    <result column="monthsit" jdbcType="VARCHAR" property="monthsit" />
+    <result column="monthclimb" jdbcType="VARCHAR" property="monthclimb" />
+    <result column="monthgo" jdbcType="VARCHAR" property="monthgo" />
     <result column="speakreason" jdbcType="VARCHAR" property="speakreason" />
-    <result column="vitamd" jdbcType="INTEGER" property="vitamd" />
+    <result column="vitamd" jdbcType="VARCHAR" property="vitamd" />
     <result column="vitamdreason" jdbcType="VARCHAR" property="vitamdreason" />
     <result column="child_id" jdbcType="INTEGER" property="childId" />
     <result column="name" property="name"/>
@@ -183,15 +183,15 @@
       monthclimb, monthgo, speakreason, 
       vitamd, vitamdreason, child_id
       )
-    values (#{birth,jdbcType=INTEGER}, #{birthreason,jdbcType=VARCHAR}, #{kg,jdbcType=VARCHAR}, 
-      #{score,jdbcType=INTEGER}, #{scorereason,jdbcType=VARCHAR}, #{gogo,jdbcType=INTEGER}, 
-      #{gogoreason,jdbcType=VARCHAR}, #{assist,jdbcType=INTEGER}, #{assistreason,jdbcType=VARCHAR}, 
-      #{compl,jdbcType=VARCHAR}, #{complreason,jdbcType=VARCHAR}, #{mombra,jdbcType=INTEGER}, 
+    values (#{birth,jdbcType=VARCHAR}, #{birthreason,jdbcType=VARCHAR}, #{kg,jdbcType=VARCHAR},
+      #{score,jdbcType=VARCHAR}, #{scorereason,jdbcType=VARCHAR}, #{gogo,jdbcType=VARCHAR},
+      #{gogoreason,jdbcType=VARCHAR}, #{assist,jdbcType=VARCHAR}, #{assistreason,jdbcType=VARCHAR},
+      #{compl,jdbcType=VARCHAR}, #{complreason,jdbcType=VARCHAR}, #{mombra,jdbcType=VARCHAR},
       #{mombrareason,jdbcType=VARCHAR}, #{bradiff,jdbcType=VARCHAR}, #{bradiffreason,jdbcType=VARCHAR}, 
-      #{grow,jdbcType=INTEGER}, #{growreason,jdbcType=VARCHAR}, #{growslowreason,jdbcType=VARCHAR}, 
-      #{monthup,jdbcType=INTEGER}, #{monthroll,jdbcType=INTEGER}, #{monthsit,jdbcType=INTEGER}, 
-      #{monthclimb,jdbcType=INTEGER}, #{monthgo,jdbcType=INTEGER}, #{speakreason,jdbcType=VARCHAR}, 
-      #{vitamd,jdbcType=INTEGER}, #{vitamdreason,jdbcType=VARCHAR}, #{childId,jdbcType=INTEGER}
+      #{grow,jdbcType=VARCHAR}, #{growreason,jdbcType=VARCHAR}, #{growslowreason,jdbcType=VARCHAR},
+      #{monthup,jdbcType=VARCHAR}, #{monthroll,jdbcType=VARCHAR}, #{monthsit,jdbcType=VARCHAR},
+      #{monthclimb,jdbcType=VARCHAR}, #{monthgo,jdbcType=VARCHAR}, #{speakreason,jdbcType=VARCHAR},
+      #{vitamd,jdbcType=VARCHAR}, #{vitamdreason,jdbcType=VARCHAR}, #{childId,jdbcType=INTEGER}
       )
   </insert>
   <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.join.autism.entity.HzhBirth.HzhBirth" useGeneratedKeys="true">
@@ -281,7 +281,7 @@
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="birth != null">
-        #{birth,jdbcType=INTEGER},
+        #{birth,jdbcType=VARCHAR},
       </if>
       <if test="birthreason != null">
         #{birthreason,jdbcType=VARCHAR},
@@ -290,19 +290,19 @@
         #{kg,jdbcType=VARCHAR},
       </if>
       <if test="score != null">
-        #{score,jdbcType=INTEGER},
+        #{score,jdbcType=VARCHAR},
       </if>
       <if test="scorereason != null">
         #{scorereason,jdbcType=VARCHAR},
       </if>
       <if test="gogo != null">
-        #{gogo,jdbcType=INTEGER},
+        #{gogo,jdbcType=VARCHAR},
       </if>
       <if test="gogoreason != null">
         #{gogoreason,jdbcType=VARCHAR},
       </if>
       <if test="assist != null">
-        #{assist,jdbcType=INTEGER},
+        #{assist,jdbcType=VARCHAR},
       </if>
       <if test="assistreason != null">
         #{assistreason,jdbcType=VARCHAR},
@@ -314,7 +314,7 @@
         #{complreason,jdbcType=VARCHAR},
       </if>
       <if test="mombra != null">
-        #{mombra,jdbcType=INTEGER},
+        #{mombra,jdbcType=VARCHAR},
       </if>
       <if test="mombrareason != null">
         #{mombrareason,jdbcType=VARCHAR},
@@ -326,7 +326,7 @@
         #{bradiffreason,jdbcType=VARCHAR},
       </if>
       <if test="grow != null">
-        #{grow,jdbcType=INTEGER},
+        #{grow,jdbcType=VARCHAR},
       </if>
       <if test="growreason != null">
         #{growreason,jdbcType=VARCHAR},
@@ -335,25 +335,25 @@
         #{growslowreason,jdbcType=VARCHAR},
       </if>
       <if test="monthup != null">
-        #{monthup,jdbcType=INTEGER},
+        #{monthup,jdbcType=VARCHAR},
       </if>
       <if test="monthroll != null">
-        #{monthroll,jdbcType=INTEGER},
+        #{monthroll,jdbcType=VARCHAR},
       </if>
       <if test="monthsit != null">
-        #{monthsit,jdbcType=INTEGER},
+        #{monthsit,jdbcType=VARCHAR},
       </if>
       <if test="monthclimb != null">
-        #{monthclimb,jdbcType=INTEGER},
+        #{monthclimb,jdbcType=VARCHAR},
       </if>
       <if test="monthgo != null">
-        #{monthgo,jdbcType=INTEGER},
+        #{monthgo,jdbcType=VARCHAR},
       </if>
       <if test="speakreason != null">
         #{speakreason,jdbcType=VARCHAR},
       </if>
       <if test="vitamd != null">
-        #{vitamd,jdbcType=INTEGER},
+        #{vitamd,jdbcType=VARCHAR},
       </if>
       <if test="vitamdreason != null">
         #{vitamdreason,jdbcType=VARCHAR},
@@ -376,7 +376,7 @@
         id = #{record.id,jdbcType=INTEGER},
       </if>
       <if test="record.birth != null">
-        birth = #{record.birth,jdbcType=INTEGER},
+        birth = #{record.birth,jdbcType=VARCHAR},
       </if>
       <if test="record.birthreason != null">
         birthreason = #{record.birthreason,jdbcType=VARCHAR},
@@ -385,19 +385,19 @@
         kg = #{record.kg,jdbcType=VARCHAR},
       </if>
       <if test="record.score != null">
-        score = #{record.score,jdbcType=INTEGER},
+        score = #{record.score,jdbcType=VARCHAR},
       </if>
       <if test="record.scorereason != null">
         scorereason = #{record.scorereason,jdbcType=VARCHAR},
       </if>
       <if test="record.gogo != null">
-        gogo = #{record.gogo,jdbcType=INTEGER},
+        gogo = #{record.gogo,jdbcType=VARCHAR},
       </if>
       <if test="record.gogoreason != null">
         gogoreason = #{record.gogoreason,jdbcType=VARCHAR},
       </if>
       <if test="record.assist != null">
-        assist = #{record.assist,jdbcType=INTEGER},
+        assist = #{record.assist,jdbcType=VARCHAR},
       </if>
       <if test="record.assistreason != null">
         assistreason = #{record.assistreason,jdbcType=VARCHAR},
@@ -409,7 +409,7 @@
         complreason = #{record.complreason,jdbcType=VARCHAR},
       </if>
       <if test="record.mombra != null">
-        mombra = #{record.mombra,jdbcType=INTEGER},
+        mombra = #{record.mombra,jdbcType=VARCHAR},
       </if>
       <if test="record.mombrareason != null">
         mombrareason = #{record.mombrareason,jdbcType=VARCHAR},
@@ -421,7 +421,7 @@
         bradiffreason = #{record.bradiffreason,jdbcType=VARCHAR},
       </if>
       <if test="record.grow != null">
-        grow = #{record.grow,jdbcType=INTEGER},
+        grow = #{record.grow,jdbcType=VARCHAR},
       </if>
       <if test="record.growreason != null">
         growreason = #{record.growreason,jdbcType=VARCHAR},
@@ -430,25 +430,25 @@
         growslowreason = #{record.growslowreason,jdbcType=VARCHAR},
       </if>
       <if test="record.monthup != null">
-        monthup = #{record.monthup,jdbcType=INTEGER},
+        monthup = #{record.monthup,jdbcType=VARCHAR},
       </if>
       <if test="record.monthroll != null">
-        monthroll = #{record.monthroll,jdbcType=INTEGER},
+        monthroll = #{record.monthroll,jdbcType=VARCHAR},
       </if>
       <if test="record.monthsit != null">
-        monthsit = #{record.monthsit,jdbcType=INTEGER},
+        monthsit = #{record.monthsit,jdbcType=VARCHAR},
       </if>
       <if test="record.monthclimb != null">
-        monthclimb = #{record.monthclimb,jdbcType=INTEGER},
+        monthclimb = #{record.monthclimb,jdbcType=VARCHAR},
       </if>
       <if test="record.monthgo != null">
-        monthgo = #{record.monthgo,jdbcType=INTEGER},
+        monthgo = #{record.monthgo,jdbcType=VARCHAR},
       </if>
       <if test="record.speakreason != null">
         speakreason = #{record.speakreason,jdbcType=VARCHAR},
       </if>
       <if test="record.vitamd != null">
-        vitamd = #{record.vitamd,jdbcType=INTEGER},
+        vitamd = #{record.vitamd,jdbcType=VARCHAR},
       </if>
       <if test="record.vitamdreason != null">
         vitamdreason = #{record.vitamdreason,jdbcType=VARCHAR},
@@ -464,31 +464,31 @@
   <update id="updateByExample" parameterType="map">
     update hzh_birth
     set id = #{record.id,jdbcType=INTEGER},
-      birth = #{record.birth,jdbcType=INTEGER},
+      birth = #{record.birth,jdbcType=VARCHAR},
       birthreason = #{record.birthreason,jdbcType=VARCHAR},
       kg = #{record.kg,jdbcType=VARCHAR},
-      score = #{record.score,jdbcType=INTEGER},
+      score = #{record.score,jdbcType=VARCHAR},
       scorereason = #{record.scorereason,jdbcType=VARCHAR},
-      gogo = #{record.gogo,jdbcType=INTEGER},
+      gogo = #{record.gogo,jdbcType=VARCHAR},
       gogoreason = #{record.gogoreason,jdbcType=VARCHAR},
-      assist = #{record.assist,jdbcType=INTEGER},
+      assist = #{record.assist,jdbcType=VARCHAR},
       assistreason = #{record.assistreason,jdbcType=VARCHAR},
       compl = #{record.compl,jdbcType=VARCHAR},
       complreason = #{record.complreason,jdbcType=VARCHAR},
-      mombra = #{record.mombra,jdbcType=INTEGER},
+      mombra = #{record.mombra,jdbcType=VARCHAR},
       mombrareason = #{record.mombrareason,jdbcType=VARCHAR},
       bradiff = #{record.bradiff,jdbcType=VARCHAR},
       bradiffreason = #{record.bradiffreason,jdbcType=VARCHAR},
-      grow = #{record.grow,jdbcType=INTEGER},
+      grow = #{record.grow,jdbcType=VARCHAR},
       growreason = #{record.growreason,jdbcType=VARCHAR},
       growslowreason = #{record.growslowreason,jdbcType=VARCHAR},
-      monthup = #{record.monthup,jdbcType=INTEGER},
-      monthroll = #{record.monthroll,jdbcType=INTEGER},
-      monthsit = #{record.monthsit,jdbcType=INTEGER},
-      monthclimb = #{record.monthclimb,jdbcType=INTEGER},
-      monthgo = #{record.monthgo,jdbcType=INTEGER},
+      monthup = #{record.monthup,jdbcType=VARCHAR},
+      monthroll = #{record.monthroll,jdbcType=VARCHAR},
+      monthsit = #{record.monthsit,jdbcType=VARCHAR},
+      monthclimb = #{record.monthclimb,jdbcType=VARCHAR},
+      monthgo = #{record.monthgo,jdbcType=VARCHAR},
       speakreason = #{record.speakreason,jdbcType=VARCHAR},
-      vitamd = #{record.vitamd,jdbcType=INTEGER},
+      vitamd = #{record.vitamd,jdbcType=VARCHAR},
       vitamdreason = #{record.vitamdreason,jdbcType=VARCHAR},
       child_id = #{record.childId,jdbcType=INTEGER}
     <if test="_parameter != null">
@@ -499,7 +499,7 @@
     update hzh_birth
     <set>
       <if test="birth != null">
-        birth = #{birth,jdbcType=INTEGER},
+        birth = #{birth,jdbcType=VARCHAR},
       </if>
       <if test="birthreason != null">
         birthreason = #{birthreason,jdbcType=VARCHAR},
@@ -508,19 +508,19 @@
         kg = #{kg,jdbcType=VARCHAR},
       </if>
       <if test="score != null">
-        score = #{score,jdbcType=INTEGER},
+        score = #{score,jdbcType=VARCHAR},
       </if>
       <if test="scorereason != null">
         scorereason = #{scorereason,jdbcType=VARCHAR},
       </if>
       <if test="gogo != null">
-        gogo = #{gogo,jdbcType=INTEGER},
+        gogo = #{gogo,jdbcType=VARCHAR},
       </if>
       <if test="gogoreason != null">
         gogoreason = #{gogoreason,jdbcType=VARCHAR},
       </if>
       <if test="assist != null">
-        assist = #{assist,jdbcType=INTEGER},
+        assist = #{assist,jdbcType=VARCHAR},
       </if>
       <if test="assistreason != null">
         assistreason = #{assistreason,jdbcType=VARCHAR},
@@ -532,7 +532,7 @@
         complreason = #{complreason,jdbcType=VARCHAR},
       </if>
       <if test="mombra != null">
-        mombra = #{mombra,jdbcType=INTEGER},
+        mombra = #{mombra,jdbcType=VARCHAR},
       </if>
       <if test="mombrareason != null">
         mombrareason = #{mombrareason,jdbcType=VARCHAR},
@@ -544,7 +544,7 @@
         bradiffreason = #{bradiffreason,jdbcType=VARCHAR},
       </if>
       <if test="grow != null">
-        grow = #{grow,jdbcType=INTEGER},
+        grow = #{grow,jdbcType=VARCHAR},
       </if>
       <if test="growreason != null">
         growreason = #{growreason,jdbcType=VARCHAR},
@@ -553,25 +553,25 @@
         growslowreason = #{growslowreason,jdbcType=VARCHAR},
       </if>
       <if test="monthup != null">
-        monthup = #{monthup,jdbcType=INTEGER},
+        monthup = #{monthup,jdbcType=VARCHAR},
       </if>
       <if test="monthroll != null">
-        monthroll = #{monthroll,jdbcType=INTEGER},
+        monthroll = #{monthroll,jdbcType=VARCHAR},
       </if>
       <if test="monthsit != null">
-        monthsit = #{monthsit,jdbcType=INTEGER},
+        monthsit = #{monthsit,jdbcType=VARCHAR},
       </if>
       <if test="monthclimb != null">
-        monthclimb = #{monthclimb,jdbcType=INTEGER},
+        monthclimb = #{monthclimb,jdbcType=VARCHAR},
       </if>
       <if test="monthgo != null">
-        monthgo = #{monthgo,jdbcType=INTEGER},
+        monthgo = #{monthgo,jdbcType=VARCHAR},
       </if>
       <if test="speakreason != null">
         speakreason = #{speakreason,jdbcType=VARCHAR},
       </if>
       <if test="vitamd != null">
-        vitamd = #{vitamd,jdbcType=INTEGER},
+        vitamd = #{vitamd,jdbcType=VARCHAR},
       </if>
       <if test="vitamdreason != null">
         vitamdreason = #{vitamdreason,jdbcType=VARCHAR},
@@ -584,31 +584,31 @@
   </update>
   <update id="updateByPrimaryKey" parameterType="com.join.autism.entity.HzhBirth.HzhBirth">
     update hzh_birth
-    set birth = #{birth,jdbcType=INTEGER},
+    set birth = #{birth,jdbcType=VARCHAR},
       birthreason = #{birthreason,jdbcType=VARCHAR},
       kg = #{kg,jdbcType=VARCHAR},
-      score = #{score,jdbcType=INTEGER},
+      score = #{score,jdbcType=VARCHAR},
       scorereason = #{scorereason,jdbcType=VARCHAR},
-      gogo = #{gogo,jdbcType=INTEGER},
+      gogo = #{gogo,jdbcType=VARCHAR},
       gogoreason = #{gogoreason,jdbcType=VARCHAR},
-      assist = #{assist,jdbcType=INTEGER},
+      assist = #{assist,jdbcType=VARCHAR},
       assistreason = #{assistreason,jdbcType=VARCHAR},
       compl = #{compl,jdbcType=VARCHAR},
       complreason = #{complreason,jdbcType=VARCHAR},
-      mombra = #{mombra,jdbcType=INTEGER},
+      mombra = #{mombra,jdbcType=VARCHAR},
       mombrareason = #{mombrareason,jdbcType=VARCHAR},
       bradiff = #{bradiff,jdbcType=VARCHAR},
       bradiffreason = #{bradiffreason,jdbcType=VARCHAR},
-      grow = #{grow,jdbcType=INTEGER},
+      grow = #{grow,jdbcType=VARCHAR},
       growreason = #{growreason,jdbcType=VARCHAR},
       growslowreason = #{growslowreason,jdbcType=VARCHAR},
-      monthup = #{monthup,jdbcType=INTEGER},
-      monthroll = #{monthroll,jdbcType=INTEGER},
-      monthsit = #{monthsit,jdbcType=INTEGER},
-      monthclimb = #{monthclimb,jdbcType=INTEGER},
-      monthgo = #{monthgo,jdbcType=INTEGER},
+      monthup = #{monthup,jdbcType=VARCHAR},
+      monthroll = #{monthroll,jdbcType=VARCHAR},
+      monthsit = #{monthsit,jdbcType=VARCHAR},
+      monthclimb = #{monthclimb,jdbcType=VARCHAR},
+      monthgo = #{monthgo,jdbcType=VARCHAR},
       speakreason = #{speakreason,jdbcType=VARCHAR},
-      vitamd = #{vitamd,jdbcType=INTEGER},
+      vitamd = #{vitamd,jdbcType=VARCHAR},
       vitamdreason = #{vitamdreason,jdbcType=VARCHAR},
       child_id = #{childId,jdbcType=INTEGER}
     where id = #{id,jdbcType=INTEGER}
@@ -617,7 +617,7 @@
   <select id="mutiSelect" resultMap="mutiSelectResultMap">
     select <include refid="mutiSelect_Column_List"/> from hzh_birth b left join hzh_general g on ( b.child_id = g.id )where  1=1
     <if test="birth != null and birth != ''">
-      and birth = #{birth,jdbcType=INTEGER}
+      and birth = #{birth,jdbcType=VARCHAR}
     </if>
     <if test="birthreason != null and birthreason != ''">
       and birthreason = #{birthreason,jdbcType=VARCHAR}
@@ -626,19 +626,19 @@
       and kg = #{kg,jdbcType=VARCHAR}
     </if>
     <if test="score != null and score != ''">
-      and score = #{score,jdbcType=INTEGER}
+      and score = #{score,jdbcType=VARCHAR}
     </if>
     <if test="scorereason != null and scorereason != ''">
       and scorereason = #{scorereason,jdbcType=VARCHAR}
     </if>
     <if test="gogo != null and gogo != ''">
-      and gogo = #{gogo,jdbcType=INTEGER}
+      and gogo = #{gogo,jdbcType=VARCHAR}
     </if>
     <if test="gogoreason != null and gogoreason != ''">
       and gogoreason = #{gogoreason,jdbcType=VARCHAR}
     </if>
     <if test="assist != null and assist != ''">
-      and assist = #{assist,jdbcType=INTEGER}
+      and assist = #{assist,jdbcType=VARCHAR}
     </if>
     <if test="assistreason != null and assistreason != ''">
       and assistreason = #{assistreason,jdbcType=VARCHAR}
@@ -650,7 +650,7 @@
       and complreason = #{complreason,jdbcType=VARCHAR}
     </if>
     <if test="mombra != null and mombra != ''">
-      and mombra = #{mombra,jdbcType=INTEGER}
+      and mombra = #{mombra,jdbcType=VARCHAR}
     </if>
     <if test="mombrareason != null and mombrareason != ''">
       and mombrareason = #{mombrareason,jdbcType=VARCHAR}
@@ -662,7 +662,7 @@
       and bradiffreason = #{bradiffreason,jdbcType=VARCHAR}
     </if>
     <if test="grow != null and grow != ''">
-      and grow = #{grow,jdbcType=INTEGER}
+      and grow = #{grow,jdbcType=VARCHAR}
     </if>
     <if test="growreason != null and growreason != ''">
       and growreason = #{growreason,jdbcType=VARCHAR}
@@ -671,25 +671,25 @@
       and growslowreason = #{growslowreason,jdbcType=VARCHAR}
     </if>
     <if test="monthup != null and monthup != ''">
-      and monthup = #{monthup,jdbcType=INTEGER}
+      and monthup = #{monthup,jdbcType=VARCHAR}
     </if>
     <if test="monthroll != null and monthroll != ''">
-      and monthroll = #{monthroll,jdbcType=INTEGER}
+      and monthroll = #{monthroll,jdbcType=VARCHAR}
     </if>
     <if test="monthsit != null and monthsit != ''">
-      and monthsit = #{monthsit,jdbcType=INTEGER}
+      and monthsit = #{monthsit,jdbcType=VARCHAR}
     </if>
     <if test="monthclimb != null and monthclimb != ''">
-      and monthclimb = #{monthclimb,jdbcType=INTEGER}
+      and monthclimb = #{monthclimb,jdbcType=VARCHAR}
     </if>
     <if test="monthgo != null and monthgo != ''">
-      and monthgo = #{monthgo,jdbcType=INTEGER}
+      and monthgo = #{monthgo,jdbcType=VARCHAR}
     </if>
     <if test="speakreason != null and speakreason != ''">
       and speakreason = #{speakreason,jdbcType=VARCHAR}
     </if>
     <if test="vitamd != null and vitamd != ''">
-      and vitamd = #{vitamd,jdbcType=INTEGER}
+      and vitamd = #{vitamd,jdbcType=VARCHAR}
     </if>
     <if test="vitamdreason != null and vitamdreason != ''">
       and vitamdreason = #{vitamdreason,jdbcType=VARCHAR}

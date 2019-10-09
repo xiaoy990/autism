@@ -26,7 +26,6 @@ public class HzhGeneralController {
      * */
     @RequestMapping(value = "selectGeneral",produces = "application/json;charset=UTF-8")
     public List<HzhGeneral> selectGeneral(HzhGeneral hzhGeneral, CriteriaSupportGeneral criteriaSupportGeneral){
-        System.out.println("搜索日志："+criteriaSupportGeneral);
         return hzhGeneralService.selectHzhGeneral(hzhGeneral,criteriaSupportGeneral);
     }
 
@@ -36,9 +35,26 @@ public class HzhGeneralController {
      * 要求前端必须同时传入生日和就诊时月份
      * */
     @RequestMapping(value = "addGeneral",produces = "application/json;charset=UTF-8")
-    public void insertGeneral( HzhGeneral hzhGeneral, String[] pct){
-        System.out.println("添加日志： "+hzhGeneral);
+    public List<HzhGeneral> insertGeneral( HzhGeneral hzhGeneral, String[] pct){
         hzhGeneralService.insertHzhGeneral(hzhGeneral,pct);
+        if (hzhGeneral.getBirthday() != null) {
+            System.out.println(hzhGeneral.getBirthday());
+            hzhGeneral.setBirthday(hzhGeneral.getBirthday().replaceAll("-",""));
+            System.out.println(hzhGeneral.getBirthday());
+        }
+        if (hzhGeneral.getSurveyTime()!=null){
+            System.out.println(hzhGeneral.getSurveyTime());
+            hzhGeneral.setSurveyTime(hzhGeneral.getSurveyTime().replaceAll("-",""));
+            System.out.println(hzhGeneral.getSurveyTime());
+        }
+        System.out.println("controller: "+hzhGeneral.getBirthday()+" "+hzhGeneral.getSurveyTime());
+        List<HzhGeneral> hzhGenerals = hzhGeneralService.selectHzhGeneral(hzhGeneral, new CriteriaSupportGeneral());
+        for (HzhGeneral g:hzhGenerals
+             ) {
+            System.out.println(g);
+        }
+        return hzhGenerals;
+
     }
 
     /**
