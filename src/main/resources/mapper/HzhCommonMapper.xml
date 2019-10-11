@@ -3,54 +3,54 @@
 <mapper namespace="com.join.autism.mapper.HzhCommonMapper">
   <resultMap id="BaseResultMap" type="com.join.autism.entity.HzhCommon.HzhCommon">
     <id column="id" jdbcType="INTEGER" property="id" />
-    <result column="low" jdbcType="INTEGER" property="low" />
+    <result column="low" jdbcType="VARCHAR" property="low" />
     <result column="lowreason" jdbcType="VARCHAR" property="lowreason" />
-    <result column="infect" jdbcType="INTEGER" property="infect" />
+    <result column="infect" jdbcType="VARCHAR" property="infect" />
     <result column="infectreason" jdbcType="VARCHAR" property="infectreason" />
-    <result column="stop" jdbcType="INTEGER" property="stop" />
+    <result column="stop" jdbcType="VARCHAR" property="stop" />
     <result column="stopreason" jdbcType="VARCHAR" property="stopreason" />
-    <result column="high" jdbcType="INTEGER" property="high" />
+    <result column="high" jdbcType="VARCHAR" property="high" />
     <result column="highreason" jdbcType="VARCHAR" property="highreason" />
-    <result column="around" jdbcType="INTEGER" property="around" />
+    <result column="around" jdbcType="VARCHAR" property="around" />
     <result column="aroundreason" jdbcType="VARCHAR" property="aroundreason" />
-    <result column="listen" jdbcType="INTEGER" property="listen" />
-    <result column="is_audiphones" jdbcType="INTEGER" property="isAudiphones" />
+    <result column="listen" jdbcType="VARCHAR" property="listen" />
+    <result column="is_audiphones" jdbcType="VARCHAR" property="isAudiphones" />
     <result column="listenreason" jdbcType="VARCHAR" property="listenreason" />
-    <result column="eye" jdbcType="INTEGER" property="eye" />
-    <result column="is_glasses" jdbcType="INTEGER" property="isGlasses" />
+    <result column="eye" jdbcType="VARCHAR" property="eye" />
+    <result column="is_glasses" jdbcType="VARCHAR" property="isGlasses" />
     <result column="eyereason" jdbcType="VARCHAR" property="eyereason" />
-    <result column="disease" jdbcType="INTEGER" property="disease" />
+    <result column="disease" jdbcType="VARCHAR" property="disease" />
     <result column="diseasereason" jdbcType="VARCHAR" property="diseasereason" />
-    <result column="lax" jdbcType="INTEGER" property="lax" />
+    <result column="lax" jdbcType="VARCHAR" property="lax" />
     <result column="laxreason" jdbcType="VARCHAR" property="laxreason" />
-    <result column="vaccin" jdbcType="INTEGER" property="vaccin" />
+    <result column="vaccin" jdbcType="VARCHAR" property="vaccin" />
     <result column="vaccinreason" jdbcType="VARCHAR" property="vaccinreason" />
     <result column="child_id" jdbcType="INTEGER" property="childId" />
   </resultMap>
 
   <resultMap id="MutiSelectResultMap" type="com.join.autism.entity.HzhCommon.HzhCommonDto">
     <id column="id" jdbcType="INTEGER" property="id" />
-    <result column="low" jdbcType="INTEGER" property="low" />
+    <result column="low" jdbcType="VARCHAR" property="low" />
     <result column="lowreason" jdbcType="VARCHAR" property="lowreason" />
-    <result column="infect" jdbcType="INTEGER" property="infect" />
+    <result column="infect" jdbcType="VARCHAR" property="infect" />
     <result column="infectreason" jdbcType="VARCHAR" property="infectreason" />
-    <result column="stop" jdbcType="INTEGER" property="stop" />
+    <result column="stop" jdbcType="VARCHAR" property="stop" />
     <result column="stopreason" jdbcType="VARCHAR" property="stopreason" />
-    <result column="high" jdbcType="INTEGER" property="high" />
+    <result column="high" jdbcType="VARCHAR" property="high" />
     <result column="highreason" jdbcType="VARCHAR" property="highreason" />
-    <result column="around" jdbcType="INTEGER" property="around" />
+    <result column="around" jdbcType="VARCHAR" property="around" />
     <result column="aroundreason" jdbcType="VARCHAR" property="aroundreason" />
-    <result column="listen" jdbcType="INTEGER" property="listen" />
-    <result column="is_audiphones" jdbcType="INTEGER" property="isAudiphones" />
+    <result column="listen" jdbcType="VARCHAR" property="listen" />
+    <result column="is_audiphones" jdbcType="VARCHAR" property="isAudiphones" />
     <result column="listenreason" jdbcType="VARCHAR" property="listenreason" />
-    <result column="eye" jdbcType="INTEGER" property="eye" />
-    <result column="is_glasses" jdbcType="INTEGER" property="isGlasses" />
+    <result column="eye" jdbcType="VARCHAR" property="eye" />
+    <result column="is_glasses" jdbcType="VARCHAR" property="isGlasses" />
     <result column="eyereason" jdbcType="VARCHAR" property="eyereason" />
-    <result column="disease" jdbcType="INTEGER" property="disease" />
+    <result column="disease" jdbcType="VARCHAR" property="disease" />
     <result column="diseasereason" jdbcType="VARCHAR" property="diseasereason" />
-    <result column="lax" jdbcType="INTEGER" property="lax" />
+    <result column="lax" jdbcType="VARCHAR" property="lax" />
     <result column="laxreason" jdbcType="VARCHAR" property="laxreason" />
-    <result column="vaccin" jdbcType="INTEGER" property="vaccin" />
+    <result column="vaccin" jdbcType="VARCHAR" property="vaccin" />
     <result column="vaccinreason" jdbcType="VARCHAR" property="vaccinreason" />
     <result column="child_id" jdbcType="INTEGER" property="childId" />
     <result column="name" jdbcType="VARCHAR" property="name" />
@@ -72,13 +72,13 @@
       eyereason, disease, diseasereason,
       lax, laxreason, vaccin,
       vaccinreason, child_id)
-    values (#{low,jdbcType=INTEGER}, #{lowreason,jdbcType=VARCHAR}, #{infect,jdbcType=INTEGER},
-      #{infectreason,jdbcType=VARCHAR}, #{stop,jdbcType=INTEGER}, #{stopreason,jdbcType=VARCHAR},
-      #{high,jdbcType=INTEGER}, #{highreason,jdbcType=VARCHAR}, #{around,jdbcType=INTEGER},
-      #{aroundreason,jdbcType=VARCHAR}, #{listen,jdbcType=INTEGER}, #{isAudiphones,jdbcType=INTEGER},
-      #{listenreason,jdbcType=VARCHAR}, #{eye,jdbcType=INTEGER}, #{isGlasses,jdbcType=INTEGER},
-      #{eyereason,jdbcType=VARCHAR}, #{disease,jdbcType=INTEGER}, #{diseasereason,jdbcType=VARCHAR},
-      #{lax,jdbcType=INTEGER}, #{laxreason,jdbcType=VARCHAR}, #{vaccin,jdbcType=INTEGER},
+    values (#{low,jdbcType=VARCHAR}, #{lowreason,jdbcType=VARCHAR}, #{infect,jdbcType=VARCHAR},
+      #{infectreason,jdbcType=VARCHAR}, #{stop,jdbcType=VARCHAR}, #{stopreason,jdbcType=VARCHAR},
+      #{high,jdbcType=VARCHAR}, #{highreason,jdbcType=VARCHAR}, #{around,jdbcType=VARCHAR},
+      #{aroundreason,jdbcType=VARCHAR}, #{listen,jdbcType=VARCHAR}, #{isAudiphones,jdbcType=VARCHAR},
+      #{listenreason,jdbcType=VARCHAR}, #{eye,jdbcType=VARCHAR}, #{isGlasses,jdbcType=VARCHAR},
+      #{eyereason,jdbcType=VARCHAR}, #{disease,jdbcType=VARCHAR}, #{diseasereason,jdbcType=VARCHAR},
+      #{lax,jdbcType=VARCHAR}, #{laxreason,jdbcType=VARCHAR}, #{vaccin,jdbcType=VARCHAR},
       #{vaccinreason,jdbcType=VARCHAR}, #{childId,jdbcType=INTEGER})
   </insert>
 
@@ -93,67 +93,67 @@
     update hzh_common
     <set>
       <if test="low != null">
-        low = #{low,jdbcType=INTEGER},
+        low = #{low,jdbcType=VARCHAR},
       </if>
       <if test="lowreason != null">
         lowreason = #{lowreason,jdbcType=VARCHAR},
       </if>
       <if test="infect != null">
-        infect = #{infect,jdbcType=INTEGER},
+        infect = #{infect,jdbcType=VARCHAR},
       </if>
       <if test="infectreason != null">
         infectreason = #{infectreason,jdbcType=VARCHAR},
       </if>
       <if test="stop != null">
-        stop = #{stop,jdbcType=INTEGER},
+        stop = #{stop,jdbcType=VARCHAR},
       </if>
       <if test="stopreason != null">
         stopreason = #{stopreason,jdbcType=VARCHAR},
       </if>
       <if test="high != null">
-        high = #{high,jdbcType=INTEGER},
+        high = #{high,jdbcType=VARCHAR},
       </if>
       <if test="highreason != null">
         highreason = #{highreason,jdbcType=VARCHAR},
       </if>
       <if test="around != null">
-        around = #{around,jdbcType=INTEGER},
+        around = #{around,jdbcType=VARCHAR},
       </if>
       <if test="aroundreason != null">
         aroundreason = #{aroundreason,jdbcType=VARCHAR},
       </if>
       <if test="listen != null">
-        `listen` = #{listen,jdbcType=INTEGER},
+        `listen` = #{listen,jdbcType=VARCHAR},
       </if>
       <if test="isAudiphones != null">
-        is_audiphones = #{isAudiphones,jdbcType=INTEGER},
+        is_audiphones = #{isAudiphones,jdbcType=VARCHAR},
       </if>
       <if test="listenreason != null">
         listenreason = #{listenreason,jdbcType=VARCHAR},
       </if>
       <if test="eye != null">
-        eye = #{eye,jdbcType=INTEGER},
+        eye = #{eye,jdbcType=VARCHAR},
       </if>
       <if test="isGlasses != null">
-        is_glasses = #{isGlasses,jdbcType=INTEGER},
+        is_glasses = #{isGlasses,jdbcType=VARCHAR},
       </if>
       <if test="eyereason != null">
         eyereason = #{eyereason,jdbcType=VARCHAR},
       </if>
       <if test="disease != null">
-        disease = #{disease,jdbcType=INTEGER},
+        disease = #{disease,jdbcType=VARCHAR},
       </if>
       <if test="diseasereason != null">
         diseasereason = #{diseasereason,jdbcType=VARCHAR},
       </if>
       <if test="lax != null">
-        lax = #{lax,jdbcType=INTEGER},
+        lax = #{lax,jdbcType=VARCHAR},
       </if>
       <if test="laxreason != null">
         laxreason = #{laxreason,jdbcType=VARCHAR},
       </if>
       <if test="vaccin != null">
-        vaccin = #{vaccin,jdbcType=INTEGER},
+        vaccin = #{vaccin,jdbcType=VARCHAR},
       </if>
       <if test="vaccinreason != null">
         vaccinreason = #{vaccinreason,jdbcType=VARCHAR},
@@ -182,68 +182,71 @@
   <select id="mutiSelect" resultMap="MutiSelectResultMap">
     select <include refid="mutiSelect_Column_List"/>,`name`,g.sicknum,g.doctor,g.survey_time,g.livenum from hzh_common common left join hzh_general g on (g.id = common.child_id)
     where 1 = 1
+    <if test="hzhGeneral.name != null and hzhGeneral.name != ''">
+      and g.name like concat('%','${hzhGeneral.name}','%')
+    </if>
     <if test="common.low != null">
-      and common.low = #{common.low,jdbcType=INTEGER}
+      and common.low = #{common.low,jdbcType=VARCHAR}
     </if>
     <if test="common.lowreason != null">
       and common.lowreason = #{common.lowreason,jdbcType=VARCHAR}
     </if>
     <if test="common.infect != null">
-      and common.infect = #{common.infect,jdbcType=INTEGER}
+      and common.infect = #{common.infect,jdbcType=VARCHAR}
     </if>
     <if test="common.infectreason != null">
       and common.infectreason = #{common.infectreason,jdbcType=VARCHAR}
     </if>
     <if test="common.stop != null">
-      and common.stop = #{common.stop,jdbcType=INTEGER}
+      and common.stop = #{common.stop,jdbcType=VARCHAR}
     </if>
     <if test="common.stopreason != null">
       and common.stopreason = #{common.stopreason,jdbcType=VARCHAR}
     </if>
     <if test="common.high != null">
-      and common.high = #{common.high,jdbcType=INTEGER}
+      and common.high = #{common.high,jdbcType=VARCHAR}
     </if>
     <if test="common.highreason != null">
       and common.highreason = #{common.highreason,jdbcType=VARCHAR}
     </if>
     <if test="common.around != null">
-      and common.around = #{common.around,jdbcType=INTEGER}
+      and common.around = #{common.around,jdbcType=VARCHAR}
     </if>
     <if test="common.aroundreason != null">
       and common.aroundreason = #{common.aroundreason,jdbcType=VARCHAR}
     </if>
     <if test="common.listen != null">
-      and common.listen = #{common.listen,jdbcType=INTEGER}
+      and common.listen = #{common.listen,jdbcType=VARCHAR}
     </if>
     <if test="common.isAudiphones != null">
-      and common.is_audiphones = #{common.isAudiphones,jdbcType=INTEGER}
+      and common.is_audiphones = #{common.isAudiphones,jdbcType=VARCHAR}
     </if>
     <if test="common.listenreason != null">
       and common.listenreason = #{common.listenreason,jdbcType=VARCHAR}
     </if>
     <if test="common.eye != null">
-      and common.eye = #{common.eye,jdbcType=INTEGER}
+      and common.eye = #{common.eye,jdbcType=VARCHAR}
     </if>
     <if test="common.isGlasses != null">
-      and common.is_glasses = #{common.isGlasses,jdbcType=INTEGER}
+      and common.is_glasses = #{common.isGlasses,jdbcType=VARCHAR}
     </if>
     <if test="common.eyereason != null">
       and common.eyereason = #{common.eyereason,jdbcType=VARCHAR}
     </if>
     <if test="common.disease != null">
-      and common.disease = #{common.disease,jdbcType=INTEGER}
+      and common.disease = #{common.disease,jdbcType=VARCHAR}
     </if>
     <if test="common.diseasereason != null">
       and common.diseasereason = #{common.diseasereason,jdbcType=VARCHAR}
     </if>
     <if test="common.lax != null">
-      and common.lax = #{common.lax,jdbcType=INTEGER}
+      and common.lax = #{common.lax,jdbcType=VARCHAR}
     </if>
     <if test="common.laxreason != null">
       and common.laxreason = #{common.laxreason,jdbcType=VARCHAR}
     </if>
     <if test="common.vaccin != null">
-      and common.vaccin = #{common.vaccin,jdbcType=INTEGER}
+      and common.vaccin = #{common.vaccin,jdbcType=VARCHAR}
     </if>
     <if test="common.vaccinreason != null">
       and common.vaccinreason = #{common.vaccinreason,jdbcType=VARCHAR}
@@ -433,67 +436,67 @@
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="low != null">
-        #{low,jdbcType=INTEGER},
+        #{low,jdbcType=VARCHAR},
       </if>
       <if test="lowreason != null">
         #{lowreason,jdbcType=VARCHAR},
       </if>
       <if test="infect != null">
-        #{infect,jdbcType=INTEGER},
+        #{infect,jdbcType=VARCHAR},
       </if>
       <if test="infectreason != null">
         #{infectreason,jdbcType=VARCHAR},
       </if>
       <if test="stop != null">
-        #{stop,jdbcType=INTEGER},
+        #{stop,jdbcType=VARCHAR},
       </if>
       <if test="stopreason != null">
         #{stopreason,jdbcType=VARCHAR},
       </if>
       <if test="high != null">
-        #{high,jdbcType=INTEGER},
+        #{high,jdbcType=VARCHAR},
       </if>
       <if test="highreason != null">
         #{highreason,jdbcType=VARCHAR},
       </if>
       <if test="around != null">
-        #{around,jdbcType=INTEGER},
+        #{around,jdbcType=VARCHAR},
       </if>
       <if test="aroundreason != null">
         #{aroundreason,jdbcType=VARCHAR},
       </if>
       <if test="listen != null">
-        #{listen,jdbcType=INTEGER},
+        #{listen,jdbcType=VARCHAR},
       </if>
       <if test="isAudiphones != null">
-        #{isAudiphones,jdbcType=INTEGER},
+        #{isAudiphones,jdbcType=VARCHAR},
       </if>
       <if test="listenreason != null">
         #{listenreason,jdbcType=VARCHAR},
       </if>
       <if test="eye != null">
-        #{eye,jdbcType=INTEGER},
+        #{eye,jdbcType=VARCHAR},
       </if>
       <if test="isGlasses != null">
-        #{isGlasses,jdbcType=INTEGER},
+        #{isGlasses,jdbcType=VARCHAR},
       </if>
       <if test="eyereason != null">
         #{eyereason,jdbcType=VARCHAR},
       </if>
       <if test="disease != null">
-        #{disease,jdbcType=INTEGER},
+        #{disease,jdbcType=VARCHAR},
       </if>
       <if test="diseasereason != null">
         #{diseasereason,jdbcType=VARCHAR},
       </if>
       <if test="lax != null">
-        #{lax,jdbcType=INTEGER},
+        #{lax,jdbcType=VARCHAR},
       </if>
       <if test="laxreason != null">
         #{laxreason,jdbcType=VARCHAR},
       </if>
       <if test="vaccin != null">
-        #{vaccin,jdbcType=INTEGER},
+        #{vaccin,jdbcType=VARCHAR},
       </if>
       <if test="vaccinreason != null">
         #{vaccinreason,jdbcType=VARCHAR},
@@ -516,73 +519,73 @@
         id = #{record.id,jdbcType=INTEGER},
       </if>
       <if test="record.low != null">
-        low = #{record.low,jdbcType=INTEGER},
+        low = #{record.low,jdbcType=VARCHAR},
       </if>
       <if test="record.lowreason != null">
         lowreason = #{record.lowreason,jdbcType=VARCHAR},
       </if>
       <if test="record.infect != null">
-        infect = #{record.infect,jdbcType=INTEGER},
+        infect = #{record.infect,jdbcType=VARCHAR},
       </if>
       <if test="record.infectreason != null">
         infectreason = #{record.infectreason,jdbcType=VARCHAR},
       </if>
       <if test="record.stop != null">
-        stop = #{record.stop,jdbcType=INTEGER},
+        stop = #{record.stop,jdbcType=VARCHAR},
       </if>
       <if test="record.stopreason != null">
         stopreason = #{record.stopreason,jdbcType=VARCHAR},
       </if>
       <if test="record.high != null">
-        high = #{record.high,jdbcType=INTEGER},
+        high = #{record.high,jdbcType=VARCHAR},
       </if>
       <if test="record.highreason != null">
         highreason = #{record.highreason,jdbcType=VARCHAR},
       </if>
       <if test="record.around != null">
-        around = #{record.around,jdbcType=INTEGER},
+        around = #{record.around,jdbcType=VARCHAR},
       </if>
       <if test="record.aroundreason != null">
         aroundreason = #{record.aroundreason,jdbcType=VARCHAR},
       </if>
       <if test="record.listen != null">
-        `listen` = #{record.listen,jdbcType=INTEGER},
+        `listen` = #{record.listen,jdbcType=VARCHAR},
       </if>
       <if test="record.isAudiphones != null">
-        is_audiphones = #{record.isAudiphones,jdbcType=INTEGER},
+        is_audiphones = #{record.isAudiphones,jdbcType=VARCHAR},
       </if>
       <if test="record.listenreason != null">
         listenreason = #{record.listenreason,jdbcType=VARCHAR},
       </if>
       <if test="record.eye != null">
-        eye = #{record.eye,jdbcType=INTEGER},
+        eye = #{record.eye,jdbcType=VARCHAR},
       </if>
       <if test="record.isGlasses != null">
-        is_glasses = #{record.isGlasses,jdbcType=INTEGER},
+        is_glasses = #{record.isGlasses,jdbcType=VARCHAR},
       </if>
       <if test="record.eyereason != null">
         eyereason = #{record.eyereason,jdbcType=VARCHAR},
       </if>
       <if test="record.disease != null">
-        disease = #{record.disease,jdbcType=INTEGER},
+        disease = #{record.disease,jdbcType=VARCHAR},
       </if>
       <if test="record.diseasereason != null">
         diseasereason = #{record.diseasereason,jdbcType=VARCHAR},
       </if>
       <if test="record.lax != null">
-        lax = #{record.lax,jdbcType=INTEGER},
+        lax = #{record.lax,jdbcType=VARCHAR},
       </if>
       <if test="record.laxreason != null">
         laxreason = #{record.laxreason,jdbcType=VARCHAR},
       </if>
       <if test="record.vaccin != null">
-        vaccin = #{record.vaccin,jdbcType=INTEGER},
+        vaccin = #{record.vaccin,jdbcType=VARCHAR},
       </if>
       <if test="record.vaccinreason != null">
         vaccinreason = #{record.vaccinreason,jdbcType=VARCHAR},
       </if>
       <if test="record.childId != null">
-        child_id = #{record.childId,jdbcType=INTEGER},
+        child_id = #{record.childId,jdbcType=VARCHAR},
       </if>
     </set>
     <if test="_parameter != null">
@@ -592,27 +595,27 @@
   <update id="updateByExample" parameterType="map">
     update hzh_common
     set id = #{record.id,jdbcType=INTEGER},
-      low = #{record.low,jdbcType=INTEGER},
+      low = #{record.low,jdbcType=VARCHAR},
       lowreason = #{record.lowreason,jdbcType=VARCHAR},
-      infect = #{record.infect,jdbcType=INTEGER},
+      infect = #{record.infect,jdbcType=VARCHAR},
       infectreason = #{record.infectreason,jdbcType=VARCHAR},
-      stop = #{record.stop,jdbcType=INTEGER},
+      stop = #{record.stop,jdbcType=VARCHAR},
       stopreason = #{record.stopreason,jdbcType=VARCHAR},
-      high = #{record.high,jdbcType=INTEGER},
+      high = #{record.high,jdbcType=VARCHAR},
       highreason = #{record.highreason,jdbcType=VARCHAR},
-      around = #{record.around,jdbcType=INTEGER},
+      around = #{record.around,jdbcType=VARCHAR},
       aroundreason = #{record.aroundreason,jdbcType=VARCHAR},
-      `listen` = #{record.listen,jdbcType=INTEGER},
-      is_audiphones = #{record.isAudiphones,jdbcType=INTEGER},
+      `listen` = #{record.listen,jdbcType=VARCHAR},
+      is_audiphones = #{record.isAudiphones,jdbcType=VARCHAR},
       listenreason = #{record.listenreason,jdbcType=VARCHAR},
-      eye = #{record.eye,jdbcType=INTEGER},
-      is_glasses = #{record.isGlasses,jdbcType=INTEGER},
+      eye = #{record.eye,jdbcType=VARCHAR},
+      is_glasses = #{record.isGlasses,jdbcType=VARCHAR},
       eyereason = #{record.eyereason,jdbcType=VARCHAR},
-      disease = #{record.disease,jdbcType=INTEGER},
+      disease = #{record.disease,jdbcType=VARCHAR},
       diseasereason = #{record.diseasereason,jdbcType=VARCHAR},
-      lax = #{record.lax,jdbcType=INTEGER},
+      lax = #{record.lax,jdbcType=VARCHAR},
       laxreason = #{record.laxreason,jdbcType=VARCHAR},
-      vaccin = #{record.vaccin,jdbcType=INTEGER},
+      vaccin = #{record.vaccin,jdbcType=VARCHAR},
       vaccinreason = #{record.vaccinreason,jdbcType=VARCHAR},
       child_id = #{record.childId,jdbcType=INTEGER}
     <if test="_parameter != null">
@@ -621,29 +624,29 @@
   </update>
   <update id="updateByPrimaryKey" parameterType="com.join.autism.entity.HzhCommon.HzhCommon">
     update hzh_common
-    set low = #{low,jdbcType=INTEGER},
+    set low = #{low,jdbcType=VARCHAR},
       lowreason = #{lowreason,jdbcType=VARCHAR},
-      infect = #{infect,jdbcType=INTEGER},
+      infect = #{infect,jdbcType=VARCHAR},
       infectreason = #{infectreason,jdbcType=VARCHAR},
-      stop = #{stop,jdbcType=INTEGER},
+      stop = #{stop,jdbcType=VARCHAR},
       stopreason = #{stopreason,jdbcType=VARCHAR},
-      high = #{high,jdbcType=INTEGER},
+      high = #{high,jdbcType=VARCHAR},
       highreason = #{highreason,jdbcType=VARCHAR},
-      around = #{around,jdbcType=INTEGER},
+      around = #{around,jdbcType=VARCHAR},
       aroundreason = #{aroundreason,jdbcType=VARCHAR},
-      `listen` = #{listen,jdbcType=INTEGER},
-      is_audiphones = #{isAudiphones,jdbcType=INTEGER},
+      `listen` = #{listen,jdbcType=VARCHAR},
+      is_audiphones = #{isAudiphones,jdbcType=VARCHAR},
       listenreason = #{listenreason,jdbcType=VARCHAR},
-      eye = #{eye,jdbcType=INTEGER},
-      is_glasses = #{isGlasses,jdbcType=INTEGER},
+      eye = #{eye,jdbcType=VARCHAR},
+      is_glasses = #{isGlasses,jdbcType=VARCHAR},
       eyereason = #{eyereason,jdbcType=VARCHAR},
-      disease = #{disease,jdbcType=INTEGER},
+      disease = #{disease,jdbcType=VARCHAR},
       diseasereason = #{diseasereason,jdbcType=VARCHAR},
-      lax = #{lax,jdbcType=INTEGER},
+      lax = #{lax,jdbcType=VARCHAR},
       laxreason = #{laxreason,jdbcType=VARCHAR},
-      vaccin = #{vaccin,jdbcType=INTEGER},
+      vaccin = #{vaccin,jdbcType=VARCHAR},
       vaccinreason = #{vaccinreason,jdbcType=VARCHAR},
-      child_id = #{childId,jdbcType=INTEGER}
+      child_id = #{childId,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
 </mapper>

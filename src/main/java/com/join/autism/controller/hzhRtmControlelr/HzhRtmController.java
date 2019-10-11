@@ -1,5 +1,6 @@
 package com.join.autism.controller.hzhRtmControlelr;
 
+import com.join.autism.entity.HzhGeneral.HzhGeneral;
 import com.join.autism.entity.HzhRtm.HzhRtm;
 import com.join.autism.entity.HzhRtm.HzhRtmDto;
 import com.join.autism.entity.HzhRtm.RtmQuestions;
@@ -29,8 +30,8 @@ public class HzhRtmController {
     }
 
     @RequestMapping("selectHzhRtm")
-    public List<HzhRtmDto> selectRtm(HzhRtm hzhRtm){
-        return hzhRtmService.selectHzhRtm(hzhRtm);
+    public List<HzhRtmDto> selectRtm(HzhRtm hzhRtm, HzhGeneral hzhGeneral){
+        return hzhRtmService.selectHzhRtm(hzhRtm,hzhGeneral);
     }
 
     @RequestMapping("insertHzhRtm")

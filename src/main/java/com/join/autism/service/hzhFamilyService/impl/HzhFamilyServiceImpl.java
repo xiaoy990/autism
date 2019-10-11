@@ -2,6 +2,7 @@ package com.join.autism.service.hzhFamilyService.impl;
 
 import com.join.autism.entity.HzhFamily.HzhFamily;
 import com.join.autism.entity.HzhFamily.HzhFamilyDto;
+import com.join.autism.entity.HzhGeneral.HzhGeneral;
 import com.join.autism.mapper.HzhFamilyMapper;
 import com.join.autism.service.hzhFamilyService.HzhFamilyService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -53,7 +54,7 @@ public class HzhFamilyServiceImpl implements HzhFamilyService {
      * @return
      */
     @Override
-    public List<HzhFamilyDto> mutiSelectFamily(HzhFamily hzhFamily){
-        return hzhFamilyMapper.mutiSelect(hzhFamily);
+    public List<HzhFamilyDto> mutiSelectFamily(HzhFamily hzhFamily, HzhGeneral hzhGeneral){
+        return hzhFamilyMapper.mutiSelect(hzhFamily,hzhGeneral);
     }
 }

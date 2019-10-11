@@ -3,35 +3,35 @@ package com.join.autism.entity.HzhNerve;
 public class HzhNerveDto {
     private Integer id;
 
-    private Integer yesNo;
+    private String yesNo;
 
-    private Integer epilepsy;
+    private String epilepsy;
 
-    private String epilepsyreason;
+    private String epilepsyreason = "";
 
-    private Integer tension;
+    private String tension;
 
-    private String tensionreason;
+    private String tensionreason = "";
 
-    private Integer imbalance;
+    private String imbalance;
 
-    private String imbalancereason;
+    private String imbalancereason = "";
 
-    private Integer gait;
+    private String gait;
 
-    private String gaitreason;
+    private String gaitreason = "";
 
-    private Integer lncrease;
+    private String lncrease;
 
-    private String lncreasereason;
+    private String lncreasereason = "";
 
-    private Integer weaken;
+    private String weaken;
 
-    private String weakenreason;
+    private String weakenreason = "";
 
-    private Integer other;
+    private String other;
 
-    private String otherreason;
+    private String otherreason = "";
 
     private Integer childId;
 
@@ -55,19 +55,19 @@ public class HzhNerveDto {
         this.id = id;
     }
 
-    public Integer getYesNo() {
+    public String getYesNo() {
         return yesNo;
     }
 
-    public void setYesNo(Integer yesNo) {
+    public void setYesNo(String yesNo) {
         this.yesNo = yesNo;
     }
 
-    public Integer getEpilepsy() {
+    public String getEpilepsy() {
         return epilepsy;
     }
 
-    public void setEpilepsy(Integer epilepsy) {
+    public void setEpilepsy(String epilepsy) {
         this.epilepsy = epilepsy;
     }
 
@@ -79,11 +79,11 @@ public class HzhNerveDto {
         this.epilepsyreason = epilepsyreason;
     }
 
-    public Integer getTension() {
+    public String getTension() {
         return tension;
     }
 
-    public void setTension(Integer tension) {
+    public void setTension(String tension) {
         this.tension = tension;
     }
 
@@ -95,11 +95,11 @@ public class HzhNerveDto {
         this.tensionreason = tensionreason;
     }
 
-    public Integer getImbalance() {
+    public String getImbalance() {
         return imbalance;
     }
 
-    public void setImbalance(Integer imbalance) {
+    public void setImbalance(String imbalance) {
         this.imbalance = imbalance;
     }
 
@@ -111,11 +111,11 @@ public class HzhNerveDto {
         this.imbalancereason = imbalancereason;
     }
 
-    public Integer getGait() {
+    public String getGait() {
         return gait;
     }
 
-    public void setGait(Integer gait) {
+    public void setGait(String gait) {
         this.gait = gait;
     }
 
@@ -127,11 +127,11 @@ public class HzhNerveDto {
         this.gaitreason = gaitreason;
     }
 
-    public Integer getLncrease() {
+    public String getLncrease() {
         return lncrease;
     }
 
-    public void setLncrease(Integer lncrease) {
+    public void setLncrease(String lncrease) {
         this.lncrease = lncrease;
     }
 
@@ -143,11 +143,11 @@ public class HzhNerveDto {
         this.lncreasereason = lncreasereason;
     }
 
-    public Integer getWeaken() {
+    public String getWeaken() {
         return weaken;
     }
 
-    public void setWeaken(Integer weaken) {
+    public void setWeaken(String weaken) {
         this.weaken = weaken;
     }
 
@@ -159,11 +159,11 @@ public class HzhNerveDto {
         this.weakenreason = weakenreason;
     }
 
-    public Integer getOther() {
+    public String getOther() {
         return other;
     }
 
-    public void setOther(Integer other) {
+    public void setOther(String other) {
         this.other = other;
     }
 

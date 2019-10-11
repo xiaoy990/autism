@@ -3,30 +3,30 @@
 <mapper namespace="com.join.autism.mapper.HzhConvertionMapper">
   <resultMap id="BaseResultMap" type="com.join.autism.entity.HzhConvertion.HzhConvertion">
     <id column="id" jdbcType="INTEGER" property="id" />
-    <result column="sleep" jdbcType="INTEGER" property="sleep" />
+    <result column="sleep" jdbcType="VARCHAR" property="sleep" />
     <result column="sleepreason" jdbcType="VARCHAR" property="sleepreason" />
-    <result column="eat" jdbcType="INTEGER" property="eat" />
+    <result column="eat" jdbcType="VARCHAR" property="eat" />
     <result column="eatreason" jdbcType="VARCHAR" property="eatreason" />
-    <result column="fat" jdbcType="INTEGER" property="fat" />
+    <result column="fat" jdbcType="VARCHAR" property="fat" />
     <result column="fatreason" jdbcType="VARCHAR" property="fatreason" />
-    <result column="active" jdbcType="INTEGER" property="active" />
+    <result column="active" jdbcType="VARCHAR" property="active" />
     <result column="activereason" jdbcType="VARCHAR" property="activereason" />
-    <result column="thin" jdbcType="INTEGER" property="thin" />
+    <result column="thin" jdbcType="VARCHAR" property="thin" />
     <result column="thinreason" jdbcType="VARCHAR" property="thinreason" />
     <result column="child_id" jdbcType="INTEGER" property="childId" />
   </resultMap>
 
   <resultMap id="MutiSelectResultMap" type="com.join.autism.entity.HzhConvertion.HzhConvertionDto">
     <id column="id" jdbcType="INTEGER" property="id" />
-    <result column="sleep" jdbcType="INTEGER" property="sleep" />
+    <result column="sleep" jdbcType="VARCHAR" property="sleep" />
     <result column="sleepreason" jdbcType="VARCHAR" property="sleepreason" />
-    <result column="eat" jdbcType="INTEGER" property="eat" />
+    <result column="eat" jdbcType="VARCHAR" property="eat" />
     <result column="eatreason" jdbcType="VARCHAR" property="eatreason" />
-    <result column="fat" jdbcType="INTEGER" property="fat" />
+    <result column="fat" jdbcType="VARCHAR" property="fat" />
     <result column="fatreason" jdbcType="VARCHAR" property="fatreason" />
-    <result column="active" jdbcType="INTEGER" property="active" />
+    <result column="active" jdbcType="VARCHAR" property="active" />
     <result column="activereason" jdbcType="VARCHAR" property="activereason" />
-    <result column="thin" jdbcType="INTEGER" property="thin" />
+    <result column="thin" jdbcType="VARCHAR" property="thin" />
     <result column="thinreason" jdbcType="VARCHAR" property="thinreason" />
     <result column="child_id" jdbcType="INTEGER" property="childId" />
     <result column="name" jdbcType="VARCHAR" property="name" />
@@ -42,9 +42,9 @@
       eatreason, fat, fatreason,
       active, activereason, thin,
       thinreason, child_id)
-    values (#{sleep,jdbcType=INTEGER}, #{sleepreason,jdbcType=VARCHAR}, #{eat,jdbcType=INTEGER},
-      #{eatreason,jdbcType=VARCHAR}, #{fat,jdbcType=INTEGER}, #{fatreason,jdbcType=VARCHAR},
-      #{active,jdbcType=INTEGER}, #{activereason,jdbcType=VARCHAR}, #{thin,jdbcType=INTEGER},
+    values (#{sleep,jdbcType=VARCHAR}, #{sleepreason,jdbcType=VARCHAR}, #{eat,jdbcType=VARCHAR},
+      #{eatreason,jdbcType=VARCHAR}, #{fat,jdbcType=VARCHAR}, #{fatreason,jdbcType=VARCHAR},
+      #{active,jdbcType=VARCHAR}, #{activereason,jdbcType=VARCHAR}, #{thin,jdbcType=VARCHAR},
       #{thinreason,jdbcType=VARCHAR}, #{childId,jdbcType=INTEGER})
   </insert>
 
@@ -59,37 +59,37 @@
     update hzh_convertion
     <set>
       <if test="sleep != null">
-        sleep = #{sleep,jdbcType=INTEGER},
+        sleep = #{sleep,jdbcType=VARCHAR},
       </if>
       <if test="sleepreason != null">
         sleepreason = #{sleepreason,jdbcType=VARCHAR},
       </if>
       <if test="eat != null">
-        eat = #{eat,jdbcType=INTEGER},
+        eat = #{eat,jdbcType=VARCHAR},
       </if>
       <if test="eatreason != null">
         eatreason = #{eatreason,jdbcType=VARCHAR},
       </if>
       <if test="fat != null">
-        fat = #{fat,jdbcType=INTEGER},
+        fat = #{fat,jdbcType=VARCHAR},
       </if>
       <if test="fatreason != null">
         fatreason = #{fatreason,jdbcType=VARCHAR},
       </if>
       <if test="active != null">
-        active = #{active,jdbcType=INTEGER},
+        active = #{active,jdbcType=VARCHAR},
       </if>
       <if test="activereason != null">
         activereason = #{activereason,jdbcType=VARCHAR},
       </if>
       <if test="thin != null">
-        thin = #{thin,jdbcType=INTEGER},
+        thin = #{thin,jdbcType=VARCHAR},
       </if>
       <if test="thinreason != null">
         thinreason = #{thinreason,jdbcType=VARCHAR},
       </if>
       <if test="childId != null">
-        child_id = #{childId,jdbcType=INTEGER},
+        child_id = #{childId,jdbcType=VARCHAR},
       </if>
     </set>
     where id = #{id,jdbcType=INTEGER}
@@ -108,32 +108,35 @@
   <select id="mutiSelect" resultMap="MutiSelectResultMap">
     select <include refid="mutiSelect_Column_List"/>,`name`,g.sicknum,g.doctor,g.survey_time,g.livenum from hzh_convertion convertion left join hzh_general g on (g.id = convertion.child_id)
     where 1 = 1
+    <if test="hzhGeneral.name != null and hzhGeneral.name != ''">
+      and g.name like concat('%','${hzhGeneral.name}','%')
+    </if>
     <if test="hzhConvertion.sleep != null">
-      and hzhConvertion.sleep = #{sleep,jdbcType=INTEGER}
+      and hzhConvertion.sleep = #{sleep,jdbcType=VARCHAR}
     </if>
     <if test="hzhConvertion.sleepreason != null">
       and hzhConvertion.sleepreason = #{sleepreason,jdbcType=VARCHAR}
     </if>
     <if test="hzhConvertion.eat != null">
-      and hzhConvertion.eat = #{eat,jdbcType=INTEGER}
+      and hzhConvertion.eat = #{eat,jdbcType=VARCHAR}
     </if>
     <if test="hzhConvertion.eatreason != null">
       and hzhConvertion.eatreason = #{eatreason,jdbcType=VARCHAR}
     </if>
     <if test="hzhConvertion.fat != null">
-      and hzhConvertion.fat = #{fat,jdbcType=INTEGER}
+      and hzhConvertion.fat = #{fat,jdbcType=VARCHAR}
     </if>
     <if test="hzhConvertion.fatreason != null">
       and hzhConvertion.fatreason = #{fatreason,jdbcType=VARCHAR}
     </if>
     <if test="hzhConvertion.active != null">
-      and hzhConvertion.active = #{active,jdbcType=INTEGER}
+      and hzhConvertion.active = #{active,jdbcType=VARCHAR}
     </if>
     <if test="hzhConvertion.activereason != null">
       and hzhConvertion.activereason = #{activereason,jdbcType=VARCHAR}
     </if>
     <if test="hzhConvertion.thin != null">
-      and hzhConvertion.thin = #{thin,jdbcType=INTEGER}
+      and hzhConvertion.thin = #{thin,jdbcType=VARCHAR}
     </if>
     <if test="hzhConvertion.thinreason != null">
       and hzhConvertion.thinreason = #{thinreason,jdbcType=VARCHAR}
@@ -282,31 +285,31 @@
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="sleep != null">
-        #{sleep,jdbcType=INTEGER},
+        #{sleep,jdbcType=VARCHAR},
       </if>
       <if test="sleepreason != null">
         #{sleepreason,jdbcType=VARCHAR},
       </if>
       <if test="eat != null">
-        #{eat,jdbcType=INTEGER},
+        #{eat,jdbcType=VARCHAR},
       </if>
       <if test="eatreason != null">
         #{eatreason,jdbcType=VARCHAR},
       </if>
       <if test="fat != null">
-        #{fat,jdbcType=INTEGER},
+        #{fat,jdbcType=VARCHAR},
       </if>
       <if test="fatreason != null">
         #{fatreason,jdbcType=VARCHAR},
       </if>
       <if test="active != null">
-        #{active,jdbcType=INTEGER},
+        #{active,jdbcType=VARCHAR},
       </if>
       <if test="activereason != null">
         #{activereason,jdbcType=VARCHAR},
       </if>
       <if test="thin != null">
-        #{thin,jdbcType=INTEGER},
+        #{thin,jdbcType=VARCHAR},
       </if>
       <if test="thinreason != null">
         #{thinreason,jdbcType=VARCHAR},
@@ -329,31 +332,31 @@
         id = #{record.id,jdbcType=INTEGER},
       </if>
       <if test="record.sleep != null">
-        sleep = #{record.sleep,jdbcType=INTEGER},
+        sleep = #{record.sleep,jdbcType=VARCHAR},
       </if>
       <if test="record.sleepreason != null">
         sleepreason = #{record.sleepreason,jdbcType=VARCHAR},
       </if>
       <if test="record.eat != null">
-        eat = #{record.eat,jdbcType=INTEGER},
+        eat = #{record.eat,jdbcType=VARCHAR},
       </if>
       <if test="record.eatreason != null">
         eatreason = #{record.eatreason,jdbcType=VARCHAR},
       </if>
       <if test="record.fat != null">
-        fat = #{record.fat,jdbcType=INTEGER},
+        fat = #{record.fat,jdbcType=VARCHAR},
       </if>
       <if test="record.fatreason != null">
         fatreason = #{record.fatreason,jdbcType=VARCHAR},
       </if>
       <if test="record.active != null">
-        active = #{record.active,jdbcType=INTEGER},
+        active = #{record.active,jdbcType=VARCHAR},
       </if>
       <if test="record.activereason != null">
         activereason = #{record.activereason,jdbcType=VARCHAR},
       </if>
       <if test="record.thin != null">
-        thin = #{record.thin,jdbcType=INTEGER},
+        thin = #{record.thin,jdbcType=VARCHAR},
       </if>
       <if test="record.thinreason != null">
         thinreason = #{record.thinreason,jdbcType=VARCHAR},
@@ -369,15 +372,15 @@
   <update id="updateByExample" parameterType="map">
     update hzh_convertion
     set id = #{record.id,jdbcType=INTEGER},
-      sleep = #{record.sleep,jdbcType=INTEGER},
+      sleep = #{record.sleep,jdbcType=VARCHAR},
       sleepreason = #{record.sleepreason,jdbcType=VARCHAR},
-      eat = #{record.eat,jdbcType=INTEGER},
+      eat = #{record.eat,jdbcType=VARCHAR},
       eatreason = #{record.eatreason,jdbcType=VARCHAR},
-      fat = #{record.fat,jdbcType=INTEGER},
+      fat = #{record.fat,jdbcType=VARCHAR},
       fatreason = #{record.fatreason,jdbcType=VARCHAR},
-      active = #{record.active,jdbcType=INTEGER},
+      active = #{record.active,jdbcType=VARCHAR},
       activereason = #{record.activereason,jdbcType=VARCHAR},
-      thin = #{record.thin,jdbcType=INTEGER},
+      thin = #{record.thin,jdbcType=VARCHAR},
       thinreason = #{record.thinreason,jdbcType=VARCHAR},
       child_id = #{record.childId,jdbcType=INTEGER}
     <if test="_parameter != null">
@@ -387,15 +390,15 @@
 
   <update id="updateByPrimaryKey" parameterType="com.join.autism.entity.HzhConvertion.HzhConvertion">
     update hzh_convertion
-    set sleep = #{sleep,jdbcType=INTEGER},
+    set sleep = #{sleep,jdbcType=VARCHAR},
       sleepreason = #{sleepreason,jdbcType=VARCHAR},
-      eat = #{eat,jdbcType=INTEGER},
+      eat = #{eat,jdbcType=VARCHAR},
       eatreason = #{eatreason,jdbcType=VARCHAR},
-      fat = #{fat,jdbcType=INTEGER},
+      fat = #{fat,jdbcType=VARCHAR},
       fatreason = #{fatreason,jdbcType=VARCHAR},
-      active = #{active,jdbcType=INTEGER},
+      active = #{active,jdbcType=VARCHAR},
       activereason = #{activereason,jdbcType=VARCHAR},
-      thin = #{thin,jdbcType=INTEGER},
+      thin = #{thin,jdbcType=VARCHAR},
       thinreason = #{thinreason,jdbcType=VARCHAR},
       child_id = #{childId,jdbcType=INTEGER}
     where id = #{id,jdbcType=INTEGER}

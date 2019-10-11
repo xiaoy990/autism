@@ -1,5 +1,6 @@
 package com.join.autism.service.hzhRtmService.impl;
 
+import com.join.autism.entity.HzhGeneral.HzhGeneral;
 import com.join.autism.entity.HzhRtm.HzhRtm;
 import com.join.autism.entity.HzhRtm.HzhRtmDto;
 import com.join.autism.mapper.HzhRtmMapper;
@@ -19,8 +20,8 @@ public class HzhRtmServiceImpl implements HzhRtmService {
     }
 
     @Override
-    public List<HzhRtmDto> selectHzhRtm(HzhRtm hzhRtm) {
-        return hzhRtmMapper.mutiSelect(hzhRtm);
+    public List<HzhRtmDto> selectHzhRtm(HzhRtm hzhRtm, HzhGeneral hzhGeneral) {
+        return hzhRtmMapper.mutiSelect(hzhRtm,hzhGeneral);
     }
 
     @Override

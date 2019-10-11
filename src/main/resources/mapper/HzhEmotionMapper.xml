@@ -462,59 +462,62 @@
 
   <select id="mutiSelect" resultMap="mutiSelectResultMap">
     select <include refid="mutiSelect_Column_List"/> from hzh_emotion e left join hzh_general g on (e.child_id = g.id) where 1=1
-    <if test="childId != null">
-      and child_id = #{childId,jdbcType=INTEGER}
+    <if test="hzhGeneral.name != null and hzhGeneral.name != ''">
+      and g.name like concat('%','${hzhGeneral.name}','%')
     </if>
-    <if test="rela != null">
-      and rela = #{rela,jdbcType=INTEGER}
+    <if test="hzhEmotion.childId != null">
+      and child_id = #{hzhEmotion.childId,jdbcType=INTEGER}
     </if>
-    <if test="imitate != null">
-      and imitate = #{imitate,jdbcType=INTEGER}
+    <if test="hzhEmotion.rela != null">
+      and rela = #{hzhEmotion.rela,jdbcType=INTEGER}
     </if>
-    <if test="emotion != null">
-      and emotion = #{emotion,jdbcType=INTEGER}
+    <if test="hzhEmotion.imitate != null">
+      and imitate = #{hzhEmotion.imitate,jdbcType=INTEGER}
     </if>
-    <if test="motion != null">
-      and motion = #{motion,jdbcType=INTEGER}
+    <if test="hzhEmotion.emotion != null">
+      and emotion = #{hzhEmotion.emotion,jdbcType=INTEGER}
     </if>
-    <if test="nonlife != null">
-      and nonlife = #{nonlife,jdbcType=INTEGER}
+    <if test="hzhEmotion.motion != null">
+      and motion = #{hzhEmotion.motion,jdbcType=INTEGER}
     </if>
-    <if test="change != null">
-      and `change` = #{change,jdbcType=INTEGER}
+    <if test="hzhEmotion.nonlife != null">
+      and nonlife = #{hzhEmotion.nonlife,jdbcType=INTEGER}
     </if>
-    <if test="vision != null">
-      and vision = #{vision,jdbcType=INTEGER}
+    <if test="hzhEmotion.change != null">
+      and `change` = #{hzhEmotion.change,jdbcType=INTEGER}
     </if>
-    <if test="hearing != null">
-      and hearing = #{hearing,jdbcType=INTEGER}
+    <if test="hzhEmotion.vision != null">
+      and vision = #{hzhEmotion.vision,jdbcType=INTEGER}
     </if>
-    <if test="nearby != null">
-      and nearby = #{nearby,jdbcType=INTEGER}
+    <if test="hzhEmotion.hearing != null">
+      and hearing = #{hzhEmotion.hearing,jdbcType=INTEGER}
     </if>
-    <if test="anxious != null">
-      and anxious = #{anxious,jdbcType=INTEGER}
+    <if test="hzhEmotion.nearby != null">
+      and nearby = #{hzhEmotion.nearby,jdbcType=INTEGER}
     </if>
-    <if test="language != null">
-      and `language` = #{language,jdbcType=INTEGER}
+    <if test="hzhEmotion.anxious != null">
+      and anxious = #{hzhEmotion.anxious,jdbcType=INTEGER}
     </if>
-    <if test="nolan != null">
-      and nolan = #{nolan,jdbcType=INTEGER}
+    <if test="hzhEmotion.language != null">
+      and `language` = #{hzhEmotion.language,jdbcType=INTEGER}
     </if>
-    <if test="activity != null">
-      and activity = #{activity,jdbcType=INTEGER}
+    <if test="hzhEmotion.nolan != null">
+      and nolan = #{hzhEmotion.nolan,jdbcType=INTEGER}
     </if>
-    <if test="intelligence != null">
-      and intelligence = #{intelligence,jdbcType=INTEGER}
+    <if test="hzhEmotion.activity != null">
+      and activity = #{hzhEmotion.activity,jdbcType=INTEGER}
     </if>
-    <if test="impression != null">
-      and impression = #{impression,jdbcType=INTEGER}
+    <if test="hzhEmotion.intelligence != null">
+      and intelligence = #{hzhEmotion.intelligence,jdbcType=INTEGER}
     </if>
-    <if test="frasum != null">
-      and frasum = #{frasum,jdbcType=INTEGER}
+    <if test="hzhEmotion.impression != null">
+      and impression = #{hzhEmotion.impression,jdbcType=INTEGER}
     </if>
-    <if test="addtime != null">
-      and addtime = #{addtime,jdbcType=INTEGER}
+    <if test="hzhEmotion.frasum != null">
+      and frasum = #{hzhEmotion.frasum,jdbcType=INTEGER}
+    </if>
+    <if test="hzhEmotion.addtime != null">
+      and addtime = #{hzhEmotion.addtime,jdbcType=INTEGER}
     </if>
   </select>
 </mapper>

@@ -2,6 +2,7 @@ package com.join.autism.controller.hzhFamilyController;
 
 import com.join.autism.entity.HzhFamily.HzhFamily;
 import com.join.autism.entity.HzhFamily.HzhFamilyDto;
+import com.join.autism.entity.HzhGeneral.HzhGeneral;
 import com.join.autism.service.hzhFamilyService.HzhFamilyService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -88,10 +89,10 @@ public class HzhFamilyController {
      * @return
      */
     @RequestMapping(value = "/mutiSelectFamily")
-    public List<HzhFamilyDto> mutiSelectFamily(HzhFamily hzhFamily){
+    public List<HzhFamilyDto> mutiSelectFamily(HzhFamily hzhFamily, HzhGeneral hzhGeneral){
         List<HzhFamilyDto> mutiSelectFamilyList = null;
         try {
-            mutiSelectFamilyList = hzhFamilyService.mutiSelectFamily(hzhFamily);
+            mutiSelectFamilyList = hzhFamilyService.mutiSelectFamily(hzhFamily,hzhGeneral);
         }catch (Exception e){
             e.printStackTrace();
         }

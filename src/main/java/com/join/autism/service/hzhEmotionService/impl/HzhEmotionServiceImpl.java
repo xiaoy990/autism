@@ -2,6 +2,7 @@ package com.join.autism.service.hzhEmotionService.impl;
 
 import com.join.autism.entity.HzhEmotion.HzhEmotion;
 import com.join.autism.entity.HzhEmotion.HzhEmotionDto;
+import com.join.autism.entity.HzhGeneral.HzhGeneral;
 import com.join.autism.mapper.HzhEmotionMapper;
 import com.join.autism.service.hzhEmotionService.HzhEmotionService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,8 +19,8 @@ public class HzhEmotionServiceImpl implements HzhEmotionService {
     }
 
     @Override
-    public List<HzhEmotionDto> selectHzhEmotion(HzhEmotion hzhEmotion) {
-        return hzhEmotionMapper.mutiSelect(hzhEmotion);
+    public List<HzhEmotionDto> selectHzhEmotion(HzhEmotion hzhEmotion, HzhGeneral hzhGeneral) {
+        return hzhEmotionMapper.mutiSelect(hzhEmotion,hzhGeneral);
     }
 
     @Override

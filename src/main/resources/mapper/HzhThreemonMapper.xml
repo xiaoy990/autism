@@ -395,182 +395,185 @@
   <select id="mutiSelect" resultMap="MutiSelectResultMap">
     select <include refid="mutiSelect_Column_List"/>,`name`,g.sicknum,g.doctor,g.survey_time,g.livenum from hzh_threemon threemon left join hzh_general g on (g.id = threemon.child_id)
     where 1 = 1
-    <if test="question1 != null">
-      and question1 = #{question1,jdbcType=INTEGER}
+    <if test="hzhGeneral.name != null and hzhGeneral.name != ''">
+      and g.name like concat('%','${hzhGeneral.name}','%')
     </if>
-    <if test="question2 != null">
-      and question2 = #{question2,jdbcType=INTEGER}
+    <if test="hzhThreemon.question1 != null">
+      and question1 = #{hzhThreemon.question1,jdbcType=INTEGER}
     </if>
-    <if test="question3 != null">
-      and question3 = #{question3,jdbcType=INTEGER}
+    <if test="hzhThreemon.question2 != null">
+      and question2 = #{hzhThreemon.question2,jdbcType=INTEGER}
     </if>
-    <if test="question4 != null">
-      and question4 = #{question4,jdbcType=INTEGER}
+    <if test="hzhThreemon.question3 != null">
+      and question3 = #{hzhThreemon.question3,jdbcType=INTEGER}
     </if>
-    <if test="question5 != null">
-      and question5 = #{question5,jdbcType=INTEGER}
+    <if test="hzhThreemon.question4 != null">
+      and question4 = #{hzhThreemon.question4,jdbcType=INTEGER}
     </if>
-    <if test="question6 != null">
-      and question6 = #{question6,jdbcType=INTEGER}
+    <if test="hzhThreemon.question5 != null">
+      and question5 = #{hzhThreemon.question5,jdbcType=INTEGER}
     </if>
-    <if test="question7 != null">
-      and question7 = #{question7,jdbcType=INTEGER}
+    <if test="hzhThreemon.question6 != null">
+      and question6 = #{hzhThreemon.question6,jdbcType=INTEGER}
     </if>
-    <if test="question8 != null">
-      and question8 = #{question8,jdbcType=INTEGER}
+    <if test="hzhThreemon.question7 != null">
+      and question7 = #{hzhThreemon.question7,jdbcType=INTEGER}
     </if>
-    <if test="question9 != null">
-      and question9 = #{question9,jdbcType=INTEGER}
+    <if test="hzhThreemon.question8 != null">
+      and question8 = #{hzhThreemon.question8,jdbcType=INTEGER}
     </if>
-    <if test="question10 != null">
-      and question10 = #{question10,jdbcType=INTEGER}
+    <if test="hzhThreemon.question9 != null">
+      and question9 = #{hzhThreemon.question9,jdbcType=INTEGER}
     </if>
-    <if test="question11 != null">
-      and question11 = #{question11,jdbcType=INTEGER}
+    <if test="hzhThreemon.question10 != null">
+      and question10 = #{hzhThreemon.question10,jdbcType=INTEGER}
     </if>
-    <if test="question12 != null">
-      and question12 = #{question12,jdbcType=INTEGER}
+    <if test="hzhThreemon.question11 != null">
+      and question11 = #{hzhThreemon.question11,jdbcType=INTEGER}
     </if>
-    <if test="question13 != null">
-      and question13 = #{question13,jdbcType=INTEGER}
+    <if test="hzhThreemon.question12 != null">
+      and question12 = #{hzhThreemon.question12,jdbcType=INTEGER}
     </if>
-    <if test="question14 != null">
-      and question14 = #{question14,jdbcType=INTEGER}
+    <if test="hzhThreemon.question13 != null">
+      and question13 = #{hzhThreemon.question13,jdbcType=INTEGER}
     </if>
-    <if test="question15 != null">
-      and question15 = #{question15,jdbcType=INTEGER}
+    <if test="hzhThreemon.question14 != null">
+      and question14 = #{hzhThreemon.question14,jdbcType=INTEGER}
     </if>
-    <if test="question16 != null">
-      and question16 = #{question16,jdbcType=INTEGER}
+    <if test="hzhThreemon.question15 != null">
+      and question15 = #{hzhThreemon.question15,jdbcType=INTEGER}
     </if>
-    <if test="question17 != null">
-      and question17 = #{question17,jdbcType=INTEGER}
+    <if test="hzhThreemon.question16 != null">
+      and question16 = #{hzhThreemon.question16,jdbcType=INTEGER}
     </if>
-    <if test="question18 != null">
-      and question18 = #{question18,jdbcType=INTEGER}
+    <if test="hzhThreemon.question17 != null">
+      and question17 = #{hzhThreemon.question17,jdbcType=INTEGER}
     </if>
-    <if test="question19 != null">
-      and question19 = #{question19,jdbcType=INTEGER}
+    <if test="hzhThreemon.question18 != null">
+      and question18 = #{hzhThreemon.question18,jdbcType=INTEGER}
     </if>
-    <if test="question20 != null">
-      and question20 = #{question20,jdbcType=INTEGER}
+    <if test="hzhThreemon.question19 != null">
+      and question19 = #{hzhThreemon.question19,jdbcType=INTEGER}
     </if>
-    <if test="question21 != null">
-      and question21 = #{question21,jdbcType=INTEGER}
+    <if test="hzhThreemon.question20 != null">
+      and question20 = #{hzhThreemon.question20,jdbcType=INTEGER}
     </if>
-    <if test="question22 != null">
-      and question22 = #{question22,jdbcType=INTEGER}
+    <if test="hzhThreemon.question21 != null">
+      and question21 = #{hzhThreemon.question21,jdbcType=INTEGER}
     </if>
-    <if test="question23 != null">
-      and question23 = #{question23,jdbcType=INTEGER}
+    <if test="hzhThreemon.question22 != null">
+      and question22 = #{hzhThreemon.question22,jdbcType=INTEGER}
     </if>
-    <if test="question24 != null">
-      and question24 = #{question24,jdbcType=INTEGER}
+    <if test="hzhThreemon.question23 != null">
+      and question23 = #{hzhThreemon.question23,jdbcType=INTEGER}
     </if>
-    <if test="question25 != null">
-      and question25 = #{question25,jdbcType=INTEGER}
+    <if test="hzhThreemon.question24 != null">
+      and question24 = #{hzhThreemon.question24,jdbcType=INTEGER}
     </if>
-    <if test="question26 != null">
-      and question26 = #{question26,jdbcType=INTEGER}
+    <if test="hzhThreemon.question25 != null">
+      and question25 = #{hzhThreemon.question25,jdbcType=INTEGER}
     </if>
-    <if test="question27 != null">
-      and question27 = #{question27,jdbcType=INTEGER}
+    <if test="hzhThreemon.question26 != null">
+      and question26 = #{hzhThreemon.question26,jdbcType=INTEGER}
     </if>
-    <if test="question28 != null">
-      and question28 = #{question28,jdbcType=INTEGER}
+    <if test="hzhThreemon.question27 != null">
+      and question27 = #{hzhThreemon.question27,jdbcType=INTEGER}
     </if>
-    <if test="question29 != null">
-      and question29 = #{question29,jdbcType=INTEGER}
+    <if test="hzhThreemon.question28 != null">
+      and question28 = #{hzhThreemon.question28,jdbcType=INTEGER}
     </if>
-    <if test="question30 != null">
-      and question30 = #{question30,jdbcType=INTEGER}
+    <if test="hzhThreemon.question29 != null">
+      and question29 = #{hzhThreemon.question29,jdbcType=INTEGER}
     </if>
-    <if test="question31 != null">
-      and question31 = #{question31,jdbcType=INTEGER}
+    <if test="hzhThreemon.question30 != null">
+      and question30 = #{hzhThreemon.question30,jdbcType=INTEGER}
     </if>
-    <if test="question32 != null">
-      and question32 = #{question32,jdbcType=INTEGER}
+    <if test="hzhThreemon.question31 != null">
+      and question31 = #{hzhThreemon.question31,jdbcType=INTEGER}
     </if>
-    <if test="question33 != null">
-      and question33 = #{question33,jdbcType=INTEGER}
+    <if test="hzhThreemon.question32 != null">
+      and question32 = #{hzhThreemon.question32,jdbcType=INTEGER}
     </if>
-    <if test="question34 != null">
-      and question34 = #{question34,jdbcType=INTEGER}
+    <if test="hzhThreemon.question33 != null">
+      and question33 = #{hzhThreemon.question33,jdbcType=INTEGER}
     </if>
-    <if test="question35 != null">
-      and question35 = #{question35,jdbcType=INTEGER}
+    <if test="hzhThreemon.question34 != null">
+      and question34 = #{hzhThreemon.question34,jdbcType=INTEGER}
     </if>
-    <if test="question36 != null">
-      and question36 = #{question36,jdbcType=INTEGER}
+    <if test="hzhThreemon.question35 != null">
+      and question35 = #{hzhThreemon.question35,jdbcType=INTEGER}
     </if>
-    <if test="question37 != null">
-      and question37 = #{question37,jdbcType=INTEGER}
+    <if test="hzhThreemon.question36 != null">
+      and question36 = #{hzhThreemon.question36,jdbcType=INTEGER}
     </if>
-    <if test="question38 != null">
-      and question38 = #{question38,jdbcType=INTEGER}
+    <if test="hzhThreemon.question37 != null">
+      and question37 = #{hzhThreemon.question37,jdbcType=INTEGER}
     </if>
-    <if test="question39 != null">
-      and question39 = #{question39,jdbcType=INTEGER}
+    <if test="hzhThreemon.question38 != null">
+      and question38 = #{hzhThreemon.question38,jdbcType=INTEGER}
     </if>
-    <if test="question40 != null">
-      and question40 = #{question40,jdbcType=INTEGER}
+    <if test="hzhThreemon.question39 != null">
+      and question39 = #{hzhThreemon.question39,jdbcType=INTEGER}
     </if>
-    <if test="question41 != null">
-      and question41 = #{question41,jdbcType=INTEGER}
+    <if test="hzhThreemon.question40 != null">
+      and question40 = #{hzhThreemon.question40,jdbcType=INTEGER}
     </if>
-    <if test="question42 != null">
-      and question42 = #{question42,jdbcType=INTEGER}
+    <if test="hzhThreemon.question41 != null">
+      and question41 = #{hzhThreemon.question41,jdbcType=INTEGER}
     </if>
-    <if test="question43 != null">
-      and question43 = #{question43,jdbcType=INTEGER}
+    <if test="hzhThreemon.question42 != null">
+      and question42 = #{hzhThreemon.question42,jdbcType=INTEGER}
     </if>
-    <if test="question44 != null">
-      and question44 = #{question44,jdbcType=INTEGER}
+    <if test="hzhThreemon.question43 != null">
+      and question43 = #{hzhThreemon.question43,jdbcType=INTEGER}
     </if>
-    <if test="question45 != null">
-      and question45 = #{question45,jdbcType=INTEGER}
+    <if test="hzhThreemon.question44 != null">
+      and question44 = #{hzhThreemon.question44,jdbcType=INTEGER}
     </if>
-    <if test="question46 != null">
-      and question46 = #{question46,jdbcType=INTEGER}
+    <if test="hzhThreemon.question45 != null">
+      and question45 = #{hzhThreemon.question45,jdbcType=INTEGER}
     </if>
-    <if test="question47 != null">
-      and question47 = #{question47,jdbcType=INTEGER}
+    <if test="hzhThreemon.question46 != null">
+      and question46 = #{hzhThreemon.question46,jdbcType=INTEGER}
     </if>
-    <if test="question48 != null">
-      and question48 = #{question48,jdbcType=INTEGER}
+    <if test="hzhThreemon.question47 != null">
+      and question47 = #{hzhThreemon.question47,jdbcType=INTEGER}
     </if>
-    <if test="question49 != null">
-      and question49 = #{question49,jdbcType=INTEGER}
+    <if test="hzhThreemon.question48 != null">
+      and question48 = #{hzhThreemon.question48,jdbcType=INTEGER}
     </if>
-    <if test="question50 != null">
-      and question50 = #{question50,jdbcType=INTEGER}
+    <if test="hzhThreemon.question49 != null">
+      and question49 = #{hzhThreemon.question49,jdbcType=INTEGER}
     </if>
-    <if test="question51 != null">
-      and question51 = #{question51,jdbcType=INTEGER}
+    <if test="hzhThreemon.question50 != null">
+      and question50 = #{hzhThreemon.question50,jdbcType=INTEGER}
     </if>
-    <if test="question52 != null">
-      and question52 = #{question52,jdbcType=INTEGER}
+    <if test="hzhThreemon.question51 != null">
+      and question51 = #{hzhThreemon.question51,jdbcType=INTEGER}
     </if>
-    <if test="question53 != null">
-      and question53 = #{question53,jdbcType=INTEGER}
+    <if test="hzhThreemon.question52 != null">
+      and question52 = #{hzhThreemon.question52,jdbcType=INTEGER}
     </if>
-    <if test="question54 != null">
-      and question54 = #{question54,jdbcType=INTEGER}
+    <if test="hzhThreemon.question53 != null">
+      and question53 = #{hzhThreemon.question53,jdbcType=INTEGER}
     </if>
-    <if test="question55 != null">
-      and question55 = #{question55,jdbcType=INTEGER}
+    <if test="hzhThreemon.question54 != null">
+      and question54 = #{hzhThreemon.question54,jdbcType=INTEGER}
     </if>
-    <if test="question56 != null">
-      and question56 = #{question56,jdbcType=INTEGER}
+    <if test="hzhThreemon.question55 != null">
+      and question55 = #{hzhThreemon.question55,jdbcType=INTEGER}
     </if>
-    <if test="question57 != null">
-      and question57 = #{question57,jdbcType=INTEGER}
+    <if test="hzhThreemon.question56 != null">
+      and question56 = #{hzhThreemon.question56,jdbcType=INTEGER}
     </if>
-    <if test="questionSum != null">
-      and question_sum = #{questionSum,jdbcType=INTEGER}
+    <if test="hzhThreemon.question57 != null">
+      and question57 = #{hzhThreemon.question57,jdbcType=INTEGER}
     </if>
-    <if test="childId != null">
-      and child_id = #{childId,jdbcType=INTEGER}
+    <if test="hzhThreemon.questionSum != null">
+      and question_sum = #{hzhThreemon.questionSum,jdbcType=INTEGER}
+    </if>
+    <if test="hzhThreemon.childId != null">
+      and child_id = #{hzhThreemon.childId,jdbcType=INTEGER}
     </if>
   </select>
   

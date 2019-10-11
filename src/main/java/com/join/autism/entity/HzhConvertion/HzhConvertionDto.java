@@ -11,23 +11,23 @@ public class HzhConvertionDto implements Serializable {
 
     private Integer id;
 
-    private Integer sleep;
+    private String sleep;
 
     private String sleepreason;
 
-    private Integer eat;
+    private String eat;
 
     private String eatreason;
 
-    private Integer fat;
+    private String fat;
 
     private String fatreason;
 
-    private Integer active;
+    private String active;
 
     private String activereason;
 
-    private Integer thin;
+    private String thin;
 
     private String thinreason;
 
@@ -53,11 +53,11 @@ public class HzhConvertionDto implements Serializable {
         this.id = id;
     }
 
-    public Integer getSleep() {
+    public String getSleep() {
         return sleep;
     }
 
-    public void setSleep(Integer sleep) {
+    public void setSleep(String sleep) {
         this.sleep = sleep;
     }
 
@@ -69,11 +69,11 @@ public class HzhConvertionDto implements Serializable {
         this.sleepreason = sleepreason;
     }
 
-    public Integer getEat() {
+    public String getEat() {
         return eat;
     }
 
-    public void setEat(Integer eat) {
+    public void setEat(String eat) {
         this.eat = eat;
     }
 
@@ -85,11 +85,11 @@ public class HzhConvertionDto implements Serializable {
         this.eatreason = eatreason;
     }
 
-    public Integer getFat() {
+    public String getFat() {
         return fat;
     }
 
-    public void setFat(Integer fat) {
+    public void setFat(String fat) {
         this.fat = fat;
     }
 
@@ -101,11 +101,11 @@ public class HzhConvertionDto implements Serializable {
         this.fatreason = fatreason;
     }
 
-    public Integer getActive() {
+    public String getActive() {
         return active;
     }
 
-    public void setActive(Integer active) {
+    public void setActive(String active) {
         this.active = active;
     }
 
@@ -117,11 +117,11 @@ public class HzhConvertionDto implements Serializable {
         this.activereason = activereason;
     }
 
-    public Integer getThin() {
+    public String getThin() {
         return thin;
     }
 
-    public void setThin(Integer thin) {
+    public void setThin(String thin) {
         this.thin = thin;
     }
 

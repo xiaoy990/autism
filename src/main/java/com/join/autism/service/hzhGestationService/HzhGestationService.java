@@ -1,5 +1,6 @@
 package com.join.autism.service.hzhGestationService;
 
+import com.join.autism.entity.HzhGeneral.HzhGeneral;
 import com.join.autism.entity.HzhGestation.HzhGestation;
 import com.join.autism.entity.HzhGestation.HzhGestationDto;
 
@@ -34,5 +35,5 @@ public interface HzhGestationService {
      * 多条件查询
      * @return
      */
-    public List<HzhGestationDto> mutiSelectGestation();
+    public List<HzhGestationDto> mutiSelectGestation(HzhGestation hzhGestation, HzhGeneral hzhGeneral);
 }

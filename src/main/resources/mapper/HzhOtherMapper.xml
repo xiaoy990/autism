@@ -95,6 +95,9 @@
   <select id="mutiSelect" resultMap="MutiSelectResultMap">
     select <include refid="mutiSelect_Column_List"/>,`name`,g.sicknum,g.doctor,g.survey_time,g.livenum from hzh_other other left join hzh_general g on (g.id = other.child_id)
     where 1 = 1
+    <if test="hzhGeneral.name != null and hzhGeneral.name != ''">
+      and g.name like concat('%','${hzhGeneral.name}','%')
+    </if>
     <if test="other.stature != null and other.stature != ''">
       and other.stature = #{other.stature,jdbcType=VARCHAR}
     </if>

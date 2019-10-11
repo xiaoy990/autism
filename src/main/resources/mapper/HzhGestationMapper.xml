@@ -853,128 +853,131 @@
 
   <select id="mutiSelect" resultMap="mutiSelectResultMap">
     select <include refid="mutiSelect_Column_List"/> from hzh_gestation ge left join hzh_general g on (ge.child_id = g.id) where 1 = 1
-    <if test="close != null">
-      and `close` = #{close,jdbcType=INTEGER}
+    <if test="hzhGeneral.name != null and hzhGeneral.name != ''">
+      and g.name like concat('%','${hzhGeneral.name}','%')
     </if>
-    <if test="closereason != null and closereason != ''">
-      and closereason = #{closereason,jdbcType=VARCHAR}
+    <if test="hzhGestation.close != null">
+      and `close` = #{hzhGestation.close,jdbcType=INTEGER}
     </if>
-    <if test="abortioncount != null">
-      and abortioncount = #{abortioncount,jdbcType=INTEGER}
+    <if test="hzhGestation.closereason != null and hzhGestation.closereason != ''">
+      and closereason = #{hzhGestation.closereason,jdbcType=VARCHAR}
     </if>
-    <if test="abortionreason != null and abortionreason != ''">
-      and abortionreason = #{abortionreason,jdbcType=VARCHAR}
+    <if test="hzhGestation.abortioncount != null">
+      and abortioncount = #{hzhGestation.abortioncount,jdbcType=INTEGER}
     </if>
-    <if test="assist != null">
-      and assist = #{assist,jdbcType=INTEGER}
+    <if test="hzhGestation.abortionreason != null and hzhGestation.abortionreason != ''">
+      and abortionreason = #{hzhGestation.abortionreason,jdbcType=VARCHAR}
     </if>
-    <if test="assistreason != null and assistreason != ''">
-      and assistreason = #{assistreason,jdbcType=VARCHAR}
+    <if test="hzhGestation.assist != null">
+      and assist = #{hzhGestation.assist,jdbcType=INTEGER}
     </if>
-    <if test="amniotic != null and amniotic != ''">
-      and amniotic = #{amniotic,jdbcType=VARCHAR}
+    <if test="hzhGestation.assistreason != null and hzhGestation.assistreason != ''">
+      and assistreason = #{hzhGestation.assistreason,jdbcType=VARCHAR}
     </if>
-    <if test="amnioticreason != null and amnioticreason != ''">
-      and amnioticreason = #{amnioticreason,jdbcType=VARCHAR}
+    <if test="hzhGestation.amniotic != null and hzhGestation.amniotic != ''">
+      and amniotic = #{hzhGestation.amniotic,jdbcType=VARCHAR}
     </if>
-    <if test="highblood != null">
-      and highblood = #{highblood,jdbcType=INTEGER}
+    <if test="hzhGestation.amnioticreason != null and hzhGestation.amnioticreason != ''">
+      and amnioticreason = #{hzhGestation.amnioticreason,jdbcType=VARCHAR}
     </if>
-    <if test="highbloodreason != null and highbloodreason != ''">
-      and highbloodreason = #{highbloodreason,jdbcType=VARCHAR}
+    <if test="hzhGestation.highblood != null">
+      and highblood = #{hzhGestation.highblood,jdbcType=INTEGER}
     </if>
-    <if test="babygo != null">
-      and babygo = #{babygo,jdbcType=INTEGER}
+    <if test="hzhGestation.highbloodreason != null and hzhGestation.highbloodreason != ''">
+      and highbloodreason = #{hzhGestation.highbloodreason,jdbcType=VARCHAR}
     </if>
-    <if test="babygoreason != null and babygoreason != ''">
-      and babygoreason = #{babygoreason,jdbcType=VARCHAR}
+    <if test="hzhGestation.babygo != null">
+      and babygo = #{hzhGestation.babygo,jdbcType=INTEGER}
     </if>
-    <if test="blood != null">
-      and blood = #{blood,jdbcType=INTEGER}
+    <if test="hzhGestation.babygoreason != null and hzhGestation.babygoreason != ''">
+      and babygoreason = #{hzhGestation.babygoreason,jdbcType=VARCHAR}
     </if>
-    <if test="bloodreason != null and bloodreason != ''">
-      and bloodreason = #{bloodreason,jdbcType=VARCHAR}
+    <if test="hzhGestation.blood != null">
+      and blood = #{hzhGestation.blood,jdbcType=INTEGER}
     </if>
-    <if test="sugarwater != null">
-      and sugarwater = #{sugarwater,jdbcType=INTEGER}
+    <if test="hzhGestation.bloodreason != null and hzhGestation.bloodreason != ''">
+      and bloodreason = #{hzhGestation.bloodreason,jdbcType=VARCHAR}
     </if>
-    <if test="sugarwaterreason != null and sugarwaterreason != ''">
-      and sugarwaterreason = #{sugarwaterreason,jdbcType=VARCHAR}
+    <if test="hzhGestation.sugarwater != null">
+      and sugarwater = #{hzhGestation.sugarwater,jdbcType=INTEGER}
     </if>
-    <if test="blues != null">
-      and blues = #{blues,jdbcType=INTEGER}
+    <if test="hzhGestation.sugarwaterreason != null and hzhGestation.sugarwaterreason != ''">
+      and sugarwaterreason = #{hzhGestation.sugarwaterreason,jdbcType=VARCHAR}
     </if>
-    <if test="bluesreason != null and bluesreason != ''">
-      and bluesreason = #{bluesreason,jdbcType=VARCHAR}
+    <if test="hzhGestation.blues != null">
+      and blues = #{hzhGestation.blues,jdbcType=INTEGER}
     </if>
-    <if test="other != null">
-      and other = #{other,jdbcType=INTEGER}
+    <if test="hzhGestation.bluesreason != null and hzhGestation.bluesreason != ''">
+      and bluesreason = #{hzhGestation.bluesreason,jdbcType=VARCHAR}
     </if>
-    <if test="otherreason != null and otherreason != ''">
-      and otherreason = #{otherreason,jdbcType=VARCHAR}
+    <if test="hzhGestation.other != null">
+      and other = #{hzhGestation.other,jdbcType=INTEGER}
     </if>
-    <if test="drug != null">
-      and drug = #{drug,jdbcType=INTEGER}
+    <if test="hzhGestation.otherreason != null and hzhGestation.otherreason != ''">
+      and otherreason = #{hzhGestation.otherreason,jdbcType=VARCHAR}
     </if>
-    <if test="drugreason != null and drugreason != ''">
-      and drugreason = #{drugreason,jdbcType=VARCHAR}
+    <if test="hzhGestation.drug != null">
+      and drug = #{hzhGestation.drug,jdbcType=INTEGER}
     </if>
-    <if test="bear != null">
-      and bear = #{bear,jdbcType=INTEGER}
+    <if test="hzhGestation.drugreason != null and hzhGestation.drugreason != ''">
+      and drugreason = #{hzhGestation.drugreason,jdbcType=VARCHAR}
     </if>
-    <if test="bearreason != null and bearreason != ''">
-      and bearreason = #{bearreason,jdbcType=VARCHAR}
+    <if test="hzhGestation.bear != null">
+      and bear = #{hzhGestation.bear,jdbcType=INTEGER}
     </if>
-    <if test="xray != null">
+    <if test="hzhGestation.bearreason != null and hzhGestation.bearreason != ''">
+      and bearreason = #{hzhGestation.bearreason,jdbcType=VARCHAR}
+    </if>
+    <if test="hzhGestation.xray != null">
       and xray = #{xray,jdbcType=INTEGER}
     </if>
-    <if test="xrayreason != null and xrayreason != ''">
+    <if test="hzhGestation.xrayreason != null and hzhGestation.xrayreason != ''">
       and xrayreason = #{xrayreason,jdbcType=VARCHAR}
     </if>
-    <if test="bads != null">
+    <if test="hzhGestation.bads != null">
       and bads = #{bads,jdbcType=INTEGER}
     </if>
-    <if test="badsreason != null and badsreason != ''">
-      and badsreason = #{badsreason,jdbcType=VARCHAR}
+    <if test="hzhGestation.badsreason != null and hzhGestation.badsreason != ''">
+      and badsreason = #{hzhGestation.badsreason,jdbcType=VARCHAR}
     </if>
-    <if test="fidge != null">
+    <if test="hzhGestation.fidge != null">
       and fidge = #{fidge,jdbcType=INTEGER}
     </if>
-    <if test="fidgereason != null and fidgereason != ''">
-      and fidgereason = #{fidgereason,jdbcType=VARCHAR}
+    <if test="hzhGestation.fidgereason != null and hzhGestation.fidgereason != ''">
+      and fidgereason = #{hzhGestation.fidgereason,jdbcType=VARCHAR}
     </if>
-    <if test="vitamd != null">
-      and vitamd = #{vitamd,jdbcType=INTEGER}
+    <if test="hzhGestation.vitamd != null">
+      and vitamd = #{hzhGestation.vitamd,jdbcType=INTEGER}
     </if>
-    <if test="vitamdreason != null and vitamdreason != ''">
-      and vitamdreason = #{vitamdreason,jdbcType=VARCHAR}
+    <if test="hzhGestation.vitamdreason != null and hzhGestation.vitamdreason != ''">
+      and vitamdreason = #{hzhGestation.vitamdreason,jdbcType=VARCHAR}
     </if>
-    <if test="childId != null">
-      and child_id = #{childId,jdbcType=INTEGER}
+    <if test="hzhGestation.childId != null">
+      and child_id = #{hzhGestation.childId,jdbcType=INTEGER}
     </if>
-    <if test="stress != null">
-      and stress = #{stress,jdbcType=INTEGER}
+    <if test="hzhGestation.stress != null">
+      and stress = #{hzhGestation.stress,jdbcType=INTEGER}
     </if>
-    <if test="stressreason != null and stressreason != ''">
-      and stressreason = #{stressreason,jdbcType=VARCHAR}
+    <if test="hzhGestation.stressreason != null and hzhGestation.stressreason != ''">
+      and stressreason = #{hzhGestation.stressreason,jdbcType=VARCHAR}
     </if>
-    <if test="xiyan != null">
-      and xiyan = #{xiyan,jdbcType=INTEGER}
+    <if test="hzhGestation.xiyan != null">
+      and xiyan = #{hzhGestation.xiyan,jdbcType=INTEGER}
     </if>
-    <if test="yesuan != null">
-      and yesuan = #{yesuan,jdbcType=INTEGER}
+    <if test="hzhGestation.yesuan != null">
+      and yesuan = #{hzhGestation.yesuan,jdbcType=INTEGER}
     </if>
-    <if test="bingdu != null">
-      and bingdu = #{bingdu,jdbcType=INTEGER}
+    <if test="hzhGestation.bingdu != null">
+      and bingdu = #{hzhGestation.bingdu,jdbcType=INTEGER}
     </if>
-    <if test="xiyans != null and xiyans != ''">
-      and xiyans = #{xiyans,jdbcType=VARCHAR}
+    <if test="hzhGestation.xiyans != null and hzhGestation.xiyans != ''">
+      and xiyans = #{hzhGestation.xiyans,jdbcType=VARCHAR}
     </if>
-    <if test="yesuans != null and yesuans != ''">
-      and yesuans = #{yesuans,jdbcType=VARCHAR}
+    <if test="hzhGestation.yesuans != null and hzhGestation.yesuans != ''">
+      and yesuans = #{hzhGestation.yesuans,jdbcType=VARCHAR}
     </if>
-    <if test="bingdus != null and bingdus != ''">
-      and bingdus = #{bingdus,jdbcType=VARCHAR}
+    <if test="hzhGestation.bingdus != null and hzhGestation.bingdus != ''">
+      and bingdus = #{hzhGestation.bingdus,jdbcType=VARCHAR}
     </if>
   </select>
 </mapper>

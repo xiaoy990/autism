@@ -1,5 +1,6 @@
 package com.join.autism.controller.hzhInbornController;
 
+import com.join.autism.entity.HzhGeneral.HzhGeneral;
 import com.join.autism.entity.HzhInborn.HzhInbornDto;
 import com.join.autism.entity.HzhInborn.HzhInborn;
 import com.join.autism.service.hzhInbornService.HzhInbornService;
@@ -26,8 +27,8 @@ public class HzhInbornController {
     }
 
     @RequestMapping("selectInborn")
-    public List<HzhInbornDto> selectInborn(HzhInborn hzhInborn){
-        return hzhInbornService.selectHzhInborn(hzhInborn);
+    public List<HzhInbornDto> selectInborn(HzhInborn hzhInborn, HzhGeneral hzhGeneral){
+        return hzhInbornService.selectHzhInborn(hzhInborn,hzhGeneral);
     }
 
     @RequestMapping("insertInborn")

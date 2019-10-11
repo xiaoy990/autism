@@ -531,71 +531,74 @@
 
   <select id="mutiSelect" resultMap="mutiSelectResultMap">
     select <include refid="mutiSelect_Column_List"/> from hzh_rtm r left join hzh_general g on (r.child_id = g.id) where 1=1
-    <if test="childId != null">
-      and child_id = #{childId,jdbcType=INTEGER}
+    <if test="hzhGeneral.name != null and hzhGeneral.name != ''">
+      and g.name like concat('%','${hzhGeneral.name}','%')
     </if>
-    <if test="isLook != null">
-      and is_look = #{isLook,jdbcType=INTEGER}
+    <if test="hzhRtm.childId != null">
+      and child_id = #{hzhRtm.childId,jdbcType=INTEGER}
     </if>
-    <if test="isHearing != null">
-      and is_hearing = #{isHearing,jdbcType=INTEGER}
+    <if test="hzhRtm.isLook != null">
+      and is_look = #{hzhRtm.isLook,jdbcType=INTEGER}
     </if>
-    <if test="isGame != null">
-      and is_game = #{isGame,jdbcType=INTEGER}
+    <if test="hzhRtm.isHearing != null">
+      and is_hearing = #{hzhRtm.isHearing,jdbcType=INTEGER}
     </if>
-    <if test="isClimbing != null">
-      and is_climbing = #{isClimbing,jdbcType=INTEGER}
+    <if test="hzhRtm.isGame != null">
+      and is_game = #{hzhRtm.isGame,jdbcType=INTEGER}
     </if>
-    <if test="isFinger != null">
-      and is_finger = #{isFinger,jdbcType=INTEGER}
+    <if test="hzhRtm.isClimbing != null">
+      and is_climbing = #{hzhRtm.isClimbing,jdbcType=INTEGER}
     </if>
-    <if test="isHelp != null">
-      and is_help = #{isHelp,jdbcType=INTEGER}
+    <if test="hzhRtm.isFinger != null">
+      and is_finger = #{hzhRtm.isFinger,jdbcType=INTEGER}
     </if>
-    <if test="isInterest != null">
-      and is_interest = #{isInterest,jdbcType=INTEGER}
+    <if test="hzhRtm.isHelp != null">
+      and is_help = #{hzhRtm.isHelp,jdbcType=INTEGER}
     </if>
-    <if test="isChildren != null">
-      and is_children = #{isChildren,jdbcType=INTEGER}
+    <if test="hzhRtm.isInterest != null">
+      and is_interest = #{hzhRtm.isInterest,jdbcType=INTEGER}
     </if>
-    <if test="isParentsLook != null">
-      and is_parents_look = #{isParentsLook,jdbcType=INTEGER}
+    <if test="hzhRtm.isChildren != null">
+      and is_children = #{hzhRtm.isChildren,jdbcType=INTEGER}
     </if>
-    <if test="isResponse != null">
-      and is_response = #{isResponse,jdbcType=INTEGER}
+    <if test="hzhRtm.isParentsLook != null">
+      and is_parents_look = #{hzhRtm.isParentsLook,jdbcType=INTEGER}
     </if>
-    <if test="isSmileResponse != null">
-      and is_smile_response = #{isSmileResponse,jdbcType=INTEGER}
+    <if test="hzhRtm.isResponse != null">
+      and is_response = #{hzhRtm.isResponse,jdbcType=INTEGER}
     </if>
-    <if test="isNoise != null">
-      and is_noise = #{isNoise,jdbcType=INTEGER}
+    <if test="hzhRtm.isSmileResponse != null">
+      and is_smile_response = #{hzhRtm.isSmileResponse,jdbcType=INTEGER}
     </if>
-    <if test="isGo != null">
-      and is_go = #{isGo,jdbcType=INTEGER}
+    <if test="hzhRtm.isNoise != null">
+      and is_noise = #{hzhRtm.isNoise,jdbcType=INTEGER}
     </if>
-    <if test="isEye != null">
-      and is_eye = #{isEye,jdbcType=INTEGER}
+    <if test="hzhRtm.isGo != null">
+      and is_go = #{hzhRtm.isGo,jdbcType=INTEGER}
     </if>
-    <if test="isImitate != null">
-      and is_imitate = #{isImitate,jdbcType=INTEGER}
+    <if test="hzhRtm.isEye != null">
+      and is_eye = #{hzhRtm.isEye,jdbcType=INTEGER}
     </if>
-    <if test="isSearch != null">
-      and is_search = #{isSearch,jdbcType=INTEGER}
+    <if test="hzhRtm.isImitate != null">
+      and is_imitate = #{hzhRtm.isImitate,jdbcType=INTEGER}
     </if>
-    <if test="isAttract != null">
-      and is_attract = #{isAttract,jdbcType=INTEGER}
+    <if test="hzhRtm.isSearch != null">
+      and is_search = #{hzhRtm.isSearch,jdbcType=INTEGER}
     </if>
-    <if test="isUnderstand != null">
-      and is_understand = #{isUnderstand,jdbcType=INTEGER}
+    <if test="hzhRtm.isAttract != null">
+      and is_attract = #{hzhRtm.isAttract,jdbcType=INTEGER}
     </if>
-    <if test="isReaction != null">
-      and is_reaction = #{isReaction,jdbcType=INTEGER}
+    <if test="hzhRtm.isUnderstand != null">
+      and is_understand = #{hzhRtm.isUnderstand,jdbcType=INTEGER}
     </if>
-    <if test="isMovement != null">
-      and is_movement = #{isMovement,jdbcType=INTEGER}
+    <if test="hzhRtm.isReaction != null">
+      and is_reaction = #{hzhRtm.isReaction,jdbcType=INTEGER}
     </if>
-    <if test="addtime != null">
-      and addtime = #{addtime,jdbcType=INTEGER}
+    <if test="hzhRtm.isMovement != null">
+      and is_movement = #{hzhRtm.isMovement,jdbcType=INTEGER}
+    </if>
+    <if test="hzhRtm.addtime != null">
+      and addtime = #{hzhRtm.addtime,jdbcType=INTEGER}
     </if>
   </select>
 </mapper>

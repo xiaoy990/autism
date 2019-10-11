@@ -616,86 +616,89 @@
 
   <select id="mutiSelect" resultMap="mutiSelectResultMap">
     select <include refid="mutiSelect_Column_List"/> from hzh_birth b left join hzh_general g on ( b.child_id = g.id )where  1=1
-    <if test="birth != null and birth != ''">
-      and birth = #{birth,jdbcType=VARCHAR}
+    <if test="hzhGeneral.name != null and hzhGeneral.name != ''">
+      and g.name like concat('%','${hzhGeneral.name}','%')
     </if>
-    <if test="birthreason != null and birthreason != ''">
-      and birthreason = #{birthreason,jdbcType=VARCHAR}
+    <if test="hzhBirth.birth != null and hzhBirth.birth != ''">
+      and birth = #{hzhBirth.birth,jdbcType=VARCHAR}
     </if>
-    <if test="kg != null and kg != ''">
-      and kg = #{kg,jdbcType=VARCHAR}
+    <if test="hzhBirth.birthreason != null and hzhBirth.birthreason != ''">
+      and birthreason = #{hzhBirth.birthreason,jdbcType=VARCHAR}
     </if>
-    <if test="score != null and score != ''">
-      and score = #{score,jdbcType=VARCHAR}
+    <if test="hzhBirth.kg != null and hzhBirth.kg != ''">
+      and kg = #{hzhBirth.kg,jdbcType=VARCHAR}
     </if>
-    <if test="scorereason != null and scorereason != ''">
-      and scorereason = #{scorereason,jdbcType=VARCHAR}
+    <if test="hzhBirth.score != null and hzhBirth.score != ''">
+      and score = #{hzhBirth.score,jdbcType=VARCHAR}
     </if>
-    <if test="gogo != null and gogo != ''">
-      and gogo = #{gogo,jdbcType=VARCHAR}
+    <if test="hzhBirth.scorereason != null and hzhBirth.scorereason != ''">
+      and scorereason = #{hzhBirth.scorereason,jdbcType=VARCHAR}
     </if>
-    <if test="gogoreason != null and gogoreason != ''">
-      and gogoreason = #{gogoreason,jdbcType=VARCHAR}
+    <if test="hzhBirth.gogo != null and hzhBirth.gogo != ''">
+      and gogo = #{hzhBirth.gogo,jdbcType=VARCHAR}
     </if>
-    <if test="assist != null and assist != ''">
-      and assist = #{assist,jdbcType=VARCHAR}
+    <if test="hzhBirth.gogoreason != null and hzhBirth.gogoreason != ''">
+      and gogoreason = #{hzhBirth.gogoreason,jdbcType=VARCHAR}
     </if>
-    <if test="assistreason != null and assistreason != ''">
-      and assistreason = #{assistreason,jdbcType=VARCHAR}
+    <if test="hzhBirth.assist != null and hzhBirth.assist != ''">
+      and assist = #{hzhBirth.assist,jdbcType=VARCHAR}
     </if>
-    <if test="compl != null and compl != ''">
-      and compl = #{compl,jdbcType=VARCHAR}
+    <if test="hzhBirth.assistreason != null and hzhBirth.assistreason != ''">
+      and assistreason = #{hzhBirth.assistreason,jdbcType=VARCHAR}
     </if>
-    <if test="complreason != null and complreason != ''">
-      and complreason = #{complreason,jdbcType=VARCHAR}
+    <if test="hzhBirth.compl != null and hzhBirth.compl != ''">
+      and compl = #{hzhBirth.compl,jdbcType=VARCHAR}
     </if>
-    <if test="mombra != null and mombra != ''">
-      and mombra = #{mombra,jdbcType=VARCHAR}
+    <if test="hzhBirth.complreason != null and hzhBirth.complreason != ''">
+      and complreason = #{hzhBirth.complreason,jdbcType=VARCHAR}
     </if>
-    <if test="mombrareason != null and mombrareason != ''">
-      and mombrareason = #{mombrareason,jdbcType=VARCHAR}
+    <if test="hzhBirth.mombra != null and hzhBirth.mombra != ''">
+      and mombra = #{hzhBirth.mombra,jdbcType=VARCHAR}
     </if>
-    <if test="bradiff != null and bradiff != ''">
-      and bradiff = #{bradiff,jdbcType=VARCHAR}
+    <if test="hzhBirth.mombrareason != null and hzhBirth.mombrareason != ''">
+      and mombrareason = #{hzhBirth.mombrareason,jdbcType=VARCHAR}
     </if>
-    <if test="bradiffreason != null and bradiffreason != ''">
-      and bradiffreason = #{bradiffreason,jdbcType=VARCHAR}
+    <if test="hzhBirth.bradiff != null and hzhBirth.bradiff != ''">
+      and bradiff = #{hzhBirth.bradiff,jdbcType=VARCHAR}
     </if>
-    <if test="grow != null and grow != ''">
-      and grow = #{grow,jdbcType=VARCHAR}
+    <if test="hzhBirth.bradiffreason != null and hzhBirth.bradiffreason != ''">
+      and bradiffreason = #{hzhBirth.bradiffreason,jdbcType=VARCHAR}
     </if>
-    <if test="growreason != null and growreason != ''">
-      and growreason = #{growreason,jdbcType=VARCHAR}
+    <if test="hzhBirth.grow != null and hzhBirth.grow != ''">
+      and grow = #{hzhBirth.grow,jdbcType=VARCHAR}
     </if>
-    <if test="growslowreason != null and growslowreason != ''">
-      and growslowreason = #{growslowreason,jdbcType=VARCHAR}
+    <if test="hzhBirth.growreason != null and hzhBirth.growreason != ''">
+      and growreason = #{hzhBirth.growreason,jdbcType=VARCHAR}
     </if>
-    <if test="monthup != null and monthup != ''">
-      and monthup = #{monthup,jdbcType=VARCHAR}
+    <if test="hzhBirth.growslowreason != null and hzhBirth.growslowreason != ''">
+      and growslowreason = #{hzhBirth.growslowreason,jdbcType=VARCHAR}
     </if>
-    <if test="monthroll != null and monthroll != ''">
-      and monthroll = #{monthroll,jdbcType=VARCHAR}
+    <if test="hzhBirth.monthup != null and hzhBirth.monthup != ''">
+      and monthup = #{hzhBirth.monthup,jdbcType=VARCHAR}
     </if>
-    <if test="monthsit != null and monthsit != ''">
-      and monthsit = #{monthsit,jdbcType=VARCHAR}
+    <if test="hzhBirth.monthroll != null and hzhBirth.monthroll != ''">
+      and monthroll = #{hzhBirth.monthroll,jdbcType=VARCHAR}
     </if>
-    <if test="monthclimb != null and monthclimb != ''">
-      and monthclimb = #{monthclimb,jdbcType=VARCHAR}
+    <if test="hzhBirth.monthsit != null and hzhBirth.monthsit != ''">
+      and monthsit = #{hzhBirth.monthsit,jdbcType=VARCHAR}
     </if>
-    <if test="monthgo != null and monthgo != ''">
-      and monthgo = #{monthgo,jdbcType=VARCHAR}
+    <if test="hzhBirth.monthclimb != null and hzhBirth.monthclimb != ''">
+      and monthclimb = #{hzhBirth.monthclimb,jdbcType=VARCHAR}
     </if>
-    <if test="speakreason != null and speakreason != ''">
-      and speakreason = #{speakreason,jdbcType=VARCHAR}
+    <if test="hzhBirth.monthgo != null and hzhBirth.monthgo != ''">
+      and monthgo = #{hzhBirth.monthgo,jdbcType=VARCHAR}
     </if>
-    <if test="vitamd != null and vitamd != ''">
-      and vitamd = #{vitamd,jdbcType=VARCHAR}
+    <if test="hzhBirth.speakreason != null and hzhBirth.speakreason != ''">
+      and speakreason = #{hzhBirth.speakreason,jdbcType=VARCHAR}
     </if>
-    <if test="vitamdreason != null and vitamdreason != ''">
-      and vitamdreason = #{vitamdreason,jdbcType=VARCHAR}
+    <if test="hzhBirth.vitamd != null and hzhBirth.vitamd != ''">
+      and vitamd = #{hzhBirth.vitamd,jdbcType=VARCHAR}
     </if>
-    <if test="childId != null">
-      and child_id = #{childId,jdbcType=INTEGER}
+    <if test="hzhBirth.vitamdreason != null and hzhBirth.vitamdreason != ''">
+      and vitamdreason = #{hzhBirth.vitamdreason,jdbcType=VARCHAR}
+    </if>
+    <if test="hzhBirth.childId != null">
+      and child_id = #{hzhBirth.childId,jdbcType=INTEGER}
     </if>
   </select>
 </mapper>

@@ -14,5 +14,5 @@ import java.util.List;
  */
 @Repository
 public interface HzhCommonMapper extends MyBatisBaseDao<HzhCommon, Integer, HzhCommonExample> {
-    List<HzhCommonDto> mutiSelect(@Param("common") HzhCommon hzhCommon, @Param("general")HzhGeneral hzhGeneral);
+    List<HzhCommonDto> mutiSelect(@Param("common") HzhCommon hzhCommon, @Param("hzhGeneral")HzhGeneral hzhGeneral);
 }

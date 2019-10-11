@@ -613,86 +613,89 @@
 
   <select id="mutiSelect" resultMap="mutiSelectResultMap">
     select <include refid="mutiSelect_Column_List"/> from hzh_inborn i left join hzh_general g on (i.child_id = g.id) where 1=1
-    <if test="sicknum != null">
-       and sicknum = #{sicknum,jdbcType=VARCHAR}
+    <if test="hzhGeneral.name != null and hzhGeneral.name != ''">
+      and g.name like concat('%','${hzhGeneral.name}','%')
     </if>
-    <if test="doctor != null">
-       and doctor = #{doctor,jdbcType=VARCHAR}
+    <if test="hzhInborn.sicknum != null">
+       and sicknum = #{hzhInborn.sicknum,jdbcType=VARCHAR}
     </if>
-    <if test="datetime != null">
-       and `datetime` = #{datetime,jdbcType=VARCHAR}
+    <if test="hzhInborn.doctor != null">
+       and doctor = #{hzhInborn.doctor,jdbcType=VARCHAR}
     </if>
-    <if test="livenum != null">
-       and livenum = #{livenum,jdbcType=VARCHAR}
+    <if test="hzhInborn.datetime != null">
+       and `datetime` = #{hzhInborn.datetime,jdbcType=VARCHAR}
     </if>
-    <if test="skull != null">
-       and skull = #{skull,jdbcType=VARCHAR}
+    <if test="hzhInborn.livenum != null">
+       and livenum = #{hzhInborn.livenum,jdbcType=VARCHAR}
     </if>
-    <if test="skullreason != null">
-       and skullreason = #{skullreason,jdbcType=VARCHAR}
+    <if test="hzhInborn.skull != null">
+       and skull = #{hzhInborn.skull,jdbcType=VARCHAR}
     </if>
-    <if test="ear != null">
-       and ear = #{ear,jdbcType=VARCHAR}
+    <if test="hzhInborn.skullreason != null">
+       and skullreason = #{hzhInborn.skullreason,jdbcType=VARCHAR}
     </if>
-    <if test="earreason != null">
-      and earreason = #{earreason,jdbcType=VARCHAR}
+    <if test="hzhInborn.ear != null">
+       and ear = #{hzhInborn.ear,jdbcType=VARCHAR}
     </if>
-    <if test="eye != null">
-       and eye = #{eye,jdbcType=VARCHAR}
+    <if test="hzhInborn.earreason != null">
+      and earreason = #{hzhInborn.earreason,jdbcType=VARCHAR}
     </if>
-    <if test="eyereason != null">
-       and eyereason = #{eyereason,jdbcType=VARCHAR}
+    <if test="hzhInborn.eye != null">
+       and eye = #{hzhInborn.eye,jdbcType=VARCHAR}
     </if>
-    <if test="nose != null">
-       and nose = #{nose,jdbcType=VARCHAR}
+    <if test="hzhInborn.eyereason != null">
+       and eyereason = #{hzhInborn.eyereason,jdbcType=VARCHAR}
     </if>
-    <if test="nosereason != null">
-      nosereason = #{nosereason,jdbcType=VARCHAR}
+    <if test="hzhInborn.nose != null">
+       and nose = #{hzhInborn.nose,jdbcType=VARCHAR}
     </if>
-    <if test="center != null">
-       and center = #{center,jdbcType=VARCHAR}
+    <if test="hzhInborn.nosereason != null">
+      nosereason = #{hzhInborn.nosereason,jdbcType=VARCHAR}
     </if>
-    <if test="centerreason != null">
-      centerreason = #{centerreason,jdbcType=VARCHAR}
+    <if test="hzhInborn.center != null">
+       and center = #{hzhInborn.center,jdbcType=VARCHAR}
     </if>
-    <if test="mouth != null">
-       and mouth = #{mouth,jdbcType=VARCHAR}
+    <if test="hzhInborn.centerreason != null">
+      centerreason = #{hzhInborn.centerreason,jdbcType=VARCHAR}
     </if>
-    <if test="mouthreason != null">
-       and mouthreason = #{mouthreason,jdbcType=VARCHAR}
+    <if test="hzhInborn.mouth != null">
+       and mouth = #{hzhInborn.mouth,jdbcType=VARCHAR}
     </if>
-    <if test="jaw != null">
-       and jaw = #{jaw,jdbcType=VARCHAR}
+    <if test="hzhInborn.mouthreason != null">
+       and mouthreason = #{hzhInborn.mouthreason,jdbcType=VARCHAR}
     </if>
-    <if test="jawreason != null">
-       and jawreason = #{jawreason,jdbcType=VARCHAR}
+    <if test="hzhInborn.jaw != null">
+       and jaw = #{hzhInborn.jaw,jdbcType=VARCHAR}
     </if>
-    <if test="breast != null">
-       and breast = #{breast,jdbcType=VARCHAR}
+    <if test="hzhInborn.jawreason != null">
+       and jawreason = #{hzhInborn.jawreason,jdbcType=VARCHAR}
     </if>
-    <if test="breastreason != null">
-       and breastreason = #{breastreason,jdbcType=VARCHAR}
+    <if test="hzhInborn.breast != null">
+       and breast = #{hzhInborn.breast,jdbcType=VARCHAR}
     </if>
-    <if test="footleg != null">
-      and footleg = #{footleg,jdbcType=VARCHAR}
+    <if test="hzhInborn.breastreason != null">
+       and breastreason = #{hzhInborn.breastreason,jdbcType=VARCHAR}
     </if>
-    <if test="footlegreason != null">
-      and footlegreason = #{footlegreason,jdbcType=VARCHAR}
+    <if test="hzhInborn.footleg != null">
+      and footleg = #{hzhInborn.footleg,jdbcType=VARCHAR}
     </if>
-    <if test="heart != null">
-      and heart = #{heart,jdbcType=VARCHAR}
+    <if test="hzhInborn.footlegreason != null">
+      and footlegreason = #{hzhInborn.footlegreason,jdbcType=VARCHAR}
     </if>
-    <if test="belly != null">
-      and belly = #{belly,jdbcType=VARCHAR}
+    <if test="hzhInborn.heart != null">
+      and heart = #{hzhInborn.heart,jdbcType=VARCHAR}
     </if>
-    <if test="skin != null">
-      and skin = #{skin,jdbcType=VARCHAR}
+    <if test="hzhInborn.belly != null">
+      and belly = #{hzhInborn.belly,jdbcType=VARCHAR}
     </if>
-    <if test="otherreason != null">
-      and otherreason = #{otherreason,jdbcType=VARCHAR}
+    <if test="hzhInborn.skin != null">
+      and skin = #{hzhInborn.skin,jdbcType=VARCHAR}
     </if>
-    <if test="childId != null">
-      and child_id = #{childId,jdbcType=INTEGER}
+    <if test="hzhInborn.otherreason != null">
+      and otherreason = #{hzhInborn.otherreason,jdbcType=VARCHAR}
+    </if>
+    <if test="hzhInborn.childId != null">
+      and child_id = #{hzhInborn.childId,jdbcType=INTEGER}
     </if>
   </select>
 </mapper>

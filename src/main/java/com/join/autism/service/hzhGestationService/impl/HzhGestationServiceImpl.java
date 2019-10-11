@@ -1,4 +1,5 @@
 package com.join.autism.service.hzhGestationService.impl;
+import com.join.autism.entity.HzhGeneral.HzhGeneral;
 import com.join.autism.entity.HzhGestation.HzhGestation;
 import com.join.autism.entity.HzhGestation.HzhGestationDto;
 import com.join.autism.mapper.HzhGestationMapper;
@@ -52,9 +53,8 @@ public class HzhGestationServiceImpl implements HzhGestationService{
      * @return
      */
     @Override
-    public List<HzhGestationDto> mutiSelectGestation(){
-        HzhGestation hzhGestation = new HzhGestation();
-        List<HzhGestationDto> mutiSelectGestationList = hzhGestationMapper.mutiSelect(hzhGestation);
+    public List<HzhGestationDto> mutiSelectGestation(HzhGestation hzhGestation, HzhGeneral hzhGeneral){
+        List<HzhGestationDto> mutiSelectGestationList = hzhGestationMapper.mutiSelect(hzhGestation,hzhGeneral);
         return mutiSelectGestationList;
     }
 

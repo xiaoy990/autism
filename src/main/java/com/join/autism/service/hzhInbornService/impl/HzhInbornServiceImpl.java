@@ -1,5 +1,6 @@
 package com.join.autism.service.hzhInbornService.impl;
 
+import com.join.autism.entity.HzhGeneral.HzhGeneral;
 import com.join.autism.entity.HzhInborn.HzhInbornDto;
 import com.join.autism.entity.HzhInborn.HzhInborn;
 import com.join.autism.mapper.HzhInbornMapper;
@@ -16,8 +17,8 @@ public class HzhInbornServiceImpl implements HzhInbornService {
     HzhInbornMapper hzhInbornMapper;
 
     @Override
-    public List<HzhInbornDto> selectHzhInborn(HzhInborn hzhInborn) {
-        return hzhInbornMapper.mutiSelect(hzhInborn);
+    public List<HzhInbornDto> selectHzhInborn(HzhInborn hzhInborn, HzhGeneral hzhGeneral) {
+        return hzhInbornMapper.mutiSelect(hzhInborn,hzhGeneral);
     }
 
     @Override

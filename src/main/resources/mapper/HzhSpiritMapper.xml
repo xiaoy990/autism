@@ -463,62 +463,65 @@
     select
     <include refid="mutiSelect_Column_List" />
     from hzh_spirit s left join hzh_general g on (g.id = s.child_id) where 1=1
-    <if test="childId != null and childId != ''">
-      and s.child_id = #{childId}
+    <if test="hzhGeneral.name != null and hzhGeneral.name != ''">
+      and g.name like concat('%','${hzhGeneral.name}','%')
     </if>
-    <if test="sicknum != null and sicknum != ''">
-      and s.sicknum = #{sicknum,jdbcType=VARCHAR}
+    <if test="hzhSpirit.childId != null and hzhSpirit.childId != ''">
+      and s.child_id = #{hzhSpirit.childId}
     </if>
-    <if test="doctor != null and doctor != ''">
-      and s.doctor = #{doctor,jdbcType=VARCHAR}
+    <if test="hzhSpirit.sicknum != null and hzhSpirit.sicknum != ''">
+      and s.sicknum = #{hzhSpirit.sicknum,jdbcType=VARCHAR}
     </if>
-    <if test="datetime != null and datetime != ''">
-      and `datetime` = #{datetime,jdbcType=VARCHAR}
+    <if test="hzhSpirit.doctor != null and hzhSpirit.doctor != ''">
+      and s.doctor = #{hzhSpirit.doctor,jdbcType=VARCHAR}
     </if>
-    <if test="livenum != null and livenum != ''">
-      and s.livenum = #{livenum,jdbcType=VARCHAR}
+    <if test="hzhSpirit.datetime != null and hzhSpirit.datetime != ''">
+      and `datetime` = #{hzhSpirit.datetime,jdbcType=VARCHAR}
     </if>
-    <if test="nospeak != null and nospeak != ''">
-      and nospeak = #{nospeak,jdbcType=VARCHAR}
+    <if test="hzhSpirit.livenum != null and hzhSpirit.livenum != ''">
+      and s.livenum = #{hzhSpirit.livenum,jdbcType=VARCHAR}
     </if>
-    <if test="brains != null and brains != ''">
-      and brains = #{brains,jdbcType=VARCHAR}
+    <if test="hzhSpirit.nospeak != null and hzhSpirit.nospeak != ''">
+      and nospeak = #{hzhSpirit.nospeak,jdbcType=VARCHAR}
     </if>
-    <if test="speakslow != null and speakslow != ''">
-      and speakslow = #{speakslow,jdbcType=VARCHAR}
+    <if test="hzhSpirit.brains != null and hzhSpirit.brains != ''">
+      and brains = #{hzhSpirit.brains,jdbcType=VARCHAR}
     </if>
-    <if test="blues != null and blues != ''">
-      and blues = #{blues,jdbcType=VARCHAR}
+    <if test="hzhSpirit.speakslow != null and hzhSpirit.speakslow != ''">
+      and speakslow = #{hzhSpirit.speakslow,jdbcType=VARCHAR}
     </if>
-    <if test="anxious != null and anxious != ''">
-      and anxious = #{anxious,jdbcType=VARCHAR}
+    <if test="hzhSpirit.blues != null and hzhSpirit.blues != ''">
+      and blues = #{hzhSpirit.blues,jdbcType=VARCHAR}
     </if>
-    <if test="manic != null and manic != ''">
-      and manic = #{manic,jdbcType=VARCHAR}
+    <if test="hzhSpirit.anxious != null and hzhSpirit.anxious != ''">
+      and anxious = #{hzhSpirit.anxious,jdbcType=VARCHAR}
     </if>
-    <if test="split != null and split != ''">
-      and split = #{split,jdbcType=VARCHAR}
+    <if test="hzhSpirit.manic != null and hzhSpirit.manic != ''">
+      and manic = #{hzhSpirit.manic,jdbcType=VARCHAR}
     </if>
-    <if test="muchgo != null and muchgo != ''">
-      and muchgo = #{muchgo,jdbcType=VARCHAR}
+    <if test="hzhSpirit.split != null and hzhSpirit.split != ''">
+      and split = #{hzhSpirit.split,jdbcType=VARCHAR}
     </if>
-    <if test="social != null and social != ''">
-      and social = #{social,jdbcType=VARCHAR}
+    <if test="hzhSpirit.muchgo != null and hzhSpirit.muchgo != ''">
+      and muchgo = #{hzhSpirit.muchgo,jdbcType=VARCHAR}
     </if>
-    <if test="force != null and force != ''">
-      and `force` = #{force,jdbcType=VARCHAR}
+    <if test="hzhSpirit.social != null and hzhSpirit.social != ''">
+      and social = #{hzhSpirit.social,jdbcType=VARCHAR}
     </if>
-    <if test="choice != null and choice != ''">
-      and choice = #{choice,jdbcType=VARCHAR}
+    <if test="hzhSpirit.force != null and hzhSpirit.force != ''">
+      and `force` = #{hzhSpirit.force,jdbcType=VARCHAR}
     </if>
-    <if test="spirit != null and spirit != ''">
-      and spirit = #{spirit,jdbcType=VARCHAR}
+    <if test="hzhSpirit.choice != null and hzhSpirit.choice != ''">
+      and choice = #{hzhSpirit.choice,jdbcType=VARCHAR}
     </if>
-    <if test="other != null and other != ''">
-      and other = #{other,jdbcType=VARCHAR}
+    <if test="hzhSpirit.spirit != null and hzhSpirit.spirit != ''">
+      and spirit = #{hzhSpirit.spirit,jdbcType=VARCHAR}
     </if>
-    <if test="childId != null and childId != ''">
-      and child_id = #{childId,jdbcType=INTEGER}
+    <if test="hzhSpirit.other != null and hzhSpirit.other != ''">
+      and other = #{hzhSpirit.other,jdbcType=VARCHAR}
+    </if>
+    <if test="hzhSpirit.childId != null and hzhSpirit.childId != ''">
+      and child_id = #{hzhSpirit.childId,jdbcType=INTEGER}
     </if>
   </select>
 </mapper>

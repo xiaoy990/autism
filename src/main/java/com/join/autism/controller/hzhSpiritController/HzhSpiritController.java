@@ -1,5 +1,6 @@
 package com.join.autism.controller.hzhSpiritController;
 
+import com.join.autism.entity.HzhGeneral.HzhGeneral;
 import com.join.autism.entity.HzhSpirit.HzhSpirit;
 import com.join.autism.entity.HzhSpirit.HzhSpiritDto;
 import com.join.autism.service.hzhSpiritService.HzhSpiritService;
@@ -30,8 +31,8 @@ public class HzhSpiritController {
     }
 
     @RequestMapping("selectSpirit")
-    public List<HzhSpiritDto> queryAll(HzhSpirit hzhSpirit){
-        return hzhSpiritService.selectHzhSpirit(hzhSpirit);
+    public List<HzhSpiritDto> queryAll(HzhSpirit hzhSpirit, HzhGeneral hzhGeneral){
+        return hzhSpiritService.selectHzhSpirit(hzhSpirit,hzhGeneral);
     }
 
     @RequestMapping("insertSpirit")

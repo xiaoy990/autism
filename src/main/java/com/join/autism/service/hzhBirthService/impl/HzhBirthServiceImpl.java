@@ -2,6 +2,7 @@ package com.join.autism.service.hzhBirthService.impl;
 
 import com.join.autism.entity.HzhBirth.HzhBirth;
 import com.join.autism.entity.HzhBirth.HzhBirthDto;
+import com.join.autism.entity.HzhGeneral.HzhGeneral;
 import com.join.autism.mapper.HzhBirthMapper;
 import com.join.autism.service.hzhBirthService.HzhBirthService;
 import org.springframework.stereotype.Service;
@@ -18,8 +19,8 @@ public class HzhBirthServiceImpl implements HzhBirthService {
     }
 
     @Override
-    public List<HzhBirthDto> selectHzhBirth(HzhBirth hzhBirth) {
-        return hzhBirthMapper.mutiSelect(hzhBirth);
+    public List<HzhBirthDto> selectHzhBirth(HzhBirth hzhBirth, HzhGeneral hzhGeneral) {
+        return hzhBirthMapper.mutiSelect(hzhBirth,hzhGeneral);
     }
 
     @Override

@@ -57,6 +57,6 @@ public class HzhThreemonServiceImpl implements HzhThreemonService {
      */
     @Override
     public List<HzhThreemonDto> mutiSelectThreemon(HzhThreemon hzhThreemon, HzhGeneral hzhGeneral){
-        return hzhThreemonMapper.mutiSelect(hzhThreemon);
+        return hzhThreemonMapper.mutiSelect(hzhThreemon,hzhGeneral);
     }
 }

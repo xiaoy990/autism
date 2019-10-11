@@ -14,5 +14,5 @@ import java.util.List;
  */
 @Repository
 public interface HzhThreemonMapper extends MyBatisBaseDao<HzhThreemon, Integer, HzhThreemonExample> {
-    List<HzhThreemonDto> mutiSelect(HzhThreemon hzhThreemonl);
+    List<HzhThreemonDto> mutiSelect(@Param("hzhThreemon") HzhThreemon hzhThreemonl,@Param("hzhGeneral") HzhGeneral hzhGeneral);
 }

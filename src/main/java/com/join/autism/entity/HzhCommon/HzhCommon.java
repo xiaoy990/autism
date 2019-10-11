@@ -9,47 +9,47 @@ import java.io.Serializable;
 public class HzhCommon implements Serializable {
     private Integer id;
 
-    private Integer low;
+    private String low;
 
     private String lowreason = "";
 
-    private Integer infect;
+    private String infect;
 
     private String infectreason = "";
 
-    private Integer stop;
+    private String stop;
 
     private String stopreason = "";
 
-    private Integer high;
+    private String high;
 
     private String highreason = "";
 
-    private Integer around;
+    private String around;
 
     private String aroundreason = "";
 
-    private Integer listen;
+    private String listen;
 
-    private Integer isAudiphones = 0;
+    private String isAudiphones = "";
 
     private String listenreason = "";
 
-    private Integer eye;
+    private String eye;
 
-    private Integer isGlasses = 0;
+    private String isGlasses = "";
 
     private String eyereason = "";
 
-    private Integer disease;
+    private String disease;
 
     private String diseasereason = "";
 
-    private Integer lax;
+    private String lax;
 
     private String laxreason = "";
 
-    private Integer vaccin;
+    private String vaccin;
 
     private String vaccinreason = "";
 
@@ -65,11 +65,11 @@ public class HzhCommon implements Serializable {
         this.id = id;
     }
 
-    public Integer getLow() {
+    public String getLow() {
         return low;
     }
 
-    public void setLow(Integer low) {
+    public void setLow(String low) {
         this.low = low;
     }
 
@@ -81,11 +81,11 @@ public class HzhCommon implements Serializable {
         this.lowreason = lowreason;
     }
 
-    public Integer getInfect() {
+    public String getInfect() {
         return infect;
     }
 
-    public void setInfect(Integer infect) {
+    public void setInfect(String infect) {
         this.infect = infect;
     }
 
@@ -97,11 +97,11 @@ public class HzhCommon implements Serializable {
         this.infectreason = infectreason;
     }
 
-    public Integer getStop() {
+    public String getStop() {
         return stop;
     }
 
-    public void setStop(Integer stop) {
+    public void setStop(String stop) {
         this.stop = stop;
     }
 
@@ -113,11 +113,11 @@ public class HzhCommon implements Serializable {
         this.stopreason = stopreason;
     }
 
-    public Integer getHigh() {
+    public String getHigh() {
         return high;
     }
 
-    public void setHigh(Integer high) {
+    public void setHigh(String high) {
         this.high = high;
     }
 
@@ -129,11 +129,11 @@ public class HzhCommon implements Serializable {
         this.highreason = highreason;
     }
 
-    public Integer getAround() {
+    public String getAround() {
         return around;
     }
 
-    public void setAround(Integer around) {
+    public void setAround(String around) {
         this.around = around;
     }
 
@@ -145,19 +145,19 @@ public class HzhCommon implements Serializable {
         this.aroundreason = aroundreason;
     }
 
-    public Integer getListen() {
+    public String getListen() {
         return listen;
     }
 
-    public void setListen(Integer listen) {
+    public void setListen(String listen) {
         this.listen = listen;
     }
 
-    public Integer getIsAudiphones() {
+    public String getIsAudiphones() {
         return isAudiphones;
     }
 
-    public void setIsAudiphones(Integer isAudiphones) {
+    public void setIsAudiphones(String isAudiphones) {
         this.isAudiphones = isAudiphones;
     }
 
@@ -169,19 +169,19 @@ public class HzhCommon implements Serializable {
         this.listenreason = listenreason;
     }
 
-    public Integer getEye() {
+    public String getEye() {
         return eye;
     }
 
-    public void setEye(Integer eye) {
+    public void setEye(String eye) {
         this.eye = eye;
     }
 
-    public Integer getIsGlasses() {
+    public String getIsGlasses() {
         return isGlasses;
     }
 
-    public void setIsGlasses(Integer isGlasses) {
+    public void setIsGlasses(String isGlasses) {
         this.isGlasses = isGlasses;
     }
 
@@ -193,11 +193,11 @@ public class HzhCommon implements Serializable {
         this.eyereason = eyereason;
     }
 
-    public Integer getDisease() {
+    public String getDisease() {
         return disease;
     }
 
-    public void setDisease(Integer disease) {
+    public void setDisease(String disease) {
         this.disease = disease;
     }
 
@@ -209,11 +209,11 @@ public class HzhCommon implements Serializable {
         this.diseasereason = diseasereason;
     }
 
-    public Integer getLax() {
+    public String getLax() {
         return lax;
     }
 
-    public void setLax(Integer lax) {
+    public void setLax(String lax) {
         this.lax = lax;
     }
 
@@ -225,11 +225,11 @@ public class HzhCommon implements Serializable {
         this.laxreason = laxreason;
     }
 
-    public Integer getVaccin() {
+    public String getVaccin() {
         return vaccin;
     }
 
-    public void setVaccin(Integer vaccin) {
+    public void setVaccin(String vaccin) {
         this.vaccin = vaccin;
     }
 

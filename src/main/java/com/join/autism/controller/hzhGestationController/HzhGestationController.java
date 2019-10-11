@@ -1,6 +1,7 @@
 package com.join.autism.controller.hzhGestationController;
 
 import com.join.autism.entity.HzhFamily.HzhFamily;
+import com.join.autism.entity.HzhGeneral.HzhGeneral;
 import com.join.autism.entity.HzhGestation.HzhGestation;
 import com.join.autism.entity.HzhGestation.HzhGestationDto;
 import com.join.autism.service.hzhGestationService.HzhGestationService;
@@ -94,10 +95,10 @@ public class HzhGestationController {
      * @return
      */
     @RequestMapping(value = "/mutiSelectGestation")
-    public List<HzhGestationDto> mutiSelectGestation(Model model){
+    public List<HzhGestationDto> mutiSelectGestation(Model model, HzhGestation hzhGestation, HzhGeneral hzhGeneral){
         List<HzhGestationDto> mutiSelectGestationList = null;
         try {
-            mutiSelectGestationList = hzhGestationService.mutiSelectGestation();
+            mutiSelectGestationList = hzhGestationService.mutiSelectGestation(hzhGestation,hzhGeneral);
             model.addAttribute("mutiSelectGestationList",mutiSelectGestationList);
         }catch (Exception e){
             e.printStackTrace();

@@ -1,5 +1,6 @@
 package com.join.autism.service.hzhSpiritService.impl;
 
+import com.join.autism.entity.HzhGeneral.HzhGeneral;
 import com.join.autism.entity.HzhSpirit.HzhSpirit;
 import com.join.autism.entity.HzhSpirit.HzhSpiritDto;
 import com.join.autism.mapper.HzhSpiritMapper;
@@ -17,15 +18,15 @@ public class HzhSpiritServiceImpl implements HzhSpiritService {
     HzhSpiritMapper hzhSpiritMapper;
 
     @Override
-    public List<HzhSpiritDto> selectHzhSpirit(HzhSpirit hzhSpirit) {
-        return hzhSpiritMapper.mutiSelect(hzhSpirit);
+    public List<HzhSpiritDto> selectHzhSpirit(HzhSpirit hzhSpirit, HzhGeneral hzhGeneral) {
+        return hzhSpiritMapper.mutiSelect(hzhSpirit,hzhGeneral);
     }
 
     @Override
     // 由于字符解析的原因，在这里手动生成了json数据。具体逻辑大概是：遍历查询到的所有对象，内层循环遍历该对象的全部属性，
     // 将不需要拆分的属性直接拼在json中，将需要拆分的属性拆分后封装到json中
     public String queryAllSpirits(HzhSpirit hzhSpirit) throws IllegalAccessException {
-        List<HzhSpiritDto> hzhSpiritDtos = hzhSpiritMapper.mutiSelect(hzhSpirit);
+        List<HzhSpiritDto> hzhSpiritDtos = hzhSpiritMapper.mutiSelect(hzhSpirit,new HzhGeneral());
         Field[] declaredFields = HzhSpiritDto.class.getDeclaredFields();
         StringBuffer sb = new StringBuffer();
         sb.append("[");

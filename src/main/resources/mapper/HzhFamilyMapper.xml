@@ -91,38 +91,41 @@
   <select id="mutiSelect" resultMap="MutiSelectResultMap" >
     select <include refid="mutiSelect_Column_List" />,`name`,g.sicknum from hzh_family f left join hzh_general g on (g.id = f.child_id)
     where 1 = 1
-    <if test="childId != null">
-      and f.child_id = #{childId}
+    <if test="hzhGeneral.name != null and hzhGeneral.name != ''">
+      and g.name like concat('%','${hzhGeneral.name}','%')
     </if>
-    <if test="motherage != null and motherage != ''" >
-      and motherage = #{motherage,jdbcType=INTEGER}
+    <if test="hzhFamily.childId != null">
+      and f.child_id = #{hzhFamily.childId}
     </if>
-    <if test="fatherage != null and fatherage != ''">
-      and fatherage = #{fatherage,jdbcType=INTEGER}
+    <if test="hzhFamily.motherage != null and hzhFamily.motherage != ''" >
+      and motherage = #{hzhFamily.motherage,jdbcType=INTEGER}
     </if>
-    <if test="momculture != null and momculture != ''">
-      and momculture = #{momculture,jdbcType=VARCHAR}
+    <if test="hzhFamily.fatherage != null and hzhFamily.fatherage != ''">
+      and fatherage = #{hzhFamily.fatherage,jdbcType=INTEGER}
     </if>
-    <if test="dadculture != null and dadculture != ''">
-      and dadculture = #{dadculture,jdbcType=VARCHAR}
+    <if test="hzhFamily.momculture != null and hzhFamily.momculture != ''">
+      and momculture = #{hzhFamily.momculture,jdbcType=VARCHAR}
     </if>
-    <if test="mompross != null and mompross != ''">
-      and mompross = #{mompross,jdbcType=VARCHAR}
+    <if test="hzhFamily.dadculture != null and hzhFamily.dadculture != ''">
+      and dadculture = #{hzhFamily.dadculture,jdbcType=VARCHAR}
     </if>
-    <if test="dadpross != null and dadpross != ''">
-      and dadpross = #{dadpross,jdbcType=VARCHAR}
+    <if test="hzhFamily.mompross != null and hzhFamily.mompross != ''">
+      and mompross = #{hzhFamily.mompross,jdbcType=VARCHAR}
     </if>
-    <if test="childId != null and childId != ''">
-      and child_id = #{childId,jdbcType=INTEGER}
+    <if test="hzhFamily.dadpross != null and hzhFamily.dadpross != ''">
+      and dadpross = #{hzhFamily.dadpross,jdbcType=VARCHAR}
     </if>
-    <if test="marriage != null">
-      and marriage = #{marriage,jdbcType=INTEGER}
+    <if test="hzhFamily.childId != null and hzhFamily.childId != ''">
+      and child_id = #{hzhFamily.childId,jdbcType=INTEGER}
     </if>
-    <if test="marriageDesc != null and marriageDesc != ''">
-      and marriage_desc = #{marriageDesc,jdbcType=VARCHAR}
+    <if test="hzhFamily.marriage != null">
+      and marriage = #{hzhFamily.marriage,jdbcType=INTEGER}
     </if>
-    <if test="much != null and much != ''">
-      and much = #{much,jdbcType=VARCHAR}
+    <if test="hzhFamily.marriageDesc != null and hzhFamily.marriageDesc != ''">
+      and marriage_desc = #{hzhFamily.marriageDesc,jdbcType=VARCHAR}
+    </if>
+    <if test="hzhFamily.much != null and hzhFamily.much != ''">
+      and much = #{hzhFamily.much,jdbcType=VARCHAR}
     </if>
   </select>
 

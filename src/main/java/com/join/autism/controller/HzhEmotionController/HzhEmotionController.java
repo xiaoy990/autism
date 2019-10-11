@@ -3,6 +3,7 @@ package com.join.autism.controller.HzhEmotionController;
 import com.join.autism.entity.HzhEmotion.HzhEmotion;
 import com.join.autism.entity.HzhEmotion.HzhEmotionDto;
 import com.join.autism.entity.HzhEmotion.QuestionEmotion;
+import com.join.autism.entity.HzhGeneral.HzhGeneral;
 import com.join.autism.service.hzhEmotionService.HzhEmotionService;
 import com.join.autism.service.hzhEmotionService.QuestionEmotionService;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -27,8 +28,8 @@ public class HzhEmotionController {
     }
 
     @RequestMapping("selectEmotion")
-    public List<HzhEmotionDto> selectHzhEmotion(HzhEmotion hzhEmotion){
-        return hzhEmotionService.selectHzhEmotion(hzhEmotion);
+    public List<HzhEmotionDto> selectHzhEmotion(HzhEmotion hzhEmotion, HzhGeneral hzhGeneral){
+        return hzhEmotionService.selectHzhEmotion(hzhEmotion,hzhGeneral);
     }
 
     @RequestMapping("insertEmotion")
