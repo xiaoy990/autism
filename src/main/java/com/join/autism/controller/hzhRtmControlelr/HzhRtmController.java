@@ -44,7 +44,7 @@ public class HzhRtmController {
         hzhRtmService.delHzhRtmByPK(hzhRtm.getId());
     }
 
-    @RequestMapping("updateHzhRtm")
+    @RequestMapping("updateRtm")
     public void updateRtm(HzhRtm hzhRtm){
         hzhRtmService.updateHzhRtm(hzhRtm);
     }

@@ -3,10 +3,21 @@ package com.join.autism.controller.hzhgeneralController;
 import com.join.autism.entity.HzhGeneral.CriteriaSupportGeneral;
 import com.join.autism.entity.HzhGeneral.HzhGeneral;
 import com.join.autism.service.hzhGeneralService.HzhGeneralService;
+import com.join.autism.util.poi.ExcelUtil;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.servlet.ServletOutputStream;
+import javax.servlet.http.HttpServletResponse;
+import java.io.BufferedInputStream;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -29,30 +40,57 @@ public class HzhGeneralController {
         return hzhGeneralService.selectHzhGeneral(hzhGeneral,criteriaSupportGeneral);
     }
 
+    @RequestMapping(value = "downExcel",produces = "application/json;charset=UTF-8")
+    public String selectGeneralForDownloadExcel(HzhGeneral hzhGeneral, CriteriaSupportGeneral criteriaSupportGeneral, HttpServletResponse resp){
+        List<HzhGeneral> hzhGenerals = hzhGeneralService.selectHzhGeneral(hzhGeneral, criteriaSupportGeneral);
+        ExcelUtil<HzhGeneral> excelUtil = new ExcelUtil<>();
+        String fileUrl = excelUtil.creatExcelFile(hzhGenerals);
+
+        File file = new File(fileUrl);
+        if (file.exists()){
+
+            resp.setContentType("application/octet-stream");
+            resp.setHeader("content-type","application/octet-steam");
+            long l = System.currentTimeMillis();
+            Date date = new Date(l);
+            SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
+            resp.setHeader("Content-Disposition","attachment;fileName=AutismInfo"+simpleDateFormat.format(date)+".xls");
+            byte[] buffer = new byte[1024];
+            FileInputStream input = null;
+            BufferedInputStream bis = null;
+
+            try {
+                input = new FileInputStream(file);
+                bis = new BufferedInputStream(input);
+                ServletOutputStream outputStream = resp.getOutputStream();
+                int i = bis.read(buffer);
+                while( i != -1){
+                    outputStream.write(buffer,0,i);
+                    i = bis.read(buffer);
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        return "succeed";
+    }
+
 
     /**
      * 插入一般信息，对应一般信息添加
      * 要求前端必须同时传入生日和就诊时月份
      * */
     @RequestMapping(value = "addGeneral",produces = "application/json;charset=UTF-8")
-    public List<HzhGeneral> insertGeneral( HzhGeneral hzhGeneral, String[] pct){
-        hzhGeneralService.insertHzhGeneral(hzhGeneral,pct);
+    public List insertGeneral( HzhGeneral hzhGeneral, String[] pct){
+
+        if(!hzhGeneralService.insertHzhGeneral(hzhGeneral,pct))return null;
         if (hzhGeneral.getBirthday() != null) {
-            System.out.println(hzhGeneral.getBirthday());
             hzhGeneral.setBirthday(hzhGeneral.getBirthday().replaceAll("-",""));
-            System.out.println(hzhGeneral.getBirthday());
         }
         if (hzhGeneral.getSurveyTime()!=null){
-            System.out.println(hzhGeneral.getSurveyTime());
             hzhGeneral.setSurveyTime(hzhGeneral.getSurveyTime().replaceAll("-",""));
-            System.out.println(hzhGeneral.getSurveyTime());
         }
-        System.out.println("controller: "+hzhGeneral.getBirthday()+" "+hzhGeneral.getSurveyTime());
-        List<HzhGeneral> hzhGenerals = hzhGeneralService.selectHzhGeneral(hzhGeneral, new CriteriaSupportGeneral());
-        for (HzhGeneral g:hzhGenerals
-             ) {
-            System.out.println(g);
-        }
+        List hzhGenerals = hzhGeneralService.selectHzhGeneral(hzhGeneral, new CriteriaSupportGeneral());
         return hzhGenerals;
 
     }

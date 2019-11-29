@@ -4,52 +4,52 @@
   <resultMap id="BaseResultMap" type="com.join.autism.entity.HzhRtm.HzhRtm">
     <id column="id" jdbcType="INTEGER" property="id" />
     <result column="child_id" jdbcType="INTEGER" property="childId" />
-    <result column="is_look" jdbcType="INTEGER" property="isLook" />
-    <result column="is_hearing" jdbcType="INTEGER" property="isHearing" />
-    <result column="is_game" jdbcType="INTEGER" property="isGame" />
-    <result column="is_climbing" jdbcType="INTEGER" property="isClimbing" />
-    <result column="is_finger" jdbcType="INTEGER" property="isFinger" />
-    <result column="is_help" jdbcType="INTEGER" property="isHelp" />
-    <result column="is_interest" jdbcType="INTEGER" property="isInterest" />
-    <result column="is_children" jdbcType="INTEGER" property="isChildren" />
-    <result column="is_parents_look" jdbcType="INTEGER" property="isParentsLook" />
-    <result column="is_response" jdbcType="INTEGER" property="isResponse" />
-    <result column="is_smile_response" jdbcType="INTEGER" property="isSmileResponse" />
-    <result column="is_noise" jdbcType="INTEGER" property="isNoise" />
-    <result column="is_go" jdbcType="INTEGER" property="isGo" />
-    <result column="is_eye" jdbcType="INTEGER" property="isEye" />
-    <result column="is_imitate" jdbcType="INTEGER" property="isImitate" />
-    <result column="is_search" jdbcType="INTEGER" property="isSearch" />
-    <result column="is_attract" jdbcType="INTEGER" property="isAttract" />
-    <result column="is_understand" jdbcType="INTEGER" property="isUnderstand" />
-    <result column="is_reaction" jdbcType="INTEGER" property="isReaction" />
-    <result column="is_movement" jdbcType="INTEGER" property="isMovement" />
-    <result column="addtime" jdbcType="INTEGER" property="addtime" />
+    <result column="is_look" jdbcType="VARCHAR" property="isLook" />
+    <result column="is_hearing" jdbcType="VARCHAR" property="isHearing" />
+    <result column="is_game" jdbcType="VARCHAR" property="isGame" />
+    <result column="is_climbing" jdbcType="VARCHAR" property="isClimbing" />
+    <result column="is_finger" jdbcType="VARCHAR" property="isFinger" />
+    <result column="is_help" jdbcType="VARCHAR" property="isHelp" />
+    <result column="is_interest" jdbcType="VARCHAR" property="isInterest" />
+    <result column="is_children" jdbcType="VARCHAR" property="isChildren" />
+    <result column="is_parents_look" jdbcType="VARCHAR" property="isParentsLook" />
+    <result column="is_response" jdbcType="VARCHAR" property="isResponse" />
+    <result column="is_smile_response" jdbcType="VARCHAR" property="isSmileResponse" />
+    <result column="is_noise" jdbcType="VARCHAR" property="isNoise" />
+    <result column="is_go" jdbcType="VARCHAR" property="isGo" />
+    <result column="is_eye" jdbcType="VARCHAR" property="isEye" />
+    <result column="is_imitate" jdbcType="VARCHAR" property="isImitate" />
+    <result column="is_search" jdbcType="VARCHAR" property="isSearch" />
+    <result column="is_attract" jdbcType="VARCHAR" property="isAttract" />
+    <result column="is_understand" jdbcType="VARCHAR" property="isUnderstand" />
+    <result column="is_reaction" jdbcType="VARCHAR" property="isReaction" />
+    <result column="is_movement" jdbcType="VARCHAR" property="isMovement" />
+    <result column="addtime" jdbcType="VARCHAR" property="addtime" />
   </resultMap>
   <resultMap id="mutiSelectResultMap" type="com.join.autism.entity.HzhRtm.HzhRtmDto">
     <id column="id" jdbcType="INTEGER" property="id" />
     <result column="child_id" jdbcType="INTEGER" property="childId" />
-    <result column="is_look" jdbcType="INTEGER" property="isLook" />
-    <result column="is_hearing" jdbcType="INTEGER" property="isHearing" />
-    <result column="is_game" jdbcType="INTEGER" property="isGame" />
-    <result column="is_climbing" jdbcType="INTEGER" property="isClimbing" />
-    <result column="is_finger" jdbcType="INTEGER" property="isFinger" />
-    <result column="is_help" jdbcType="INTEGER" property="isHelp" />
-    <result column="is_interest" jdbcType="INTEGER" property="isInterest" />
-    <result column="is_children" jdbcType="INTEGER" property="isChildren" />
-    <result column="is_parents_look" jdbcType="INTEGER" property="isParentsLook" />
-    <result column="is_response" jdbcType="INTEGER" property="isResponse" />
-    <result column="is_smile_response" jdbcType="INTEGER" property="isSmileResponse" />
-    <result column="is_noise" jdbcType="INTEGER" property="isNoise" />
-    <result column="is_go" jdbcType="INTEGER" property="isGo" />
-    <result column="is_eye" jdbcType="INTEGER" property="isEye" />
-    <result column="is_imitate" jdbcType="INTEGER" property="isImitate" />
-    <result column="is_search" jdbcType="INTEGER" property="isSearch" />
-    <result column="is_attract" jdbcType="INTEGER" property="isAttract" />
-    <result column="is_understand" jdbcType="INTEGER" property="isUnderstand" />
-    <result column="is_reaction" jdbcType="INTEGER" property="isReaction" />
-    <result column="is_movement" jdbcType="INTEGER" property="isMovement" />
-    <result column="addtime" jdbcType="INTEGER" property="addtime" />
+    <result column="is_look" jdbcType="VARCHAR" property="isLook" />
+    <result column="is_hearing" jdbcType="VARCHAR" property="isHearing" />
+    <result column="is_game" jdbcType="VARCHAR" property="isGame" />
+    <result column="is_climbing" jdbcType="VARCHAR" property="isClimbing" />
+    <result column="is_finger" jdbcType="VARCHAR" property="isFinger" />
+    <result column="is_help" jdbcType="VARCHAR" property="isHelp" />
+    <result column="is_interest" jdbcType="VARCHAR" property="isInterest" />
+    <result column="is_children" jdbcType="VARCHAR" property="isChildren" />
+    <result column="is_parents_look" jdbcType="VARCHAR" property="isParentsLook" />
+    <result column="is_response" jdbcType="VARCHAR" property="isResponse" />
+    <result column="is_smile_response" jdbcType="VARCHAR" property="isSmileResponse" />
+    <result column="is_noise" jdbcType="VARCHAR" property="isNoise" />
+    <result column="is_go" jdbcType="VARCHAR" property="isGo" />
+    <result column="is_eye" jdbcType="VARCHAR" property="isEye" />
+    <result column="is_imitate" jdbcType="VARCHAR" property="isImitate" />
+    <result column="is_search" jdbcType="VARCHAR" property="isSearch" />
+    <result column="is_attract" jdbcType="VARCHAR" property="isAttract" />
+    <result column="is_understand" jdbcType="VARCHAR" property="isUnderstand" />
+    <result column="is_reaction" jdbcType="VARCHAR" property="isReaction" />
+    <result column="is_movement" jdbcType="VARCHAR" property="isMovement" />
+    <result column="addtime" jdbcType="VARCHAR" property="addtime" />
     <result column="name" property="name"/>
     <result column="sicknum" property="sicknum"/>
     <result column="doctor" property="doctor"/>
@@ -170,14 +170,14 @@
       is_imitate, is_search, is_attract, 
       is_understand, is_reaction, is_movement, 
       addtime)
-    values (#{childId,jdbcType=INTEGER}, #{isLook,jdbcType=INTEGER}, #{isHearing,jdbcType=INTEGER}, 
-      #{isGame,jdbcType=INTEGER}, #{isClimbing,jdbcType=INTEGER}, #{isFinger,jdbcType=INTEGER}, 
-      #{isHelp,jdbcType=INTEGER}, #{isInterest,jdbcType=INTEGER}, #{isChildren,jdbcType=INTEGER}, 
-      #{isParentsLook,jdbcType=INTEGER}, #{isResponse,jdbcType=INTEGER}, #{isSmileResponse,jdbcType=INTEGER}, 
-      #{isNoise,jdbcType=INTEGER}, #{isGo,jdbcType=INTEGER}, #{isEye,jdbcType=INTEGER}, 
-      #{isImitate,jdbcType=INTEGER}, #{isSearch,jdbcType=INTEGER}, #{isAttract,jdbcType=INTEGER}, 
-      #{isUnderstand,jdbcType=INTEGER}, #{isReaction,jdbcType=INTEGER}, #{isMovement,jdbcType=INTEGER}, 
-      #{addtime,jdbcType=INTEGER})
+    values (#{childId,jdbcType=INTEGER}, #{isLook,jdbcType=VARCHAR}, #{isHearing,jdbcType=VARCHAR},
+      #{isGame,jdbcType=VARCHAR}, #{isClimbing,jdbcType=VARCHAR}, #{isFinger,jdbcType=VARCHAR},
+      #{isHelp,jdbcType=VARCHAR}, #{isInterest,jdbcType=VARCHAR}, #{isChildren,jdbcType=VARCHAR},
+      #{isParentsLook,jdbcType=VARCHAR}, #{isResponse,jdbcType=VARCHAR}, #{isSmileResponse,jdbcType=VARCHAR},
+      #{isNoise,jdbcType=VARCHAR}, #{isGo,jdbcType=VARCHAR}, #{isEye,jdbcType=VARCHAR},
+      #{isImitate,jdbcType=VARCHAR}, #{isSearch,jdbcType=VARCHAR}, #{isAttract,jdbcType=VARCHAR},
+      #{isUnderstand,jdbcType=VARCHAR}, #{isReaction,jdbcType=VARCHAR}, #{isMovement,jdbcType=VARCHAR},
+      #{addtime,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.join.autism.entity.HzhRtm.HzhRtm" useGeneratedKeys="true">
     insert into hzh_rtm
@@ -254,67 +254,67 @@
         #{childId,jdbcType=INTEGER},
       </if>
       <if test="isLook != null">
-        #{isLook,jdbcType=INTEGER},
+        #{isLook,jdbcType=VARCHAR},
       </if>
       <if test="isHearing != null">
-        #{isHearing,jdbcType=INTEGER},
+        #{isHearing,jdbcType=VARCHAR},
       </if>
       <if test="isGame != null">
-        #{isGame,jdbcType=INTEGER},
+        #{isGame,jdbcType=VARCHAR},
       </if>
       <if test="isClimbing != null">
-        #{isClimbing,jdbcType=INTEGER},
+        #{isClimbing,jdbcType=VARCHAR},
       </if>
       <if test="isFinger != null">
-        #{isFinger,jdbcType=INTEGER},
+        #{isFinger,jdbcType=VARCHAR},
       </if>
       <if test="isHelp != null">
-        #{isHelp,jdbcType=INTEGER},
+        #{isHelp,jdbcType=VARCHAR},
       </if>
       <if test="isInterest != null">
-        #{isInterest,jdbcType=INTEGER},
+        #{isInterest,jdbcType=VARCHAR},
       </if>
       <if test="isChildren != null">
-        #{isChildren,jdbcType=INTEGER},
+        #{isChildren,jdbcType=VARCHAR},
       </if>
       <if test="isParentsLook != null">
-        #{isParentsLook,jdbcType=INTEGER},
+        #{isParentsLook,jdbcType=VARCHAR},
       </if>
       <if test="isResponse != null">
-        #{isResponse,jdbcType=INTEGER},
+        #{isResponse,jdbcType=VARCHAR},
       </if>
       <if test="isSmileResponse != null">
-        #{isSmileResponse,jdbcType=INTEGER},
+        #{isSmileResponse,jdbcType=VARCHAR},
       </if>
       <if test="isNoise != null">
-        #{isNoise,jdbcType=INTEGER},
+        #{isNoise,jdbcType=VARCHAR},
       </if>
       <if test="isGo != null">
-        #{isGo,jdbcType=INTEGER},
+        #{isGo,jdbcType=VARCHAR},
       </if>
       <if test="isEye != null">
-        #{isEye,jdbcType=INTEGER},
+        #{isEye,jdbcType=VARCHAR},
       </if>
       <if test="isImitate != null">
-        #{isImitate,jdbcType=INTEGER},
+        #{isImitate,jdbcType=VARCHAR},
       </if>
       <if test="isSearch != null">
-        #{isSearch,jdbcType=INTEGER},
+        #{isSearch,jdbcType=VARCHAR},
       </if>
       <if test="isAttract != null">
-        #{isAttract,jdbcType=INTEGER},
+        #{isAttract,jdbcType=VARCHAR},
       </if>
       <if test="isUnderstand != null">
-        #{isUnderstand,jdbcType=INTEGER},
+        #{isUnderstand,jdbcType=VARCHAR},
       </if>
       <if test="isReaction != null">
-        #{isReaction,jdbcType=INTEGER},
+        #{isReaction,jdbcType=VARCHAR},
       </if>
       <if test="isMovement != null">
-        #{isMovement,jdbcType=INTEGER},
+        #{isMovement,jdbcType=VARCHAR},
       </if>
       <if test="addtime != null">
-        #{addtime,jdbcType=INTEGER},
+        #{addtime,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
@@ -334,67 +334,67 @@
         child_id = #{record.childId,jdbcType=INTEGER},
       </if>
       <if test="record.isLook != null">
-        is_look = #{record.isLook,jdbcType=INTEGER},
+        is_look = #{record.isLook,jdbcType=VARCHAR},
       </if>
       <if test="record.isHearing != null">
-        is_hearing = #{record.isHearing,jdbcType=INTEGER},
+        is_hearing = #{record.isHearing,jdbcType=VARCHAR},
       </if>
       <if test="record.isGame != null">
-        is_game = #{record.isGame,jdbcType=INTEGER},
+        is_game = #{record.isGame,jdbcType=VARCHAR},
       </if>
       <if test="record.isClimbing != null">
-        is_climbing = #{record.isClimbing,jdbcType=INTEGER},
+        is_climbing = #{record.isClimbing,jdbcType=VARCHAR},
       </if>
       <if test="record.isFinger != null">
-        is_finger = #{record.isFinger,jdbcType=INTEGER},
+        is_finger = #{record.isFinger,jdbcType=VARCHAR},
       </if>
       <if test="record.isHelp != null">
-        is_help = #{record.isHelp,jdbcType=INTEGER},
+        is_help = #{record.isHelp,jdbcType=VARCHAR},
       </if>
       <if test="record.isInterest != null">
-        is_interest = #{record.isInterest,jdbcType=INTEGER},
+        is_interest = #{record.isInterest,jdbcType=VARCHAR},
       </if>
       <if test="record.isChildren != null">
-        is_children = #{record.isChildren,jdbcType=INTEGER},
+        is_children = #{record.isChildren,jdbcType=VARCHAR},
       </if>
       <if test="record.isParentsLook != null">
-        is_parents_look = #{record.isParentsLook,jdbcType=INTEGER},
+        is_parents_look = #{record.isParentsLook,jdbcType=VARCHAR},
       </if>
       <if test="record.isResponse != null">
-        is_response = #{record.isResponse,jdbcType=INTEGER},
+        is_response = #{record.isResponse,jdbcType=VARCHAR},
       </if>
       <if test="record.isSmileResponse != null">
-        is_smile_response = #{record.isSmileResponse,jdbcType=INTEGER},
+        is_smile_response = #{record.isSmileResponse,jdbcType=VARCHAR},
       </if>
       <if test="record.isNoise != null">
-        is_noise = #{record.isNoise,jdbcType=INTEGER},
+        is_noise = #{record.isNoise,jdbcType=VARCHAR},
       </if>
       <if test="record.isGo != null">
-        is_go = #{record.isGo,jdbcType=INTEGER},
+        is_go = #{record.isGo,jdbcType=VARCHAR},
       </if>
       <if test="record.isEye != null">
-        is_eye = #{record.isEye,jdbcType=INTEGER},
+        is_eye = #{record.isEye,jdbcType=VARCHAR},
       </if>
       <if test="record.isImitate != null">
-        is_imitate = #{record.isImitate,jdbcType=INTEGER},
+        is_imitate = #{record.isImitate,jdbcType=VARCHAR},
       </if>
       <if test="record.isSearch != null">
-        is_search = #{record.isSearch,jdbcType=INTEGER},
+        is_search = #{record.isSearch,jdbcType=VARCHAR},
       </if>
       <if test="record.isAttract != null">
-        is_attract = #{record.isAttract,jdbcType=INTEGER},
+        is_attract = #{record.isAttract,jdbcType=VARCHAR},
       </if>
       <if test="record.isUnderstand != null">
-        is_understand = #{record.isUnderstand,jdbcType=INTEGER},
+        is_understand = #{record.isUnderstand,jdbcType=VARCHAR},
       </if>
       <if test="record.isReaction != null">
-        is_reaction = #{record.isReaction,jdbcType=INTEGER},
+        is_reaction = #{record.isReaction,jdbcType=VARCHAR},
       </if>
       <if test="record.isMovement != null">
-        is_movement = #{record.isMovement,jdbcType=INTEGER},
+        is_movement = #{record.isMovement,jdbcType=VARCHAR},
       </if>
       <if test="record.addtime != null">
-        addtime = #{record.addtime,jdbcType=INTEGER},
+        addtime = #{record.addtime,jdbcType=VARCHAR},
       </if>
     </set>
     <if test="_parameter != null">
@@ -405,27 +405,27 @@
     update hzh_rtm
     set id = #{record.id,jdbcType=INTEGER},
       child_id = #{record.childId,jdbcType=INTEGER},
-      is_look = #{record.isLook,jdbcType=INTEGER},
-      is_hearing = #{record.isHearing,jdbcType=INTEGER},
-      is_game = #{record.isGame,jdbcType=INTEGER},
-      is_climbing = #{record.isClimbing,jdbcType=INTEGER},
-      is_finger = #{record.isFinger,jdbcType=INTEGER},
-      is_help = #{record.isHelp,jdbcType=INTEGER},
-      is_interest = #{record.isInterest,jdbcType=INTEGER},
-      is_children = #{record.isChildren,jdbcType=INTEGER},
-      is_parents_look = #{record.isParentsLook,jdbcType=INTEGER},
-      is_response = #{record.isResponse,jdbcType=INTEGER},
-      is_smile_response = #{record.isSmileResponse,jdbcType=INTEGER},
-      is_noise = #{record.isNoise,jdbcType=INTEGER},
-      is_go = #{record.isGo,jdbcType=INTEGER},
-      is_eye = #{record.isEye,jdbcType=INTEGER},
-      is_imitate = #{record.isImitate,jdbcType=INTEGER},
-      is_search = #{record.isSearch,jdbcType=INTEGER},
-      is_attract = #{record.isAttract,jdbcType=INTEGER},
-      is_understand = #{record.isUnderstand,jdbcType=INTEGER},
-      is_reaction = #{record.isReaction,jdbcType=INTEGER},
-      is_movement = #{record.isMovement,jdbcType=INTEGER},
-      addtime = #{record.addtime,jdbcType=INTEGER}
+      is_look = #{record.isLook,jdbcType=VARCHAR},
+      is_hearing = #{record.isHearing,jdbcType=VARCHAR},
+      is_game = #{record.isGame,jdbcType=VARCHAR},
+      is_climbing = #{record.isClimbing,jdbcType=VARCHAR},
+      is_finger = #{record.isFinger,jdbcType=VARCHAR},
+      is_help = #{record.isHelp,jdbcType=VARCHAR},
+      is_interest = #{record.isInterest,jdbcType=VARCHAR},
+      is_children = #{record.isChildren,jdbcType=VARCHAR},
+      is_parents_look = #{record.isParentsLook,jdbcType=VARCHAR},
+      is_response = #{record.isResponse,jdbcType=VARCHAR},
+      is_smile_response = #{record.isSmileResponse,jdbcType=VARCHAR},
+      is_noise = #{record.isNoise,jdbcType=VARCHAR},
+      is_go = #{record.isGo,jdbcType=VARCHAR},
+      is_eye = #{record.isEye,jdbcType=VARCHAR},
+      is_imitate = #{record.isImitate,jdbcType=VARCHAR},
+      is_search = #{record.isSearch,jdbcType=VARCHAR},
+      is_attract = #{record.isAttract,jdbcType=VARCHAR},
+      is_understand = #{record.isUnderstand,jdbcType=VARCHAR},
+      is_reaction = #{record.isReaction,jdbcType=VARCHAR},
+      is_movement = #{record.isMovement,jdbcType=VARCHAR},
+      addtime = #{record.addtime,jdbcType=VARCHAR}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -437,67 +437,67 @@
         child_id = #{childId,jdbcType=INTEGER},
       </if>
       <if test="isLook != null">
-        is_look = #{isLook,jdbcType=INTEGER},
+        is_look = #{isLook,jdbcType=VARCHAR},
       </if>
       <if test="isHearing != null">
-        is_hearing = #{isHearing,jdbcType=INTEGER},
+        is_hearing = #{isHearing,jdbcType=VARCHAR},
       </if>
       <if test="isGame != null">
-        is_game = #{isGame,jdbcType=INTEGER},
+        is_game = #{isGame,jdbcType=VARCHAR},
       </if>
       <if test="isClimbing != null">
-        is_climbing = #{isClimbing,jdbcType=INTEGER},
+        is_climbing = #{isClimbing,jdbcType=VARCHAR},
       </if>
       <if test="isFinger != null">
-        is_finger = #{isFinger,jdbcType=INTEGER},
+        is_finger = #{isFinger,jdbcType=VARCHAR},
       </if>
       <if test="isHelp != null">
-        is_help = #{isHelp,jdbcType=INTEGER},
+        is_help = #{isHelp,jdbcType=VARCHAR},
       </if>
       <if test="isInterest != null">
-        is_interest = #{isInterest,jdbcType=INTEGER},
+        is_interest = #{isInterest,jdbcType=VARCHAR},
       </if>
       <if test="isChildren != null">
-        is_children = #{isChildren,jdbcType=INTEGER},
+        is_children = #{isChildren,jdbcType=VARCHAR},
       </if>
       <if test="isParentsLook != null">
-        is_parents_look = #{isParentsLook,jdbcType=INTEGER},
+        is_parents_look = #{isParentsLook,jdbcType=VARCHAR},
       </if>
       <if test="isResponse != null">
-        is_response = #{isResponse,jdbcType=INTEGER},
+        is_response = #{isResponse,jdbcType=VARCHAR},
       </if>
       <if test="isSmileResponse != null">
-        is_smile_response = #{isSmileResponse,jdbcType=INTEGER},
+        is_smile_response = #{isSmileResponse,jdbcType=VARCHAR},
       </if>
       <if test="isNoise != null">
-        is_noise = #{isNoise,jdbcType=INTEGER},
+        is_noise = #{isNoise,jdbcType=VARCHAR},
       </if>
       <if test="isGo != null">
-        is_go = #{isGo,jdbcType=INTEGER},
+        is_go = #{isGo,jdbcType=VARCHAR},
       </if>
       <if test="isEye != null">
-        is_eye = #{isEye,jdbcType=INTEGER},
+        is_eye = #{isEye,jdbcType=VARCHAR},
       </if>
       <if test="isImitate != null">
-        is_imitate = #{isImitate,jdbcType=INTEGER},
+        is_imitate = #{isImitate,jdbcType=VARCHAR},
       </if>
       <if test="isSearch != null">
-        is_search = #{isSearch,jdbcType=INTEGER},
+        is_search = #{isSearch,jdbcType=VARCHAR},
       </if>
       <if test="isAttract != null">
-        is_attract = #{isAttract,jdbcType=INTEGER},
+        is_attract = #{isAttract,jdbcType=VARCHAR},
       </if>
       <if test="isUnderstand != null">
-        is_understand = #{isUnderstand,jdbcType=INTEGER},
+        is_understand = #{isUnderstand,jdbcType=VARCHAR},
       </if>
       <if test="isReaction != null">
-        is_reaction = #{isReaction,jdbcType=INTEGER},
+        is_reaction = #{isReaction,jdbcType=VARCHAR},
       </if>
       <if test="isMovement != null">
-        is_movement = #{isMovement,jdbcType=INTEGER},
+        is_movement = #{isMovement,jdbcType=VARCHAR},
       </if>
       <if test="addtime != null">
-        addtime = #{addtime,jdbcType=INTEGER},
+        addtime = #{addtime,jdbcType=VARCHAR},
       </if>
     </set>
     where id = #{id,jdbcType=INTEGER}
@@ -505,27 +505,27 @@
   <update id="updateByPrimaryKey" parameterType="com.join.autism.entity.HzhRtm.HzhRtm">
     update hzh_rtm
     set child_id = #{childId,jdbcType=INTEGER},
-      is_look = #{isLook,jdbcType=INTEGER},
-      is_hearing = #{isHearing,jdbcType=INTEGER},
-      is_game = #{isGame,jdbcType=INTEGER},
-      is_climbing = #{isClimbing,jdbcType=INTEGER},
-      is_finger = #{isFinger,jdbcType=INTEGER},
-      is_help = #{isHelp,jdbcType=INTEGER},
-      is_interest = #{isInterest,jdbcType=INTEGER},
-      is_children = #{isChildren,jdbcType=INTEGER},
-      is_parents_look = #{isParentsLook,jdbcType=INTEGER},
-      is_response = #{isResponse,jdbcType=INTEGER},
-      is_smile_response = #{isSmileResponse,jdbcType=INTEGER},
-      is_noise = #{isNoise,jdbcType=INTEGER},
-      is_go = #{isGo,jdbcType=INTEGER},
-      is_eye = #{isEye,jdbcType=INTEGER},
-      is_imitate = #{isImitate,jdbcType=INTEGER},
-      is_search = #{isSearch,jdbcType=INTEGER},
-      is_attract = #{isAttract,jdbcType=INTEGER},
-      is_understand = #{isUnderstand,jdbcType=INTEGER},
-      is_reaction = #{isReaction,jdbcType=INTEGER},
-      is_movement = #{isMovement,jdbcType=INTEGER},
-      addtime = #{addtime,jdbcType=INTEGER}
+      is_look = #{isLook,jdbcType=VARCHAR},
+      is_hearing = #{isHearing,jdbcType=VARCHAR},
+      is_game = #{isGame,jdbcType=VARCHAR},
+      is_climbing = #{isClimbing,jdbcType=VARCHAR},
+      is_finger = #{isFinger,jdbcType=VARCHAR},
+      is_help = #{isHelp,jdbcType=VARCHAR},
+      is_interest = #{isInterest,jdbcType=VARCHAR},
+      is_children = #{isChildren,jdbcType=VARCHAR},
+      is_parents_look = #{isParentsLook,jdbcType=VARCHAR},
+      is_response = #{isResponse,jdbcType=VARCHAR},
+      is_smile_response = #{isSmileResponse,jdbcType=VARCHAR},
+      is_noise = #{isNoise,jdbcType=VARCHAR},
+      is_go = #{isGo,jdbcType=VARCHAR},
+      is_eye = #{isEye,jdbcType=VARCHAR},
+      is_imitate = #{isImitate,jdbcType=VARCHAR},
+      is_search = #{isSearch,jdbcType=VARCHAR},
+      is_attract = #{isAttract,jdbcType=VARCHAR},
+      is_understand = #{isUnderstand,jdbcType=VARCHAR},
+      is_reaction = #{isReaction,jdbcType=VARCHAR},
+      is_movement = #{isMovement,jdbcType=VARCHAR},
+      addtime = #{addtime,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
 
@@ -538,67 +538,67 @@
       and child_id = #{hzhRtm.childId,jdbcType=INTEGER}
     </if>
     <if test="hzhRtm.isLook != null">
-      and is_look = #{hzhRtm.isLook,jdbcType=INTEGER}
+      and is_look = #{hzhRtm.isLook,jdbcType=VARCHAR}
     </if>
     <if test="hzhRtm.isHearing != null">
-      and is_hearing = #{hzhRtm.isHearing,jdbcType=INTEGER}
+      and is_hearing = #{hzhRtm.isHearing,jdbcType=VARCHAR}
     </if>
     <if test="hzhRtm.isGame != null">
-      and is_game = #{hzhRtm.isGame,jdbcType=INTEGER}
+      and is_game = #{hzhRtm.isGame,jdbcType=VARCHAR}
     </if>
     <if test="hzhRtm.isClimbing != null">
-      and is_climbing = #{hzhRtm.isClimbing,jdbcType=INTEGER}
+      and is_climbing = #{hzhRtm.isClimbing,jdbcType=VARCHAR}
     </if>
     <if test="hzhRtm.isFinger != null">
-      and is_finger = #{hzhRtm.isFinger,jdbcType=INTEGER}
+      and is_finger = #{hzhRtm.isFinger,jdbcType=VARCHAR}
     </if>
     <if test="hzhRtm.isHelp != null">
-      and is_help = #{hzhRtm.isHelp,jdbcType=INTEGER}
+      and is_help = #{hzhRtm.isHelp,jdbcType=VARCHAR}
     </if>
     <if test="hzhRtm.isInterest != null">
-      and is_interest = #{hzhRtm.isInterest,jdbcType=INTEGER}
+      and is_interest = #{hzhRtm.isInterest,jdbcType=VARCHAR}
     </if>
     <if test="hzhRtm.isChildren != null">
-      and is_children = #{hzhRtm.isChildren,jdbcType=INTEGER}
+      and is_children = #{hzhRtm.isChildren,jdbcType=VARCHAR}
     </if>
     <if test="hzhRtm.isParentsLook != null">
-      and is_parents_look = #{hzhRtm.isParentsLook,jdbcType=INTEGER}
+      and is_parents_look = #{hzhRtm.isParentsLook,jdbcType=VARCHAR}
     </if>
     <if test="hzhRtm.isResponse != null">
-      and is_response = #{hzhRtm.isResponse,jdbcType=INTEGER}
+      and is_response = #{hzhRtm.isResponse,jdbcType=VARCHAR}
     </if>
     <if test="hzhRtm.isSmileResponse != null">
-      and is_smile_response = #{hzhRtm.isSmileResponse,jdbcType=INTEGER}
+      and is_smile_response = #{hzhRtm.isSmileResponse,jdbcType=VARCHAR}
     </if>
     <if test="hzhRtm.isNoise != null">
-      and is_noise = #{hzhRtm.isNoise,jdbcType=INTEGER}
+      and is_noise = #{hzhRtm.isNoise,jdbcType=VARCHAR}
     </if>
     <if test="hzhRtm.isGo != null">
-      and is_go = #{hzhRtm.isGo,jdbcType=INTEGER}
+      and is_go = #{hzhRtm.isGo,jdbcType=VARCHAR}
     </if>
     <if test="hzhRtm.isEye != null">
-      and is_eye = #{hzhRtm.isEye,jdbcType=INTEGER}
+      and is_eye = #{hzhRtm.isEye,jdbcType=VARCHAR}
     </if>
     <if test="hzhRtm.isImitate != null">
-      and is_imitate = #{hzhRtm.isImitate,jdbcType=INTEGER}
+      and is_imitate = #{hzhRtm.isImitate,jdbcType=VARCHAR}
     </if>
     <if test="hzhRtm.isSearch != null">
-      and is_search = #{hzhRtm.isSearch,jdbcType=INTEGER}
+      and is_search = #{hzhRtm.isSearch,jdbcType=VARCHAR}
     </if>
     <if test="hzhRtm.isAttract != null">
-      and is_attract = #{hzhRtm.isAttract,jdbcType=INTEGER}
+      and is_attract = #{hzhRtm.isAttract,jdbcType=VARCHAR}
     </if>
     <if test="hzhRtm.isUnderstand != null">
-      and is_understand = #{hzhRtm.isUnderstand,jdbcType=INTEGER}
+      and is_understand = #{hzhRtm.isUnderstand,jdbcType=VARCHAR}
     </if>
     <if test="hzhRtm.isReaction != null">
-      and is_reaction = #{hzhRtm.isReaction,jdbcType=INTEGER}
+      and is_reaction = #{hzhRtm.isReaction,jdbcType=VARCHAR}
     </if>
     <if test="hzhRtm.isMovement != null">
-      and is_movement = #{hzhRtm.isMovement,jdbcType=INTEGER}
+      and is_movement = #{hzhRtm.isMovement,jdbcType=VARCHAR}
     </if>
     <if test="hzhRtm.addtime != null">
-      and addtime = #{hzhRtm.addtime,jdbcType=INTEGER}
+      and addtime = #{hzhRtm.addtime,jdbcType=VARCHAR}
     </if>
   </select>
 </mapper>

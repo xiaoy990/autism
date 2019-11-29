@@ -1,5 +1,7 @@
 package com.join.autism.entity.HzhGeneral;
 
+import com.join.autism.util.poi.ExpressInExcel;
+
 import java.io.Serializable;
 
 /**
@@ -9,38 +11,50 @@ import java.io.Serializable;
 public class HzhGeneral implements Serializable {
     private Integer id;
 
+    @ExpressInExcel("儿童姓名")
     private String name;
 
     private String birthday;
 
+    @ExpressInExcel("年龄")
     private Integer age;
 
+    @ExpressInExcel("省份")
     private String province;
 
+    @ExpressInExcel("城市")
     private String city;
 
+    @ExpressInExcel("街道")
     private String town;
 
     private String nation;
 
+    @ExpressInExcel("受访姓名")
     private String sfname;
 
+    @ExpressInExcel("关系")
     private String relation;
 
+    @ExpressInExcel("地址")
     private String address;
 
+    @ExpressInExcel("移动电话")
     private String mobile;
 
+    @ExpressInExcel("兄弟姐妹数量")
     private Integer brosis;
 
     /**
      * 患者编号
      */
+    @ExpressInExcel("患者编号")
     private String sicknum;
 
     /**
      * 负责医生
      */
+    @ExpressInExcel("负责医生")
     private String doctor;
 
     /**
@@ -56,6 +70,7 @@ public class HzhGeneral implements Serializable {
     /**
      * 这里是性别。但上一任程序员有点傻x，然后我也懒得改了，凑合用吧
      */
+    @ExpressInExcel("性别")
     private String six;
 
     private String adder;

@@ -5,47 +5,47 @@ public class HzhRtmDto {
 
     private Integer childId;
 
-    private Integer isLook;
+    private String isLook;
 
-    private Integer isHearing;
+    private String isHearing;
 
-    private Integer isGame;
+    private String isGame;
 
-    private Integer isClimbing;
+    private String isClimbing;
 
-    private Integer isFinger;
+    private String isFinger;
 
-    private Integer isHelp;
+    private String isHelp;
 
-    private Integer isInterest;
+    private String isInterest;
 
-    private Integer isChildren;
+    private String isChildren;
 
-    private Integer isParentsLook;
+    private String isParentsLook;
 
-    private Integer isResponse;
+    private String isResponse;
 
-    private Integer isSmileResponse;
+    private String isSmileResponse;
 
-    private Integer isNoise;
+    private String isNoise;
 
-    private Integer isGo;
+    private String isGo;
 
-    private Integer isEye;
+    private String isEye;
 
-    private Integer isImitate;
+    private String isImitate;
 
-    private Integer isSearch;
+    private String isSearch;
 
-    private Integer isAttract;
+    private String isAttract;
 
-    private Integer isUnderstand;
+    private String isUnderstand;
 
-    private Integer isReaction;
+    private String isReaction;
 
-    private Integer isMovement;
+    private String isMovement;
 
-    private Integer addtime;
+    private String addtime;
 
     private String name;
 
@@ -69,171 +69,171 @@ public class HzhRtmDto {
         this.childId = childId;
     }
 
-    public Integer getIsLook() {
+    public String getIsLook() {
         return isLook;
     }
 
-    public void setIsLook(Integer isLook) {
+    public void setIsLook(String isLook) {
         this.isLook = isLook;
     }
 
-    public Integer getIsHearing() {
+    public String getIsHearing() {
         return isHearing;
     }
 
-    public void setIsHearing(Integer isHearing) {
+    public void setIsHearing(String isHearing) {
         this.isHearing = isHearing;
     }
 
-    public Integer getIsGame() {
+    public String getIsGame() {
         return isGame;
     }
 
-    public void setIsGame(Integer isGame) {
+    public void setIsGame(String isGame) {
         this.isGame = isGame;
     }
 
-    public Integer getIsClimbing() {
+    public String getIsClimbing() {
         return isClimbing;
     }
 
-    public void setIsClimbing(Integer isClimbing) {
+    public void setIsClimbing(String isClimbing) {
         this.isClimbing = isClimbing;
     }
 
-    public Integer getIsFinger() {
+    public String getIsFinger() {
         return isFinger;
     }
 
-    public void setIsFinger(Integer isFinger) {
+    public void setIsFinger(String isFinger) {
         this.isFinger = isFinger;
     }
 
-    public Integer getIsHelp() {
+    public String getIsHelp() {
         return isHelp;
     }
 
-    public void setIsHelp(Integer isHelp) {
+    public void setIsHelp(String isHelp) {
         this.isHelp = isHelp;
     }
 
-    public Integer getIsInterest() {
+    public String getIsInterest() {
         return isInterest;
     }
 
-    public void setIsInterest(Integer isInterest) {
+    public void setIsInterest(String isInterest) {
         this.isInterest = isInterest;
     }
 
-    public Integer getIsChildren() {
+    public String getIsChildren() {
         return isChildren;
     }
 
-    public void setIsChildren(Integer isChildren) {
+    public void setIsChildren(String isChildren) {
         this.isChildren = isChildren;
     }
 
-    public Integer getIsParentsLook() {
+    public String getIsParentsLook() {
         return isParentsLook;
     }
 
-    public void setIsParentsLook(Integer isParentsLook) {
+    public void setIsParentsLook(String isParentsLook) {
         this.isParentsLook = isParentsLook;
     }
 
-    public Integer getIsResponse() {
+    public String getIsResponse() {
         return isResponse;
     }
 
-    public void setIsResponse(Integer isResponse) {
+    public void setIsResponse(String isResponse) {
         this.isResponse = isResponse;
     }
 
-    public Integer getIsSmileResponse() {
+    public String getIsSmileResponse() {
         return isSmileResponse;
     }
 
-    public void setIsSmileResponse(Integer isSmileResponse) {
+    public void setIsSmileResponse(String isSmileResponse) {
         this.isSmileResponse = isSmileResponse;
     }
 
-    public Integer getIsNoise() {
+    public String getIsNoise() {
         return isNoise;
     }
 
-    public void setIsNoise(Integer isNoise) {
+    public void setIsNoise(String isNoise) {
         this.isNoise = isNoise;
     }
 
-    public Integer getIsGo() {
+    public String getIsGo() {
         return isGo;
     }
 
-    public void setIsGo(Integer isGo) {
+    public void setIsGo(String isGo) {
         this.isGo = isGo;
     }
 
-    public Integer getIsEye() {
+    public String getIsEye() {
         return isEye;
     }
 
-    public void setIsEye(Integer isEye) {
+    public void setIsEye(String isEye) {
         this.isEye = isEye;
     }
 
-    public Integer getIsImitate() {
+    public String getIsImitate() {
         return isImitate;
     }
 
-    public void setIsImitate(Integer isImitate) {
+    public void setIsImitate(String isImitate) {
         this.isImitate = isImitate;
     }
 
-    public Integer getIsSearch() {
+    public String getIsSearch() {
         return isSearch;
     }
 
-    public void setIsSearch(Integer isSearch) {
+    public void setIsSearch(String isSearch) {
         this.isSearch = isSearch;
     }
 
-    public Integer getIsAttract() {
+    public String getIsAttract() {
         return isAttract;
     }
 
-    public void setIsAttract(Integer isAttract) {
+    public void setIsAttract(String isAttract) {
         this.isAttract = isAttract;
     }
 
-    public Integer getIsUnderstand() {
+    public String getIsUnderstand() {
         return isUnderstand;
     }
 
-    public void setIsUnderstand(Integer isUnderstand) {
+    public void setIsUnderstand(String isUnderstand) {
         this.isUnderstand = isUnderstand;
     }
 
-    public Integer getIsReaction() {
+    public String getIsReaction() {
         return isReaction;
     }
 
-    public void setIsReaction(Integer isReaction) {
+    public void setIsReaction(String isReaction) {
         this.isReaction = isReaction;
     }
 
-    public Integer getIsMovement() {
+    public String getIsMovement() {
         return isMovement;
     }
 
-    public void setIsMovement(Integer isMovement) {
+    public void setIsMovement(String isMovement) {
         this.isMovement = isMovement;
     }
 
-    public Integer getAddtime() {
+    public String getAddtime() {
         return addtime;
     }
 
-    public void setAddtime(Integer addtime) {
+    public void setAddtime(String addtime) {
         this.addtime = addtime;
     }
 

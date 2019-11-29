@@ -6,8 +6,10 @@ import com.join.autism.mapper.HzhGeneralMapper;
 import com.join.autism.service.hzhGeneralService.HzhGeneralService;
 import com.join.autism.util.enums.Month;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -67,10 +69,18 @@ public class HzhGeneralServiceImpl implements HzhGeneralService {
     }
 
     @Override
-    public void insertHzhGeneral(HzhGeneral hzhGeneral,String[] pct) {
+    public boolean insertHzhGeneral(HzhGeneral hzhGeneral,String[] pct) {
             updateAge(hzhGeneral);
             hzhGeneral.setBirthday(hzhGeneral.getBirthday().replaceAll("-",""));
             hzhGeneral.setSurveyTime(hzhGeneral.getSurveyTime().replaceAll("-",""));
+            //判重
+            List<HzhGeneral> hzhGenerals = selectHzhGeneral(hzhGeneral, new CriteriaSupportGeneral());
+            System.out.println("判重数组长度为："+hzhGenerals.size());
+            if (hzhGenerals.size()>0){
+                ArrayList<Object> objects = new ArrayList<>();
+                objects.add(HttpStatus.CONFLICT);
+                return false;
+            }
             //将字符串解析成省份城市区县
             if (pct.length == 3) {
                 hzhGeneral.setProvince(pct[0]);
@@ -83,7 +93,8 @@ public class HzhGeneralServiceImpl implements HzhGeneralService {
                 hzhGeneral.setProvince(pct[0]);
             }
 
-        hzhGeneralMapper.insert(hzhGeneral);
+            hzhGeneralMapper.insert(hzhGeneral);
+            return true;
     }
 
     @Override

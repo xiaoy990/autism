@@ -3,126 +3,126 @@
 <mapper namespace="com.join.autism.mapper.HzhThreemonMapper">
   <resultMap id="BaseResultMap" type="com.join.autism.entity.HzhThreemon.HzhThreemon">
     <id column="id" jdbcType="INTEGER" property="id" />
-    <result column="question1" jdbcType="INTEGER" property="question1" />
-    <result column="question2" jdbcType="INTEGER" property="question2" />
-    <result column="question3" jdbcType="INTEGER" property="question3" />
-    <result column="question4" jdbcType="INTEGER" property="question4" />
-    <result column="question5" jdbcType="INTEGER" property="question5" />
-    <result column="question6" jdbcType="INTEGER" property="question6" />
-    <result column="question7" jdbcType="INTEGER" property="question7" />
-    <result column="question8" jdbcType="INTEGER" property="question8" />
-    <result column="question9" jdbcType="INTEGER" property="question9" />
-    <result column="question10" jdbcType="INTEGER" property="question10" />
-    <result column="question11" jdbcType="INTEGER" property="question11" />
-    <result column="question12" jdbcType="INTEGER" property="question12" />
-    <result column="question13" jdbcType="INTEGER" property="question13" />
-    <result column="question14" jdbcType="INTEGER" property="question14" />
-    <result column="question15" jdbcType="INTEGER" property="question15" />
-    <result column="question16" jdbcType="INTEGER" property="question16" />
-    <result column="question17" jdbcType="INTEGER" property="question17" />
-    <result column="question18" jdbcType="INTEGER" property="question18" />
-    <result column="question19" jdbcType="INTEGER" property="question19" />
-    <result column="question20" jdbcType="INTEGER" property="question20" />
-    <result column="question21" jdbcType="INTEGER" property="question21" />
-    <result column="question22" jdbcType="INTEGER" property="question22" />
-    <result column="question23" jdbcType="INTEGER" property="question23" />
-    <result column="question24" jdbcType="INTEGER" property="question24" />
-    <result column="question25" jdbcType="INTEGER" property="question25" />
-    <result column="question26" jdbcType="INTEGER" property="question26" />
-    <result column="question27" jdbcType="INTEGER" property="question27" />
-    <result column="question28" jdbcType="INTEGER" property="question28" />
-    <result column="question29" jdbcType="INTEGER" property="question29" />
-    <result column="question30" jdbcType="INTEGER" property="question30" />
-    <result column="question31" jdbcType="INTEGER" property="question31" />
-    <result column="question32" jdbcType="INTEGER" property="question32" />
-    <result column="question33" jdbcType="INTEGER" property="question33" />
-    <result column="question34" jdbcType="INTEGER" property="question34" />
-    <result column="question35" jdbcType="INTEGER" property="question35" />
-    <result column="question36" jdbcType="INTEGER" property="question36" />
-    <result column="question37" jdbcType="INTEGER" property="question37" />
-    <result column="question38" jdbcType="INTEGER" property="question38" />
-    <result column="question39" jdbcType="INTEGER" property="question39" />
-    <result column="question40" jdbcType="INTEGER" property="question40" />
-    <result column="question41" jdbcType="INTEGER" property="question41" />
-    <result column="question42" jdbcType="INTEGER" property="question42" />
-    <result column="question43" jdbcType="INTEGER" property="question43" />
-    <result column="question44" jdbcType="INTEGER" property="question44" />
-    <result column="question45" jdbcType="INTEGER" property="question45" />
-    <result column="question46" jdbcType="INTEGER" property="question46" />
-    <result column="question47" jdbcType="INTEGER" property="question47" />
-    <result column="question48" jdbcType="INTEGER" property="question48" />
-    <result column="question49" jdbcType="INTEGER" property="question49" />
-    <result column="question50" jdbcType="INTEGER" property="question50" />
-    <result column="question51" jdbcType="INTEGER" property="question51" />
-    <result column="question52" jdbcType="INTEGER" property="question52" />
-    <result column="question53" jdbcType="INTEGER" property="question53" />
-    <result column="question54" jdbcType="INTEGER" property="question54" />
-    <result column="question55" jdbcType="INTEGER" property="question55" />
-    <result column="question56" jdbcType="INTEGER" property="question56" />
-    <result column="question57" jdbcType="INTEGER" property="question57" />
+    <result column="question1" jdbcType="VARCHAR" property="question1" />
+    <result column="question2" jdbcType="VARCHAR" property="question2" />
+    <result column="question3" jdbcType="VARCHAR" property="question3" />
+    <result column="question4" jdbcType="VARCHAR" property="question4" />
+    <result column="question5" jdbcType="VARCHAR" property="question5" />
+    <result column="question6" jdbcType="VARCHAR" property="question6" />
+    <result column="question7" jdbcType="VARCHAR" property="question7" />
+    <result column="question8" jdbcType="VARCHAR" property="question8" />
+    <result column="question9" jdbcType="VARCHAR" property="question9" />
+    <result column="question10" jdbcType="VARCHAR" property="question10" />
+    <result column="question11" jdbcType="VARCHAR" property="question11" />
+    <result column="question12" jdbcType="VARCHAR" property="question12" />
+    <result column="question13" jdbcType="VARCHAR" property="question13" />
+    <result column="question14" jdbcType="VARCHAR" property="question14" />
+    <result column="question15" jdbcType="VARCHAR" property="question15" />
+    <result column="question16" jdbcType="VARCHAR" property="question16" />
+    <result column="question17" jdbcType="VARCHAR" property="question17" />
+    <result column="question18" jdbcType="VARCHAR" property="question18" />
+    <result column="question19" jdbcType="VARCHAR" property="question19" />
+    <result column="question20" jdbcType="VARCHAR" property="question20" />
+    <result column="question21" jdbcType="VARCHAR" property="question21" />
+    <result column="question22" jdbcType="VARCHAR" property="question22" />
+    <result column="question23" jdbcType="VARCHAR" property="question23" />
+    <result column="question24" jdbcType="VARCHAR" property="question24" />
+    <result column="question25" jdbcType="VARCHAR" property="question25" />
+    <result column="question26" jdbcType="VARCHAR" property="question26" />
+    <result column="question27" jdbcType="VARCHAR" property="question27" />
+    <result column="question28" jdbcType="VARCHAR" property="question28" />
+    <result column="question29" jdbcType="VARCHAR" property="question29" />
+    <result column="question30" jdbcType="VARCHAR" property="question30" />
+    <result column="question31" jdbcType="VARCHAR" property="question31" />
+    <result column="question32" jdbcType="VARCHAR" property="question32" />
+    <result column="question33" jdbcType="VARCHAR" property="question33" />
+    <result column="question34" jdbcType="VARCHAR" property="question34" />
+    <result column="question35" jdbcType="VARCHAR" property="question35" />
+    <result column="question36" jdbcType="VARCHAR" property="question36" />
+    <result column="question37" jdbcType="VARCHAR" property="question37" />
+    <result column="question38" jdbcType="VARCHAR" property="question38" />
+    <result column="question39" jdbcType="VARCHAR" property="question39" />
+    <result column="question40" jdbcType="VARCHAR" property="question40" />
+    <result column="question41" jdbcType="VARCHAR" property="question41" />
+    <result column="question42" jdbcType="VARCHAR" property="question42" />
+    <result column="question43" jdbcType="VARCHAR" property="question43" />
+    <result column="question44" jdbcType="VARCHAR" property="question44" />
+    <result column="question45" jdbcType="VARCHAR" property="question45" />
+    <result column="question46" jdbcType="VARCHAR" property="question46" />
+    <result column="question47" jdbcType="VARCHAR" property="question47" />
+    <result column="question48" jdbcType="VARCHAR" property="question48" />
+    <result column="question49" jdbcType="VARCHAR" property="question49" />
+    <result column="question50" jdbcType="VARCHAR" property="question50" />
+    <result column="question51" jdbcType="VARCHAR" property="question51" />
+    <result column="question52" jdbcType="VARCHAR" property="question52" />
+    <result column="question53" jdbcType="VARCHAR" property="question53" />
+    <result column="question54" jdbcType="VARCHAR" property="question54" />
+    <result column="question55" jdbcType="VARCHAR" property="question55" />
+    <result column="question56" jdbcType="VARCHAR" property="question56" />
+    <result column="question57" jdbcType="VARCHAR" property="question57" />
     <result column="question_sum" jdbcType="INTEGER" property="questionSum" />
     <result column="child_id" jdbcType="INTEGER" property="childId" />
   </resultMap>
   
   <resultMap id="MutiSelectResultMap" type="com.join.autism.entity.HzhThreemon.HzhThreemonDto">
     <id column="id" jdbcType="INTEGER" property="id" />
-    <result column="question1" jdbcType="INTEGER" property="question1" />
-    <result column="question2" jdbcType="INTEGER" property="question2" />
-    <result column="question3" jdbcType="INTEGER" property="question3" />
-    <result column="question4" jdbcType="INTEGER" property="question4" />
-    <result column="question5" jdbcType="INTEGER" property="question5" />
-    <result column="question6" jdbcType="INTEGER" property="question6" />
-    <result column="question7" jdbcType="INTEGER" property="question7" />
-    <result column="question8" jdbcType="INTEGER" property="question8" />
-    <result column="question9" jdbcType="INTEGER" property="question9" />
-    <result column="question10" jdbcType="INTEGER" property="question10" />
-    <result column="question11" jdbcType="INTEGER" property="question11" />
-    <result column="question12" jdbcType="INTEGER" property="question12" />
-    <result column="question13" jdbcType="INTEGER" property="question13" />
-    <result column="question14" jdbcType="INTEGER" property="question14" />
-    <result column="question15" jdbcType="INTEGER" property="question15" />
-    <result column="question16" jdbcType="INTEGER" property="question16" />
-    <result column="question17" jdbcType="INTEGER" property="question17" />
-    <result column="question18" jdbcType="INTEGER" property="question18" />
-    <result column="question19" jdbcType="INTEGER" property="question19" />
-    <result column="question20" jdbcType="INTEGER" property="question20" />
-    <result column="question21" jdbcType="INTEGER" property="question21" />
-    <result column="question22" jdbcType="INTEGER" property="question22" />
-    <result column="question23" jdbcType="INTEGER" property="question23" />
-    <result column="question24" jdbcType="INTEGER" property="question24" />
-    <result column="question25" jdbcType="INTEGER" property="question25" />
-    <result column="question26" jdbcType="INTEGER" property="question26" />
-    <result column="question27" jdbcType="INTEGER" property="question27" />
-    <result column="question28" jdbcType="INTEGER" property="question28" />
-    <result column="question29" jdbcType="INTEGER" property="question29" />
-    <result column="question30" jdbcType="INTEGER" property="question30" />
-    <result column="question31" jdbcType="INTEGER" property="question31" />
-    <result column="question32" jdbcType="INTEGER" property="question32" />
-    <result column="question33" jdbcType="INTEGER" property="question33" />
-    <result column="question34" jdbcType="INTEGER" property="question34" />
-    <result column="question35" jdbcType="INTEGER" property="question35" />
-    <result column="question36" jdbcType="INTEGER" property="question36" />
-    <result column="question37" jdbcType="INTEGER" property="question37" />
-    <result column="question38" jdbcType="INTEGER" property="question38" />
-    <result column="question39" jdbcType="INTEGER" property="question39" />
-    <result column="question40" jdbcType="INTEGER" property="question40" />
-    <result column="question41" jdbcType="INTEGER" property="question41" />
-    <result column="question42" jdbcType="INTEGER" property="question42" />
-    <result column="question43" jdbcType="INTEGER" property="question43" />
-    <result column="question44" jdbcType="INTEGER" property="question44" />
-    <result column="question45" jdbcType="INTEGER" property="question45" />
-    <result column="question46" jdbcType="INTEGER" property="question46" />
-    <result column="question47" jdbcType="INTEGER" property="question47" />
-    <result column="question48" jdbcType="INTEGER" property="question48" />
-    <result column="question49" jdbcType="INTEGER" property="question49" />
-    <result column="question50" jdbcType="INTEGER" property="question50" />
-    <result column="question51" jdbcType="INTEGER" property="question51" />
-    <result column="question52" jdbcType="INTEGER" property="question52" />
-    <result column="question53" jdbcType="INTEGER" property="question53" />
-    <result column="question54" jdbcType="INTEGER" property="question54" />
-    <result column="question55" jdbcType="INTEGER" property="question55" />
-    <result column="question56" jdbcType="INTEGER" property="question56" />
-    <result column="question57" jdbcType="INTEGER" property="question57" />
+    <result column="question1" jdbcType="VARCHAR" property="question1" />
+    <result column="question2" jdbcType="VARCHAR" property="question2" />
+    <result column="question3" jdbcType="VARCHAR" property="question3" />
+    <result column="question4" jdbcType="VARCHAR" property="question4" />
+    <result column="question5" jdbcType="VARCHAR" property="question5" />
+    <result column="question6" jdbcType="VARCHAR" property="question6" />
+    <result column="question7" jdbcType="VARCHAR" property="question7" />
+    <result column="question8" jdbcType="VARCHAR" property="question8" />
+    <result column="question9" jdbcType="VARCHAR" property="question9" />
+    <result column="question10" jdbcType="VARCHAR" property="question10" />
+    <result column="question11" jdbcType="VARCHAR" property="question11" />
+    <result column="question12" jdbcType="VARCHAR" property="question12" />
+    <result column="question13" jdbcType="VARCHAR" property="question13" />
+    <result column="question14" jdbcType="VARCHAR" property="question14" />
+    <result column="question15" jdbcType="VARCHAR" property="question15" />
+    <result column="question16" jdbcType="VARCHAR" property="question16" />
+    <result column="question17" jdbcType="VARCHAR" property="question17" />
+    <result column="question18" jdbcType="VARCHAR" property="question18" />
+    <result column="question19" jdbcType="VARCHAR" property="question19" />
+    <result column="question20" jdbcType="VARCHAR" property="question20" />
+    <result column="question21" jdbcType="VARCHAR" property="question21" />
+    <result column="question22" jdbcType="VARCHAR" property="question22" />
+    <result column="question23" jdbcType="VARCHAR" property="question23" />
+    <result column="question24" jdbcType="VARCHAR" property="question24" />
+    <result column="question25" jdbcType="VARCHAR" property="question25" />
+    <result column="question26" jdbcType="VARCHAR" property="question26" />
+    <result column="question27" jdbcType="VARCHAR" property="question27" />
+    <result column="question28" jdbcType="VARCHAR" property="question28" />
+    <result column="question29" jdbcType="VARCHAR" property="question29" />
+    <result column="question30" jdbcType="VARCHAR" property="question30" />
+    <result column="question31" jdbcType="VARCHAR" property="question31" />
+    <result column="question32" jdbcType="VARCHAR" property="question32" />
+    <result column="question33" jdbcType="VARCHAR" property="question33" />
+    <result column="question34" jdbcType="VARCHAR" property="question34" />
+    <result column="question35" jdbcType="VARCHAR" property="question35" />
+    <result column="question36" jdbcType="VARCHAR" property="question36" />
+    <result column="question37" jdbcType="VARCHAR" property="question37" />
+    <result column="question38" jdbcType="VARCHAR" property="question38" />
+    <result column="question39" jdbcType="VARCHAR" property="question39" />
+    <result column="question40" jdbcType="VARCHAR" property="question40" />
+    <result column="question41" jdbcType="VARCHAR" property="question41" />
+    <result column="question42" jdbcType="VARCHAR" property="question42" />
+    <result column="question43" jdbcType="VARCHAR" property="question43" />
+    <result column="question44" jdbcType="VARCHAR" property="question44" />
+    <result column="question45" jdbcType="VARCHAR" property="question45" />
+    <result column="question46" jdbcType="VARCHAR" property="question46" />
+    <result column="question47" jdbcType="VARCHAR" property="question47" />
+    <result column="question48" jdbcType="VARCHAR" property="question48" />
+    <result column="question49" jdbcType="VARCHAR" property="question49" />
+    <result column="question50" jdbcType="VARCHAR" property="question50" />
+    <result column="question51" jdbcType="VARCHAR" property="question51" />
+    <result column="question52" jdbcType="VARCHAR" property="question52" />
+    <result column="question53" jdbcType="VARCHAR" property="question53" />
+    <result column="question54" jdbcType="VARCHAR" property="question54" />
+    <result column="question55" jdbcType="VARCHAR" property="question55" />
+    <result column="question56" jdbcType="VARCHAR" property="question56" />
+    <result column="question57" jdbcType="VARCHAR" property="question57" />
     <result column="question_sum" jdbcType="INTEGER" property="questionSum" />
     <result column="child_id" jdbcType="INTEGER" property="childId" />
     <result column="name" jdbcType="VARCHAR" property="name" />
@@ -154,25 +154,25 @@
       question52, question53, question54, 
       question55, question56, question57, 
       question_sum, child_id)
-    values (#{question1,jdbcType=INTEGER}, #{question2,jdbcType=INTEGER}, #{question3,jdbcType=INTEGER}, 
-      #{question4,jdbcType=INTEGER}, #{question5,jdbcType=INTEGER}, #{question6,jdbcType=INTEGER}, 
-      #{question7,jdbcType=INTEGER}, #{question8,jdbcType=INTEGER}, #{question9,jdbcType=INTEGER}, 
-      #{question10,jdbcType=INTEGER}, #{question11,jdbcType=INTEGER}, #{question12,jdbcType=INTEGER}, 
-      #{question13,jdbcType=INTEGER}, #{question14,jdbcType=INTEGER}, #{question15,jdbcType=INTEGER}, 
-      #{question16,jdbcType=INTEGER}, #{question17,jdbcType=INTEGER}, #{question18,jdbcType=INTEGER}, 
-      #{question19,jdbcType=INTEGER}, #{question20,jdbcType=INTEGER}, #{question21,jdbcType=INTEGER}, 
-      #{question22,jdbcType=INTEGER}, #{question23,jdbcType=INTEGER}, #{question24,jdbcType=INTEGER}, 
-      #{question25,jdbcType=INTEGER}, #{question26,jdbcType=INTEGER}, #{question27,jdbcType=INTEGER}, 
-      #{question28,jdbcType=INTEGER}, #{question29,jdbcType=INTEGER}, #{question30,jdbcType=INTEGER}, 
-      #{question31,jdbcType=INTEGER}, #{question32,jdbcType=INTEGER}, #{question33,jdbcType=INTEGER}, 
-      #{question34,jdbcType=INTEGER}, #{question35,jdbcType=INTEGER}, #{question36,jdbcType=INTEGER}, 
-      #{question37,jdbcType=INTEGER}, #{question38,jdbcType=INTEGER}, #{question39,jdbcType=INTEGER}, 
-      #{question40,jdbcType=INTEGER}, #{question41,jdbcType=INTEGER}, #{question42,jdbcType=INTEGER}, 
-      #{question43,jdbcType=INTEGER}, #{question44,jdbcType=INTEGER}, #{question45,jdbcType=INTEGER}, 
-      #{question46,jdbcType=INTEGER}, #{question47,jdbcType=INTEGER}, #{question48,jdbcType=INTEGER}, 
-      #{question49,jdbcType=INTEGER}, #{question50,jdbcType=INTEGER}, #{question51,jdbcType=INTEGER}, 
-      #{question52,jdbcType=INTEGER}, #{question53,jdbcType=INTEGER}, #{question54,jdbcType=INTEGER}, 
-      #{question55,jdbcType=INTEGER}, #{question56,jdbcType=INTEGER}, #{question57,jdbcType=INTEGER}, 
+    values (#{question1,jdbcType=VARCHAR}, #{question2,jdbcType=VARCHAR}, #{question3,jdbcType=VARCHAR},
+      #{question4,jdbcType=VARCHAR}, #{question5,jdbcType=VARCHAR}, #{question6,jdbcType=VARCHAR},
+      #{question7,jdbcType=VARCHAR}, #{question8,jdbcType=VARCHAR}, #{question9,jdbcType=VARCHAR},
+      #{question10,jdbcType=VARCHAR}, #{question11,jdbcType=VARCHAR}, #{question12,jdbcType=VARCHAR},
+      #{question13,jdbcType=VARCHAR}, #{question14,jdbcType=VARCHAR}, #{question15,jdbcType=VARCHAR},
+      #{question16,jdbcType=VARCHAR}, #{question17,jdbcType=VARCHAR}, #{question18,jdbcType=VARCHAR},
+      #{question19,jdbcType=VARCHAR}, #{question20,jdbcType=VARCHAR}, #{question21,jdbcType=VARCHAR},
+      #{question22,jdbcType=VARCHAR}, #{question23,jdbcType=VARCHAR}, #{question24,jdbcType=VARCHAR},
+      #{question25,jdbcType=VARCHAR}, #{question26,jdbcType=VARCHAR}, #{question27,jdbcType=VARCHAR},
+      #{question28,jdbcType=VARCHAR}, #{question29,jdbcType=VARCHAR}, #{question30,jdbcType=VARCHAR},
+      #{question31,jdbcType=VARCHAR}, #{question32,jdbcType=VARCHAR}, #{question33,jdbcType=VARCHAR},
+      #{question34,jdbcType=VARCHAR}, #{question35,jdbcType=VARCHAR}, #{question36,jdbcType=VARCHAR},
+      #{question37,jdbcType=VARCHAR}, #{question38,jdbcType=VARCHAR}, #{question39,jdbcType=VARCHAR},
+      #{question40,jdbcType=VARCHAR}, #{question41,jdbcType=VARCHAR}, #{question42,jdbcType=VARCHAR},
+      #{question43,jdbcType=VARCHAR}, #{question44,jdbcType=VARCHAR}, #{question45,jdbcType=VARCHAR},
+      #{question46,jdbcType=VARCHAR}, #{question47,jdbcType=VARCHAR}, #{question48,jdbcType=VARCHAR},
+      #{question49,jdbcType=VARCHAR}, #{question50,jdbcType=VARCHAR}, #{question51,jdbcType=VARCHAR},
+      #{question52,jdbcType=VARCHAR}, #{question53,jdbcType=VARCHAR}, #{question54,jdbcType=VARCHAR},
+      #{question55,jdbcType=VARCHAR}, #{question56,jdbcType=VARCHAR}, #{question57,jdbcType=VARCHAR},
       #{questionSum,jdbcType=INTEGER}, #{childId,jdbcType=INTEGER})
   </insert>
   
@@ -187,175 +187,175 @@
     update hzh_threemon
     <set>
       <if test="question1 != null">
-        question1 = #{question1,jdbcType=INTEGER},
+        question1 = #{question1,jdbcType=VARCHAR},
       </if>
       <if test="question2 != null">
-        question2 = #{question2,jdbcType=INTEGER},
+        question2 = #{question2,jdbcType=VARCHAR},
       </if>
       <if test="question3 != null">
-        question3 = #{question3,jdbcType=INTEGER},
+        question3 = #{question3,jdbcType=VARCHAR},
       </if>
       <if test="question4 != null">
-        question4 = #{question4,jdbcType=INTEGER},
+        question4 = #{question4,jdbcType=VARCHAR},
       </if>
       <if test="question5 != null">
-        question5 = #{question5,jdbcType=INTEGER},
+        question5 = #{question5,jdbcType=VARCHAR},
       </if>
       <if test="question6 != null">
-        question6 = #{question6,jdbcType=INTEGER},
+        question6 = #{question6,jdbcType=VARCHAR},
       </if>
       <if test="question7 != null">
-        question7 = #{question7,jdbcType=INTEGER},
+        question7 = #{question7,jdbcType=VARCHAR},
       </if>
       <if test="question8 != null">
-        question8 = #{question8,jdbcType=INTEGER},
+        question8 = #{question8,jdbcType=VARCHAR},
       </if>
       <if test="question9 != null">
-        question9 = #{question9,jdbcType=INTEGER},
+        question9 = #{question9,jdbcType=VARCHAR},
       </if>
       <if test="question10 != null">
-        question10 = #{question10,jdbcType=INTEGER},
+        question10 = #{question10,jdbcType=VARCHAR},
       </if>
       <if test="question11 != null">
-        question11 = #{question11,jdbcType=INTEGER},
+        question11 = #{question11,jdbcType=VARCHAR},
       </if>
       <if test="question12 != null">
-        question12 = #{question12,jdbcType=INTEGER},
+        question12 = #{question12,jdbcType=VARCHAR},
       </if>
       <if test="question13 != null">
-        question13 = #{question13,jdbcType=INTEGER},
+        question13 = #{question13,jdbcType=VARCHAR},
       </if>
       <if test="question14 != null">
-        question14 = #{question14,jdbcType=INTEGER},
+        question14 = #{question14,jdbcType=VARCHAR},
       </if>
       <if test="question15 != null">
-        question15 = #{question15,jdbcType=INTEGER},
+        question15 = #{question15,jdbcType=VARCHAR},
       </if>
       <if test="question16 != null">
-        question16 = #{question16,jdbcType=INTEGER},
+        question16 = #{question16,jdbcType=VARCHAR},
       </if>
       <if test="question17 != null">
-        question17 = #{question17,jdbcType=INTEGER},
+        question17 = #{question17,jdbcType=VARCHAR},
       </if>
       <if test="question18 != null">
-        question18 = #{question18,jdbcType=INTEGER},
+        question18 = #{question18,jdbcType=VARCHAR},
       </if>
       <if test="question19 != null">
-        question19 = #{question19,jdbcType=INTEGER},
+        question19 = #{question19,jdbcType=VARCHAR},
       </if>
       <if test="question20 != null">
-        question20 = #{question20,jdbcType=INTEGER},
+        question20 = #{question20,jdbcType=VARCHAR},
       </if>
       <if test="question21 != null">
-        question21 = #{question21,jdbcType=INTEGER},
+        question21 = #{question21,jdbcType=VARCHAR},
       </if>
       <if test="question22 != null">
-        question22 = #{question22,jdbcType=INTEGER},
+        question22 = #{question22,jdbcType=VARCHAR},
       </if>
       <if test="question23 != null">
-        question23 = #{question23,jdbcType=INTEGER},
+        question23 = #{question23,jdbcType=VARCHAR},
       </if>
       <if test="question24 != null">
-        question24 = #{question24,jdbcType=INTEGER},
+        question24 = #{question24,jdbcType=VARCHAR},
       </if>
       <if test="question25 != null">
-        question25 = #{question25,jdbcType=INTEGER},
+        question25 = #{question25,jdbcType=VARCHAR},
       </if>
       <if test="question26 != null">
-        question26 = #{question26,jdbcType=INTEGER},
+        question26 = #{question26,jdbcType=VARCHAR},
       </if>
       <if test="question27 != null">
-        question27 = #{question27,jdbcType=INTEGER},
+        question27 = #{question27,jdbcType=VARCHAR},
       </if>
       <if test="question28 != null">
-        question28 = #{question28,jdbcType=INTEGER},
+        question28 = #{question28,jdbcType=VARCHAR},
       </if>
       <if test="question29 != null">
-        question29 = #{question29,jdbcType=INTEGER},
+        question29 = #{question29,jdbcType=VARCHAR},
       </if>
       <if test="question30 != null">
-        question30 = #{question30,jdbcType=INTEGER},
+        question30 = #{question30,jdbcType=VARCHAR},
       </if>
       <if test="question31 != null">
-        question31 = #{question31,jdbcType=INTEGER},
+        question31 = #{question31,jdbcType=VARCHAR},
       </if>
       <if test="question32 != null">
-        question32 = #{question32,jdbcType=INTEGER},
+        question32 = #{question32,jdbcType=VARCHAR},
       </if>
       <if test="question33 != null">
-        question33 = #{question33,jdbcType=INTEGER},
+        question33 = #{question33,jdbcType=VARCHAR},
       </if>
       <if test="question34 != null">
-        question34 = #{question34,jdbcType=INTEGER},
+        question34 = #{question34,jdbcType=VARCHAR},
       </if>
       <if test="question35 != null">
-        question35 = #{question35,jdbcType=INTEGER},
+        question35 = #{question35,jdbcType=VARCHAR},
       </if>
       <if test="question36 != null">
-        question36 = #{question36,jdbcType=INTEGER},
+        question36 = #{question36,jdbcType=VARCHAR},
       </if>
       <if test="question37 != null">
-        question37 = #{question37,jdbcType=INTEGER},
+        question37 = #{question37,jdbcType=VARCHAR},
       </if>
       <if test="question38 != null">
-        question38 = #{question38,jdbcType=INTEGER},
+        question38 = #{question38,jdbcType=VARCHAR},
       </if>
       <if test="question39 != null">
-        question39 = #{question39,jdbcType=INTEGER},
+        question39 = #{question39,jdbcType=VARCHAR},
       </if>
       <if test="question40 != null">
-        question40 = #{question40,jdbcType=INTEGER},
+        question40 = #{question40,jdbcType=VARCHAR},
       </if>
       <if test="question41 != null">
-        question41 = #{question41,jdbcType=INTEGER},
+        question41 = #{question41,jdbcType=VARCHAR},
       </if>
       <if test="question42 != null">
-        question42 = #{question42,jdbcType=INTEGER},
+        question42 = #{question42,jdbcType=VARCHAR},
       </if>
       <if test="question43 != null">
-        question43 = #{question43,jdbcType=INTEGER},
+        question43 = #{question43,jdbcType=VARCHAR},
       </if>
       <if test="question44 != null">
-        question44 = #{question44,jdbcType=INTEGER},
+        question44 = #{question44,jdbcType=VARCHAR},
       </if>
       <if test="question45 != null">
-        question45 = #{question45,jdbcType=INTEGER},
+        question45 = #{question45,jdbcType=VARCHAR},
       </if>
       <if test="question46 != null">
-        question46 = #{question46,jdbcType=INTEGER},
+        question46 = #{question46,jdbcType=VARCHAR},
       </if>
       <if test="question47 != null">
-        question47 = #{question47,jdbcType=INTEGER},
+        question47 = #{question47,jdbcType=VARCHAR},
       </if>
       <if test="question48 != null">
-        question48 = #{question48,jdbcType=INTEGER},
+        question48 = #{question48,jdbcType=VARCHAR},
       </if>
       <if test="question49 != null">
-        question49 = #{question49,jdbcType=INTEGER},
+        question49 = #{question49,jdbcType=VARCHAR},
       </if>
       <if test="question50 != null">
-        question50 = #{question50,jdbcType=INTEGER},
+        question50 = #{question50,jdbcType=VARCHAR},
       </if>
       <if test="question51 != null">
-        question51 = #{question51,jdbcType=INTEGER},
+        question51 = #{question51,jdbcType=VARCHAR},
       </if>
       <if test="question52 != null">
-        question52 = #{question52,jdbcType=INTEGER},
+        question52 = #{question52,jdbcType=VARCHAR},
       </if>
       <if test="question53 != null">
-        question53 = #{question53,jdbcType=INTEGER},
+        question53 = #{question53,jdbcType=VARCHAR},
       </if>
       <if test="question54 != null">
-        question54 = #{question54,jdbcType=INTEGER},
+        question54 = #{question54,jdbcType=VARCHAR},
       </if>
       <if test="question55 != null">
-        question55 = #{question55,jdbcType=INTEGER},
+        question55 = #{question55,jdbcType=VARCHAR},
       </if>
       <if test="question56 != null">
-        question56 = #{question56,jdbcType=INTEGER},
+        question56 = #{question56,jdbcType=VARCHAR},
       </if>
       <if test="question57 != null">
-        question57 = #{question57,jdbcType=INTEGER},
+        question57 = #{question57,jdbcType=VARCHAR},
       </if>
       <if test="questionSum != null">
         question_sum = #{questionSum,jdbcType=INTEGER},
@@ -399,178 +399,178 @@
       and g.name like concat('%','${hzhGeneral.name}','%')
     </if>
     <if test="hzhThreemon.question1 != null">
-      and question1 = #{hzhThreemon.question1,jdbcType=INTEGER}
+      and question1 = #{hzhThreemon.question1,jdbcType=VARCHAR}
     </if>
     <if test="hzhThreemon.question2 != null">
-      and question2 = #{hzhThreemon.question2,jdbcType=INTEGER}
+      and question2 = #{hzhThreemon.question2,jdbcType=VARCHAR}
     </if>
     <if test="hzhThreemon.question3 != null">
-      and question3 = #{hzhThreemon.question3,jdbcType=INTEGER}
+      and question3 = #{hzhThreemon.question3,jdbcType=VARCHAR}
     </if>
     <if test="hzhThreemon.question4 != null">
-      and question4 = #{hzhThreemon.question4,jdbcType=INTEGER}
+      and question4 = #{hzhThreemon.question4,jdbcType=VARCHAR}
     </if>
     <if test="hzhThreemon.question5 != null">
-      and question5 = #{hzhThreemon.question5,jdbcType=INTEGER}
+      and question5 = #{hzhThreemon.question5,jdbcType=VARCHAR}
     </if>
     <if test="hzhThreemon.question6 != null">
-      and question6 = #{hzhThreemon.question6,jdbcType=INTEGER}
+      and question6 = #{hzhThreemon.question6,jdbcType=VARCHAR}
     </if>
     <if test="hzhThreemon.question7 != null">
-      and question7 = #{hzhThreemon.question7,jdbcType=INTEGER}
+      and question7 = #{hzhThreemon.question7,jdbcType=VARCHAR}
     </if>
     <if test="hzhThreemon.question8 != null">
-      and question8 = #{hzhThreemon.question8,jdbcType=INTEGER}
+      and question8 = #{hzhThreemon.question8,jdbcType=VARCHAR}
     </if>
     <if test="hzhThreemon.question9 != null">
-      and question9 = #{hzhThreemon.question9,jdbcType=INTEGER}
+      and question9 = #{hzhThreemon.question9,jdbcType=VARCHAR}
     </if>
     <if test="hzhThreemon.question10 != null">
-      and question10 = #{hzhThreemon.question10,jdbcType=INTEGER}
+      and question10 = #{hzhThreemon.question10,jdbcType=VARCHAR}
     </if>
     <if test="hzhThreemon.question11 != null">
-      and question11 = #{hzhThreemon.question11,jdbcType=INTEGER}
+      and question11 = #{hzhThreemon.question11,jdbcType=VARCHAR}
     </if>
     <if test="hzhThreemon.question12 != null">
-      and question12 = #{hzhThreemon.question12,jdbcType=INTEGER}
+      and question12 = #{hzhThreemon.question12,jdbcType=VARCHAR}
     </if>
     <if test="hzhThreemon.question13 != null">
-      and question13 = #{hzhThreemon.question13,jdbcType=INTEGER}
+      and question13 = #{hzhThreemon.question13,jdbcType=VARCHAR}
     </if>
     <if test="hzhThreemon.question14 != null">
-      and question14 = #{hzhThreemon.question14,jdbcType=INTEGER}
+      and question14 = #{hzhThreemon.question14,jdbcType=VARCHAR}
     </if>
     <if test="hzhThreemon.question15 != null">
-      and question15 = #{hzhThreemon.question15,jdbcType=INTEGER}
+      and question15 = #{hzhThreemon.question15,jdbcType=VARCHAR}
     </if>
     <if test="hzhThreemon.question16 != null">
-      and question16 = #{hzhThreemon.question16,jdbcType=INTEGER}
+      and question16 = #{hzhThreemon.question16,jdbcType=VARCHAR}
     </if>
     <if test="hzhThreemon.question17 != null">
-      and question17 = #{hzhThreemon.question17,jdbcType=INTEGER}
+      and question17 = #{hzhThreemon.question17,jdbcType=VARCHAR}
     </if>
     <if test="hzhThreemon.question18 != null">
-      and question18 = #{hzhThreemon.question18,jdbcType=INTEGER}
+      and question18 = #{hzhThreemon.question18,jdbcType=VARCHAR}
     </if>
     <if test="hzhThreemon.question19 != null">
-      and question19 = #{hzhThreemon.question19,jdbcType=INTEGER}
+      and question19 = #{hzhThreemon.question19,jdbcType=VARCHAR}
     </if>
     <if test="hzhThreemon.question20 != null">
-      and question20 = #{hzhThreemon.question20,jdbcType=INTEGER}
+      and question20 = #{hzhThreemon.question20,jdbcType=VARCHAR}
     </if>
     <if test="hzhThreemon.question21 != null">
-      and question21 = #{hzhThreemon.question21,jdbcType=INTEGER}
+      and question21 = #{hzhThreemon.question21,jdbcType=VARCHAR}
     </if>
     <if test="hzhThreemon.question22 != null">
-      and question22 = #{hzhThreemon.question22,jdbcType=INTEGER}
+      and question22 = #{hzhThreemon.question22,jdbcType=VARCHAR}
     </if>
     <if test="hzhThreemon.question23 != null">
-      and question23 = #{hzhThreemon.question23,jdbcType=INTEGER}
+      and question23 = #{hzhThreemon.question23,jdbcType=VARCHAR}
     </if>
     <if test="hzhThreemon.question24 != null">
-      and question24 = #{hzhThreemon.question24,jdbcType=INTEGER}
+      and question24 = #{hzhThreemon.question24,jdbcType=VARCHAR}
     </if>
     <if test="hzhThreemon.question25 != null">
-      and question25 = #{hzhThreemon.question25,jdbcType=INTEGER}
+      and question25 = #{hzhThreemon.question25,jdbcType=VARCHAR}
     </if>
     <if test="hzhThreemon.question26 != null">
-      and question26 = #{hzhThreemon.question26,jdbcType=INTEGER}
+      and question26 = #{hzhThreemon.question26,jdbcType=VARCHAR}
     </if>
     <if test="hzhThreemon.question27 != null">
-      and question27 = #{hzhThreemon.question27,jdbcType=INTEGER}
+      and question27 = #{hzhThreemon.question27,jdbcType=VARCHAR}
     </if>
     <if test="hzhThreemon.question28 != null">
-      and question28 = #{hzhThreemon.question28,jdbcType=INTEGER}
+      and question28 = #{hzhThreemon.question28,jdbcType=VARCHAR}
     </if>
     <if test="hzhThreemon.question29 != null">
-      and question29 = #{hzhThreemon.question29,jdbcType=INTEGER}
+      and question29 = #{hzhThreemon.question29,jdbcType=VARCHAR}
     </if>
     <if test="hzhThreemon.question30 != null">
-      and question30 = #{hzhThreemon.question30,jdbcType=INTEGER}
+      and question30 = #{hzhThreemon.question30,jdbcType=VARCHAR}
     </if>
     <if test="hzhThreemon.question31 != null">
-      and question31 = #{hzhThreemon.question31,jdbcType=INTEGER}
+      and question31 = #{hzhThreemon.question31,jdbcType=VARCHAR}
     </if>
     <if test="hzhThreemon.question32 != null">
-      and question32 = #{hzhThreemon.question32,jdbcType=INTEGER}
+      and question32 = #{hzhThreemon.question32,jdbcType=VARCHAR}
     </if>
     <if test="hzhThreemon.question33 != null">
-      and question33 = #{hzhThreemon.question33,jdbcType=INTEGER}
+      and question33 = #{hzhThreemon.question33,jdbcType=VARCHAR}
     </if>
     <if test="hzhThreemon.question34 != null">
-      and question34 = #{hzhThreemon.question34,jdbcType=INTEGER}
+      and question34 = #{hzhThreemon.question34,jdbcType=VARCHAR}
     </if>
     <if test="hzhThreemon.question35 != null">
-      and question35 = #{hzhThreemon.question35,jdbcType=INTEGER}
+      and question35 = #{hzhThreemon.question35,jdbcType=VARCHAR}
     </if>
     <if test="hzhThreemon.question36 != null">
-      and question36 = #{hzhThreemon.question36,jdbcType=INTEGER}
+      and question36 = #{hzhThreemon.question36,jdbcType=VARCHAR}
     </if>
     <if test="hzhThreemon.question37 != null">
-      and question37 = #{hzhThreemon.question37,jdbcType=INTEGER}
+      and question37 = #{hzhThreemon.question37,jdbcType=VARCHAR}
     </if>
     <if test="hzhThreemon.question38 != null">
-      and question38 = #{hzhThreemon.question38,jdbcType=INTEGER}
+      and question38 = #{hzhThreemon.question38,jdbcType=VARCHAR}
     </if>
     <if test="hzhThreemon.question39 != null">
-      and question39 = #{hzhThreemon.question39,jdbcType=INTEGER}
+      and question39 = #{hzhThreemon.question39,jdbcType=VARCHAR}
     </if>
     <if test="hzhThreemon.question40 != null">
-      and question40 = #{hzhThreemon.question40,jdbcType=INTEGER}
+      and question40 = #{hzhThreemon.question40,jdbcType=VARCHAR}
     </if>
     <if test="hzhThreemon.question41 != null">
-      and question41 = #{hzhThreemon.question41,jdbcType=INTEGER}
+      and question41 = #{hzhThreemon.question41,jdbcType=VARCHAR}
     </if>
     <if test="hzhThreemon.question42 != null">
-      and question42 = #{hzhThreemon.question42,jdbcType=INTEGER}
+      and question42 = #{hzhThreemon.question42,jdbcType=VARCHAR}
     </if>
     <if test="hzhThreemon.question43 != null">
-      and question43 = #{hzhThreemon.question43,jdbcType=INTEGER}
+      and question43 = #{hzhThreemon.question43,jdbcType=VARCHAR}
     </if>
     <if test="hzhThreemon.question44 != null">
-      and question44 = #{hzhThreemon.question44,jdbcType=INTEGER}
+      and question44 = #{hzhThreemon.question44,jdbcType=VARCHAR}
     </if>
     <if test="hzhThreemon.question45 != null">
-      and question45 = #{hzhThreemon.question45,jdbcType=INTEGER}
+      and question45 = #{hzhThreemon.question45,jdbcType=VARCHAR}
     </if>
     <if test="hzhThreemon.question46 != null">
-      and question46 = #{hzhThreemon.question46,jdbcType=INTEGER}
+      and question46 = #{hzhThreemon.question46,jdbcType=VARCHAR}
     </if>
     <if test="hzhThreemon.question47 != null">
-      and question47 = #{hzhThreemon.question47,jdbcType=INTEGER}
+      and question47 = #{hzhThreemon.question47,jdbcType=VARCHAR}
     </if>
     <if test="hzhThreemon.question48 != null">
-      and question48 = #{hzhThreemon.question48,jdbcType=INTEGER}
+      and question48 = #{hzhThreemon.question48,jdbcType=VARCHAR}
     </if>
     <if test="hzhThreemon.question49 != null">
-      and question49 = #{hzhThreemon.question49,jdbcType=INTEGER}
+      and question49 = #{hzhThreemon.question49,jdbcType=VARCHAR}
     </if>
     <if test="hzhThreemon.question50 != null">
-      and question50 = #{hzhThreemon.question50,jdbcType=INTEGER}
+      and question50 = #{hzhThreemon.question50,jdbcType=VARCHAR}
     </if>
     <if test="hzhThreemon.question51 != null">
-      and question51 = #{hzhThreemon.question51,jdbcType=INTEGER}
+      and question51 = #{hzhThreemon.question51,jdbcType=VARCHAR}
     </if>
     <if test="hzhThreemon.question52 != null">
-      and question52 = #{hzhThreemon.question52,jdbcType=INTEGER}
+      and question52 = #{hzhThreemon.question52,jdbcType=VARCHAR}
     </if>
     <if test="hzhThreemon.question53 != null">
-      and question53 = #{hzhThreemon.question53,jdbcType=INTEGER}
+      and question53 = #{hzhThreemon.question53,jdbcType=VARCHAR}
     </if>
     <if test="hzhThreemon.question54 != null">
-      and question54 = #{hzhThreemon.question54,jdbcType=INTEGER}
+      and question54 = #{hzhThreemon.question54,jdbcType=VARCHAR}
     </if>
     <if test="hzhThreemon.question55 != null">
-      and question55 = #{hzhThreemon.question55,jdbcType=INTEGER}
+      and question55 = #{hzhThreemon.question55,jdbcType=VARCHAR}
     </if>
     <if test="hzhThreemon.question56 != null">
-      and question56 = #{hzhThreemon.question56,jdbcType=INTEGER}
+      and question56 = #{hzhThreemon.question56,jdbcType=VARCHAR}
     </if>
     <if test="hzhThreemon.question57 != null">
-      and question57 = #{hzhThreemon.question57,jdbcType=INTEGER}
+      and question57 = #{hzhThreemon.question57,jdbcType=VARCHAR}
     </if>
     <if test="hzhThreemon.questionSum != null">
-      and question_sum = #{hzhThreemon.questionSum,jdbcType=INTEGER}
+      and question_sum = #{hzhThreemon.questionSum,jdbcType=VARCHAR}
     </if>
     <if test="hzhThreemon.childId != null">
       and child_id = #{hzhThreemon.childId,jdbcType=INTEGER}
@@ -863,175 +863,175 @@
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="question1 != null">
-        #{question1,jdbcType=INTEGER},
+        #{question1,jdbcType=VARCHAR},
       </if>
       <if test="question2 != null">
-        #{question2,jdbcType=INTEGER},
+        #{question2,jdbcType=VARCHAR},
       </if>
       <if test="question3 != null">
-        #{question3,jdbcType=INTEGER},
+        #{question3,jdbcType=VARCHAR},
       </if>
       <if test="question4 != null">
-        #{question4,jdbcType=INTEGER},
+        #{question4,jdbcType=VARCHAR},
       </if>
       <if test="question5 != null">
-        #{question5,jdbcType=INTEGER},
+        #{question5,jdbcType=VARCHAR},
       </if>
       <if test="question6 != null">
-        #{question6,jdbcType=INTEGER},
+        #{question6,jdbcType=VARCHAR},
       </if>
       <if test="question7 != null">
-        #{question7,jdbcType=INTEGER},
+        #{question7,jdbcType=VARCHAR},
       </if>
       <if test="question8 != null">
-        #{question8,jdbcType=INTEGER},
+        #{question8,jdbcType=VARCHAR},
       </if>
       <if test="question9 != null">
-        #{question9,jdbcType=INTEGER},
+        #{question9,jdbcType=VARCHAR},
       </if>
       <if test="question10 != null">
-        #{question10,jdbcType=INTEGER},
+        #{question10,jdbcType=VARCHAR},
       </if>
       <if test="question11 != null">
-        #{question11,jdbcType=INTEGER},
+        #{question11,jdbcType=VARCHAR},
       </if>
       <if test="question12 != null">
-        #{question12,jdbcType=INTEGER},
+        #{question12,jdbcType=VARCHAR},
       </if>
       <if test="question13 != null">
-        #{question13,jdbcType=INTEGER},
+        #{question13,jdbcType=VARCHAR},
       </if>
       <if test="question14 != null">
-        #{question14,jdbcType=INTEGER},
+        #{question14,jdbcType=VARCHAR},
       </if>
       <if test="question15 != null">
-        #{question15,jdbcType=INTEGER},
+        #{question15,jdbcType=VARCHAR},
       </if>
       <if test="question16 != null">
-        #{question16,jdbcType=INTEGER},
+        #{question16,jdbcType=VARCHAR},
       </if>
       <if test="question17 != null">
-        #{question17,jdbcType=INTEGER},
+        #{question17,jdbcType=VARCHAR},
       </if>
       <if test="question18 != null">
-        #{question18,jdbcType=INTEGER},
+        #{question18,jdbcType=VARCHAR},
       </if>
       <if test="question19 != null">
-        #{question19,jdbcType=INTEGER},
+        #{question19,jdbcType=VARCHAR},
       </if>
       <if test="question20 != null">
-        #{question20,jdbcType=INTEGER},
+        #{question20,jdbcType=VARCHAR},
       </if>
       <if test="question21 != null">
-        #{question21,jdbcType=INTEGER},
+        #{question21,jdbcType=VARCHAR},
       </if>
       <if test="question22 != null">
-        #{question22,jdbcType=INTEGER},
+        #{question22,jdbcType=VARCHAR},
       </if>
       <if test="question23 != null">
-        #{question23,jdbcType=INTEGER},
+        #{question23,jdbcType=VARCHAR},
       </if>
       <if test="question24 != null">
-        #{question24,jdbcType=INTEGER},
+        #{question24,jdbcType=VARCHAR},
       </if>
       <if test="question25 != null">
-        #{question25,jdbcType=INTEGER},
+        #{question25,jdbcType=VARCHAR},
       </if>
       <if test="question26 != null">
-        #{question26,jdbcType=INTEGER},
+        #{question26,jdbcType=VARCHAR},
       </if>
       <if test="question27 != null">
-        #{question27,jdbcType=INTEGER},
+        #{question27,jdbcType=VARCHAR},
       </if>
       <if test="question28 != null">
-        #{question28,jdbcType=INTEGER},
+        #{question28,jdbcType=VARCHAR},
       </if>
       <if test="question29 != null">
-        #{question29,jdbcType=INTEGER},
+        #{question29,jdbcType=VARCHAR},
       </if>
       <if test="question30 != null">
-        #{question30,jdbcType=INTEGER},
+        #{question30,jdbcType=VARCHAR},
       </if>
       <if test="question31 != null">
-        #{question31,jdbcType=INTEGER},
+        #{question31,jdbcType=VARCHAR},
       </if>
       <if test="question32 != null">
-        #{question32,jdbcType=INTEGER},
+        #{question32,jdbcType=VARCHAR},
       </if>
       <if test="question33 != null">
-        #{question33,jdbcType=INTEGER},
+        #{question33,jdbcType=VARCHAR},
       </if>
       <if test="question34 != null">
-        #{question34,jdbcType=INTEGER},
+        #{question34,jdbcType=VARCHAR},
       </if>
       <if test="question35 != null">
-        #{question35,jdbcType=INTEGER},
+        #{question35,jdbcType=VARCHAR},
       </if>
       <if test="question36 != null">
-        #{question36,jdbcType=INTEGER},
+        #{question36,jdbcType=VARCHAR},
       </if>
       <if test="question37 != null">
-        #{question37,jdbcType=INTEGER},
+        #{question37,jdbcType=VARCHAR},
       </if>
       <if test="question38 != null">
-        #{question38,jdbcType=INTEGER},
+        #{question38,jdbcType=VARCHAR},
       </if>
       <if test="question39 != null">
-        #{question39,jdbcType=INTEGER},
+        #{question39,jdbcType=VARCHAR},
       </if>
       <if test="question40 != null">
-        #{question40,jdbcType=INTEGER},
+        #{question40,jdbcType=VARCHAR},
       </if>
       <if test="question41 != null">
-        #{question41,jdbcType=INTEGER},
+        #{question41,jdbcType=VARCHAR},
       </if>
       <if test="question42 != null">
-        #{question42,jdbcType=INTEGER},
+        #{question42,jdbcType=VARCHAR},
       </if>
       <if test="question43 != null">
-        #{question43,jdbcType=INTEGER},
+        #{question43,jdbcType=VARCHAR},
       </if>
       <if test="question44 != null">
-        #{question44,jdbcType=INTEGER},
+        #{question44,jdbcType=VARCHAR},
       </if>
       <if test="question45 != null">
-        #{question45,jdbcType=INTEGER},
+        #{question45,jdbcType=VARCHAR},
       </if>
       <if test="question46 != null">
-        #{question46,jdbcType=INTEGER},
+        #{question46,jdbcType=VARCHAR},
       </if>
       <if test="question47 != null">
-        #{question47,jdbcType=INTEGER},
+        #{question47,jdbcType=VARCHAR},
       </if>
       <if test="question48 != null">
-        #{question48,jdbcType=INTEGER},
+        #{question48,jdbcType=VARCHAR},
       </if>
       <if test="question49 != null">
-        #{question49,jdbcType=INTEGER},
+        #{question49,jdbcType=VARCHAR},
       </if>
       <if test="question50 != null">
-        #{question50,jdbcType=INTEGER},
+        #{question50,jdbcType=VARCHAR},
       </if>
       <if test="question51 != null">
-        #{question51,jdbcType=INTEGER},
+        #{question51,jdbcType=VARCHAR},
       </if>
       <if test="question52 != null">
-        #{question52,jdbcType=INTEGER},
+        #{question52,jdbcType=VARCHAR},
       </if>
       <if test="question53 != null">
-        #{question53,jdbcType=INTEGER},
+        #{question53,jdbcType=VARCHAR},
       </if>
       <if test="question54 != null">
-        #{question54,jdbcType=INTEGER},
+        #{question54,jdbcType=VARCHAR},
       </if>
       <if test="question55 != null">
-        #{question55,jdbcType=INTEGER},
+        #{question55,jdbcType=VARCHAR},
       </if>
       <if test="question56 != null">
-        #{question56,jdbcType=INTEGER},
+        #{question56,jdbcType=VARCHAR},
       </if>
       <if test="question57 != null">
-        #{question57,jdbcType=INTEGER},
+        #{question57,jdbcType=VARCHAR},
       </if>
       <if test="questionSum != null">
         #{questionSum,jdbcType=INTEGER},
@@ -1054,175 +1054,175 @@
         id = #{record.id,jdbcType=INTEGER},
       </if>
       <if test="record.question1 != null">
-        question1 = #{record.question1,jdbcType=INTEGER},
+        question1 = #{record.question1,jdbcType=VARCHAR},
       </if>
       <if test="record.question2 != null">
-        question2 = #{record.question2,jdbcType=INTEGER},
+        question2 = #{record.question2,jdbcType=VARCHAR},
       </if>
       <if test="record.question3 != null">
-        question3 = #{record.question3,jdbcType=INTEGER},
+        question3 = #{record.question3,jdbcType=VARCHAR},
       </if>
       <if test="record.question4 != null">
-        question4 = #{record.question4,jdbcType=INTEGER},
+        question4 = #{record.question4,jdbcType=VARCHAR},
       </if>
       <if test="record.question5 != null">
-        question5 = #{record.question5,jdbcType=INTEGER},
+        question5 = #{record.question5,jdbcType=VARCHAR},
       </if>
       <if test="record.question6 != null">
-        question6 = #{record.question6,jdbcType=INTEGER},
+        question6 = #{record.question6,jdbcType=VARCHAR},
       </if>
       <if test="record.question7 != null">
-        question7 = #{record.question7,jdbcType=INTEGER},
+        question7 = #{record.question7,jdbcType=VARCHAR},
       </if>
       <if test="record.question8 != null">
-        question8 = #{record.question8,jdbcType=INTEGER},
+        question8 = #{record.question8,jdbcType=VARCHAR},
       </if>
       <if test="record.question9 != null">
-        question9 = #{record.question9,jdbcType=INTEGER},
+        question9 = #{record.question9,jdbcType=VARCHAR},
       </if>
       <if test="record.question10 != null">
-        question10 = #{record.question10,jdbcType=INTEGER},
+        question10 = #{record.question10,jdbcType=VARCHAR},
       </if>
       <if test="record.question11 != null">
-        question11 = #{record.question11,jdbcType=INTEGER},
+        question11 = #{record.question11,jdbcType=VARCHAR},
       </if>
       <if test="record.question12 != null">
-        question12 = #{record.question12,jdbcType=INTEGER},
+        question12 = #{record.question12,jdbcType=VARCHAR},
       </if>
       <if test="record.question13 != null">
-        question13 = #{record.question13,jdbcType=INTEGER},
+        question13 = #{record.question13,jdbcType=VARCHAR},
       </if>
       <if test="record.question14 != null">
-        question14 = #{record.question14,jdbcType=INTEGER},
+        question14 = #{record.question14,jdbcType=VARCHAR},
       </if>
       <if test="record.question15 != null">
-        question15 = #{record.question15,jdbcType=INTEGER},
+        question15 = #{record.question15,jdbcType=VARCHAR},
       </if>
       <if test="record.question16 != null">
-        question16 = #{record.question16,jdbcType=INTEGER},
+        question16 = #{record.question16,jdbcType=VARCHAR},
       </if>
       <if test="record.question17 != null">
-        question17 = #{record.question17,jdbcType=INTEGER},
+        question17 = #{record.question17,jdbcType=VARCHAR},
       </if>
       <if test="record.question18 != null">
-        question18 = #{record.question18,jdbcType=INTEGER},
+        question18 = #{record.question18,jdbcType=VARCHAR},
       </if>
       <if test="record.question19 != null">
-        question19 = #{record.question19,jdbcType=INTEGER},
+        question19 = #{record.question19,jdbcType=VARCHAR},
       </if>
       <if test="record.question20 != null">
-        question20 = #{record.question20,jdbcType=INTEGER},
+        question20 = #{record.question20,jdbcType=VARCHAR},
       </if>
       <if test="record.question21 != null">
-        question21 = #{record.question21,jdbcType=INTEGER},
+        question21 = #{record.question21,jdbcType=VARCHAR},
       </if>
       <if test="record.question22 != null">
-        question22 = #{record.question22,jdbcType=INTEGER},
+        question22 = #{record.question22,jdbcType=VARCHAR},
       </if>
       <if test="record.question23 != null">
-        question23 = #{record.question23,jdbcType=INTEGER},
+        question23 = #{record.question23,jdbcType=VARCHAR},
       </if>
       <if test="record.question24 != null">
-        question24 = #{record.question24,jdbcType=INTEGER},
+        question24 = #{record.question24,jdbcType=VARCHAR},
       </if>
       <if test="record.question25 != null">
-        question25 = #{record.question25,jdbcType=INTEGER},
+        question25 = #{record.question25,jdbcType=VARCHAR},
       </if>
       <if test="record.question26 != null">
-        question26 = #{record.question26,jdbcType=INTEGER},
+        question26 = #{record.question26,jdbcType=VARCHAR},
       </if>
       <if test="record.question27 != null">
-        question27 = #{record.question27,jdbcType=INTEGER},
+        question27 = #{record.question27,jdbcType=VARCHAR},
       </if>
       <if test="record.question28 != null">
-        question28 = #{record.question28,jdbcType=INTEGER},
+        question28 = #{record.question28,jdbcType=VARCHAR},
       </if>
       <if test="record.question29 != null">
-        question29 = #{record.question29,jdbcType=INTEGER},
+        question29 = #{record.question29,jdbcType=VARCHAR},
       </if>
       <if test="record.question30 != null">
-        question30 = #{record.question30,jdbcType=INTEGER},
+        question30 = #{record.question30,jdbcType=VARCHAR},
       </if>
       <if test="record.question31 != null">
-        question31 = #{record.question31,jdbcType=INTEGER},
+        question31 = #{record.question31,jdbcType=VARCHAR},
       </if>
       <if test="record.question32 != null">
-        question32 = #{record.question32,jdbcType=INTEGER},
+        question32 = #{record.question32,jdbcType=VARCHAR},
       </if>
       <if test="record.question33 != null">
-        question33 = #{record.question33,jdbcType=INTEGER},
+        question33 = #{record.question33,jdbcType=VARCHAR},
       </if>
       <if test="record.question34 != null">
-        question34 = #{record.question34,jdbcType=INTEGER},
+        question34 = #{record.question34,jdbcType=VARCHAR},
       </if>
       <if test="record.question35 != null">
-        question35 = #{record.question35,jdbcType=INTEGER},
+        question35 = #{record.question35,jdbcType=VARCHAR},
       </if>
       <if test="record.question36 != null">
-        question36 = #{record.question36,jdbcType=INTEGER},
+        question36 = #{record.question36,jdbcType=VARCHAR},
       </if>
       <if test="record.question37 != null">
-        question37 = #{record.question37,jdbcType=INTEGER},
+        question37 = #{record.question37,jdbcType=VARCHAR},
       </if>
       <if test="record.question38 != null">
-        question38 = #{record.question38,jdbcType=INTEGER},
+        question38 = #{record.question38,jdbcType=VARCHAR},
       </if>
       <if test="record.question39 != null">
-        question39 = #{record.question39,jdbcType=INTEGER},
+        question39 = #{record.question39,jdbcType=VARCHAR},
       </if>
       <if test="record.question40 != null">
-        question40 = #{record.question40,jdbcType=INTEGER},
+        question40 = #{record.question40,jdbcType=VARCHAR},
       </if>
       <if test="record.question41 != null">
-        question41 = #{record.question41,jdbcType=INTEGER},
+        question41 = #{record.question41,jdbcType=VARCHAR},
       </if>
       <if test="record.question42 != null">
-        question42 = #{record.question42,jdbcType=INTEGER},
+        question42 = #{record.question42,jdbcType=VARCHAR},
       </if>
       <if test="record.question43 != null">
-        question43 = #{record.question43,jdbcType=INTEGER},
+        question43 = #{record.question43,jdbcType=VARCHAR},
       </if>
       <if test="record.question44 != null">
-        question44 = #{record.question44,jdbcType=INTEGER},
+        question44 = #{record.question44,jdbcType=VARCHAR},
       </if>
       <if test="record.question45 != null">
-        question45 = #{record.question45,jdbcType=INTEGER},
+        question45 = #{record.question45,jdbcType=VARCHAR},
       </if>
       <if test="record.question46 != null">
-        question46 = #{record.question46,jdbcType=INTEGER},
+        question46 = #{record.question46,jdbcType=VARCHAR},
       </if>
       <if test="record.question47 != null">
-        question47 = #{record.question47,jdbcType=INTEGER},
+        question47 = #{record.question47,jdbcType=VARCHAR},
       </if>
       <if test="record.question48 != null">
-        question48 = #{record.question48,jdbcType=INTEGER},
+        question48 = #{record.question48,jdbcType=VARCHAR},
       </if>
       <if test="record.question49 != null">
-        question49 = #{record.question49,jdbcType=INTEGER},
+        question49 = #{record.question49,jdbcType=VARCHAR},
       </if>
       <if test="record.question50 != null">
-        question50 = #{record.question50,jdbcType=INTEGER},
+        question50 = #{record.question50,jdbcType=VARCHAR},
       </if>
       <if test="record.question51 != null">
-        question51 = #{record.question51,jdbcType=INTEGER},
+        question51 = #{record.question51,jdbcType=VARCHAR},
       </if>
       <if test="record.question52 != null">
-        question52 = #{record.question52,jdbcType=INTEGER},
+        question52 = #{record.question52,jdbcType=VARCHAR},
       </if>
       <if test="record.question53 != null">
-        question53 = #{record.question53,jdbcType=INTEGER},
+        question53 = #{record.question53,jdbcType=VARCHAR},
       </if>
       <if test="record.question54 != null">
-        question54 = #{record.question54,jdbcType=INTEGER},
+        question54 = #{record.question54,jdbcType=VARCHAR},
       </if>
       <if test="record.question55 != null">
-        question55 = #{record.question55,jdbcType=INTEGER},
+        question55 = #{record.question55,jdbcType=VARCHAR},
       </if>
       <if test="record.question56 != null">
-        question56 = #{record.question56,jdbcType=INTEGER},
+        question56 = #{record.question56,jdbcType=VARCHAR},
       </if>
       <if test="record.question57 != null">
-        question57 = #{record.question57,jdbcType=INTEGER},
+        question57 = #{record.question57,jdbcType=VARCHAR},
       </if>
       <if test="record.questionSum != null">
         question_sum = #{record.questionSum,jdbcType=INTEGER},
@@ -1238,63 +1238,63 @@
   <update id="updateByExample" parameterType="map">
     update hzh_threemon
     set id = #{record.id,jdbcType=INTEGER},
-      question1 = #{record.question1,jdbcType=INTEGER},
-      question2 = #{record.question2,jdbcType=INTEGER},
-      question3 = #{record.question3,jdbcType=INTEGER},
-      question4 = #{record.question4,jdbcType=INTEGER},
-      question5 = #{record.question5,jdbcType=INTEGER},
-      question6 = #{record.question6,jdbcType=INTEGER},
-      question7 = #{record.question7,jdbcType=INTEGER},
-      question8 = #{record.question8,jdbcType=INTEGER},
-      question9 = #{record.question9,jdbcType=INTEGER},
-      question10 = #{record.question10,jdbcType=INTEGER},
-      question11 = #{record.question11,jdbcType=INTEGER},
-      question12 = #{record.question12,jdbcType=INTEGER},
-      question13 = #{record.question13,jdbcType=INTEGER},
-      question14 = #{record.question14,jdbcType=INTEGER},
-      question15 = #{record.question15,jdbcType=INTEGER},
-      question16 = #{record.question16,jdbcType=INTEGER},
-      question17 = #{record.question17,jdbcType=INTEGER},
-      question18 = #{record.question18,jdbcType=INTEGER},
-      question19 = #{record.question19,jdbcType=INTEGER},
-      question20 = #{record.question20,jdbcType=INTEGER},
-      question21 = #{record.question21,jdbcType=INTEGER},
-      question22 = #{record.question22,jdbcType=INTEGER},
-      question23 = #{record.question23,jdbcType=INTEGER},
-      question24 = #{record.question24,jdbcType=INTEGER},
-      question25 = #{record.question25,jdbcType=INTEGER},
-      question26 = #{record.question26,jdbcType=INTEGER},
-      question27 = #{record.question27,jdbcType=INTEGER},
-      question28 = #{record.question28,jdbcType=INTEGER},
-      question29 = #{record.question29,jdbcType=INTEGER},
-      question30 = #{record.question30,jdbcType=INTEGER},
-      question31 = #{record.question31,jdbcType=INTEGER},
-      question32 = #{record.question32,jdbcType=INTEGER},
-      question33 = #{record.question33,jdbcType=INTEGER},
-      question34 = #{record.question34,jdbcType=INTEGER},
-      question35 = #{record.question35,jdbcType=INTEGER},
-      question36 = #{record.question36,jdbcType=INTEGER},
-      question37 = #{record.question37,jdbcType=INTEGER},
-      question38 = #{record.question38,jdbcType=INTEGER},
-      question39 = #{record.question39,jdbcType=INTEGER},
-      question40 = #{record.question40,jdbcType=INTEGER},
-      question41 = #{record.question41,jdbcType=INTEGER},
-      question42 = #{record.question42,jdbcType=INTEGER},
-      question43 = #{record.question43,jdbcType=INTEGER},
-      question44 = #{record.question44,jdbcType=INTEGER},
-      question45 = #{record.question45,jdbcType=INTEGER},
-      question46 = #{record.question46,jdbcType=INTEGER},
-      question47 = #{record.question47,jdbcType=INTEGER},
-      question48 = #{record.question48,jdbcType=INTEGER},
-      question49 = #{record.question49,jdbcType=INTEGER},
-      question50 = #{record.question50,jdbcType=INTEGER},
-      question51 = #{record.question51,jdbcType=INTEGER},
-      question52 = #{record.question52,jdbcType=INTEGER},
-      question53 = #{record.question53,jdbcType=INTEGER},
-      question54 = #{record.question54,jdbcType=INTEGER},
-      question55 = #{record.question55,jdbcType=INTEGER},
-      question56 = #{record.question56,jdbcType=INTEGER},
-      question57 = #{record.question57,jdbcType=INTEGER},
+    question1 = #{record.question1,jdbcType=VARCHAR},
+    question2 = #{record.question2,jdbcType=VARCHAR},
+    question3 = #{record.question3,jdbcType=VARCHAR},
+    question4 = #{record.question4,jdbcType=VARCHAR},
+    question5 = #{record.question5,jdbcType=VARCHAR},
+    question6 = #{record.question6,jdbcType=VARCHAR},
+    question7 = #{record.question7,jdbcType=VARCHAR},
+    question8 = #{record.question8,jdbcType=VARCHAR},
+    question9 = #{record.question9,jdbcType=VARCHAR},
+    question10 = #{record.question10,jdbcType=VARCHAR},
+    question11 = #{record.question11,jdbcType=VARCHAR},
+    question12 = #{record.question12,jdbcType=VARCHAR},
+    question13 = #{record.question13,jdbcType=VARCHAR},
+    question14 = #{record.question14,jdbcType=VARCHAR},
+    question15 = #{record.question15,jdbcType=VARCHAR},
+    question16 = #{record.question16,jdbcType=VARCHAR},
+    question17 = #{record.question17,jdbcType=VARCHAR},
+    question18 = #{record.question18,jdbcType=VARCHAR},
+    question19 = #{record.question19,jdbcType=VARCHAR},
+    question20 = #{record.question20,jdbcType=VARCHAR},
+    question21 = #{record.question21,jdbcType=VARCHAR},
+    question22 = #{record.question22,jdbcType=VARCHAR},
+    question23 = #{record.question23,jdbcType=VARCHAR},
+    question24 = #{record.question24,jdbcType=VARCHAR},
+    question25 = #{record.question25,jdbcType=VARCHAR},
+    question26 = #{record.question26,jdbcType=VARCHAR},
+    question27 = #{record.question27,jdbcType=VARCHAR},
+    question28 = #{record.question28,jdbcType=VARCHAR},
+    question29 = #{record.question29,jdbcType=VARCHAR},
+    question30 = #{record.question30,jdbcType=VARCHAR},
+    question31 = #{record.question31,jdbcType=VARCHAR},
+    question32 = #{record.question32,jdbcType=VARCHAR},
+    question33 = #{record.question33,jdbcType=VARCHAR},
+    question34 = #{record.question34,jdbcType=VARCHAR},
+    question35 = #{record.question35,jdbcType=VARCHAR},
+    question36 = #{record.question36,jdbcType=VARCHAR},
+    question37 = #{record.question37,jdbcType=VARCHAR},
+    question38 = #{record.question38,jdbcType=VARCHAR},
+    question39 = #{record.question39,jdbcType=VARCHAR},
+    question40 = #{record.question40,jdbcType=VARCHAR},
+    question41 = #{record.question41,jdbcType=VARCHAR},
+    question42 = #{record.question42,jdbcType=VARCHAR},
+    question43 = #{record.question43,jdbcType=VARCHAR},
+    question44 = #{record.question44,jdbcType=VARCHAR},
+    question45 = #{record.question45,jdbcType=VARCHAR},
+    question46 = #{record.question46,jdbcType=VARCHAR},
+    question47 = #{record.question47,jdbcType=VARCHAR},
+    question48 = #{record.question48,jdbcType=VARCHAR},
+    question49 = #{record.question49,jdbcType=VARCHAR},
+    question50 = #{record.question50,jdbcType=VARCHAR},
+    question51 = #{record.question51,jdbcType=VARCHAR},
+    question52 = #{record.question52,jdbcType=VARCHAR},
+    question53 = #{record.question53,jdbcType=VARCHAR},
+    question54 = #{record.question54,jdbcType=VARCHAR},
+    question55 = #{record.question55,jdbcType=VARCHAR},
+    question56 = #{record.question56,jdbcType=VARCHAR},
+    question57 = #{record.question57,jdbcType=VARCHAR},
       question_sum = #{record.questionSum,jdbcType=INTEGER},
       child_id = #{record.childId,jdbcType=INTEGER}
     <if test="_parameter != null">
@@ -1303,63 +1303,63 @@
   </update>
   <update id="updateByPrimaryKey" parameterType="com.join.autism.entity.HzhThreemon.HzhThreemon">
     update hzh_threemon
-    set question1 = #{question1,jdbcType=INTEGER},
-      question2 = #{question2,jdbcType=INTEGER},
-      question3 = #{question3,jdbcType=INTEGER},
-      question4 = #{question4,jdbcType=INTEGER},
-      question5 = #{question5,jdbcType=INTEGER},
-      question6 = #{question6,jdbcType=INTEGER},
-      question7 = #{question7,jdbcType=INTEGER},
-      question8 = #{question8,jdbcType=INTEGER},
-      question9 = #{question9,jdbcType=INTEGER},
-      question10 = #{question10,jdbcType=INTEGER},
-      question11 = #{question11,jdbcType=INTEGER},
-      question12 = #{question12,jdbcType=INTEGER},
-      question13 = #{question13,jdbcType=INTEGER},
-      question14 = #{question14,jdbcType=INTEGER},
-      question15 = #{question15,jdbcType=INTEGER},
-      question16 = #{question16,jdbcType=INTEGER},
-      question17 = #{question17,jdbcType=INTEGER},
-      question18 = #{question18,jdbcType=INTEGER},
-      question19 = #{question19,jdbcType=INTEGER},
-      question20 = #{question20,jdbcType=INTEGER},
-      question21 = #{question21,jdbcType=INTEGER},
-      question22 = #{question22,jdbcType=INTEGER},
-      question23 = #{question23,jdbcType=INTEGER},
-      question24 = #{question24,jdbcType=INTEGER},
-      question25 = #{question25,jdbcType=INTEGER},
-      question26 = #{question26,jdbcType=INTEGER},
-      question27 = #{question27,jdbcType=INTEGER},
-      question28 = #{question28,jdbcType=INTEGER},
-      question29 = #{question29,jdbcType=INTEGER},
-      question30 = #{question30,jdbcType=INTEGER},
-      question31 = #{question31,jdbcType=INTEGER},
-      question32 = #{question32,jdbcType=INTEGER},
-      question33 = #{question33,jdbcType=INTEGER},
-      question34 = #{question34,jdbcType=INTEGER},
-      question35 = #{question35,jdbcType=INTEGER},
-      question36 = #{question36,jdbcType=INTEGER},
-      question37 = #{question37,jdbcType=INTEGER},
-      question38 = #{question38,jdbcType=INTEGER},
-      question39 = #{question39,jdbcType=INTEGER},
-      question40 = #{question40,jdbcType=INTEGER},
-      question41 = #{question41,jdbcType=INTEGER},
-      question42 = #{question42,jdbcType=INTEGER},
-      question43 = #{question43,jdbcType=INTEGER},
-      question44 = #{question44,jdbcType=INTEGER},
-      question45 = #{question45,jdbcType=INTEGER},
-      question46 = #{question46,jdbcType=INTEGER},
-      question47 = #{question47,jdbcType=INTEGER},
-      question48 = #{question48,jdbcType=INTEGER},
-      question49 = #{question49,jdbcType=INTEGER},
-      question50 = #{question50,jdbcType=INTEGER},
-      question51 = #{question51,jdbcType=INTEGER},
-      question52 = #{question52,jdbcType=INTEGER},
-      question53 = #{question53,jdbcType=INTEGER},
-      question54 = #{question54,jdbcType=INTEGER},
-      question55 = #{question55,jdbcType=INTEGER},
-      question56 = #{question56,jdbcType=INTEGER},
-      question57 = #{question57,jdbcType=INTEGER},
+    set question1 = #{question1,jdbcType=VARCHAR},
+      question2 = #{question2,jdbcType=VARCHAR},
+      question3 = #{question3,jdbcType=VARCHAR},
+      question4 = #{question4,jdbcType=VARCHAR},
+      question5 = #{question5,jdbcType=VARCHAR},
+      question6 = #{question6,jdbcType=VARCHAR},
+      question7 = #{question7,jdbcType=VARCHAR},
+      question8 = #{question8,jdbcType=VARCHAR},
+      question9 = #{question9,jdbcType=VARCHAR},
+      question10 = #{question10,jdbcType=VARCHAR},
+      question11 = #{question11,jdbcType=VARCHAR},
+      question12 = #{question12,jdbcType=VARCHAR},
+      question13 = #{question13,jdbcType=VARCHAR},
+      question14 = #{question14,jdbcType=VARCHAR},
+      question15 = #{question15,jdbcType=VARCHAR},
+      question16 = #{question16,jdbcType=VARCHAR},
+      question17 = #{question17,jdbcType=VARCHAR},
+      question18 = #{question18,jdbcType=VARCHAR},
+      question19 = #{question19,jdbcType=VARCHAR},
+      question20 = #{question20,jdbcType=VARCHAR},
+      question21 = #{question21,jdbcType=VARCHAR},
+      question22 = #{question22,jdbcType=VARCHAR},
+      question23 = #{question23,jdbcType=VARCHAR},
+      question24 = #{question24,jdbcType=VARCHAR},
+      question25 = #{question25,jdbcType=VARCHAR},
+      question26 = #{question26,jdbcType=VARCHAR},
+      question27 = #{question27,jdbcType=VARCHAR},
+      question28 = #{question28,jdbcType=VARCHAR},
+      question29 = #{question29,jdbcType=VARCHAR},
+      question30 = #{question30,jdbcType=VARCHAR},
+      question31 = #{question31,jdbcType=VARCHAR},
+      question32 = #{question32,jdbcType=VARCHAR},
+      question33 = #{question33,jdbcType=VARCHAR},
+      question34 = #{question34,jdbcType=VARCHAR},
+      question35 = #{question35,jdbcType=VARCHAR},
+      question36 = #{question36,jdbcType=VARCHAR},
+      question37 = #{question37,jdbcType=VARCHAR},
+      question38 = #{question38,jdbcType=VARCHAR},
+      question39 = #{question39,jdbcType=VARCHAR},
+      question40 = #{question40,jdbcType=VARCHAR},
+      question41 = #{question41,jdbcType=VARCHAR},
+      question42 = #{question42,jdbcType=VARCHAR},
+      question43 = #{question43,jdbcType=VARCHAR},
+      question44 = #{question44,jdbcType=VARCHAR},
+      question45 = #{question45,jdbcType=VARCHAR},
+      question46 = #{question46,jdbcType=VARCHAR},
+      question47 = #{question47,jdbcType=VARCHAR},
+      question48 = #{question48,jdbcType=VARCHAR},
+      question49 = #{question49,jdbcType=VARCHAR},
+      question50 = #{question50,jdbcType=VARCHAR},
+      question51 = #{question51,jdbcType=VARCHAR},
+      question52 = #{question52,jdbcType=VARCHAR},
+      question53 = #{question53,jdbcType=VARCHAR},
+      question54 = #{question54,jdbcType=VARCHAR},
+      question55 = #{question55,jdbcType=VARCHAR},
+      question56 = #{question56,jdbcType=VARCHAR},
+      question57 = #{question57,jdbcType=VARCHAR},
       question_sum = #{questionSum,jdbcType=INTEGER},
       child_id = #{childId,jdbcType=INTEGER}
     where id = #{id,jdbcType=INTEGER}
