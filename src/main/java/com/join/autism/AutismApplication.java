@@ -5,6 +5,8 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.servlet.ServletComponentScan;
 
+import java.lang.reflect.Proxy;
+
 @ServletComponentScan
 @MapperScan("com.join.autism.mapper")
 @SpringBootApplication

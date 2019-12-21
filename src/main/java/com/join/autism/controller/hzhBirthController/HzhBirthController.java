@@ -43,5 +43,7 @@ public class HzhBirthController {
     public void deleteBirth(HzhBirth hzhBirth){hzhBirthService.delHzhBirthByPK(hzhBirth.getId());}
 
     @RequestMapping("updateBirth")
-    public void updateBirth(HzhBirth hzhBirth){hzhBirthService.updateBirth(hzhBirth);}
+    public void updateBirth(HzhBirth hzhBirth){
+        hzhBirthService.updateBirth(hzhBirth);
+    }
 }
