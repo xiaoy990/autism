@@ -109,7 +109,7 @@
   </sql>
   <sql id="mutiSelect_Column_List">
     s.id, s.sicknum, s.doctor, `datetime`, s.livenum, nospeak, brains, speakslow, blues, anxious,
-    manic, split, muchgo, social, `force`, choice, spirit, other,`name`
+    manic, split, muchgo, social, `force`, choice, spirit, other,`name`, s.child_id
   </sql>
   <select id="selectByExample" parameterType="com.join.autism.entity.HzhSpirit.HzhSpiritExample" resultMap="BaseResultMap">
     select
